@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FastCloud — Карточка сервера</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="cab"><aside class="sidebar">
+  <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
+  <a href="dashboard.html" class="nav-item"><span class="ico">⊡</span>Обзор</a><a href="servers.html" class="nav-item on"><span class="ico">▣</span>Серверы</a><a href="create.html" class="nav-item"><span class="ico">+</span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico">⚿</span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico">€</span>Биллинг</a><a href="profile.html" class="nav-item"><span class="ico">○</span>Профиль</a>
+  <div class="sidebar-balance">
+    <div class="text-sm" style="margin-bottom:4px">Баланс</div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:10px">€ 42,80</div>
+    <a href="billing.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">+ Пополнить</a>
+  </div>
+</aside><div class="cab-main"><div class="cab-topbar">
+  <div class="breadcrumb flex items-center"><a href="servers.html" class="breadcrumb" style="color:var(--text3)">Серверы</a><span style="color:var(--text3);margin:0 6px">/</span><span class="breadcrumb"><span style="color:var(--text)">fc-pro-fra</span></span></div>
+  <div class="flex-1"></div>
+  <input class="search-box" placeholder="⌘K — поиск…" type="text">
+  <span class="text-xs">€ 42,80</span>
+  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">ИП</div>
+</div>
+<div style="padding:14px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;background:var(--surface)">
+  <span style="font-size:16px;font-weight:700">fc-pro-fra</span>
+  <span class="chip">PRO</span><span class="chip">Frankfurt</span><span class="dot dot-green">running</span>
+  <div class="flex-1"></div>
+  <button class="btn btn-ghost btn-sm">⏻ Power</button>
+  <button class="btn btn-ghost btn-sm">↻ Reboot</button>
+  <button class="btn btn-primary btn-sm">▶ Консоль</button>
+</div>
+<div class="tabs" style="padding:0 24px;margin-bottom:0">
+  <span class="tab on">Консоль</span><span class="tab">Обзор</span><span class="tab">Сеть</span><span class="tab">Перестановка ОС</span><span class="tab">Ресайз</span>
+</div>
+<div style="display:flex;flex:1;min-height:500px">
+  <div style="flex:1;padding:20px;display:flex;flex-direction:column;gap:12px">
+    <div class="flex gap-2 items-center">
+      <span class="chip on">VNC</span><span class="chip">SSH (browser)</span>
+      <div class="flex-1"></div>
+      <button class="btn btn-ghost btn-sm">⤢ Полный экран</button>
+      <button class="btn btn-ghost btn-sm">↻</button>
+    </div>
+    <div class="term" style="flex:1;min-height:320px">
+      <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># uname -a</div>
+      <div class="dim">Linux fc-pro-fra 6.1.0-21-amd64 x86_64 GNU/Linux</div>
+      <br>
+      <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># df -h</div>
+      <div class="dim">Filesystem   Size  Used  Avail  Use%  Mounted</div>
+      <div class="dim">/dev/sda1    118G   14G   100G   13%   /</div>
+      <br>
+      <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># <span style="animation:blink 1s infinite">█</span></div>
+    </div>
+    <div class="flex gap-2">
+      <button class="btn btn-ghost btn-sm">Ctrl</button><button class="btn btn-ghost btn-sm">Alt</button><button class="btn btn-ghost btn-sm">Tab</button><button class="btn btn-ghost btn-sm">Esc</button>
+    </div>
+  </div>
+  <div style="width:230px;border-left:1px solid var(--border);padding:18px;display:flex;flex-direction:column;gap:16px">
+    <div class="section-title">Метрики</div>
+    <div><div class="text-sm" style="margin-bottom:6px">CPU</div><div class="bar-wrap"><div class="bar bar-green" style="width:12%"></div></div><div class="text-xs" style="margin-top:3px">12%</div></div>
+    <div><div class="text-sm" style="margin-bottom:6px">RAM</div><div class="bar-wrap"><div class="bar bar-green" style="width:38%"></div></div><div class="text-xs" style="margin-top:3px">3.1 / 8 GB</div></div>
+    <div><div class="text-sm" style="margin-bottom:6px">Диск</div><div class="bar-wrap"><div class="bar bar-green" style="width:13%"></div></div><div class="text-xs" style="margin-top:3px">14 / 120 GB</div></div>
+    <div><div class="text-sm">Сеть ↓</div><div class="text-mono">2.4 MB/s</div></div>
+    <div><div class="text-sm">Сеть ↑</div><div class="text-mono">0.8 MB/s</div></div>
+    <div class="divider"></div>
+    <div><div class="text-sm" style="margin-bottom:4px">IPv4</div><div class="text-mono">185.12.44.22</div></div>
+    <div><div class="text-sm" style="margin-bottom:4px">IPv6</div><div class="text-mono" style="word-break:break-all">2a02:6b8::1</div></div>
+    <div class="divider"></div>
+    <button class="btn btn-ghost btn-sm" style="justify-content:center">Создать снапшот</button>
+    <button class="btn btn-ghost btn-sm" style="justify-content:center">Перестановка ОС</button>
+  </div>
+</div>
+<style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style></div></div></body></html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FastCloud — SSH-ключи</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="cab"><aside class="sidebar">
+  <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
+  <a href="dashboard.html" class="nav-item"><span class="ico">⊡</span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico">▣</span>Серверы</a><a href="create.html" class="nav-item"><span class="ico">+</span>Создать</a><a href="ssh-keys.html" class="nav-item on"><span class="ico">⚿</span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico">€</span>Биллинг</a><a href="profile.html" class="nav-item"><span class="ico">○</span>Профиль</a>
+  <div class="sidebar-balance">
+    <div class="text-sm" style="margin-bottom:4px">Баланс</div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:10px">€ 42,80</div>
+    <a href="billing.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">+ Пополнить</a>
+  </div>
+</aside><div class="cab-main"><div class="cab-topbar">
+  <div class="breadcrumb flex items-center"><span class="breadcrumb"><span style="color:var(--text)">SSH-ключи</span></span></div>
+  <div class="flex-1"></div>
+  <input class="search-box" placeholder="⌘K — поиск…" type="text">
+  <span class="text-xs">€ 42,80</span>
+  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">ИП</div>
+</div>
+<div class="cab-content">
+  <div class="page-title">SSH-ключи</div>
+  <div class="flex gap-4" style="align-items:flex-start">
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px">
+      <div class="card" style="padding:0;overflow:hidden">
+        <table class="tbl">
+          <thead><tr><th>Имя</th><th>Fingerprint</th><th>Добавлен</th><th></th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600">id_personal</td><td class="text-mono">SHA256:abc123…xyz</td><td class="text-mono">2026-01-14</td><td><button class="btn btn-danger btn-sm">удалить</button></td></tr>
+            <tr><td style="font-weight:600">work-macbook</td><td class="text-mono">SHA256:def456…uvw</td><td class="text-mono">2026-03-02</td><td><button class="btn btn-danger btn-sm">удалить</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="section-title">Добавить ключ</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div><label>Название</label><input class="inp" placeholder="my-laptop" type="text"></div>
+          <div><label>Публичный ключ</label><textarea class="inp" style="height:80px;resize:vertical;font-family:var(--mono);font-size:11px" placeholder="ssh-ed25519 AAAAC3Nza… user@host"></textarea></div>
+          <button class="btn btn-primary" style="align-self:flex-start">Добавить ключ</button>
+        </div>
+      </div>
+    </div>
+    <div style="width:280px">
+      <div class="card">
+        <div class="section-title">Как получить ключ</div>
+        <div class="term" style="margin-top:10px">
+          <div><span class="p"># генерация</span></div>
+          <div>ssh-keygen -t ed25519</div>
+          <br>
+          <div><span class="p"># скопировать</span></div>
+          <div>cat ~/.ssh/id_ed25519.pub</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div></div></body></html>

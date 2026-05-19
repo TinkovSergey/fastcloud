@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FastCloud — Дашборд</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="cab"><aside class="sidebar">
+  <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
+  <a href="dashboard.html" class="nav-item on"><span class="ico">⊡</span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico">▣</span>Серверы</a><a href="create.html" class="nav-item"><span class="ico">+</span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico">⚿</span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico">€</span>Биллинг</a><a href="profile.html" class="nav-item"><span class="ico">○</span>Профиль</a>
+  <div class="sidebar-balance">
+    <div class="text-sm" style="margin-bottom:4px">Баланс</div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:10px">€ 42,80</div>
+    <a href="billing.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">+ Пополнить</a>
+  </div>
+</aside><div class="cab-main"><div class="cab-topbar">
+  <div class="breadcrumb flex items-center"><span class="breadcrumb"><span style="color:var(--text)">Обзор</span></span></div>
+  <div class="flex-1"></div>
+  <input class="search-box" placeholder="⌘K — поиск…" type="text">
+  <span class="text-xs">€ 42,80</span>
+  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">ИП</div>
+</div>
+<div class="cab-content">
+  <div class="flex items-center mb-6">
+    <div class="page-title" style="margin-bottom:0">Обзор</div>
+    <div class="flex-1"></div>
+    <a href="create.html" class="btn btn-primary">+ Создать сервер</a>
+  </div>
+  <div class="grid-4 mb-6">
+    <div class="kpi"><div class="kpi-label">Серверов</div><div class="kpi-value">7</div><div class="kpi-sub">5 running · 2 stopped</div></div>
+    <div class="kpi"><div class="kpi-label">Расход / мес</div><div class="kpi-value">€ 84,30</div><div class="kpi-sub">~€2,81/день</div></div>
+    <div class="kpi"><div class="kpi-label">Баланс</div><div class="kpi-value">€ 42,80</div><div class="kpi-sub">на ~15 дней</div></div>
+    <div class="kpi"><div class="kpi-label">Аптайм</div><div class="kpi-value" style="color:var(--green)">99,9%</div><div class="kpi-sub">последние 30 дней</div></div>
+  </div>
+  <div class="card mb-4">
+    <div class="flex items-center mb-4"><div class="section-title" style="margin-bottom:0">Серверы</div><div class="flex-1"></div><a href="create.html" class="btn btn-primary btn-sm">+ создать</a></div>
+    <table class="tbl">
+      <thead><tr><th>Имя</th><th>Статус</th><th>Тариф</th><th>ДЦ</th><th>IP</th><th></th></tr></thead>
+      <tbody>
+        <tr><td style="font-weight:600"><a href="server-detail.html">fc-pro-fra</a></td><td><span class="dot dot-green">running</span></td><td>PRO</td><td>FRA</td><td class="text-mono">185.12.44.22</td><td><a href="server-detail.html" class="btn btn-ghost btn-sm">консоль</a></td></tr>
+        <tr><td style="font-weight:600"><a href="server-detail.html">fc-dev-ams</a></td><td><span class="dot dot-green">running</span></td><td>DEV</td><td>AMS</td><td class="text-mono">94.23.11.8</td><td><a href="server-detail.html" class="btn btn-ghost btn-sm">консоль</a></td></tr>
+        <tr><td style="font-weight:600"><a href="server-detail.html">fc-test-par</a></td><td><span class="dot dot-gray">stopped</span></td><td>STARTER</td><td>PAR</td><td class="text-mono">51.77.88.14</td><td><a href="server-detail.html" class="btn btn-ghost btn-sm">консоль</a></td></tr>
+      </tbody>
+    </table>
+    <div style="padding:12px 14px 0"><a href="servers.html" style="font-size:13px;color:var(--accent)">все 7 серверов →</a></div>
+  </div>
+  <div class="card">
+    <div class="section-title">Расходы · последние 30 дней</div>
+    <div style="height:120px;position:relative;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;background:var(--surface2)">
+      <svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
+        <defs><linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6c8fff" stop-opacity=".3"/><stop offset="100%" stop-color="#6c8fff" stop-opacity="0"/></linearGradient></defs>
+        <path d="M0 90 Q80 70 150 80 T300 55 T430 65 T530 38 T600 48 L600 120 L0 120Z" fill="url(#gr)"/>
+        <path d="M0 90 Q80 70 150 80 T300 55 T430 65 T530 38 T600 48" stroke="#6c8fff" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+  </div>
+</div></div></div></body></html>

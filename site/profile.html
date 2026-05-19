@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FastCloud — Профиль</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="cab"><aside class="sidebar">
+  <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
+  <a href="dashboard.html" class="nav-item"><span class="ico">⊡</span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico">▣</span>Серверы</a><a href="create.html" class="nav-item"><span class="ico">+</span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico">⚿</span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico">€</span>Биллинг</a><a href="profile.html" class="nav-item on"><span class="ico">○</span>Профиль</a>
+  <div class="sidebar-balance">
+    <div class="text-sm" style="margin-bottom:4px">Баланс</div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:10px">€ 42,80</div>
+    <a href="billing.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">+ Пополнить</a>
+  </div>
+</aside><div class="cab-main"><div class="cab-topbar">
+  <div class="breadcrumb flex items-center"><span class="breadcrumb"><span style="color:var(--text)">Профиль</span></span></div>
+  <div class="flex-1"></div>
+  <input class="search-box" placeholder="⌘K — поиск…" type="text">
+  <span class="text-xs">€ 42,80</span>
+  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">ИП</div>
+</div>
+<div class="cab-content">
+  <div class="page-title">Профиль</div>
+  <div class="flex gap-4" style="align-items:flex-start">
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px">
+      <div class="card">
+        <div class="section-title">Личные данные</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div><label>Имя</label><input class="inp" value="Иван Петров" type="text"></div>
+          <div><label>E-mail</label><input class="inp" value="ivan@example.com" type="email"></div>
+          <button class="btn btn-primary" style="align-self:flex-start">Сохранить</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="section-title">Смена пароля</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div><label>Текущий пароль</label><input class="inp" placeholder="••••••••" type="password"></div>
+          <div><label>Новый пароль</label><input class="inp" placeholder="••••••••" type="password"></div>
+          <button class="btn btn-ghost" style="align-self:flex-start">Обновить пароль</button>
+        </div>
+      </div>
+      <div class="card" style="border-color:var(--red)">
+        <div class="section-title" style="color:var(--red)">Danger Zone</div>
+        <div class="flex items-center gap-4">
+          <div class="text-sm flex-1">Удаление аккаунта необратимо. Все серверы будут уничтожены.</div>
+          <button class="btn btn-danger btn-sm">Удалить аккаунт</button>
+        </div>
+      </div>
+    </div>
+    <div style="width:240px">
+      <div class="card">
+        <div class="section-title">Аккаунт</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
+          <div><div class="text-sm">ID</div><div class="text-mono">fc-u-1842</div></div>
+          <div><div class="text-sm">Регистрация</div><div class="text-mono">2026-01-10</div></div>
+          <div><span class="dot dot-green">активен</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div></div></body></html>

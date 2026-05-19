@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FastCloud — Биллинг</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="cab"><aside class="sidebar">
+  <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
+  <a href="dashboard.html" class="nav-item"><span class="ico">⊡</span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico">▣</span>Серверы</a><a href="create.html" class="nav-item"><span class="ico">+</span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico">⚿</span>SSH-ключи</a><a href="billing.html" class="nav-item on"><span class="ico">€</span>Биллинг</a><a href="profile.html" class="nav-item"><span class="ico">○</span>Профиль</a>
+  <div class="sidebar-balance">
+    <div class="text-sm" style="margin-bottom:4px">Баланс</div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:10px">€ 42,80</div>
+    <a href="billing.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">+ Пополнить</a>
+  </div>
+</aside><div class="cab-main"><div class="cab-topbar">
+  <div class="breadcrumb flex items-center"><span class="breadcrumb"><span style="color:var(--text)">Биллинг</span></span></div>
+  <div class="flex-1"></div>
+  <input class="search-box" placeholder="⌘K — поиск…" type="text">
+  <span class="text-xs">€ 42,80</span>
+  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">ИП</div>
+</div>
+<div class="cab-content">
+  <div class="flex items-center mb-6">
+    <div class="page-title" style="margin-bottom:0">Биллинг</div>
+    <div class="flex-1"></div>
+    <button class="btn btn-primary">+ Пополнить</button>
+    <button class="btn btn-ghost" style="margin-left:8px">Промокод</button>
+  </div>
+  <div class="grid-3 mb-6">
+    <div class="kpi"><div class="kpi-label">Текущий баланс</div><div class="kpi-value">€ 42,80</div><div class="kpi-sub">следующее списание через 8 дней</div></div>
+    <div class="kpi"><div class="kpi-label">Расход этого месяца</div><div class="kpi-value">€ 84,30</div><div class="kpi-sub">7 серверов · почасово</div></div>
+    <div class="kpi"><div class="kpi-label">Способ оплаты</div><div class="kpi-value" style="font-size:18px">Visa •••• 4242</div><div class="kpi-sub">+ добавить карту / USDT</div></div>
+  </div>
+  <div class="tabs">
+    <span class="tab on">Операции</span><span class="tab">Документы</span><span class="tab">Промокоды</span>
+  </div>
+  <div class="card" style="padding:0;overflow:hidden">
+  <table class="tbl">
+    <thead><tr><th>Дата</th><th>Описание</th><th>Сумма</th><th>Баланс</th></tr></thead>
+    <tbody>
+      <tr><td class="text-mono">2026-05-19</td><td>fc-pro-fra · почасово</td><td style="color:var(--red);font-family:var(--mono)">−€0,021</td><td class="text-mono">€42,80</td></tr>
+      <tr><td class="text-mono">2026-05-18</td><td>Пополнение · Visa •••• 4242</td><td style="color:var(--green);font-family:var(--mono)">+€50,00</td><td class="text-mono">€43,20</td></tr>
+      <tr><td class="text-mono">2026-05-18</td><td>fc-dev-ams · почасово</td><td style="color:var(--red);font-family:var(--mono)">−€0,011</td><td class="text-mono">€ 3,20</td></tr>
+      <tr><td class="text-mono">2026-05-17</td><td>fc-pro-fra · почасово</td><td style="color:var(--red);font-family:var(--mono)">−€0,021</td><td class="text-mono">€ 3,31</td></tr>
+      <tr><td class="text-mono">2026-05-15</td><td>Пополнение · USDT</td><td style="color:var(--green);font-family:var(--mono)">+€30,00</td><td class="text-mono">€30,00</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div></div></div></body></html>

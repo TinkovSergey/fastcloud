@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FastCloud — Серверы</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="cab"><aside class="sidebar">
+  <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
+  <a href="dashboard.html" class="nav-item"><span class="ico">⊡</span>Обзор</a><a href="servers.html" class="nav-item on"><span class="ico">▣</span>Серверы</a><a href="create.html" class="nav-item"><span class="ico">+</span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico">⚿</span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico">€</span>Биллинг</a><a href="profile.html" class="nav-item"><span class="ico">○</span>Профиль</a>
+  <div class="sidebar-balance">
+    <div class="text-sm" style="margin-bottom:4px">Баланс</div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:10px">€ 42,80</div>
+    <a href="billing.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">+ Пополнить</a>
+  </div>
+</aside><div class="cab-main"><div class="cab-topbar">
+  <div class="breadcrumb flex items-center"><span class="breadcrumb"><span style="color:var(--text)">Серверы</span></span></div>
+  <div class="flex-1"></div>
+  <input class="search-box" placeholder="⌘K — поиск…" type="text">
+  <span class="text-xs">€ 42,80</span>
+  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">ИП</div>
+</div>
+<div class="cab-content">
+  <div class="flex items-center mb-4">
+    <div class="page-title" style="margin-bottom:0">Серверы <span style="font-size:16px;color:var(--text3);font-weight:400">· 7</span></div>
+    <div class="flex-1"></div>
+    <a href="create.html" class="btn btn-primary">+ Создать</a>
+  </div>
+  <div class="flex gap-2 mb-4">
+    <span class="chip on">Все · 7</span><span class="chip">Running · 5</span><span class="chip">Stopped · 2</span>
+    <div class="flex-1"></div>
+    <span class="chip">FRA</span><span class="chip">AMS</span><span class="chip">PAR</span><span class="chip">HEL</span>
+  </div>
+  <div class="card" style="padding:0;overflow:hidden">
+  <table class="tbl">
+    <thead><tr><th>Имя</th><th>Статус</th><th>Тариф</th><th>ДЦ</th><th>IP</th><th>CPU</th><th>RAM</th><th></th></tr></thead>
+    <tbody>
+      <tr><td style="font-weight:600"><a href="server-detail.html">fc-pro-fra</a></td><td><span class="dot dot-green">running</span></td><td>PRO</td><td>FRA</td><td class="text-mono">185.12.44.22</td><td>12%</td><td>38%</td><td><div class="flex gap-2"><a href="server-detail.html" class="btn btn-ghost btn-sm">консоль</a><button class="btn btn-ghost btn-sm">⏻</button></div></td></tr>
+      <tr><td style="font-weight:600"><a href="server-detail.html">fc-dev-ams</a></td><td><span class="dot dot-green">running</span></td><td>DEV</td><td>AMS</td><td class="text-mono">94.23.11.8</td><td>3%</td><td>22%</td><td><div class="flex gap-2"><a href="server-detail.html" class="btn btn-ghost btn-sm">консоль</a><button class="btn btn-ghost btn-sm">⏻</button></div></td></tr>
+      <tr><td style="font-weight:600"><a href="server-detail.html">fc-test-par</a></td><td><span class="dot dot-gray">stopped</span></td><td>STARTER</td><td>PAR</td><td class="text-mono">51.77.88.14</td><td>—</td><td>—</td><td><div class="flex gap-2"><a href="server-detail.html" class="btn btn-ghost btn-sm">консоль</a><button class="btn btn-ghost btn-sm">⏻</button></div></td></tr>
+      <tr><td style="font-weight:600"><a href="server-detail.html">fc-prod-fra-2</a></td><td><span class="dot dot-green">running</span></td><td>PRO</td><td>FRA</td><td class="text-mono">185.12.44.23</td><td>44%</td><td>61%</td><td><div class="flex gap-2"><a href="server-detail.html" class="btn btn-ghost btn-sm">консоль</a><button class="btn btn-ghost btn-sm">⏻</button></div></td></tr>
+      <tr><td style="font-weight:600"><a href="server-detail.html">fc-vpn-hel</a></td><td><span class="dot dot-green">running</span></td><td>STARTER</td><td>HEL</td><td class="text-mono">95.88.33.11</td><td>1%</td><td>14%</td><td><div class="flex gap-2"><a href="server-detail.html" class="btn btn-ghost btn-sm">консоль</a><button class="btn btn-ghost btn-sm">⏻</button></div></td></tr>
+    </tbody>
+  </table>
+  </div>
+</div></div></div></body></html>

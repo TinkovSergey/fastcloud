@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FastCloud — Главная</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<nav class="mkt-nav">
+  <a href="index.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a>
+  <div class="mkt-nav-links"><a href="pricing.html" class="mkt-nav-link">Тарифы</a><a href="#" class="mkt-nav-link">Документация</a><a href="contacts.html" class="mkt-nav-link">Контакты</a></div>
+  <div class="flex gap-2">
+    <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
+    <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
+  </div>
+</nav>
+<div class="page-wrap">
+  <div class="hero" style="display:flex;gap:48px;align-items:center">
+    <div style="flex:1">
+      <div style="margin-bottom:16px"><span class="chip yellow">★ NVMe Gen4 · от € 3,80/мес</span></div>
+      <div class="hero-title">Самые быстрые<br>VPS <span style="color:var(--accent)">в Европе</span></div>
+      <div class="hero-sub">NVMe SSD, AMD EPYC, сеть 10 Gbps. Развёртывание за 45 секунд. 4 дата-центра: FR · NL · DE · FI.</div>
+      <div class="flex gap-3" style="margin-top:28px">
+        <a href="register.html" class="btn btn-primary btn-lg">Создать сервер →</a>
+        <a href="pricing.html" class="btn btn-ghost btn-lg">Посмотреть тарифы</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-val">99,99%</div><div class="stat-label">SLA</div></div>
+        <div><div class="stat-val">45 с</div><div class="stat-label">до запуска</div></div>
+        <div><div class="stat-val">4 ДЦ</div><div class="stat-label">в Европе</div></div>
+        <div><div class="stat-val">24/7</div><div class="stat-label">поддержка RU</div></div>
+      </div>
+    </div>
+    <div style="width:460px;flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden">
+      <div style="background:var(--surface2);border-bottom:1px solid var(--border);padding:10px 14px;display:flex;gap:6px">
+        <div style="width:10px;height:10px;border-radius:50%;background:#f05252"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#f5c842"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#3ecf77"></div>
+        <span style="font-family:var(--mono);font-size:11px;color:var(--text3);margin-left:8px">app.fastcloud.eu</span>
+      </div>
+      <div class="term" style="border:none;border-radius:0;padding:20px">
+        <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># htop</div>
+        <div class="dim">CPU[||||||          22%]   Tasks: 41</div>
+        <div class="dim">Mem[|||             1.2G/8G]  Uptime: 14d</div>
+        <br>
+        <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># df -h /</div>
+        <div class="dim">Filesystem   Size  Used  Avail  Use%</div>
+        <div class="dim">/dev/sda1    118G   14G   100G   13%</div>
+        <br>
+        <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># <span style="animation:blink 1s infinite">█</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feat-grid">
+    <div class="feat-card"><div class="feat-icon">⚡</div><div class="feat-title">NVMe Gen4</div><div class="feat-desc">Диски нового поколения. Скорость чтения до 7 GB/s — быстрее любого классического SSD.</div></div>
+    <div class="feat-card"><div class="feat-icon">🛡</div><div class="feat-title">Anti-DDoS 10 Гбит/с</div><div class="feat-desc">Включён во все тарифы без доплаты. Фильтрация на уровне сети, не влияет на латентность.</div></div>
+    <div class="feat-card"><div class="feat-icon">🚀</div><div class="feat-title">1-click приложения</div><div class="feat-desc">WordPress, Docker, n8n, GitLab, WireGuard — деплой за 30 секунд без ручной настройки.</div></div>
+    <div class="feat-card"><div class="feat-icon">🌐</div><div class="feat-title">API + CLI</div><div class="feat-desc">Полный REST API и Terraform-провайдер. Управляй инфраструктурой как кодом.</div></div>
+  </div>
+
+  <div style="margin:20px 0 40px">
+    <div class="flex items-center mb-4">
+      <div class="section-title" style="margin-bottom:0">Популярные тарифы</div>
+      <div class="flex-1"></div>
+      <a href="pricing.html" style="font-size:13px;color:var(--accent)">все тарифы →</a>
+    </div>
+    <div class="grid-4">
+      <div class="plan-card"><div class="plan-name">Starter</div><div class="plan-price"><sup>€</sup>3,80<sub>/мес</sub></div><div class="plan-specs">1 vCPU · 2 GB · 30 GB</div><a href="register.html" class="btn btn-ghost btn-sm" style="margin-top:8px">Выбрать</a></div>
+      <div class="plan-card"><div class="plan-name">Dev</div><div class="plan-price"><sup>€</sup>7,90<sub>/мес</sub></div><div class="plan-specs">2 vCPU · 4 GB · 60 GB</div><a href="register.html" class="btn btn-ghost btn-sm" style="margin-top:8px">Выбрать</a></div>
+      <div class="plan-card featured"><div class="flex items-center gap-2 mb-4"><div class="plan-name">Pro</div><span class="chip green" style="font-size:10px;padding:2px 8px">★ выбор</span></div><div class="plan-price"><sup>€</sup>15,40<sub>/мес</sub></div><div class="plan-specs">4 vCPU · 8 GB · 120 GB</div><a href="register.html" class="btn btn-primary btn-sm" style="margin-top:8px">Выбрать</a></div>
+      <div class="plan-card"><div class="plan-name">Power</div><div class="plan-price"><sup>€</sup>31,00<sub>/мес</sub></div><div class="plan-specs">8 vCPU · 16 GB · 250 GB</div><a href="register.html" class="btn btn-ghost btn-sm" style="margin-top:8px">Выбрать</a></div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:32px;align-items:center;margin-bottom:40px">
+    <div style="flex:1">
+      <div class="section-title">4 дата-центра · сеть 10 Gbps</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="chip">● Frankfurt</span><span class="chip">● Amsterdam</span><span class="chip">● Paris</span><span class="chip">● Helsinki</span>
+      </div>
+    </div>
+    <div class="map" style="width:380px;height:170px;flex-shrink:0">
+      <div class="map-grid"></div>
+      <div class="pin" style="left:52%;top:55%"><div class="pin-dot"></div><div class="pin-label">FRA</div></div>
+      <div class="pin" style="left:46%;top:42%"><div class="pin-dot"></div><div class="pin-label">AMS</div></div>
+      <div class="pin" style="left:41%;top:60%"><div class="pin-dot"></div><div class="pin-label">PAR</div></div>
+      <div class="pin" style="left:59%;top:22%"><div class="pin-dot"></div><div class="pin-label">HEL</div></div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div style="flex:1">
+      <div class="cta-title">Готов попробовать?</div>
+      <div class="cta-sub">€5 на счёт после подтверждения e-mail · Без карты · Активация за 30 секунд</div>
+    </div>
+    <a href="register.html" class="btn btn-lg" style="background:#fff;color:var(--accent-d);flex-shrink:0">Создать аккаунт →</a>
+  </div>
+</div>
+<style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
+</body></html>
