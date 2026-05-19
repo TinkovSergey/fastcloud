@@ -10,18 +10,18 @@
 <body>
 <div class="cab"><aside class="sidebar">
   <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
-  <a href="dashboard.html" class="nav-item"><span class="ico">⊡</span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico">▣</span>Серверы</a><a href="create.html" class="nav-item"><span class="ico">+</span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico">⚿</span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico">€</span>Биллинг</a><a href="profile.html" class="nav-item on"><span class="ico">○</span>Профиль</a>
+  <a href="dashboard.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Биллинг</a><a href="profile.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
   <div class="sidebar-balance">
     <div class="text-sm" style="margin-bottom:4px">Баланс</div>
     <div style="font-size:20px;font-weight:700;margin-bottom:10px">€ 42,80</div>
-    <a href="billing.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">+ Пополнить</a>
+    <a href="billing-topup.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">+ Пополнить</a>
   </div>
 </aside><div class="cab-main"><div class="cab-topbar">
   <div class="breadcrumb flex items-center"><span class="breadcrumb"><span style="color:var(--text)">Профиль</span></span></div>
   <div class="flex-1"></div>
-  <input class="search-box" placeholder="⌘K — поиск…" type="text">
-  <span class="text-xs">€ 42,80</span>
-  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">ИП</div>
+  <a href="billing.html" style="font-size:12px;color:var(--text2);text-decoration:none">€ 42,80</a>
+  <a href="profile.html" style="text-decoration:none;flex-shrink:0"><div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">ИП</div></a>
+  <a href="login.html" title="Выйти" class="topbar-logout"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg></a>
 </div>
 <div class="cab-content">
   <div class="page-title">Профиль</div>
@@ -31,7 +31,13 @@
         <div class="section-title">Личные данные</div>
         <div style="display:flex;flex-direction:column;gap:14px">
           <div><label>Имя</label><input class="inp" value="Иван Петров" type="text"></div>
-          <div><label>E-mail</label><input class="inp" value="ivan@example.com" type="email"></div>
+          <div>
+            <label>E-mail</label>
+            <div style="position:relative">
+              <input class="inp" value="ivan@example.com" type="email" readonly style="cursor:default;color:var(--text2);padding-right:110px">
+              <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--text3);pointer-events:none">нельзя изменить</span>
+            </div>
+          </div>
           <button class="btn btn-primary" style="align-self:flex-start">Сохранить</button>
         </div>
       </div>

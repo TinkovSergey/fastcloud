@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FastCloud — Пополнение баланса</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.amount-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
+.amount-card { padding:16px 10px; text-align:center; cursor:pointer; border:1px solid var(--border); border-radius:var(--r-sm); background:var(--surface2); transition:.15s; user-select:none; }
+.amount-card:hover { border-color:var(--accent); background:rgba(108,143,255,.05); }
+.amount-card.on { border-color:var(--accent); background:rgba(108,143,255,.10); }
+.amount-card .val { font-size:22px; font-weight:800; color:var(--text); }
+.amount-card .sub { font-size:11px; color:var(--text3); margin-top:4px; line-height:1.4; }
+.pay-panel { display:none; flex-direction:column; gap:14px; }
+.pay-panel.on { display:flex; }
+.qr-mock { width:130px; height:130px; background:var(--surface2); border:1px solid var(--border); border-radius:var(--r-sm); display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--text3); font-size:11px; gap:4px; flex-shrink:0; }
+.sum-line { display:flex; align-items:center; font-size:13px; }
+.trust-row { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text3); }
+</style>
+</head>
+<body>
+<div class="cab"><aside class="sidebar">
+  <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
+  <a href="dashboard.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Биллинг</a><a href="profile.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
+  <div class="sidebar-balance">
+    <div class="text-sm" style="margin-bottom:4px">Баланс</div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:10px">€ 42,80</div>
+    <a href="billing-topup.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">+ Пополнить</a>
+  </div>
+</aside><div class="cab-main"><div class="cab-topbar">
+  <div class="breadcrumb flex items-center"><a href="billing.html" style="color:var(--text3);font-size:13px">Биллинг</a><span style="color:var(--text3);margin:0 6px">/</span><span style="color:var(--text);font-size:13px">Пополнение</span></div>
+  <div class="flex-1"></div>
+  <a href="billing.html" style="font-size:12px;color:var(--text2);text-decoration:none">€ 42,80</a>
+  <a href="profile.html" style="text-decoration:none;flex-shrink:0"><div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">ИП</div></a>
+  <a href="login.html" title="Выйти" class="topbar-logout"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg></a>
+</div>
+
+<div class="create-layout">
+
+  <!-- LEFT: форма -->
+  <div class="create-main">
+
+    <div>
+      <div class="page-title" style="margin-bottom:4px">Пополнение баланса</div>
+      <div style="color:var(--text2);font-size:13px">Средства зачисляются мгновенно. Минимальная сумма — €5.</div>
+    </div>
+
+    <!-- Быстрый выбор суммы -->
+    <div class="card" style="display:flex;flex-direction:column;gap:14px">
+      <div class="section-title">Сумма пополнения</div>
+      <div class="amount-grid">
+        <div class="amount-card" data-amount="5"><div class="val">€5</div><div class="sub">~1 день</div></div>
+        <div class="amount-card" data-amount="10"><div class="val">€10</div><div class="sub">~3 дня</div></div>
+        <div class="amount-card on" data-amount="20"><div class="val">€20</div><div class="sub">~7 дней</div></div>
+        <div class="amount-card" data-amount="50"><div class="val">€50</div><div class="sub">~17 дней</div></div>
+        <div class="amount-card" data-amount="100"><div class="val">€100</div><div class="sub">~35 дней</div></div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div style="flex:1">
+          <label style="font-size:12px;color:var(--text2)">Другая сумма</label>
+          <div class="flex items-center gap-2" style="margin-top:5px">
+            <span style="color:var(--text2);font-size:15px;font-weight:600">€</span>
+            <input id="custom-amount" class="inp" type="number" min="5" max="10000" placeholder="0,00" style="max-width:160px;font-size:15px;font-weight:600">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Способ оплаты -->
+    <div class="card" style="display:flex;flex-direction:column;gap:16px">
+      <div class="section-title">Способ оплаты</div>
+      <div class="tabs" style="margin:0">
+        <span class="tab on" data-pay="card"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg> Банковская карта</span>
+        <span class="tab" data-pay="usdt"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg> USDT (TRC-20)</span>
+      </div>
+
+      <!-- Карта -->
+      <div id="pay-card" class="pay-panel on">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="grid-column:1/-1">
+            <label>Номер карты</label>
+            <input class="inp" type="text" placeholder="0000  0000  0000  0000" maxlength="19" style="margin-top:6px;font-family:var(--mono);letter-spacing:.05em">
+          </div>
+          <div>
+            <label>Срок действия</label>
+            <input class="inp" type="text" placeholder="ММ / ГГ" maxlength="7" style="margin-top:6px">
+          </div>
+          <div>
+            <label>CVV / CVC</label>
+            <input class="inp" type="password" placeholder="•••" maxlength="4" style="margin-top:6px">
+          </div>
+          <div style="grid-column:1/-1">
+            <label>Имя держателя</label>
+            <input class="inp" type="text" placeholder="IVAN PETROV" style="margin-top:6px;text-transform:uppercase">
+          </div>
+        </div>
+        <div class="flex items-center gap-3" style="margin-top:4px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text3);flex-shrink:0"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg>
+          <span style="font-size:11px;color:var(--text3)">Защищено 3D Secure. Данные передаются по зашифрованному каналу и не сохраняются.</span>
+        </div>
+      </div>
+
+      <!-- USDT -->
+      <div id="pay-usdt" class="pay-panel">
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start">
+          <div class="qr-mock">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <rect x="2" y="2" width="24" height="24" rx="2" stroke="var(--text3)" stroke-width="2" fill="none"/>
+              <rect x="8" y="8" width="12" height="12" rx="1" fill="var(--text3)"/>
+              <rect x="34" y="2" width="24" height="24" rx="2" stroke="var(--text3)" stroke-width="2" fill="none"/>
+              <rect x="40" y="8" width="12" height="12" rx="1" fill="var(--text3)"/>
+              <rect x="2" y="34" width="24" height="24" rx="2" stroke="var(--text3)" stroke-width="2" fill="none"/>
+              <rect x="8" y="40" width="12" height="12" rx="1" fill="var(--text3)"/>
+              <rect x="34" y="34" width="5" height="5" fill="var(--text3)"/>
+              <rect x="42" y="34" width="5" height="5" fill="var(--text3)"/>
+              <rect x="50" y="34" width="8" height="5" fill="var(--text3)"/>
+              <rect x="34" y="42" width="8" height="5" fill="var(--text3)"/>
+              <rect x="45" y="42" width="5" height="5" fill="var(--text3)"/>
+              <rect x="53" y="42" width="5" height="5" fill="var(--text3)"/>
+              <rect x="34" y="50" width="5" height="8" fill="var(--text3)"/>
+              <rect x="42" y="50" width="16" height="8" fill="var(--text3)"/>
+            </svg>
+            <span style="font-size:10px">QR-код</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;font-size:13px;min-width:0">
+            <div>
+              <div class="text-sm" style="margin-bottom:6px">Адрес кошелька TRON (TRC-20)</div>
+              <div class="flex items-center gap-2">
+                <code class="text-mono" style="font-size:11px;background:var(--surface2);padding:8px 12px;border-radius:var(--r-sm);border:1px solid var(--border);word-break:break-all;flex:1;min-width:0">TQwk3UvHr5oMmAE4xBdLuZ9VnYpKs2cFj7</code>
+                <button class="btn btn-ghost btn-sm" style="flex-shrink:0" onclick="navigator.clipboard.writeText('TQwk3UvHr5oMmAE4xBdLuZ9VnYpKs2cFj7');this.textContent='✓'">📋</button>
+              </div>
+            </div>
+            <ol style="display:flex;flex-direction:column;gap:6px;color:var(--text2);padding-left:16px">
+              <li>Переведите ровно <strong id="usdt-amount" style="color:var(--text)">20,00 USDT</strong> на адрес выше.</li>
+              <li>В комментарии к переводу укажите ваш ID: <code class="text-mono" style="color:var(--accent)">fc-u-1842</code></li>
+              <li>Зачисление — после 2–3 подтверждений сети (~2–5 мин).</li>
+            </ol>
+            <div style="font-size:11px;color:var(--red);background:rgba(240,82,82,.07);border:1px solid rgba(240,82,82,.2);padding:8px 12px;border-radius:var(--r-sm)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;vertical-align:middle;margin-right:4px"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>Только сеть TRON (TRC-20). Переводы в других сетях (ERC-20, BEP-20) будут потеряны.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: итог -->
+  <div class="create-summary">
+    <div class="section-title">Итого к оплате</div>
+
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:42px;font-weight:800;line-height:1;letter-spacing:-.5px">€<span id="topup-total">20,00</span></div>
+      <div style="font-size:12px;color:var(--text3);margin-top:4px">зачислится на баланс</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="sum-line"><span style="color:var(--text2)">Текущий баланс</span><div class="flex-1"></div><span>€42,80</span></div>
+    <div class="sum-line"><span style="color:var(--text2)">Пополнение</span><div class="flex-1"></div><span style="color:var(--green)">+€<span id="sum-amount">20,00</span></span></div>
+
+    <div class="divider"></div>
+
+    <div class="sum-line">
+      <span style="color:var(--text2)">Станет</span>
+      <div class="flex-1"></div>
+      <span style="font-size:18px;font-weight:700;color:var(--green)">€<span id="balance-after">62,80</span></span>
+    </div>
+    <div style="font-size:11px;color:var(--text3)">хватит ещё на ~<span id="days-left">21</span> день</div>
+
+    <div class="divider"></div>
+
+    <a href="billing.html" class="btn btn-primary" style="justify-content:center;padding:12px">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg> Пополнить
+    </a>
+
+    <div class="divider"></div>
+
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="trust-row"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg><span>Платёж защищён 3D Secure</span></div>
+      <div class="trust-row"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span>Зачисление мгновенно</span></div>
+      <div class="trust-row"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg><span>Возврат в течение 24 часов</span></div>
+    </div>
+  </div>
+
+</div>
+</div></div>
+<script>
+  let selectedAmount = 20;
+
+  document.querySelectorAll('.amount-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.amount-card').forEach(c => c.classList.remove('on'));
+      card.classList.add('on');
+      document.getElementById('custom-amount').value = '';
+      selectedAmount = parseInt(card.dataset.amount);
+      updateSummary();
+    });
+  });
+
+  document.getElementById('custom-amount').addEventListener('input', function() {
+    const v = parseFloat(this.value);
+    if (v >= 5) {
+      document.querySelectorAll('.amount-card').forEach(c => c.classList.remove('on'));
+      selectedAmount = v;
+      updateSummary();
+    }
+  });
+
+  document.querySelectorAll('.tab[data-pay]').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab[data-pay]').forEach(t => t.classList.remove('on'));
+      tab.classList.add('on');
+      document.querySelectorAll('.pay-panel').forEach(p => p.classList.remove('on'));
+      document.getElementById('pay-' + tab.dataset.pay).classList.add('on');
+    });
+  });
+
+  function fmt(n) { return n.toFixed(2).replace('.', ','); }
+
+  function updateSummary() {
+    const amt = selectedAmount || 20;
+    const after = 42.80 + amt;
+    const days = Math.floor(after / (84.30 / 30));
+    document.getElementById('topup-total').textContent = fmt(amt);
+    document.getElementById('sum-amount').textContent = fmt(amt);
+    document.getElementById('balance-after').textContent = fmt(after);
+    document.getElementById('days-left').textContent = days;
+    document.getElementById('usdt-amount').textContent = amt.toFixed(2) + ' USDT';
+  }
+</script>
+</body></html>
