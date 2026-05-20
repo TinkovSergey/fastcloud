@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>FastCloud — Пополнение баланса</title>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -31,6 +32,7 @@
 </aside><div class="cab-main"><div class="cab-topbar">
   <div class="breadcrumb flex items-center"><a href="billing.html" style="color:var(--text3);font-size:13px">Биллинг</a><span style="color:var(--text3);margin:0 6px">/</span><span style="color:var(--text);font-size:13px">Пополнение</span></div>
   <div class="flex-1"></div>
+  <div class="lang-switcher"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="pt">PT</button></div>
   <a href="billing.html" style="font-size:12px;color:var(--text2);text-decoration:none">€ 42,80</a>
   <a href="profile.html" style="text-decoration:none;flex-shrink:0"><div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">ИП</div></a>
   <a href="login.html" title="Выйти" class="topbar-logout"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg></a>
@@ -58,7 +60,7 @@
       </div>
       <div class="flex items-center gap-3">
         <div style="flex:1">
-          <label style="font-size:12px;color:var(--text2)">Другая сумма</label>
+          <label style="font-size:12px;color:var(--text2)" data-i18n="tu_custom_label">Другая сумма</label>
           <div class="flex items-center gap-2" style="margin-top:5px">
             <span style="color:var(--text2);font-size:15px;font-weight:600">€</span>
             <input id="custom-amount" class="inp" type="number" min="5" max="10000" placeholder="0,00" style="max-width:160px;font-size:15px;font-weight:600">
@@ -79,19 +81,19 @@
       <div id="pay-card" class="pay-panel on">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
           <div style="grid-column:1/-1">
-            <label>Номер карты</label>
+            <label data-i18n="tu_card_num">Номер карты</label>
             <input class="inp" type="text" placeholder="0000  0000  0000  0000" maxlength="19" style="margin-top:6px;font-family:var(--mono);letter-spacing:.05em">
           </div>
           <div>
-            <label>Срок действия</label>
+            <label data-i18n="tu_expiry">Срок действия</label>
             <input class="inp" type="text" placeholder="ММ / ГГ" maxlength="7" style="margin-top:6px">
           </div>
           <div>
-            <label>CVV / CVC</label>
+            <label data-i18n="tu_cvv">CVV / CVC</label>
             <input class="inp" type="password" placeholder="•••" maxlength="4" style="margin-top:6px">
           </div>
           <div style="grid-column:1/-1">
-            <label>Имя держателя</label>
+            <label data-i18n="tu_holder">Имя держателя</label>
             <input class="inp" type="text" placeholder="IVAN PETROV" style="margin-top:6px;text-transform:uppercase">
           </div>
         </div>
@@ -152,18 +154,18 @@
 
     <div style="display:flex;flex-direction:column;gap:2px">
       <div style="font-size:42px;font-weight:800;line-height:1;letter-spacing:-.5px">€<span id="topup-total">20,00</span></div>
-      <div style="font-size:12px;color:var(--text3);margin-top:4px">зачислится на баланс</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:4px" data-i18n="tu_credit_note">зачислится на баланс</div>
     </div>
 
     <div class="divider"></div>
 
-    <div class="sum-line"><span style="color:var(--text2)">Текущий баланс</span><div class="flex-1"></div><span>€42,80</span></div>
-    <div class="sum-line"><span style="color:var(--text2)">Пополнение</span><div class="flex-1"></div><span style="color:var(--green)">+€<span id="sum-amount">20,00</span></span></div>
+    <div class="sum-line"><span style="color:var(--text2)" data-i18n="tu_cur_balance">Текущий баланс</span><div class="flex-1"></div><span>€42,80</span></div>
+    <div class="sum-line"><span style="color:var(--text2)" data-i18n="tu_topup_line">Пополнение</span><div class="flex-1"></div><span style="color:var(--green)">+€<span id="sum-amount">20,00</span></span></div>
 
     <div class="divider"></div>
 
     <div class="sum-line">
-      <span style="color:var(--text2)">Станет</span>
+      <span style="color:var(--text2)" data-i18n="tu_after">Станет</span>
       <div class="flex-1"></div>
       <span style="font-size:18px;font-weight:700;color:var(--green)">€<span id="balance-after">62,80</span></span>
     </div>
@@ -186,6 +188,7 @@
 
 </div>
 </div></div>
+<script src="lang.js"></script>
 <script>
   let selectedAmount = 20;
 
