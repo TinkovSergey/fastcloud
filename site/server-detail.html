@@ -12,20 +12,20 @@
   <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
   <a href="dashboard.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Биллинг</a><a href="profile.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
   <div class="sidebar-balance">
-    <div class="text-sm" style="margin-bottom:4px">Баланс</div>
-    <div style="font-size:20px;font-weight:700;margin-bottom:10px">€ 42,80</div>
-    <a href="billing-topup.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">+ Пополнить</a>
+    <div class="text-sm mb-1">Баланс</div>
+    <div class="sidebar-balance-val">€ 42,80</div>
+    <a href="billing-topup.html" class="btn btn-primary btn-sm w-100 jcc">+ Пополнить</a>
   </div>
 </aside><div class="cab-main"><div class="cab-topbar">
-  <div class="breadcrumb flex items-center"><a href="servers.html" class="breadcrumb" style="color:var(--text3)">Серверы</a><span style="color:var(--text3);margin:0 6px">/</span><span class="breadcrumb"><span style="color:var(--text)">fc-pro-fra</span></span></div>
+  <div class="breadcrumb flex items-center"><a href="servers.html" class="breadcrumb c-text3">Серверы</a><span class="c-text3" style="margin:0 6px">/</span><span class="breadcrumb"><span>fc-pro-fra</span></span></div>
   <div class="flex-1"></div>
-  <div class="lang-switcher"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="pt">PT</button></div>
-  <a href="billing.html" style="font-size:12px;color:var(--text2);text-decoration:none">€ 42,80</a>
-  <a href="profile.html" style="text-decoration:none;flex-shrink:0"><div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">ИП</div></a>
+  
+  <a href="billing.html" class="topbar-balance">€ 42,80</a>
+  <a href="profile.html" style="text-decoration:none"><div class="topbar-avatar">ИП</div></a>
   <a href="login.html" title="Выйти" class="topbar-logout"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg></a>
 </div>
 <div style="padding:14px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;background:var(--surface)">
-  <span style="font-size:16px;font-weight:700">fc-pro-fra</span>
+  <span class="fs-16 fw-7">fc-pro-fra</span>
   <span class="chip">PRO</span><span class="chip">Frankfurt</span><span class="dot dot-green">running</span>
   <div class="flex-1"></div>
   <button class="btn btn-ghost btn-sm">⏻ Power</button>
@@ -67,11 +67,11 @@
     <div><div class="text-sm">Сеть ↓</div><div class="text-mono">2.4 MB/s</div></div>
     <div><div class="text-sm">Сеть ↑</div><div class="text-mono">0.8 MB/s</div></div>
     <div class="divider"></div>
-    <div><div class="text-sm" style="margin-bottom:4px">IPv4</div><div class="text-mono">185.12.44.22</div></div>
-    <div><div class="text-sm" style="margin-bottom:4px">IPv6</div><div class="text-mono" style="word-break:break-all">2a02:6b8::1</div></div>
+    <div><div class="text-sm mb-1">IPv4</div><div class="text-mono">185.12.44.22</div></div>
+    <div><div class="text-sm mb-1">IPv6</div><div class="text-mono word-break">2a02:6b8::1</div></div>
     <div class="divider"></div>
-    <button class="btn btn-ghost btn-sm" style="justify-content:center">Создать снапшот</button>
-    <button class="btn btn-ghost btn-sm" style="justify-content:center">Перестановка ОС</button>
+    <button class="btn btn-ghost btn-sm jcc">Создать снапшот</button>
+    <button class="btn btn-ghost btn-sm jcc">Перестановка ОС</button>
   </div>
 </div>
 
@@ -81,37 +81,37 @@
     <div class="card">
       <div class="section-title">Конфигурация</div>
       <div style="display:flex;flex-direction:column;gap:9px;font-size:13px">
-        <div class="flex items-center"><span style="color:var(--text2)">ОС</span><div class="flex-1"></div><span>Ubuntu 24.04 LTS</span></div>
-        <div class="flex items-center"><span style="color:var(--text2)">Тариф</span><div class="flex-1"></div><span>PRO</span></div>
-        <div class="flex items-center"><span style="color:var(--text2)">CPU</span><div class="flex-1"></div><span>4 vCPU AMD EPYC</span></div>
-        <div class="flex items-center"><span style="color:var(--text2)">RAM</span><div class="flex-1"></div><span>8 GB</span></div>
-        <div class="flex items-center"><span style="color:var(--text2)">Диск</span><div class="flex-1"></div><span>120 GB NVMe</span></div>
-        <div class="flex items-center"><span style="color:var(--text2)">ДЦ</span><div class="flex-1"></div><span>🇩🇪 Frankfurt</span></div>
+        <div class="flex items-center"><span class="c-text2">ОС</span><div class="flex-1"></div><span>Ubuntu 24.04 LTS</span></div>
+        <div class="flex items-center"><span class="c-text2">Тариф</span><div class="flex-1"></div><span>PRO</span></div>
+        <div class="flex items-center"><span class="c-text2">CPU</span><div class="flex-1"></div><span>4 vCPU AMD EPYC</span></div>
+        <div class="flex items-center"><span class="c-text2">RAM</span><div class="flex-1"></div><span>8 GB</span></div>
+        <div class="flex items-center"><span class="c-text2">Диск</span><div class="flex-1"></div><span>120 GB NVMe</span></div>
+        <div class="flex items-center"><span class="c-text2">ДЦ</span><div class="flex-1"></div><span>🇩🇪 Frankfurt</span></div>
       </div>
     </div>
     <div class="card">
       <div class="section-title">Информация</div>
       <div style="display:flex;flex-direction:column;gap:9px;font-size:13px">
-        <div class="flex items-center"><span style="color:var(--text2)">ID</span><div class="flex-1"></div><span class="text-mono">fc-vm-9182</span></div>
-        <div class="flex items-center"><span style="color:var(--text2)">IPv4</span><div class="flex-1"></div><span class="text-mono">185.12.44.22</span></div>
-        <div class="flex items-center"><span style="color:var(--text2)">IPv6</span><div class="flex-1"></div><span class="text-mono">2a02:6b8::1</span></div>
-        <div class="flex items-center"><span style="color:var(--text2)">Создан</span><div class="flex-1"></div><span class="text-mono">2026-04-01</span></div>
-        <div class="flex items-center"><span style="color:var(--text2)">Расход</span><div class="flex-1"></div><span>€0,021/час</span></div>
+        <div class="flex items-center"><span class="c-text2">ID</span><div class="flex-1"></div><span class="text-mono">fc-vm-9182</span></div>
+        <div class="flex items-center"><span class="c-text2">IPv4</span><div class="flex-1"></div><span class="text-mono">185.12.44.22</span></div>
+        <div class="flex items-center"><span class="c-text2">IPv6</span><div class="flex-1"></div><span class="text-mono">2a02:6b8::1</span></div>
+        <div class="flex items-center"><span class="c-text2">Создан</span><div class="flex-1"></div><span class="text-mono">2026-04-01</span></div>
+        <div class="flex items-center"><span class="c-text2">Расход</span><div class="flex-1"></div><span>€0,021/час</span></div>
       </div>
     </div>
   </div>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
-    <div class="kpi"><div class="kpi-label">CPU</div><div class="kpi-value" style="color:var(--green)">12%</div><div class="kpi-sub">4 vCPU</div></div>
-    <div class="kpi"><div class="kpi-label">RAM</div><div class="kpi-value" style="color:var(--green)">38%</div><div class="kpi-sub">3,1 / 8 GB</div></div>
-    <div class="kpi"><div class="kpi-label">Диск</div><div class="kpi-value" style="color:var(--green)">13%</div><div class="kpi-sub">14 / 120 GB</div></div>
-    <div class="kpi"><div class="kpi-label">Аптайм</div><div class="kpi-value" style="color:var(--green)">99,9%</div><div class="kpi-sub">30 дней</div></div>
+    <div class="kpi"><div class="kpi-label">CPU</div><div class="kpi-value c-green">12%</div><div class="kpi-sub">4 vCPU</div></div>
+    <div class="kpi"><div class="kpi-label">RAM</div><div class="kpi-value c-green">38%</div><div class="kpi-sub">3,1 / 8 GB</div></div>
+    <div class="kpi"><div class="kpi-label">Диск</div><div class="kpi-value c-green">13%</div><div class="kpi-sub">14 / 120 GB</div></div>
+    <div class="kpi"><div class="kpi-label">Аптайм</div><div class="kpi-value c-green">99,9%</div><div class="kpi-sub">30 дней</div></div>
   </div>
 </div>
 
 <!-- СЕТЬ -->
 <div id="tab-network" style="display:none;padding:24px">
   <div style="display:flex;flex-direction:column;gap:16px;max-width:700px">
-    <div class="card" style="padding:0;overflow:hidden">
+    <div class="card ovh" style="padding:0">
       <div style="padding:14px 20px 10px"><div class="section-title" style="margin:0">IP-адреса</div></div>
       <table class="tbl">
         <thead><tr><th>Тип</th><th>Адрес</th><th>PTR (rDNS)</th><th>Статус</th></tr></thead>
@@ -121,14 +121,14 @@
         </tbody>
       </table>
     </div>
-    <div class="card" style="padding:0;overflow:hidden">
+    <div class="card ovh" style="padding:0">
       <div style="padding:14px 20px 10px;display:flex;align-items:center"><div class="section-title" style="margin:0">Firewall</div><div class="flex-1"></div><button class="btn btn-ghost btn-sm">+ Добавить правило</button></div>
       <table class="tbl">
         <thead><tr><th>Протокол</th><th>Порт</th><th>Источник</th><th>Действие</th><th></th></tr></thead>
         <tbody>
-          <tr><td>TCP</td><td class="text-mono">22</td><td class="text-mono">0.0.0.0/0</td><td><span class="chip green" style="font-size:11px">allow</span></td><td><button class="btn btn-danger btn-sm">удалить</button></td></tr>
-          <tr><td>TCP</td><td class="text-mono">80, 443</td><td class="text-mono">0.0.0.0/0</td><td><span class="chip green" style="font-size:11px">allow</span></td><td><button class="btn btn-danger btn-sm">удалить</button></td></tr>
-          <tr><td>ICMP</td><td class="text-mono">—</td><td class="text-mono">0.0.0.0/0</td><td><span class="chip green" style="font-size:11px">allow</span></td><td><button class="btn btn-danger btn-sm">удалить</button></td></tr>
+          <tr><td>TCP</td><td class="text-mono">22</td><td class="text-mono">0.0.0.0/0</td><td><span class="chip green fs-11">allow</span></td><td><button class="btn btn-danger btn-sm">удалить</button></td></tr>
+          <tr><td>TCP</td><td class="text-mono">80, 443</td><td class="text-mono">0.0.0.0/0</td><td><span class="chip green fs-11">allow</span></td><td><button class="btn btn-danger btn-sm">удалить</button></td></tr>
+          <tr><td>ICMP</td><td class="text-mono">—</td><td class="text-mono">0.0.0.0/0</td><td><span class="chip green fs-11">allow</span></td><td><button class="btn btn-danger btn-sm">удалить</button></td></tr>
         </tbody>
       </table>
     </div>
@@ -140,8 +140,8 @@
   <div style="max-width:520px;display:flex;flex-direction:column;gap:16px">
     <div class="card" style="border-color:var(--red);background:rgba(255,80,80,.04)">
       <div class="flex items-center gap-3">
-        <span style="font-size:22px">⚠️</span>
-        <div style="font-size:13px"><strong>Внимание!</strong> Все данные на сервере будут уничтожены без возможности восстановления. Убедитесь, что у вас есть резервная копия.</div>
+        <span class="fs-22">⚠️</span>
+        <div class="fs-13"><strong>Внимание!</strong> Все данные на сервере будут уничтожены без возможности восстановления. Убедитесь, что у вас есть резервная копия.</div>
       </div>
     </div>
     <div class="card" style="display:flex;flex-direction:column;gap:14px">
@@ -149,25 +149,25 @@
       <div style="display:flex;flex-direction:column;gap:8px">
         <label style="display:flex;align-items:center;gap:10px;cursor:pointer;margin:0;padding:10px 14px;background:var(--surface2);border:1px solid var(--accent);border-radius:var(--r-sm)">
           <input type="radio" name="reinstall-os" checked style="accent-color:var(--accent)">
-          <span style="font-size:18px">🟠</span><span style="font-size:13px;font-weight:500">Ubuntu 24.04 LTS</span>
+          <span class="fs-18">🟠</span><span class="fs-13 fw-5">Ubuntu 24.04 LTS</span>
         </label>
         <label style="display:flex;align-items:center;gap:10px;cursor:pointer;margin:0;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm)">
           <input type="radio" name="reinstall-os" style="accent-color:var(--accent)">
-          <span style="font-size:18px">🟠</span><span style="font-size:13px;font-weight:500">Ubuntu 22.04 LTS</span>
+          <span class="fs-18">🟠</span><span class="fs-13 fw-5">Ubuntu 22.04 LTS</span>
         </label>
         <label style="display:flex;align-items:center;gap:10px;cursor:pointer;margin:0;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm)">
           <input type="radio" name="reinstall-os" style="accent-color:var(--accent)">
-          <span style="font-size:18px">🌀</span><span style="font-size:13px;font-weight:500">Debian 12</span>
+          <span class="fs-18">🌀</span><span class="fs-13 fw-5">Debian 12</span>
         </label>
         <label style="display:flex;align-items:center;gap:10px;cursor:pointer;margin:0;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm)">
           <input type="radio" name="reinstall-os" style="accent-color:var(--accent)">
-          <span style="font-size:18px">🔵</span><span style="font-size:13px;font-weight:500">AlmaLinux 9</span>
+          <span class="fs-18">🔵</span><span class="fs-13 fw-5">AlmaLinux 9</span>
         </label>
       </div>
       <div>
         <label>Подтвердите имя сервера</label>
         <input class="inp" placeholder="fc-pro-fra" type="text" style="max-width:280px">
-        <div style="font-size:11px;color:var(--text3);margin-top:5px">Введите «fc-pro-fra» для подтверждения операции</div>
+        <div class="hint">Введите «fc-pro-fra» для подтверждения операции</div>
       </div>
       <button class="btn btn-danger" style="align-self:flex-start">Переустановить ОС</button>
     </div>
@@ -177,25 +177,25 @@
 <!-- РЕСАЙЗ -->
 <div id="tab-resize" style="display:none;padding:24px">
   <div style="max-width:560px;display:flex;flex-direction:column;gap:16px">
-    <div style="color:var(--text2);font-size:13px">Текущий тариф: <strong style="color:var(--text)">PRO</strong>. Апгрейд применяется мгновенно с кратковременной перезагрузкой. Тарифы ниже текущего недоступны.</div>
+    <div class="c-text2 fs-13">Текущий тариф: <strong style="color:var(--text)">PRO</strong>. Апгрейд применяется мгновенно с кратковременной перезагрузкой. Тарифы ниже текущего недоступны.</div>
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="card" style="padding:14px 18px;opacity:0.38;pointer-events:none;position:relative;border-style:dashed">
-        <div style="position:absolute;top:50%;right:14px;transform:translateY(-50%)"><span style="font-size:11px;color:var(--text3)">↓ недоступно</span></div>
+        <div style="position:absolute;top:50%;right:14px;transform:translateY(-50%)"><span class="fs-11 c-text3">↓ недоступно</span></div>
         <div class="flex items-center gap-4">
           <div style="min-width:80px"><div class="plan-name">STARTER</div><div style="font-size:18px;font-weight:800;margin-top:2px">€3,80</div><div class="text-xs">/мес</div></div>
           <div class="divider" style="width:1px;height:40px;margin:0"></div>
-          <div class="flex gap-5 flex-1" style="font-size:12px;color:var(--text2)">
-            <div><div style="font-weight:700;color:var(--text)">1</div>vCPU</div><div><div style="font-weight:700;color:var(--text)">2 GB</div>RAM</div><div><div style="font-weight:700;color:var(--text)">30 GB</div>NVMe</div>
+          <div class="flex gap-5 flex-1 fs-12 c-text2">
+            <div><div class="fw-7" style="color:var(--text)">1</div>vCPU</div><div><div class="fw-7" style="color:var(--text)">2 GB</div>RAM</div><div><div class="fw-7" style="color:var(--text)">30 GB</div>NVMe</div>
           </div>
         </div>
       </div>
       <div class="card" style="padding:14px 18px;opacity:0.38;pointer-events:none;position:relative;border-style:dashed">
-        <div style="position:absolute;top:50%;right:14px;transform:translateY(-50%)"><span style="font-size:11px;color:var(--text3)">↓ недоступно</span></div>
+        <div style="position:absolute;top:50%;right:14px;transform:translateY(-50%)"><span class="fs-11 c-text3">↓ недоступно</span></div>
         <div class="flex items-center gap-4">
           <div style="min-width:80px"><div class="plan-name">DEV</div><div style="font-size:18px;font-weight:800;margin-top:2px">€7,90</div><div class="text-xs">/мес</div></div>
           <div class="divider" style="width:1px;height:40px;margin:0"></div>
-          <div class="flex gap-5 flex-1" style="font-size:12px;color:var(--text2)">
-            <div><div style="font-weight:700;color:var(--text)">2</div>vCPU</div><div><div style="font-weight:700;color:var(--text)">4 GB</div>RAM</div><div><div style="font-weight:700;color:var(--text)">60 GB</div>NVMe</div>
+          <div class="flex gap-5 flex-1 fs-12 c-text2">
+            <div><div class="fw-7" style="color:var(--text)">2</div>vCPU</div><div><div class="fw-7" style="color:var(--text)">4 GB</div>RAM</div><div><div class="fw-7" style="color:var(--text)">60 GB</div>NVMe</div>
           </div>
         </div>
       </div>
@@ -204,8 +204,8 @@
         <div class="flex items-center gap-4">
           <div style="min-width:80px"><div class="plan-name">PRO</div><div style="font-size:18px;font-weight:800;margin-top:2px">€15,40</div><div class="text-xs">/мес</div></div>
           <div class="divider" style="width:1px;height:40px;margin:0"></div>
-          <div class="flex gap-5 flex-1" style="font-size:12px;color:var(--text2)">
-            <div><div style="font-weight:700;color:var(--text)">4</div>vCPU</div><div><div style="font-weight:700;color:var(--text)">8 GB</div>RAM</div><div><div style="font-weight:700;color:var(--text)">120 GB</div>NVMe</div>
+          <div class="flex gap-5 flex-1 fs-12 c-text2">
+            <div><div class="fw-7" style="color:var(--text)">4</div>vCPU</div><div><div class="fw-7" style="color:var(--text)">8 GB</div>RAM</div><div><div class="fw-7" style="color:var(--text)">120 GB</div>NVMe</div>
           </div>
         </div>
       </div>
@@ -213,8 +213,8 @@
         <div class="flex items-center gap-4">
           <div style="min-width:80px"><div class="plan-name">POWER</div><div style="font-size:18px;font-weight:800;margin-top:2px">€31,00</div><div class="text-xs">/мес</div></div>
           <div class="divider" style="width:1px;height:40px;margin:0"></div>
-          <div class="flex gap-5 flex-1" style="font-size:12px;color:var(--text2)">
-            <div><div style="font-weight:700;color:var(--text)">8</div>vCPU</div><div><div style="font-weight:700;color:var(--text)">16 GB</div>RAM</div><div><div style="font-weight:700;color:var(--text)">250 GB</div>NVMe</div>
+          <div class="flex gap-5 flex-1 fs-12 c-text2">
+            <div><div class="fw-7" style="color:var(--text)">8</div>vCPU</div><div><div class="fw-7" style="color:var(--text)">16 GB</div>RAM</div><div><div class="fw-7" style="color:var(--text)">250 GB</div>NVMe</div>
           </div>
         </div>
       </div>
@@ -222,8 +222,8 @@
         <div class="flex items-center gap-4">
           <div style="min-width:80px"><div class="plan-name">SCALE</div><div style="font-size:18px;font-weight:800;margin-top:2px">€62,00</div><div class="text-xs">/мес</div></div>
           <div class="divider" style="width:1px;height:40px;margin:0"></div>
-          <div class="flex gap-5 flex-1" style="font-size:12px;color:var(--text2)">
-            <div><div style="font-weight:700;color:var(--text)">16</div>vCPU</div><div><div style="font-weight:700;color:var(--text)">32 GB</div>RAM</div><div><div style="font-weight:700;color:var(--text)">500 GB</div>NVMe</div>
+          <div class="flex gap-5 flex-1 fs-12 c-text2">
+            <div><div class="fw-7" style="color:var(--text)">16</div>vCPU</div><div><div class="fw-7" style="color:var(--text)">32 GB</div>RAM</div><div><div class="fw-7" style="color:var(--text)">500 GB</div>NVMe</div>
           </div>
         </div>
       </div>
@@ -251,5 +251,4 @@
     });
   });
 </script>
-<script src="lang.js"></script>
 </body></html>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -6,41 +6,51 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>FastCloud — Регистрация</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
-<div class="lang-switcher" style="position:fixed;top:16px;right:20px;z-index:100"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="pt">PT</button></div>
 <div class="auth-wrap">
   <div class="auth-left">
-    <a href="index.html" class="logo" style="margin-bottom:32px"><div class="logo-mark">FC</div>FastCloud</a>
-    <h1 style="font-size:28px;font-weight:800;line-height:1.2">Самые быстрые VPS в Европе.</h1>
-    <p style="color:var(--text2);line-height:1.6">€5 на счёт после подтверждения e-mail. Без карты — попробовать можно прямо сейчас.</p>
-    <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
-      <div class="auth-feat">NVMe Gen4 · 10 Gbps</div>
-      <div class="auth-feat">Развёртывание за 45 с</div>
-      <div class="auth-feat">4 ДЦ: FRA · AMS · PAR · HEL</div>
-      <div class="auth-feat">Оплата картой или USDT</div>
+    <div class="auth-deco auth-deco-1"></div>
+    <div class="auth-deco auth-deco-2"></div>
+    <div class="auth-deco auth-deco-3"></div>
+    <div class="auth-left-content">
+      <div class="auth-left-body">
+        <a href="index.html" class="logo logo-xl">
+          <div class="logo-mark">FC</div>FastCloud
+        </a>
+        <div>
+          <h1 class="auth-hero-title">Самые быстрые VPS в Европе.</h1>
+          <p class="auth-hero-sub">Без карты для старта — попробуйте прямо сейчас.</p>
+          <div class="auth-bonus">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            €5 на счёт после подтверждения e-mail
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:48px">
-    <div style="width:100%;max-width:380px;display:flex;flex-direction:column;gap:20px">
-      <h2 style="font-size:22px;font-weight:700">Создать аккаунт</h2>
-      <div style="display:flex;flex-direction:column;gap:14px">
+
+  <div class="auth-right-inner">
+    <div class="auth-form">
+      <h2 class="fs-22 fw-7">Создать аккаунт</h2>
+      <div class="form-group">
         <div><label>Имя</label><input class="inp" placeholder="Иван Петров" type="text"></div>
         <div><label>E-mail</label><input class="inp" placeholder="ivan@example.com" type="email"></div>
         <div><label>Пароль</label><input class="inp" placeholder="мин. 10 символов" type="password"></div>
-        <div class="flex gap-2 items-center"><input type="checkbox" id="agree"><label for="agree" style="margin:0;cursor:pointer">Согласен с <a href="terms.html" style="color:var(--accent)">офертой</a> и <a href="privacy.html" style="color:var(--accent)">политикой</a></label></div>
-        <a href="dashboard.html" class="btn btn-primary" style="justify-content:center;padding:11px">Зарегистрироваться →</a>
+        <div class="flex gap-2 items-center">
+          <input type="checkbox" id="agree">
+          <label for="agree" class="mb-0 cursor-pointer">Согласен с <a href="terms.html" class="c-accent">офертой</a> и <a href="privacy.html" class="c-accent">политикой</a></label>
+        </div>
+        <a href="dashboard.html" class="btn btn-primary jcc btn-block">Зарегистрироваться →</a>
       </div>
       <div class="flex items-center gap-2"><div class="divider flex-1"></div><span class="text-sm">или</span><div class="divider flex-1"></div></div>
       <div class="flex gap-2">
-        <button class="btn btn-ghost" style="flex:1;justify-content:center">Google</button>
-        <button class="btn btn-ghost" style="flex:1;justify-content:center">GitHub</button>
+        <button class="btn btn-ghost jcc flex-1">Google</button>
+        <button class="btn btn-ghost jcc flex-1">GitHub</button>
       </div>
-      <div class="text-sm" style="text-align:center">Уже есть аккаунт? <a href="login.html" style="color:var(--accent)">Войти</a></div>
+      <div class="text-sm tac">Уже есть аккаунт? <a href="login.html" class="c-accent">Войти</a></div>
     </div>
   </div>
 </div>
-<script src="lang.js"></script>
 </body></html>
