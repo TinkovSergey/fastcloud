@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>FastCloud — SLA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="mkt-nav">
+  <a href="index.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a>
+  <div class="mkt-nav-links"><a href="pricing.html" class="mkt-nav-link">Тарифы</a><a href="locations.html" class="mkt-nav-link">Локации</a><a href="contacts.html" class="mkt-nav-link">Контакты</a></div>
+  <div class="flex gap-2 items-center">
+    
+    <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
+    <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
+  </div>
+</nav>
+<div class="page-wrap">
+  <div class="legal-wrap">
+    <div class="legal-header">
+      <div class="flex items-center gap-2 mb-4"><a href="index.html" class="c-text3 fs-13">Главная</a><span class="c-text3">›</span><span class="fs-13 c-text2">SLA</span></div>
+      <h1 class="fs-34 fw-8 mb-2">Соглашение об уровне сервиса</h1>
+      <div class="text-sm">Редакция от 1 мая 2026 г.</div>
+    </div>
+
+    <div class="grid-3" style="margin-bottom:40px">
+      <div class="kpi">
+        <div class="kpi-label">Гарантированный аптайм</div>
+        <div class="kpi-value c-green">99,99%</div>
+        <div class="kpi-sub">≤ 52 мин простоя в год</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Ответ поддержки</div>
+        <div class="kpi-value">10 мин</div>
+        <div class="kpi-sub">критические инциденты</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Компенсация</div>
+        <div class="kpi-value">до 30%</div>
+        <div class="kpi-sub">от месячного платежа</div>
+      </div>
+    </div>
+
+    <div class="legal-body">
+
+      <h2>1. Область применения</h2>
+      <p>Настоящее SLA определяет гарантии доступности инфраструктуры FastCloud и порядок компенсации при их нарушении. Действует для всех активных тарифных планов.</p>
+
+      <h2>2. Гарантия доступности</h2>
+      <p>FastCloud гарантирует доступность виртуальных серверов на уровне <strong>99,99% в месяц</strong>, что соответствует не более 4,3 минуты плановых и внеплановых простоев в месяц.</p>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Уровень доступности</th><th>Макс. простой / месяц</th><th>Компенсация</th></tr></thead>
+          <tbody>
+            <tr><td class="c-green fw-6">99,99% и выше</td><td>≤ 4,3 мин</td><td>— (норма)</td></tr>
+            <tr><td>99,95% — 99,99%</td><td>до 21,9 мин</td><td>10% платежа</td></tr>
+            <tr><td>99,90% — 99,95%</td><td>до 43,8 мин</td><td>15% платежа</td></tr>
+            <tr><td>99,00% — 99,90%</td><td>до 7,3 ч</td><td>25% платежа</td></tr>
+            <tr><td class="c-red">Ниже 99,00%</td><td>более 7,3 ч</td><td>30% платежа</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>3. Что входит в расчёт простоя</h2>
+      <p>Простоем считается недоступность сервера по сети (ICMP + TCP-порт 22) в течение более 5 минут непрерывно, подтверждённая мониторинговой системой FastCloud.</p>
+      <p><strong>Не считается простоем:</strong></p>
+      <ul>
+        <li>Плановое техническое обслуживание с уведомлением за 48 часов</li>
+        <li>Недоступность по причине действий Заказчика (удаление правил фаервола, ошибки конфигурации)</li>
+        <li>DDoS-атаки на IP-адрес Заказчика (при наличии активной защиты)</li>
+        <li>Форс-мажорные обстоятельства</li>
+      </ul>
+
+      <h2>4. Уровни приоритета поддержки</h2>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Приоритет</th><th>Описание</th><th>Первый ответ</th><th>Решение</th></tr></thead>
+          <tbody>
+            <tr><td><span class="dot dot-red">Критический</span></td><td>Сервер недоступен, данные под угрозой</td><td>10 минут</td><td>2 часа</td></tr>
+            <tr><td><span class="dot dot-yellow">Высокий</span></td><td>Деградация производительности, частичный сбой</td><td>30 минут</td><td>8 часов</td></tr>
+            <tr><td><span class="dot dot-gray">Обычный</span></td><td>Вопросы настройки, биллинг</td><td>2 часа</td><td>24 часа</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>5. Порядок получения компенсации</h2>
+      <p>5.1. Компенсация начисляется на внутренний баланс аккаунта в виде кредита.</p>
+      <p>5.2. Для получения компенсации необходимо подать заявку через <a href="contacts.html">форму поддержки</a> в течение 30 дней с момента инцидента, указав временной диапазон и описание проблемы.</p>
+      <p>5.3. FastCloud рассматривает заявки в течение 5 рабочих дней и уведомляет о решении на e-mail.</p>
+      <p>5.4. Совокупный размер компенсации не превышает 30% от суммы ежемесячного платежа за затронутый тариф.</p>
+
+      <h2>6. Мониторинг и прозрачность</h2>
+      <p>Текущий статус всех систем доступен на странице статуса в режиме реального времени. История инцидентов публикуется и хранится не менее 12 месяцев.</p>
+
+      <h2>7. Изменения SLA</h2>
+      <p>FastCloud вправе изменять условия SLA с уведомлением Заказчика не менее чем за 30 дней. При несогласии с новыми условиями Заказчик вправе расторгнуть договор с возвратом остатка баланса.</p>
+
+    </div>
+
+    <div class="legal-nav">
+      <a href="terms.html" class="btn btn-ghost">Договор-оферта</a>
+      <a href="privacy.html" class="btn btn-ghost">Политика конфиденциальности</a>
+    </div>
+  </div>
+</div>
+
+<footer class="mkt-footer">
+  <div class="mkt-footer-inner">
+    <div class="mkt-footer-brand">
+      <a href="index.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a>
+      <div class="mkt-footer-brand-desc">Надёжные VPS в 10 локациях по всему миру. NVMe Gen4 · Anti-DDoS · SLA 99,99%.</div>
+    </div>
+    <div class="mkt-footer-cols">
+      <div class="mkt-footer-col">
+        <div class="mkt-footer-label">Продукт</div>
+        <a href="pricing.html">Тарифы</a>
+        <a href="locations.html">Локации</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+      <div class="mkt-footer-col">
+        <div class="mkt-footer-label">Юридические</div>
+        <a href="terms.html">Договор-оферта</a>
+        <a href="privacy.html">Конфиденциальность</a>
+        <a href="sla.html">SLA</a>
+      </div>
+      <div class="mkt-footer-col">
+        <div class="mkt-footer-label">Поддержка</div>
+        <a href="contacts.html">Написать нам</a>
+        <a href="mailto:support@fastcloud.eu">support@fastcloud.eu</a>
+        <span class="c-green">● Ответ &lt; 10 мин</span>
+      </div>
+    </div>
+  </div>
+  <div class="mkt-footer-copy">
+    <span>© 2026 FastCloud OÜ · Tallinn, Estonia</span>
+    <div class="flex-1"></div>
+    <span>GDPR · PCI DSS · Uptime 99,99%</span>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body></html>
