@@ -16,14 +16,14 @@
   <a href="dashboard.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Баланс</a><a href="profile.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
   <div class="sidebar-balance">
     <div class="text-sm mb-1">Баланс</div>
-    <div class="sidebar-balance-val">€ 42,80</div>
+    <div class="sidebar-balance-val">€ 60,00</div>
     <a href="billing-topup.html" class="btn btn-primary btn-sm w-100 jcc">+ Пополнить</a>
   </div>
 </aside><div class="cab-main"><div class="cab-topbar">
   <div class="breadcrumb flex items-center"><span class="breadcrumb"><span>Баланс</span></span></div>
   <div class="flex-1"></div>
   
-  <a href="billing.html" class="topbar-balance">€ 42,80</a>
+  <a href="billing.html" class="topbar-balance">€ 60,00</a>
   <a href="profile.html"><div class="topbar-avatar">ИП</div></a>
   <a href="login.html" title="Выйти" class="topbar-logout"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg></a>
 </div>
@@ -34,17 +34,15 @@
     <a href="billing-topup.html" class="btn btn-primary">+ Пополнить</a>
   </div>
   <div class="grid-3 mb-6">
-    <div class="kpi"><div class="kpi-label">Текущий баланс</div><div class="kpi-value">€ 42,80</div><div class="kpi-sub">следующее списание через 8 дней</div></div>
-    <div class="kpi"><div class="kpi-label">Расход этого месяца</div><div class="kpi-value">€ 84,30</div><div class="kpi-sub">7 серверов · почасово</div></div>
+    <div class="kpi"><div class="kpi-label">Текущий баланс</div><div class="kpi-value c-green">€ 60,00</div><div class="kpi-sub">следующее списание через 10 дней</div></div>
+    <div class="kpi"><div class="kpi-label">Расход этого месяца</div><div class="kpi-value c-red">€ 40,00</div><div class="kpi-sub">4 сервера</div></div>
     <div class="kpi"><div class="kpi-label">Способ оплаты</div><div class="kpi-value fs-18">Visa •••• 4242</div><div class="kpi-sub">+ добавить карту / USDT</div></div>
   </div>
   <div class="card mb-6">
     <div class="chart-controls">
       <div class="section-title mb-0">Расходы</div>
       <div class="chart-period-btns" id="periodsBilling">
-        <button class="chart-period-btn on" data-period="week">Неделя</button>
-        <button class="chart-period-btn" data-period="month">Месяц</button>
-        <button class="chart-period-btn" data-period="half">Полгода</button>
+        <button class="chart-period-btn on" data-period="half">Полгода</button>
         <button class="chart-period-btn" data-period="year">Год</button>
       </div>
     </div>
@@ -58,15 +56,34 @@
   <div id="panel-ops">
     <div class="card ovh p-0">
     <table class="tbl">
-      <thead><tr><th>Дата</th><th>Описание</th><th>Сумма</th><th>Баланс</th></tr></thead>
+      <thead><tr><th>Дата и время</th><th>Описание</th><th>Сумма</th><th>Баланс <span class="th-hint" data-tooltip="Баланс счёта на момент операции">?</span></th></tr></thead>
       <tbody>
-        <tr><td class="text-mono">2026-05-19</td><td>fc-pro-fra · почасово</td><td class="c-red text-mono">−€0,021</td><td class="text-mono">€42,80</td></tr>
-        <tr><td class="text-mono">2026-05-18</td><td>Пополнение · Visa •••• 4242</td><td class="c-green text-mono">+€50,00</td><td class="text-mono">€43,20</td></tr>
-        <tr><td class="text-mono">2026-05-18</td><td>fc-dev-ams · почасово</td><td class="c-red text-mono">−€0,011</td><td class="text-mono">€ 3,20</td></tr>
-        <tr><td class="text-mono">2026-05-17</td><td>fc-pro-fra · почасово</td><td class="c-red text-mono">−€0,021</td><td class="text-mono">€ 3,31</td></tr>
-        <tr><td class="text-mono">2026-05-15</td><td>Пополнение · USDT</td><td class="c-green text-mono">+€30,00</td><td class="text-mono">€30,00</td></tr>
+        <tr><td class="text-mono">2026-05-01 <span class="c-text3">00:00</span></td><td>Аренда fc-stage-ams · Starter · Amsterdam</td><td class="c-red text-mono">−€4,00</td><td class="text-mono">€60,00</td></tr>
+        <tr><td class="text-mono">2026-05-01 <span class="c-text3">00:00</span></td><td>Аренда fc-dev-ams · Pro · Amsterdam</td><td class="c-red text-mono">−€9,00</td><td class="text-mono">€64,00</td></tr>
+        <tr><td class="text-mono">2026-05-01 <span class="c-text3">00:00</span></td><td>Аренда fc-prod-lon · Business · London</td><td class="c-red text-mono">−€18,00</td><td class="text-mono">€73,00</td></tr>
+        <tr><td class="text-mono">2026-05-01 <span class="c-text3">00:00</span></td><td>Аренда fc-pro-fra · Pro · Frankfurt</td><td class="c-red text-mono">−€9,00</td><td class="text-mono">€91,00</td></tr>
+        <tr><td class="text-mono">2026-04-19 <span class="c-text3">11:44</span></td><td>Пополнение баланса · USDT (TRC-20)</td><td class="c-green text-mono">+€60,00</td><td class="text-mono">€100,00</td></tr>
+        <tr><td class="text-mono">2026-04-01 <span class="c-text3">00:00</span></td><td>Аренда fc-stage-ams · Starter · Amsterdam</td><td class="c-red text-mono">−€4,00</td><td class="text-mono">€40,00</td></tr>
+        <tr><td class="text-mono">2026-04-01 <span class="c-text3">00:00</span></td><td>Аренда fc-dev-ams · Pro · Amsterdam</td><td class="c-red text-mono">−€9,00</td><td class="text-mono">€44,00</td></tr>
+        <tr><td class="text-mono">2026-04-01 <span class="c-text3">00:00</span></td><td>Аренда fc-prod-lon · Business · London</td><td class="c-red text-mono">−€18,00</td><td class="text-mono">€53,00</td></tr>
+        <tr><td class="text-mono">2026-04-01 <span class="c-text3">00:00</span></td><td>Аренда fc-pro-fra · Pro · Frankfurt</td><td class="c-red text-mono">−€9,00</td><td class="text-mono">€71,00</td></tr>
+        <tr><td class="text-mono">2026-03-01 <span class="c-text3">00:00</span></td><td>Аренда fc-stage-ams · Starter · Amsterdam</td><td class="c-red text-mono">−€4,00</td><td class="text-mono">€80,00</td></tr>
+        <tr><td class="text-mono">2026-03-01 <span class="c-text3">00:00</span></td><td>Аренда fc-dev-ams · Pro · Amsterdam</td><td class="c-red text-mono">−€9,00</td><td class="text-mono">€84,00</td></tr>
+        <tr><td class="text-mono">2026-03-01 <span class="c-text3">00:00</span></td><td>Аренда fc-prod-lon · Business · London</td><td class="c-red text-mono">−€18,00</td><td class="text-mono">€93,00</td></tr>
+        <tr><td class="text-mono">2026-03-01 <span class="c-text3">00:00</span></td><td>Аренда fc-pro-fra · Pro · Frankfurt</td><td class="c-red text-mono">−€9,00</td><td class="text-mono">€111,00</td></tr>
+        <tr><td class="text-mono">2026-02-14 <span class="c-text3">11:20</span></td><td>Пополнение баланса · Visa •••• 4242</td><td class="c-green text-mono">+€100,00</td><td class="text-mono">€120,00</td></tr>
+        <tr><td class="text-mono">2026-02-01 <span class="c-text3">00:00</span></td><td>Аренда fc-stage-ams · Starter · Amsterdam</td><td class="c-red text-mono">−€4,00</td><td class="text-mono">€20,00</td></tr>
+        <tr><td class="text-mono">2026-02-01 <span class="c-text3">00:00</span></td><td>Аренда fc-dev-ams · Pro · Amsterdam</td><td class="c-red text-mono">−€9,00</td><td class="text-mono">€24,00</td></tr>
+        <tr><td class="text-mono">2026-02-01 <span class="c-text3">00:00</span></td><td>Аренда fc-prod-lon · Business · London</td><td class="c-red text-mono">−€18,00</td><td class="text-mono">€33,00</td></tr>
+        <tr><td class="text-mono">2026-02-01 <span class="c-text3">00:00</span></td><td>Аренда fc-pro-fra · Pro · Frankfurt</td><td class="c-red text-mono">−€9,00</td><td class="text-mono">€51,00</td></tr>
+        <tr><td class="text-mono">2026-01-01 <span class="c-text3">00:00</span></td><td>Аренда fc-stage-ams · Starter · Amsterdam</td><td class="c-red text-mono">−€4,00</td><td class="text-mono">€60,00</td></tr>
+        <tr><td class="text-mono">2026-01-01 <span class="c-text3">00:00</span></td><td>Аренда fc-dev-ams · Pro · Amsterdam</td><td class="c-red text-mono">−€9,00</td><td class="text-mono">€64,00</td></tr>
+        <tr><td class="text-mono">2026-01-01 <span class="c-text3">00:00</span></td><td>Аренда fc-prod-lon · Business · London</td><td class="c-red text-mono">−€18,00</td><td class="text-mono">€73,00</td></tr>
+        <tr><td class="text-mono">2026-01-01 <span class="c-text3">00:00</span></td><td>Аренда fc-pro-fra · Pro · Frankfurt</td><td class="c-red text-mono">−€9,00</td><td class="text-mono">€91,00</td></tr>
+        <tr><td class="text-mono">2025-12-28 <span class="c-text3">09:00</span></td><td>Пополнение баланса · Visa •••• 4242</td><td class="c-green text-mono">+€100,00</td><td class="text-mono">€100,00</td></tr>
       </tbody>
     </table>
+    <div class="pagination" id="pg-ops"></div>
     </div>
   </div>
   <div id="panel-docs" style="display:none">
@@ -74,17 +91,52 @@
     <table class="tbl">
       <thead><tr><th>Период</th><th>Тип</th><th>Сумма</th><th>Статус</th><th></th></tr></thead>
       <tbody>
-        <tr><td>Май 2026</td><td class="c-text2">Инвойс</td><td class="text-mono">€84,30</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
-        <tr><td>Май 2026</td><td class="c-text2">Акт</td><td class="text-mono">€84,30</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
-        <tr><td>Апрель 2026</td><td class="c-text2">Инвойс</td><td class="text-mono">€79,50</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
-        <tr><td>Апрель 2026</td><td class="c-text2">Акт</td><td class="text-mono">€79,50</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
-        <tr><td>Март 2026</td><td class="c-text2">Инвойс</td><td class="text-mono">€79,50</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
-        <tr><td>Март 2026</td><td class="c-text2">Акт</td><td class="text-mono">€79,50</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Май 2026</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Май 2026</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Апрель 2026</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Апрель 2026</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Март 2026</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Март 2026</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Февраль 2026</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Февраль 2026</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Январь 2026</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Январь 2026</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Декабрь 2025</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Декабрь 2025</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Ноябрь 2025</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Ноябрь 2025</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Октябрь 2025</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Октябрь 2025</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Сентябрь 2025</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Сентябрь 2025</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Август 2025</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Август 2025</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Июль 2025</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Июль 2025</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Июнь 2025</td><td class="c-text2">Инвойс</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">оплачен</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
+        <tr><td>Июнь 2025</td><td class="c-text2">Акт</td><td class="text-mono">€40,00</td><td><span class="dot dot-green">подписан</span></td><td><button class="btn btn-ghost btn-sm">↓ PDF</button></td></tr>
       </tbody>
     </table>
+    <div class="pagination" id="pg-docs"></div>
     </div>
   </div>
 <script>
+  (function() {
+    var tip = document.createElement('div');
+    tip.id = 'fc-tooltip';
+    document.body.appendChild(tip);
+    document.querySelectorAll('.th-hint').forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        tip.textContent = el.dataset.tooltip;
+        tip.style.opacity = '1';
+        var r = el.getBoundingClientRect();
+        tip.style.left = Math.max(4, r.left + r.width / 2 - tip.offsetWidth / 2) + 'px';
+        tip.style.top = (r.top - tip.offsetHeight - 8) + 'px';
+      });
+      el.addEventListener('mouseleave', function() { tip.style.opacity = '0'; });
+    });
+  })();
+
   document.getElementById('billingTabs').addEventListener('click', function(e) {
     var tab = e.target.closest('.tab');
     if (!tab) return;
@@ -94,21 +146,60 @@
     document.getElementById('panel-ops').style.display = target === 'ops' ? '' : 'none';
     document.getElementById('panel-docs').style.display = target === 'docs' ? '' : 'none';
   });
+
+  function makePaginator(panelId, pgId, pageSize) {
+    var tbody = document.querySelector('#' + panelId + ' .tbl tbody');
+    var pg = document.getElementById(pgId);
+    var rows = Array.from(tbody.rows);
+    var total = rows.length;
+    var pages = Math.ceil(total / pageSize);
+    var cur = 1;
+    function render() {
+      rows.forEach(function(r, i) {
+        r.style.display = (i >= (cur - 1) * pageSize && i < cur * pageSize) ? '' : 'none';
+      });
+      pg.innerHTML = '';
+      if (pages <= 1) return;
+      var prev = document.createElement('button');
+      prev.className = 'pg-btn'; prev.textContent = '←'; prev.disabled = cur === 1;
+      prev.onclick = function() { cur--; render(); };
+      pg.appendChild(prev);
+      for (var i = 1; i <= pages; i++) {
+        (function(p) {
+          var btn = document.createElement('button');
+          btn.className = 'pg-btn' + (p === cur ? ' on' : '');
+          btn.textContent = p;
+          btn.onclick = function() { cur = p; render(); };
+          pg.appendChild(btn);
+        })(i);
+      }
+      var next = document.createElement('button');
+      next.className = 'pg-btn'; next.textContent = '→'; next.disabled = cur === pages;
+      next.onclick = function() { cur++; render(); };
+      pg.appendChild(next);
+      var info = document.createElement('span');
+      info.className = 'pg-info';
+      info.textContent = ((cur - 1) * pageSize + 1) + '–' + Math.min(cur * pageSize, total) + ' из ' + total;
+      pg.appendChild(info);
+    }
+    render();
+  }
+
+  makePaginator('panel-ops', 'pg-ops', 10);
+  makePaginator('panel-docs', 'pg-docs', 10);
 </script>
 </div></div></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script>
 (function () {
   var PERIODS = {
-    week:  { labels: ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'], data: [2.40,3.60,3.20,2.80,2.00,2.80,2.80], yMax: 4 },
-    month: { labels: ['1–7 мая','8–14 мая','15–21 мая','22–28 мая'], data: [19.20,21.40,20.80,22.90], yMax: 25 },
-    half:  { labels: ['Дек','Янв','Фев','Мар','Апр','Май'], data: [72.4,79.5,79.5,79.5,84.3,42.8], yMax: 100 },
-    year:  { labels: ['Июн','Июл','Авг','Сен','Окт','Ноя','Дек','Янв','Фев','Мар','Апр','Май'], data: [45.0,52.3,58.7,64.2,68.5,71.0,72.4,79.5,79.5,79.5,84.3,42.8], yMax: 100 }
+    half:  { labels: ['Дек','Янв','Фев','Мар','Апр','Май'], data: [0, 40, 40, 40, 40, 40], yMax: 50 },
+    year:  { labels: ['Июн','Июл','Авг','Сен','Окт','Ноя','Дек','Янв','Фев','Мар','Апр','Май'], data: [4, 4, 4, 13, 13, 22, 22, 40, 40, 40, 40, 40], yMax: 50 }
   };
   var accent = '#6c8fff', dim = 'rgba(108,143,255,.4)';
   function colors(d) { return d.map(function(_,i){ return i===d.length-1 ? accent : dim; }); }
 
-  var p = PERIODS.week;
+  var p = PERIODS.half;
   var chart = new Chart(document.getElementById('chartBilling'), {
     type: 'bar',
     data: { labels: p.labels, datasets: [{ data: p.data, backgroundColor: colors(p.data), borderRadius: 4, borderSkipped: false }] },
