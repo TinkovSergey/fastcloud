@@ -6,6 +6,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>FastCloud — Быстрые VPS по всему миру</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="marketing.css">
 </head>
 <body>
 <nav class="mkt-nav">
@@ -23,9 +25,9 @@
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-chip-wrap"><span class="chip yellow">★ NVMe Gen4 · от € 3,80/мес</span></div>
+      <div class="hero-chip-wrap"><span class="chip yellow">★ NVMe Gen4 · от € 4,00/мес</span></div>
       <h1 class="hero-title">Быстрые VPS<br>по всему <span class="hero-accent">миру</span></h1>
-      <p class="hero-sub">NVMe SSD, AMD EPYC, сеть 10 Gbps. Развёртывание за 45 секунд. 10 локаций: Европа · Северная Америка · Азия.</p>
+      <p class="hero-sub">NVMe SSD, AMD EPYC, сеть 10 Gbps. Развёртывание за 55 секунд. 10 локаций: Европа · Америка · Азия · Австралия.</p>
       <div class="flex gap-3 mt-8">
         <a href="register.html" class="btn btn-primary btn-xl">Создать сервер →</a>
         <a href="pricing.html" class="btn btn-outline-hero btn-xl">Посмотреть тарифы</a>
@@ -33,11 +35,9 @@
       <div class="hero-stats">
         <div><div class="stat-val">99,99%</div><div class="stat-label">SLA</div></div>
         <div class="stat-divider"></div>
-        <div><div class="stat-val">45 с</div><div class="stat-label">до запуска</div></div>
+        <div><div class="stat-val">55 с</div><div class="stat-label">до запуска</div></div>
         <div class="stat-divider"></div>
         <div><div class="stat-val">10</div><div class="stat-label">локаций</div></div>
-        <div class="stat-divider"></div>
-        <div><div class="stat-val">24/7</div><div class="stat-label">поддержка RU</div></div>
       </div>
     </div>
     <div class="hero-terminal-wrap">
@@ -45,24 +45,9 @@
         <div class="term-dot term-dot-r"></div>
         <div class="term-dot term-dot-y"></div>
         <div class="term-dot term-dot-g"></div>
-        <span class="mono-xs ml-2">root@fc-pro-fra</span>
+        <span class="mono-xs ml-2">root@fra1.fastcloud.eu — ssh</span>
       </div>
-      <div class="term term-plain">
-        <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># htop</div>
-        <div class="dim">CPU[||||||          22%]   Tasks: 41</div>
-        <div class="dim">Mem[|||             1.2G/8G]  Uptime: 14d</div>
-        <br>
-        <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># df -h /</div>
-        <div class="dim">Filesystem   Size  Used  Avail</div>
-        <div class="dim">/dev/sda1    118G   14G   <span class="c-green">100G</span></div>
-        <br>
-        <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># ping 8.8.8.8 -c 3</div>
-        <div class="dim">icmp_seq=1 time=<span class="c-green">1.2 ms</span></div>
-        <div class="dim">icmp_seq=2 time=<span class="c-green">1.1 ms</span></div>
-        <div class="dim">icmp_seq=3 time=<span class="c-green">1.3 ms</span></div>
-        <br>
-        <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># <span class="blink">█</span></div>
-      </div>
+      <div id="termScreen" class="term term-plain"></div>
     </div>
   </div>
 </div>
@@ -72,7 +57,7 @@
   <div class="feat-row">
     <div class="feat-row-text">
       <div class="feat-row-tag">Мгновенный старт</div>
-      <h2 class="feat-row-title">Сервер готов за 30 секунд</h2>
+      <h2 class="feat-row-title">Сервер готов за 55 секунд</h2>
       <p class="feat-row-desc">Без верификации и ожидания. Hetzner проверяет документы до 24 часов — FastCloud активирует сервер автоматически сразу после оплаты.</p>
       <ul class="feat-row-list">
         <li>Никаких паспортов и верификаций</li>
@@ -85,7 +70,7 @@
         <div class="deploy-step"><div class="deploy-step-left"><div class="deploy-dot done">✓</div><div class="deploy-connector"></div></div><div class="deploy-info"><div class="deploy-label">Выбор ОС и тарифа</div><div class="deploy-time">0 с</div></div></div>
         <div class="deploy-step"><div class="deploy-step-left"><div class="deploy-dot done">✓</div><div class="deploy-connector"></div></div><div class="deploy-info"><div class="deploy-label">Оплата</div><div class="deploy-time">~ 5 с</div></div></div>
         <div class="deploy-step"><div class="deploy-step-left"><div class="deploy-dot done">✓</div><div class="deploy-connector"></div></div><div class="deploy-info"><div class="deploy-label">Подготовка образа</div><div class="deploy-time">~ 20 с</div></div></div>
-        <div class="deploy-step"><div class="deploy-step-left"><div class="deploy-dot finish">✓</div></div><div class="deploy-info"><div class="deploy-label c-green">SSH готов</div><div class="deploy-time c-green">30 с ✓</div></div></div>
+        <div class="deploy-step"><div class="deploy-step-left"><div class="deploy-dot finish">✓</div></div><div class="deploy-info"><div class="deploy-label c-green">SSH готов</div><div class="deploy-time c-green">55 с ✓</div></div></div>
       </div>
     </div>
   </div>
@@ -132,11 +117,11 @@
   <div class="feat-row">
     <div class="feat-row-text">
       <div class="feat-row-tag">Поддержка</div>
-      <h2 class="feat-row-title">Русский язык 24/7</h2>
-      <p class="feat-row-desc">Ни один EU-провайдер — ни Hetzner, ни OVH, ни DigitalOcean — не отвечает на русском. FastCloud закрывает этот барьер для 200+ млн пользователей.</p>
+      <h2 class="feat-row-title">Живые инженеры 24/7</h2>
+      <p class="feat-row-desc">Никаких ботов и скриптов. Реальные специалисты — в чате, по e-mail и в Telegram. Среднее время первого ответа — менее 5 минут.</p>
       <ul class="feat-row-list">
         <li>Живые инженеры, не боты</li>
-        <li>Поддержка на русском языке 24/7</li>
+        <li>Среднее время ответа &lt; 5 минут</li>
         <li>Телеграм-канал со статусом локаций</li>
       </ul>
     </div>
@@ -301,56 +286,19 @@
     </div>
     <div class="feat-row-visual">
       <div class="app-grid-feat">
-        <div class="app-item-feat"><div class="app-icon-feat" style="background:#21759b">WP</div>WordPress</div>
-        <div class="app-item-feat"><div class="app-icon-feat" style="background:#2496ed">DO</div>Docker</div>
-        <div class="app-item-feat"><div class="app-icon-feat" style="background:#fc6d26">GL</div>GitLab</div>
-        <div class="app-item-feat"><div class="app-icon-feat" style="background:#ea4c89">n8</div>n8n</div>
-        <div class="app-item-feat"><div class="app-icon-feat" style="background:#6e40c9">PT</div>Portainer</div>
-        <div class="app-item-feat"><div class="app-icon-feat" style="background:#0f9d58">GH</div>Ghost</div>
-        <div class="app-item-feat"><div class="app-icon-feat" style="background:#4353ff">NX</div>Nginx</div>
-        <div class="app-item-feat"><div class="app-icon-feat" style="background:var(--accent)">+42</div>ещё</div>
+        <div class="app-item-feat"><div class="app-icon-feat app-wp">WP</div>WordPress</div>
+        <div class="app-item-feat"><div class="app-icon-feat app-docker">DO</div>Docker</div>
+        <div class="app-item-feat"><div class="app-icon-feat app-gitlab">GL</div>GitLab</div>
+        <div class="app-item-feat"><div class="app-icon-feat app-n8n">n8</div>n8n</div>
+        <div class="app-item-feat"><div class="app-icon-feat app-portainer">PT</div>Portainer</div>
+        <div class="app-item-feat"><div class="app-icon-feat app-ghost">GH</div>Ghost</div>
+        <div class="app-item-feat"><div class="app-icon-feat app-nginx">NX</div>Nginx</div>
+        <div class="app-item-feat"><div class="app-icon-feat app-more">+42</div>ещё</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══ UTP 8: EU Jurisdiction ═══ -->
-<div class="feat-section">
-  <div class="feat-row feat-row-rev">
-    <div class="feat-row-text">
-      <div class="feat-row-tag">Юрисдикция</div>
-      <h2 class="feat-row-title">EU-юрисдикция и GDPR</h2>
-      <p class="feat-row-desc">GDPR-совместимость и EU-юрисдикция открывают СНГ-бизнесу выход на европейский рынок. Международные платёжные методы без ограничений.</p>
-      <ul class="feat-row-list">
-        <li>GDPR-совместимые локации</li>
-        <li>Visa, Mastercard, PayPal, Crypto</li>
-        <li>Счета с EU НДС для бизнеса</li>
-      </ul>
-    </div>
-    <div class="feat-row-visual">
-      <div class="compliance-wrap">
-        <div class="compliance-row">
-          <span class="compliance-badge hi">GDPR</span>
-          <span class="compliance-badge hi">EU Jurisdiction</span>
-          <span class="compliance-badge hi">ISO 27001</span>
-        </div>
-        <div class="compliance-row">
-          <span class="compliance-badge">PCI DSS</span>
-          <span class="compliance-badge">Uptime 99,99%</span>
-          <span class="compliance-badge">Tier III DC</span>
-        </div>
-        <div class="compliance-divider"></div>
-        <div class="compliance-section-label">Способы оплаты</div>
-        <div class="compliance-row">
-          <span class="pay-badge">Visa</span>
-          <span class="pay-badge">Mastercard</span>
-          <span class="pay-badge">PayPal</span>
-          <span class="pay-badge">Crypto</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ═══ PLANS ═══ -->
 <div class="feat-section feat-section-plans">
@@ -362,33 +310,33 @@
     </div>
     <div class="grid-4 w-100">
       <div class="plan-card">
-        <div class="plan-name">Starter</div>
-        <div class="plan-price"><sup>€</sup>3,80<sub>/мес</sub></div>
+        <div class="plan-name-row"><div class="plan-name">Starter</div></div>
+        <div class="plan-price"><sup>€</sup>4,00<sub>/мес</sub></div>
         <div class="plan-specs">1 vCPU · 2 GB · 30 GB NVMe</div>
         <div class="plan-check">
           <span>Anti-DDoS 10 Gbps</span>
           <span>Бэкапы 14 дней</span>
           <span>Поддержка 24/7</span>
         </div>
-        <a href="register.html" class="btn btn-ghost btn-sm mt-2">Выбрать</a>
+        <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать</a>
       </div>
-      <div class="plan-card">
-        <div class="plan-name">Dev</div>
-        <div class="plan-price"><sup>€</sup>7,90<sub>/мес</sub></div>
+      <div class="plan-card featured">
+        <div class="plan-name-row">
+          <div class="plan-name">Pro</div>
+          <span class="chip green fs-11 chip-xs">★ Популярный</span>
+        </div>
+        <div class="plan-price"><sup>€</sup>9,00<sub>/мес</sub></div>
         <div class="plan-specs">2 vCPU · 4 GB · 60 GB NVMe</div>
         <div class="plan-check">
           <span>Anti-DDoS 10 Gbps</span>
           <span>Бэкапы 14 дней</span>
           <span>Поддержка 24/7</span>
         </div>
-        <a href="register.html" class="btn btn-ghost btn-sm mt-2">Выбрать</a>
+        <a href="register.html" class="btn btn-primary btn-sm mt-auto">Выбрать</a>
       </div>
-      <div class="plan-card featured">
-        <div class="flex items-center gap-2 mb-4">
-          <div class="plan-name">Pro</div>
-          <span class="chip green fs-11 chip-xs">★ выбор</span>
-        </div>
-        <div class="plan-price"><sup>€</sup>15,40<sub>/мес</sub></div>
+      <div class="plan-card">
+        <div class="plan-name-row"><div class="plan-name">Business</div></div>
+        <div class="plan-price"><sup>€</sup>18,00<sub>/мес</sub></div>
         <div class="plan-specs">4 vCPU · 8 GB · 120 GB NVMe</div>
         <div class="plan-check">
           <span>Anti-DDoS 10 Gbps</span>
@@ -396,11 +344,11 @@
           <span>Поддержка 24/7</span>
           <span>Выделенный IPv4</span>
         </div>
-        <a href="register.html" class="btn btn-primary btn-sm mt-2">Выбрать</a>
+        <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать</a>
       </div>
       <div class="plan-card">
-        <div class="plan-name">Power</div>
-        <div class="plan-price"><sup>€</sup>31,00<sub>/мес</sub></div>
+        <div class="plan-name-row"><div class="plan-name">Scale</div></div>
+        <div class="plan-price"><sup>€</sup>35,00<sub>/мес</sub></div>
         <div class="plan-specs">8 vCPU · 16 GB · 250 GB NVMe</div>
         <div class="plan-check">
           <span>Anti-DDoS 10 Gbps</span>
@@ -408,45 +356,8 @@
           <span>Поддержка 24/7</span>
           <span>Выделенный IPv4</span>
         </div>
-        <a href="register.html" class="btn btn-ghost btn-sm mt-2">Выбрать</a>
+        <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать</a>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ MAP ═══ -->
-<div class="feat-section feat-section-notop">
-  <div class="page-wrap-xl map-wrap">
-    <div class="map-wrap-text">
-      <div class="section-title" data-i18n="dc_title">10 локаций · сеть 10 Gbps</div>
-      <div class="chip-wrap">
-        <span class="chip">● <span data-i18n="loc_fra_name">Франция</span></span>
-        <span class="chip">● <span data-i18n="loc_deu_name">Германия</span></span>
-        <span class="chip">● <span data-i18n="loc_ita_name">Италия</span></span>
-        <span class="chip">● <span data-i18n="loc_pol_name">Польша</span></span>
-        <span class="chip">● <span data-i18n="loc_gbr_name">Великобритания</span></span>
-        <span class="chip">● <span data-i18n="loc_can_name">Канада</span></span>
-        <span class="chip">● <span data-i18n="loc_usa_name">США</span></span>
-        <span class="chip">● <span data-i18n="loc_ind_name">Индия</span></span>
-        <span class="chip">● <span data-i18n="loc_sgp_name">Сингапур</span></span>
-        <span class="chip">● <span data-i18n="loc_aus_name">Австралия</span></span>
-      </div>
-    </div>
-    <div class="map map-sm">
-      <div class="map-grid"></div>
-      <!-- Europe cluster -->
-      <div class="pin" style="left:47%;top:26%"><div class="pin-dot"></div><div class="pin-label">GB</div></div>
-      <div class="pin" style="left:50%;top:33%"><div class="pin-dot"></div><div class="pin-label">FR</div></div>
-      <div class="pin" style="left:53%;top:24%"><div class="pin-dot"></div><div class="pin-label">DE</div></div>
-      <div class="pin" style="left:54%;top:37%"><div class="pin-dot"></div><div class="pin-label">IT</div></div>
-      <div class="pin" style="left:57%;top:19%"><div class="pin-dot"></div><div class="pin-label">PL</div></div>
-      <!-- Americas -->
-      <div class="pin" style="left:22%;top:28%"><div class="pin-dot"></div><div class="pin-label">CA</div></div>
-      <div class="pin" style="left:21%;top:37%"><div class="pin-dot"></div><div class="pin-label">US</div></div>
-      <!-- Asia Pacific -->
-      <div class="pin" style="left:70%;top:46%"><div class="pin-dot"></div><div class="pin-label">IN</div></div>
-      <div class="pin" style="left:77%;top:57%"><div class="pin-dot"></div><div class="pin-label">SG</div></div>
-      <div class="pin" style="left:84%;top:72%"><div class="pin-dot"></div><div class="pin-label">AU</div></div>
     </div>
   </div>
 </div>
@@ -455,37 +366,101 @@
 <div class="trust-section">
   <div class="page-wrap-xl">
     <div class="section-title tac">Нам доверяют разработчики</div>
-    <div class="trust-grid">
-      <div class="trust-card">
-        <div class="trust-stars">★★★★★</div>
-        <div class="trust-text">«Переехал с другого хостинга — скорость базы данных выросла в 4 раза. Рекомендую всем, кто ценит время.»</div>
-        <div class="trust-author">— Алексей К., backend-разработчик</div>
+    <div class="trust-carousel" id="trustCarousel">
+      <button class="trust-btn trust-prev" id="trustPrev" aria-label="Назад">&#8592;</button>
+      <div class="trust-track-wrap">
+        <div class="trust-track" id="trustTrack">
+
+          <div class="trust-slide">
+            <div class="trust-card">
+              <div class="trust-stars">★★★★★</div>
+              <div class="trust-text">«Брал под Postgres. Прям ощутимо быстрее на тяжёлых запросах — не ожидал такой разницы.»</div>
+              <div class="trust-author">— Алексей К., разработчик</div>
+            </div>
+          </div>
+
+          <div class="trust-slide">
+            <div class="trust-card">
+              <div class="trust-stars">★★★★★</div>
+              <div class="trust-text">«Полгода юзаю для CI/CD. Один раз была сеть минут десять, написал в поддержку — ответили быстро, объяснили что к чему. Больше проблем не было. В целом доволен, продолжаю пользоваться.»</div>
+              <div class="trust-author">— Михаил Т., DevOps</div>
+            </div>
+          </div>
+
+          <div class="trust-slide">
+            <div class="trust-card">
+              <div class="trust-stars">★★★★★</div>
+              <div class="trust-text">«Не надо ждать верификацию — это прям кайф. Поднял, настроил, задеплоил за вечер.»</div>
+              <div class="trust-author">— Сергей Д., разработчик</div>
+            </div>
+          </div>
+
+          <div class="trust-slide">
+            <div class="trust-card">
+              <div class="trust-stars">★★★★★</div>
+              <div class="trust-text">«Брал со скептицизмом — слишком красивый сайт обычно означает плохой продукт 😅 Но нет. Четыре месяца, всё работает, претензий нет.»</div>
+              <div class="trust-author">— Дмитрий О., фаундер</div>
+            </div>
+          </div>
+
+          <div class="trust-slide">
+            <div class="trust-card">
+              <div class="trust-stars">★★★★★</div>
+              <div class="trust-text">«У старого провайдера третий раз за месяц упал диск — переехал сюда. Тут пока тьфу-тьфу.»</div>
+              <div class="trust-author">— Владимир С., сисадмин</div>
+            </div>
+          </div>
+
+          <div class="trust-slide">
+            <div class="trust-card">
+              <div class="trust-stars">★★★★★</div>
+              <div class="trust-text">«Нужен был сервер в Сингапуре под азиатский рынок. Поднял, поставил стек — пинг из Японии вышел нормальный. Заодно взял второй в Амстердаме под EU-трафик, тоже ок. Пока всё устраивает, буду брать ещё под новый проект наверное.»</div>
+              <div class="trust-author">— Роман Л., full-stack</div>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="trust-card">
-        <div class="trust-stars">★★★★★</div>
-        <div class="trust-text">«Разворачиваю Docker-стеки за минуту. Аптайм за 8 месяцев — 100%. Никаких сюрпризов.»</div>
-        <div class="trust-author">— Мария В., DevOps-инженер</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-stars">★★★★★</div>
-        <div class="trust-text">«Поддержка на русском — это то, чего не хватало на западных хостингах. Инженеры знают что делают.»</div>
-        <div class="trust-author">— Дмитрий О., фаундер стартапа</div>
-      </div>
+      <button class="trust-btn trust-next" id="trustNext" aria-label="Вперёд">&#8594;</button>
+    </div>
+    <div class="trust-dots" id="trustDots">
+      <button class="trust-dot on"></button>
+      <button class="trust-dot"></button>
+      <button class="trust-dot"></button>
     </div>
   </div>
 </div>
+<script>
+(function () {
+  var track = document.getElementById('trustTrack');
+  var dots  = document.querySelectorAll('.trust-dot');
+  var n = dots.length, cur = 0, timer;
+
+  function go(i) {
+    cur = (i + n) % n;
+    track.style.transform = 'translateX(-' + cur * 100 + '%)';
+    dots.forEach(function (d, j) { d.classList.toggle('on', j === cur); });
+  }
+  function start() { timer = setInterval(function () { go(cur + 1); }, 4500); }
+  function stop()  { clearInterval(timer); }
+
+  document.getElementById('trustPrev').addEventListener('click', function () { stop(); go(cur - 1); start(); });
+  document.getElementById('trustNext').addEventListener('click', function () { stop(); go(cur + 1); start(); });
+  dots.forEach(function (d, j) { d.addEventListener('click', function () { stop(); go(j); start(); }); });
+
+  var wrap = document.querySelector('.trust-track-wrap');
+  wrap.addEventListener('mouseenter', stop);
+  wrap.addEventListener('mouseleave', start);
+
+  start();
+})();
+</script>
 
 <!-- ═══ CTA ═══ -->
-<div class="feat-section feat-section-notop">
-  <div class="page-wrap-xl page-wrap-xl-cta">
-    <div class="cta-block">
-      <div class="flex-1">
-        <div class="cta-title">Готов попробовать?</div>
-        <div class="cta-sub">€5 на счёт после подтверждения e-mail · Без карты · Активация за 30 секунд</div>
-      </div>
-      <a href="register.html" class="btn btn-lg btn-white shrink-0">Создать аккаунт →</a>
-    </div>
-  </div>
+<div class="cta-section">
+  <div class="cta-title">Готов попробовать?</div>
+  <div class="cta-sub">Активация за 55 секунд</div>
+  <a href="register.html" class="btn btn-lg btn-white mt-8">Создать аккаунт →</a>
 </div>
 
 <footer class="mkt-footer">
@@ -511,7 +486,6 @@
         <div class="mkt-footer-label">Поддержка</div>
         <a href="contacts.html">Написать нам</a>
         <a href="mailto:support@fastcloud.eu">support@fastcloud.eu</a>
-        <span class="c-green">● Русский язык 24/7</span>
       </div>
     </div>
   </div>
@@ -522,4 +496,133 @@
   </div>
 </footer>
 <script src="nav.js"></script>
+<script src="cookie.js"></script>
+<script>
+/* ── Terminal animation ── */
+(function () {
+  var el = document.getElementById('termScreen');
+  if (!el) return;
+
+  var PR = '<span class="p">root@fra1</span>:<span class="c">~</span># ';
+  var MAX = 20;
+  var nodes = [];
+
+  var SCRIPT = [
+    { k:'cmd', s:'ls -lh' },
+    { k:'out', q:[
+      '<span class="dim">total 36K</span>',
+      '<span class="dim">drwxr-xr-x  app/</span>',
+      '<span class="dim">drwxr-xr-x  backups/</span>',
+      '<span class="dim">drwxr-xr-x  logs/</span>',
+      '<span class="dim">-rw-r--r--  nginx.conf</span>',
+      '<span class="dim">-rwxr-xr-x  deploy.sh</span>',
+    ]},
+    { k:'wait', ms:600 },
+    { k:'cmd', s:'tail -4 logs/access.log' },
+    { k:'out', q:[
+      '<span class="dim">185.34.12.1 "GET /api/status"  <span class="c-green">200</span>  12ms</span>',
+      '<span class="dim">95.142.44.2 "GET /api/data"    <span class="c-green">200</span>  89ms</span>',
+      '<span class="dim">10.0.0.5    "POST /api/upload" <span class="c-green">201</span> 210ms</span>',
+      '<span class="dim">127.0.0.1   "GET /health"      <span class="c-green">200</span>   3ms</span>',
+    ]},
+    { k:'wait', ms:700 },
+    { k:'cmd', s:'free -h' },
+    { k:'out', q:[
+      '<span class="dim">              total    used    free</span>',
+      '<span class="dim">Mem:          8.0G    1.4G    <span class="c-green">6.6G</span></span>',
+      '<span class="dim">Swap:         2.0G    0.0G    <span class="c-green">2.0G</span></span>',
+    ]},
+    { k:'wait', ms:600 },
+    { k:'cmd', s:'df -h /' },
+    { k:'out', q:[
+      '<span class="dim">Filesystem   Size   Used  Avail  Use%</span>',
+      '<span class="dim">/dev/vda1     60G   8.3G   <span class="c-green">52G</span>   14%</span>',
+    ]},
+    { k:'wait', ms:600 },
+    { k:'cmd', s:'ping 8.8.8.8 -c 4 -q' },
+    { k:'wait', ms:900 },
+    { k:'out', q:[
+      '<span class="dim">PING 8.8.8.8 (8.8.8.8) 56(84) bytes</span>',
+      '<span class="dim">4 packets transmitted, 4 received, <span class="c-green">0% loss</span></span>',
+      '<span class="dim">rtt min/avg/max = <span class="c-green">1.1/1.2/1.3 ms</span></span>',
+    ]},
+    { k:'wait', ms:600 },
+    { k:'cmd', s:'uptime' },
+    { k:'out', q:[
+      '<span class="dim"> 14:22:05 up 14 days 2:11,  load: <span class="c-green">0.08</span>, 0.05, 0.06</span>',
+    ]},
+    { k:'wait', ms:600 },
+    { k:'cmd', s:'./deploy.sh --env prod' },
+    { k:'wait', ms:400 },
+    { k:'out', q:[
+      '<span class="c-green">✔ pulling latest image...</span>',
+      '<span class="c-green">✔ running migrations</span>',
+      '<span class="c-green">✔ restarting app (zero downtime)</span>',
+      '<span class="c-green">✔ deployed in 18s</span>',
+    ]},
+    { k:'wait', ms:1800 },
+  ];
+
+  function push(html) {
+    var d = document.createElement('div');
+    d.innerHTML = html;
+    el.appendChild(d);
+    nodes.push(d);
+    while (nodes.length > MAX) el.removeChild(nodes.shift());
+    el.scrollTop = el.scrollHeight;
+  }
+
+  var si = 0, ci = 0, promptEl = null;
+
+  function tick() {
+    if (si >= SCRIPT.length) {
+      setTimeout(function () {
+        el.innerHTML = '';
+        nodes = [];
+        si = 0; ci = 0;
+        push('');
+        tick();
+      }, 1600);
+      return;
+    }
+
+    var step = SCRIPT[si];
+
+    if (step.k === 'cmd') {
+      if (ci === 0) {
+        promptEl = document.createElement('div');
+        promptEl.innerHTML = PR + '<span class="blink">█</span>';
+        el.appendChild(promptEl);
+        nodes.push(promptEl);
+        while (nodes.length > MAX) el.removeChild(nodes.shift());
+        el.scrollTop = el.scrollHeight;
+      }
+      if (ci < step.s.length) {
+        promptEl.innerHTML = PR + step.s.slice(0, ci + 1) + '<span class="blink">█</span>';
+        ci++;
+        el.scrollTop = el.scrollHeight;
+        setTimeout(tick, 48 + Math.random() * 72);
+      } else {
+        promptEl.innerHTML = PR + step.s;
+        ci = 0; si++;
+        setTimeout(tick, 160);
+      }
+
+    } else if (step.k === 'out') {
+      var oi = 0;
+      (function nextLine() {
+        if (oi < step.q.length) { push(step.q[oi++]); setTimeout(nextLine, 55); }
+        else { si++; setTimeout(tick, 320); }
+      })();
+
+    } else if (step.k === 'wait') {
+      si++;
+      setTimeout(tick, step.ms);
+    }
+  }
+
+  push('');
+  setTimeout(tick, 400);
+})();
+</script>
 </body></html>

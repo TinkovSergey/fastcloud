@@ -6,23 +6,25 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>FastCloud — Дашборд</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="cabinet.css">
 
 </head>
 <body>
 <div class="cab"><aside class="sidebar">
   <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
-  <a href="dashboard.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Биллинг</a><a href="profile.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
+  <a href="dashboard.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Баланс</a><a href="profile.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
   <div class="sidebar-balance">
     <div class="text-sm mb-1">Баланс</div>
     <div class="sidebar-balance-val">€ 42,80</div>
     <a href="billing-topup.html" class="btn btn-primary btn-sm w-100 jcc">+ Пополнить</a>
   </div>
 </aside><div class="cab-main"><div class="cab-topbar">
-  <div class="breadcrumb flex items-center"><span class="breadcrumb"><span style="color:var(--text)">Обзор</span></span></div>
+  <div class="breadcrumb flex items-center"><span class="breadcrumb"><span>Обзор</span></span></div>
   <div class="flex-1"></div>
   
   <a href="billing.html" class="topbar-balance">€ 42,80</a>
-  <a href="profile.html" style="text-decoration:none"><div class="topbar-avatar">ИП</div></a>
+  <a href="profile.html"><div class="topbar-avatar">ИП</div></a>
   <a href="login.html" title="Выйти" class="topbar-logout"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg></a>
 </div>
 <div class="cab-content">
@@ -47,17 +49,62 @@
         <tr><td class="fw-6"><a href="server-detail.html">fc-test-par</a></td><td><span class="dot dot-gray">stopped</span></td><td>STARTER</td><td>PAR</td><td class="text-mono">51.77.88.14</td><td><a href="server-detail.html" class="btn btn-ghost btn-sm">консоль</a></td></tr>
       </tbody>
     </table>
-    <div style="padding:12px 14px 0"><a href="servers.html" class="fs-13 c-accent">все 7 серверов →</a></div>
+    <div class="card-more"><a href="servers.html" class="fs-13 c-accent">все 7 серверов →</a></div>
   </div>
   <div class="card">
-    <div class="section-title">Расходы · последние 30 дней</div>
-    <div style="height:120px;position:relative;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;background:var(--surface2)">
-      <svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
-        <defs><linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6c8fff" stop-opacity=".3"/><stop offset="100%" stop-color="#6c8fff" stop-opacity="0"/></linearGradient></defs>
-        <path d="M0 90 Q80 70 150 80 T300 55 T430 65 T530 38 T600 48 L600 120 L0 120Z" fill="url(#gr)"/>
-        <path d="M0 90 Q80 70 150 80 T300 55 T430 65 T530 38 T600 48" stroke="#6c8fff" stroke-width="2" fill="none"/>
-      </svg>
+    <div class="chart-controls">
+      <div class="section-title mb-0">Расходы</div>
+      <div class="chart-period-btns" id="periodsDashboard">
+        <button class="chart-period-btn on" data-period="week">Неделя</button>
+        <button class="chart-period-btn" data-period="month">Месяц</button>
+        <button class="chart-period-btn" data-period="half">Полгода</button>
+        <button class="chart-period-btn" data-period="year">Год</button>
+      </div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="chartDashboard"></canvas>
     </div>
   </div>
 </div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script>
+(function () {
+  var PERIODS = {
+    week:  { labels: ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'], data: [2.40,3.60,3.20,2.80,2.00,2.80,2.80], yMax: 4 },
+    month: { labels: ['1–7 мая','8–14 мая','15–21 мая','22–28 мая'], data: [19.20,21.40,20.80,22.90], yMax: 25 },
+    half:  { labels: ['Дек','Янв','Фев','Мар','Апр','Май'], data: [72.4,79.5,79.5,79.5,84.3,42.8], yMax: 100 },
+    year:  { labels: ['Июн','Июл','Авг','Сен','Окт','Ноя','Дек','Янв','Фев','Мар','Апр','Май'], data: [45.0,52.3,58.7,64.2,68.5,71.0,72.4,79.5,79.5,79.5,84.3,42.8], yMax: 100 }
+  };
+  var accent = '#6c8fff', dim = 'rgba(108,143,255,.4)';
+  function colors(d) { return d.map(function(_,i){ return i===d.length-1 ? accent : dim; }); }
+
+  var p = PERIODS.week;
+  var chart = new Chart(document.getElementById('chartDashboard'), {
+    type: 'bar',
+    data: { labels: p.labels, datasets: [{ data: p.data, backgroundColor: colors(p.data), borderRadius: 4, borderSkipped: false }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c){ return ' €'+c.parsed.y.toFixed(2).replace('.',','); } } } },
+      scales: {
+        x: { grid: { color: '#2a2f45' }, ticks: { color: '#4a5070', font: { size: 11 }, maxRotation: 0 }, border: { color: '#2a2f45' } },
+        y: { min: 0, max: p.yMax, grid: { color: '#2a2f45' }, ticks: { color: '#4a5070', font: { size: 11 }, callback: function(v){ return '€'+v; } }, border: { color: '#2a2f45' } }
+      }
+    }
+  });
+
+  document.getElementById('periodsDashboard').addEventListener('click', function(e) {
+    var btn = e.target.closest('.chart-period-btn');
+    if (!btn) return;
+    this.querySelectorAll('.chart-period-btn').forEach(function(b){ b.classList.remove('on'); });
+    btn.classList.add('on');
+    var p = PERIODS[btn.dataset.period];
+    chart.data.labels = p.labels;
+    chart.data.datasets[0].data = p.data;
+    chart.data.datasets[0].backgroundColor = colors(p.data);
+    chart.options.scales.y.max = p.yMax;
+    chart.update();
+  });
+})();
+</script>
+<script src="cookie.js"></script>
 </body></html>

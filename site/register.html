@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -6,6 +6,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>FastCloud — Регистрация</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="marketing.css">
 </head>
 <body>
 
@@ -20,12 +22,15 @@
           <div class="logo-mark">FC</div>FastCloud
         </a>
         <div>
-          <h1 class="auth-hero-title">Самые быстрые VPS в Европе.</h1>
-          <p class="auth-hero-sub">Без карты для старта — попробуйте прямо сейчас.</p>
-          <div class="auth-bonus">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            €5 на счёт после подтверждения e-mail
-          </div>
+          <h1 class="auth-hero-title">Быстрые VPS по всему миру.</h1>
+          <p class="auth-hero-sub">Всё что нужно для работы — уже включено.</p>
+          <ul class="feat-row-list mt-8">
+            <li>NVMe Gen4 · AMD EPYC · сеть 10 Gbps</li>
+            <li>10 локаций — Европа, Америка, Азия, Австралия</li>
+            <li>Anti-DDoS 10 Гбит/с на всех тарифах</li>
+            <li>Бэкапы 14 дней включены</li>
+            <li>Активация за 55 секунд без верификации</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -35,14 +40,14 @@
     <div class="auth-form">
       <h2 class="fs-22 fw-7">Создать аккаунт</h2>
       <div class="form-group">
-        <div><label>Имя</label><input class="inp" placeholder="Иван Петров" type="text"></div>
-        <div><label>E-mail</label><input class="inp" placeholder="ivan@example.com" type="email"></div>
-        <div><label>Пароль</label><input class="inp" placeholder="мин. 10 символов" type="password"></div>
+        <div><label>Имя</label><input id="reg-name" class="inp" placeholder="Иван Петров" type="text"></div>
+        <div><label>E-mail</label><input id="reg-email" class="inp" placeholder="ivan@example.com" type="email"></div>
+        <div><label>Пароль</label><input id="reg-pass" class="inp" placeholder="мин. 10 символов" type="password"></div>
         <div class="flex gap-2 items-center">
           <input type="checkbox" id="agree">
           <label for="agree" class="mb-0 cursor-pointer">Согласен с <a href="terms.html" class="c-accent">офертой</a> и <a href="privacy.html" class="c-accent">политикой</a></label>
         </div>
-        <a href="dashboard.html" class="btn btn-primary jcc btn-block">Зарегистрироваться →</a>
+        <button id="reg-btn" class="btn btn-primary jcc btn-block" disabled onclick="location.href='dashboard.html'">Зарегистрироваться →</button>
       </div>
       <div class="flex items-center gap-2"><div class="divider flex-1"></div><span class="text-sm">или</span><div class="divider flex-1"></div></div>
       <div class="flex gap-2">
@@ -53,4 +58,28 @@
     </div>
   </div>
 </div>
+<script src="cookie.js"></script>
+<script>
+(function () {
+  var name  = document.getElementById('reg-name');
+  var email = document.getElementById('reg-email');
+  var pass  = document.getElementById('reg-pass');
+  var agree = document.getElementById('agree');
+  var btn   = document.getElementById('reg-btn');
+
+  function check() {
+    btn.disabled = !(
+      name.value.trim().length > 0 &&
+      email.value.trim().length > 3 &&
+      pass.value.length >= 10 &&
+      agree.checked
+    );
+  }
+
+  [name, email, pass].forEach(function (el) {
+    el.addEventListener('input', check);
+  });
+  agree.addEventListener('change', check);
+})();
+</script>
 </body></html>

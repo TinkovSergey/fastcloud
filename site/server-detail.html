@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -6,25 +6,27 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>FastCloud — Карточка сервера</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="cabinet.css">
 </head>
 <body>
 <div class="cab"><aside class="sidebar">
   <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
-  <a href="dashboard.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Биллинг</a><a href="profile.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
+  <a href="dashboard.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Баланс</a><a href="profile.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
   <div class="sidebar-balance">
     <div class="text-sm mb-1">Баланс</div>
     <div class="sidebar-balance-val">€ 42,80</div>
     <a href="billing-topup.html" class="btn btn-primary btn-sm w-100 jcc">+ Пополнить</a>
   </div>
 </aside><div class="cab-main"><div class="cab-topbar">
-  <div class="breadcrumb flex items-center"><a href="servers.html" class="breadcrumb c-text3">Серверы</a><span class="c-text3" style="margin:0 6px">/</span><span class="breadcrumb"><span>fc-pro-fra</span></span></div>
+  <div class="breadcrumb flex items-center"><a href="servers.html" class="breadcrumb c-text3">Серверы</a><span class="c-text3 breadcrumb-sep">/</span><span class="breadcrumb"><span>fc-pro-fra</span></span></div>
   <div class="flex-1"></div>
-  
+
   <a href="billing.html" class="topbar-balance">€ 42,80</a>
-  <a href="profile.html" style="text-decoration:none"><div class="topbar-avatar">ИП</div></a>
+  <a href="profile.html"><div class="topbar-avatar">ИП</div></a>
   <a href="login.html" title="Выйти" class="topbar-logout"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg></a>
 </div>
-<div style="padding:14px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;background:var(--surface)">
+<div class="server-meta-bar">
   <span class="fs-16 fw-7">fc-pro-fra</span>
   <span class="chip">PRO</span><span class="chip">Frankfurt</span><span class="dot dot-green">running</span>
   <div class="flex-1"></div>
@@ -32,13 +34,13 @@
   <button class="btn btn-ghost btn-sm">↻ Reboot</button>
   <button class="btn btn-primary btn-sm">▶ Консоль</button>
 </div>
-<div class="tabs" style="padding:0 24px;margin-bottom:0">
+<div class="tabs tabs-page">
   <span class="tab on" data-tab="console">Консоль</span><span class="tab" data-tab="overview">Обзор</span><span class="tab" data-tab="network">Сеть</span><span class="tab" data-tab="reinstall">Перестановка ОС</span><span class="tab" data-tab="resize">Ресайз</span>
 </div>
 
 <!-- КОНСОЛЬ -->
-<div id="tab-console" style="display:flex;flex:1;min-height:500px">
-  <div style="flex:1;padding:20px;display:flex;flex-direction:column;gap:12px">
+<div id="tab-console" class="console-panel">
+  <div class="console-main">
     <div class="flex gap-2 items-center">
       <span class="chip on">VNC</span><span class="chip">SSH (browser)</span>
       <div class="flex-1"></div>
@@ -53,17 +55,17 @@
       <div class="dim">Filesystem   Size  Used  Avail  Use%  Mounted</div>
       <div class="dim">/dev/sda1    118G   14G   100G   13%   /</div>
       <br>
-      <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># <span style="animation:blink 1s infinite">█</span></div>
+      <div><span class="p">root@fc-pro-fra</span>:<span class="c">~</span># <span class="blink">█</span></div>
     </div>
     <div class="flex gap-2">
       <button class="btn btn-ghost btn-sm">Ctrl</button><button class="btn btn-ghost btn-sm">Alt</button><button class="btn btn-ghost btn-sm">Tab</button><button class="btn btn-ghost btn-sm">Esc</button>
     </div>
   </div>
-  <div style="width:230px;border-left:1px solid var(--border);padding:18px;display:flex;flex-direction:column;gap:16px">
+  <div class="server-metrics-panel">
     <div class="section-title">Метрики</div>
-    <div><div class="text-sm" style="margin-bottom:6px">CPU</div><div class="bar-wrap"><div class="bar bar-green" style="width:12%"></div></div><div class="text-xs" style="margin-top:3px">12%</div></div>
-    <div><div class="text-sm" style="margin-bottom:6px">RAM</div><div class="bar-wrap"><div class="bar bar-green" style="width:38%"></div></div><div class="text-xs" style="margin-top:3px">3.1 / 8 GB</div></div>
-    <div><div class="text-sm" style="margin-bottom:6px">Диск</div><div class="bar-wrap"><div class="bar bar-green" style="width:13%"></div></div><div class="text-xs" style="margin-top:3px">14 / 120 GB</div></div>
+    <div><div class="text-sm mb-1">CPU</div><div class="bar-wrap"><div class="bar bar-green" style="width:12%"></div></div><div class="text-xs mt-1">12%</div></div>
+    <div><div class="text-sm mb-1">RAM</div><div class="bar-wrap"><div class="bar bar-green" style="width:38%"></div></div><div class="text-xs mt-1">3.1 / 8 GB</div></div>
+    <div><div class="text-sm mb-1">Диск</div><div class="bar-wrap"><div class="bar bar-green" style="width:13%"></div></div><div class="text-xs mt-1">14 / 120 GB</div></div>
     <div><div class="text-sm">Сеть ↓</div><div class="text-mono">2.4 MB/s</div></div>
     <div><div class="text-sm">Сеть ↑</div><div class="text-mono">0.8 MB/s</div></div>
     <div class="divider"></div>
@@ -76,11 +78,11 @@
 </div>
 
 <!-- ОБЗОР -->
-<div id="tab-overview" style="display:none;padding:24px">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+<div id="tab-overview" class="tab-panel">
+  <div class="grid-2 mb-4">
     <div class="card">
       <div class="section-title">Конфигурация</div>
-      <div style="display:flex;flex-direction:column;gap:9px;font-size:13px">
+      <div class="col-gap-9 fs-13">
         <div class="flex items-center"><span class="c-text2">ОС</span><div class="flex-1"></div><span>Ubuntu 24.04 LTS</span></div>
         <div class="flex items-center"><span class="c-text2">Тариф</span><div class="flex-1"></div><span>PRO</span></div>
         <div class="flex items-center"><span class="c-text2">CPU</span><div class="flex-1"></div><span>4 vCPU AMD EPYC</span></div>
@@ -91,7 +93,7 @@
     </div>
     <div class="card">
       <div class="section-title">Информация</div>
-      <div style="display:flex;flex-direction:column;gap:9px;font-size:13px">
+      <div class="col-gap-9 fs-13">
         <div class="flex items-center"><span class="c-text2">ID</span><div class="flex-1"></div><span class="text-mono">fc-vm-9182</span></div>
         <div class="flex items-center"><span class="c-text2">IPv4</span><div class="flex-1"></div><span class="text-mono">185.12.44.22</span></div>
         <div class="flex items-center"><span class="c-text2">IPv6</span><div class="flex-1"></div><span class="text-mono">2a02:6b8::1</span></div>
@@ -109,10 +111,10 @@
 </div>
 
 <!-- СЕТЬ -->
-<div id="tab-network" style="display:none;padding:24px">
-  <div style="display:flex;flex-direction:column;gap:16px;max-width:700px">
-    <div class="card ovh" style="padding:0">
-      <div style="padding:14px 20px 10px"><div class="section-title" style="margin:0">IP-адреса</div></div>
+<div id="tab-network" class="tab-panel">
+  <div class="col-gap-16" style="max-width:700px">
+    <div class="card ovh p-0">
+      <div class="card-header"><div class="section-title mb-0">IP-адреса</div></div>
       <table class="tbl">
         <thead><tr><th>Тип</th><th>Адрес</th><th>PTR (rDNS)</th><th>Статус</th></tr></thead>
         <tbody>
@@ -121,8 +123,8 @@
         </tbody>
       </table>
     </div>
-    <div class="card ovh" style="padding:0">
-      <div style="padding:14px 20px 10px;display:flex;align-items:center"><div class="section-title" style="margin:0">Firewall</div><div class="flex-1"></div><button class="btn btn-ghost btn-sm">+ Добавить правило</button></div>
+    <div class="card ovh p-0">
+      <div class="card-header flex items-center"><div class="section-title mb-0">Firewall</div><div class="flex-1"></div><button class="btn btn-ghost btn-sm">+ Добавить правило</button></div>
       <table class="tbl">
         <thead><tr><th>Протокол</th><th>Порт</th><th>Источник</th><th>Действие</th><th></th></tr></thead>
         <tbody>
@@ -136,31 +138,31 @@
 </div>
 
 <!-- ПЕРЕСТАНОВКА ОС -->
-<div id="tab-reinstall" style="display:none;padding:24px">
-  <div style="max-width:520px;display:flex;flex-direction:column;gap:16px">
-    <div class="card" style="border-color:var(--red);background:rgba(255,80,80,.04)">
+<div id="tab-reinstall" class="tab-panel">
+  <div class="col-gap-16" style="max-width:520px">
+    <div class="card card-danger">
       <div class="flex items-center gap-3">
         <span class="fs-22">⚠️</span>
         <div class="fs-13"><strong>Внимание!</strong> Все данные на сервере будут уничтожены без возможности восстановления. Убедитесь, что у вас есть резервная копия.</div>
       </div>
     </div>
-    <div class="card" style="display:flex;flex-direction:column;gap:14px">
+    <div class="card card-form">
       <div class="section-title">Выберите образ</div>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;margin:0;padding:10px 14px;background:var(--surface2);border:1px solid var(--accent);border-radius:var(--r-sm)">
-          <input type="radio" name="reinstall-os" checked style="accent-color:var(--accent)">
+      <div class="col-gap-8">
+        <label class="os-option on">
+          <input type="radio" name="reinstall-os" checked>
           <span class="fs-18">🟠</span><span class="fs-13 fw-5">Ubuntu 24.04 LTS</span>
         </label>
-        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;margin:0;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm)">
-          <input type="radio" name="reinstall-os" style="accent-color:var(--accent)">
+        <label class="os-option">
+          <input type="radio" name="reinstall-os">
           <span class="fs-18">🟠</span><span class="fs-13 fw-5">Ubuntu 22.04 LTS</span>
         </label>
-        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;margin:0;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm)">
-          <input type="radio" name="reinstall-os" style="accent-color:var(--accent)">
+        <label class="os-option">
+          <input type="radio" name="reinstall-os">
           <span class="fs-18">🌀</span><span class="fs-13 fw-5">Debian 12</span>
         </label>
-        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;margin:0;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm)">
-          <input type="radio" name="reinstall-os" style="accent-color:var(--accent)">
+        <label class="os-option">
+          <input type="radio" name="reinstall-os">
           <span class="fs-18">🔵</span><span class="fs-13 fw-5">AlmaLinux 9</span>
         </label>
       </div>
@@ -169,70 +171,69 @@
         <input class="inp" placeholder="fc-pro-fra" type="text" style="max-width:280px">
         <div class="hint">Введите «fc-pro-fra» для подтверждения операции</div>
       </div>
-      <button class="btn btn-danger" style="align-self:flex-start">Переустановить ОС</button>
+      <button class="btn btn-danger self-start">Переустановить ОС</button>
     </div>
   </div>
 </div>
 
 <!-- РЕСАЙЗ -->
-<div id="tab-resize" style="display:none;padding:24px">
-  <div style="max-width:560px;display:flex;flex-direction:column;gap:16px">
-    <div class="c-text2 fs-13">Текущий тариф: <strong style="color:var(--text)">PRO</strong>. Апгрейд применяется мгновенно с кратковременной перезагрузкой. Тарифы ниже текущего недоступны.</div>
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="card" style="padding:14px 18px;opacity:0.38;pointer-events:none;position:relative;border-style:dashed">
-        <div style="position:absolute;top:50%;right:14px;transform:translateY(-50%)"><span class="fs-11 c-text3">↓ недоступно</span></div>
+<div id="tab-resize" class="tab-panel">
+  <div class="col-gap-16" style="max-width:560px">
+    <div class="c-text2 fs-13">Текущий тариф: <strong>PRO</strong>. Апгрейд применяется мгновенно с кратковременной перезагрузкой. Тарифы ниже текущего недоступны.</div>
+    <div class="col-gap-8">
+      <div class="card sel-card-plan-sm plan-row-disabled">
+        <div class="plan-row-disabled-label"><span class="fs-11 c-text3">↓ недоступно</span></div>
         <div class="flex items-center gap-4">
-          <div style="min-width:80px"><div class="plan-name">STARTER</div><div style="font-size:18px;font-weight:800;margin-top:2px">€3,80</div><div class="text-xs">/мес</div></div>
-          <div class="divider" style="width:1px;height:40px;margin:0"></div>
+          <div class="plan-price-block"><div class="plan-name">STARTER</div><div class="plan-price-val-sm">€3,80</div><div class="text-xs">/мес</div></div>
+          <div class="vdivider-sm"></div>
           <div class="flex gap-5 flex-1 fs-12 c-text2">
-            <div><div class="fw-7" style="color:var(--text)">1</div>vCPU</div><div><div class="fw-7" style="color:var(--text)">2 GB</div>RAM</div><div><div class="fw-7" style="color:var(--text)">30 GB</div>NVMe</div>
+            <div><div class="fw-7">1</div>vCPU</div><div><div class="fw-7">2 GB</div>RAM</div><div><div class="fw-7">30 GB</div>NVMe</div>
           </div>
         </div>
       </div>
-      <div class="card" style="padding:14px 18px;opacity:0.38;pointer-events:none;position:relative;border-style:dashed">
-        <div style="position:absolute;top:50%;right:14px;transform:translateY(-50%)"><span class="fs-11 c-text3">↓ недоступно</span></div>
+      <div class="card sel-card-plan-sm plan-row-disabled">
+        <div class="plan-row-disabled-label"><span class="fs-11 c-text3">↓ недоступно</span></div>
         <div class="flex items-center gap-4">
-          <div style="min-width:80px"><div class="plan-name">DEV</div><div style="font-size:18px;font-weight:800;margin-top:2px">€7,90</div><div class="text-xs">/мес</div></div>
-          <div class="divider" style="width:1px;height:40px;margin:0"></div>
+          <div class="plan-price-block"><div class="plan-name">DEV</div><div class="plan-price-val-sm">€7,90</div><div class="text-xs">/мес</div></div>
+          <div class="vdivider-sm"></div>
           <div class="flex gap-5 flex-1 fs-12 c-text2">
-            <div><div class="fw-7" style="color:var(--text)">2</div>vCPU</div><div><div class="fw-7" style="color:var(--text)">4 GB</div>RAM</div><div><div class="fw-7" style="color:var(--text)">60 GB</div>NVMe</div>
+            <div><div class="fw-7">2</div>vCPU</div><div><div class="fw-7">4 GB</div>RAM</div><div><div class="fw-7">60 GB</div>NVMe</div>
           </div>
         </div>
       </div>
-      <div class="card sel-card on" style="padding:14px 18px;position:relative">
-        <div style="position:absolute;top:-8px;right:14px"><span class="chip" style="font-size:10px;background:var(--surface);border:1px solid var(--border)">текущий</span></div>
+      <div class="card sel-card on sel-card-plan-sm">
+        <div class="plan-badge"><span class="chip chip-xs" style="background:var(--surface)">текущий</span></div>
         <div class="flex items-center gap-4">
-          <div style="min-width:80px"><div class="plan-name">PRO</div><div style="font-size:18px;font-weight:800;margin-top:2px">€15,40</div><div class="text-xs">/мес</div></div>
-          <div class="divider" style="width:1px;height:40px;margin:0"></div>
+          <div class="plan-price-block"><div class="plan-name">PRO</div><div class="plan-price-val-sm">€15,40</div><div class="text-xs">/мес</div></div>
+          <div class="vdivider-sm"></div>
           <div class="flex gap-5 flex-1 fs-12 c-text2">
-            <div><div class="fw-7" style="color:var(--text)">4</div>vCPU</div><div><div class="fw-7" style="color:var(--text)">8 GB</div>RAM</div><div><div class="fw-7" style="color:var(--text)">120 GB</div>NVMe</div>
+            <div><div class="fw-7">4</div>vCPU</div><div><div class="fw-7">8 GB</div>RAM</div><div><div class="fw-7">120 GB</div>NVMe</div>
           </div>
         </div>
       </div>
-      <div class="card sel-card" style="padding:14px 18px">
+      <div class="card sel-card sel-card-plan-sm">
         <div class="flex items-center gap-4">
-          <div style="min-width:80px"><div class="plan-name">POWER</div><div style="font-size:18px;font-weight:800;margin-top:2px">€31,00</div><div class="text-xs">/мес</div></div>
-          <div class="divider" style="width:1px;height:40px;margin:0"></div>
+          <div class="plan-price-block"><div class="plan-name">POWER</div><div class="plan-price-val-sm">€31,00</div><div class="text-xs">/мес</div></div>
+          <div class="vdivider-sm"></div>
           <div class="flex gap-5 flex-1 fs-12 c-text2">
-            <div><div class="fw-7" style="color:var(--text)">8</div>vCPU</div><div><div class="fw-7" style="color:var(--text)">16 GB</div>RAM</div><div><div class="fw-7" style="color:var(--text)">250 GB</div>NVMe</div>
+            <div><div class="fw-7">8</div>vCPU</div><div><div class="fw-7">16 GB</div>RAM</div><div><div class="fw-7">250 GB</div>NVMe</div>
           </div>
         </div>
       </div>
-      <div class="card sel-card" style="padding:14px 18px">
+      <div class="card sel-card sel-card-plan-sm">
         <div class="flex items-center gap-4">
-          <div style="min-width:80px"><div class="plan-name">SCALE</div><div style="font-size:18px;font-weight:800;margin-top:2px">€62,00</div><div class="text-xs">/мес</div></div>
-          <div class="divider" style="width:1px;height:40px;margin:0"></div>
+          <div class="plan-price-block"><div class="plan-name">SCALE</div><div class="plan-price-val-sm">€62,00</div><div class="text-xs">/мес</div></div>
+          <div class="vdivider-sm"></div>
           <div class="flex gap-5 flex-1 fs-12 c-text2">
-            <div><div class="fw-7" style="color:var(--text)">16</div>vCPU</div><div><div class="fw-7" style="color:var(--text)">32 GB</div>RAM</div><div><div class="fw-7" style="color:var(--text)">500 GB</div>NVMe</div>
+            <div><div class="fw-7">16</div>vCPU</div><div><div class="fw-7">32 GB</div>RAM</div><div><div class="fw-7">500 GB</div>NVMe</div>
           </div>
         </div>
       </div>
     </div>
-    <button class="btn btn-primary" style="align-self:flex-start">Применить тариф</button>
+    <button class="btn btn-primary self-start">Применить тариф</button>
   </div>
 </div>
 
-<style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
 </div></div>
 <script>
   const tabs = document.querySelectorAll('.tab[data-tab]');
@@ -251,4 +252,5 @@
     });
   });
 </script>
+<script src="cookie.js"></script>
 </body></html>

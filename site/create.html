@@ -6,22 +6,24 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>FastCloud — Новый VPS · Регион</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="cabinet.css">
 </head>
 <body>
 <div class="cab"><aside class="sidebar">
   <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
-  <a href="dashboard.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Биллинг</a><a href="profile.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
+  <a href="dashboard.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Создать</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Баланс</a><a href="profile.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
   <div class="sidebar-balance">
     <div class="text-sm mb-1">Баланс</div>
     <div class="sidebar-balance-val">€ 42,80</div>
     <a href="billing-topup.html" class="btn btn-primary btn-sm w-100 jcc">+ Пополнить</a>
   </div>
 </aside><div class="cab-main"><div class="cab-topbar">
-  <div class="breadcrumb flex items-center"><a href="servers.html" class="c-text3 fs-13">Серверы</a><span class="c-text3" style="margin:0 6px">/</span><span class="fs-13">Новый сервер</span></div>
+  <div class="breadcrumb flex items-center"><a href="servers.html" class="c-text3 fs-13">Серверы</a><span class="c-text3 breadcrumb-sep">/</span><span class="fs-13">Новый сервер</span></div>
   <div class="flex-1"></div>
   
   <a href="billing.html" class="topbar-balance">€ 42,80</a>
-  <a href="profile.html" style="text-decoration:none"><div class="topbar-avatar">ИП</div></a>
+  <a href="profile.html"><div class="topbar-avatar">ИП</div></a>
   <a href="login.html" title="Выйти" class="topbar-logout"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg></a>
 </div>
 <div class="create-layout">
@@ -44,94 +46,94 @@
   <div class="page-sub">Расположение дата-центра влияет на задержку. Все регионы — одинаковые тарифы.</div>
 
   <!-- Europe -->
-  <div style="margin-bottom:14px">
-    <div class="text-xs c-text3" style="margin-bottom:8px;text-transform:uppercase;letter-spacing:.6px" data-i18n="loc_region_eu">Европа</div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
-      <div class="card sel-card" style="text-align:center;padding:14px 6px">
-        <div style="font-size:22px;margin-bottom:5px">🇫🇷</div>
-        <div class="fw-7 fs-12" style="margin-bottom:2px" data-i18n="loc_fra_name">Франция</div>
-        <div class="text-xs c-text2" style="margin-bottom:5px">Paris · FRA</div>
+  <div class="os-label-row">
+    <div class="text-xs c-text3 os-region-label" data-i18n="loc_region_eu">Европа</div>
+    <div class="loc-card-grid">
+      <div class="card sel-card sel-card-loc">
+        <div class="loc-card-flag">🇫🇷</div>
+        <div class="fw-7 fs-12 loc-card-name" data-i18n="loc_fra_name">Франция</div>
+        <div class="text-xs c-text2 loc-card-sub">Paris · FRA</div>
         <div class="text-xs c-green">● ~8 мс</div>
       </div>
-      <div class="card sel-card on" style="text-align:center;padding:14px 6px">
-        <div style="font-size:22px;margin-bottom:5px">🇩🇪</div>
-        <div class="fw-7 fs-12" style="margin-bottom:2px" data-i18n="loc_deu_name">Германия</div>
-        <div class="text-xs c-text2" style="margin-bottom:5px">Frankfurt · DEU</div>
+      <div class="card sel-card on sel-card-loc">
+        <div class="loc-card-flag">🇩🇪</div>
+        <div class="fw-7 fs-12 loc-card-name" data-i18n="loc_deu_name">Германия</div>
+        <div class="text-xs c-text2 loc-card-sub">Frankfurt · DEU</div>
         <div class="text-xs c-green">● ~5 мс</div>
       </div>
-      <div class="card sel-card" style="text-align:center;padding:14px 6px">
-        <div style="font-size:22px;margin-bottom:5px">🇮🇹</div>
-        <div class="fw-7 fs-12" style="margin-bottom:2px" data-i18n="loc_ita_name">Италия</div>
-        <div class="text-xs c-text2" style="margin-bottom:5px">Milan · ITA</div>
+      <div class="card sel-card sel-card-loc">
+        <div class="loc-card-flag">🇮🇹</div>
+        <div class="fw-7 fs-12 loc-card-name" data-i18n="loc_ita_name">Италия</div>
+        <div class="text-xs c-text2 loc-card-sub">Milan · ITA</div>
         <div class="text-xs c-green">● ~12 мс</div>
       </div>
-      <div class="card sel-card" style="text-align:center;padding:14px 6px">
-        <div style="font-size:22px;margin-bottom:5px">🇵🇱</div>
-        <div class="fw-7 fs-12" style="margin-bottom:2px" data-i18n="loc_pol_name">Польша</div>
-        <div class="text-xs c-text2" style="margin-bottom:5px">Warsaw · POL</div>
+      <div class="card sel-card sel-card-loc">
+        <div class="loc-card-flag">🇵🇱</div>
+        <div class="fw-7 fs-12 loc-card-name" data-i18n="loc_pol_name">Польша</div>
+        <div class="text-xs c-text2 loc-card-sub">Warsaw · POL</div>
         <div class="text-xs c-green">● ~18 мс</div>
       </div>
-      <div class="card sel-card" style="text-align:center;padding:14px 6px">
-        <div style="font-size:22px;margin-bottom:5px">🇬🇧</div>
-        <div class="fw-7 fs-12" style="margin-bottom:2px" data-i18n="loc_gbr_name">Великобритания</div>
-        <div class="text-xs c-text2" style="margin-bottom:5px">London · GBR</div>
+      <div class="card sel-card sel-card-loc">
+        <div class="loc-card-flag">🇬🇧</div>
+        <div class="fw-7 fs-12 loc-card-name" data-i18n="loc_gbr_name">Великобритания</div>
+        <div class="text-xs c-text2 loc-card-sub">London · GBR</div>
         <div class="text-xs c-green">● ~10 мс</div>
       </div>
     </div>
   </div>
 
   <!-- North America -->
-  <div style="margin-bottom:14px">
-    <div class="text-xs c-text3" style="margin-bottom:8px;text-transform:uppercase;letter-spacing:.6px" data-i18n="loc_region_na">Северная Америка</div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
-      <div class="card sel-card" style="text-align:center;padding:14px 6px">
-        <div style="font-size:22px;margin-bottom:5px">🇨🇦</div>
-        <div class="fw-7 fs-12" style="margin-bottom:2px" data-i18n="loc_can_name">Канада</div>
-        <div class="text-xs c-text2" style="margin-bottom:5px">Toronto · CAN</div>
+  <div class="os-label-row">
+    <div class="text-xs c-text3 os-region-label" data-i18n="loc_region_na">Северная Америка</div>
+    <div class="loc-card-grid">
+      <div class="card sel-card sel-card-loc">
+        <div class="loc-card-flag">🇨🇦</div>
+        <div class="fw-7 fs-12 loc-card-name" data-i18n="loc_can_name">Канада</div>
+        <div class="text-xs c-text2 loc-card-sub">Toronto · CAN</div>
         <div class="text-xs c-green">● ~85 мс</div>
       </div>
-      <div class="card sel-card" style="text-align:center;padding:14px 6px">
-        <div style="font-size:22px;margin-bottom:5px">🇺🇸</div>
-        <div class="fw-7 fs-12" style="margin-bottom:2px" data-i18n="loc_usa_name">США</div>
-        <div class="text-xs c-text2" style="margin-bottom:5px">New York · USA</div>
+      <div class="card sel-card sel-card-loc">
+        <div class="loc-card-flag">🇺🇸</div>
+        <div class="fw-7 fs-12 loc-card-name" data-i18n="loc_usa_name">США</div>
+        <div class="text-xs c-text2 loc-card-sub">New York · USA</div>
         <div class="text-xs c-green">● ~90 мс</div>
       </div>
     </div>
   </div>
 
   <!-- Asia Pacific -->
-  <div style="margin-bottom:14px">
-    <div class="text-xs c-text3" style="margin-bottom:8px;text-transform:uppercase;letter-spacing:.6px" data-i18n="loc_region_ap">Азия — Тихий океан</div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
-      <div class="card sel-card" style="text-align:center;padding:14px 6px">
-        <div style="font-size:22px;margin-bottom:5px">🇮🇳</div>
-        <div class="fw-7 fs-12" style="margin-bottom:2px" data-i18n="loc_ind_name">Индия</div>
-        <div class="text-xs c-text2" style="margin-bottom:5px">Mumbai · IND</div>
+  <div class="os-label-row">
+    <div class="text-xs c-text3 os-region-label" data-i18n="loc_region_ap">Азия — Тихий океан</div>
+    <div class="loc-card-grid">
+      <div class="card sel-card sel-card-loc">
+        <div class="loc-card-flag">🇮🇳</div>
+        <div class="fw-7 fs-12 loc-card-name" data-i18n="loc_ind_name">Индия</div>
+        <div class="text-xs c-text2 loc-card-sub">Mumbai · IND</div>
         <div class="text-xs c-green">● ~120 мс</div>
       </div>
-      <div class="card sel-card" style="text-align:center;padding:14px 6px">
-        <div style="font-size:22px;margin-bottom:5px">🇸🇬</div>
-        <div class="fw-7 fs-12" style="margin-bottom:2px" data-i18n="loc_sgp_name">Сингапур</div>
-        <div class="text-xs c-text2" style="margin-bottom:5px">Singapore · SGP</div>
+      <div class="card sel-card sel-card-loc">
+        <div class="loc-card-flag">🇸🇬</div>
+        <div class="fw-7 fs-12 loc-card-name" data-i18n="loc_sgp_name">Сингапур</div>
+        <div class="text-xs c-text2 loc-card-sub">Singapore · SGP</div>
         <div class="text-xs c-green">● ~140 мс</div>
       </div>
-      <div class="card sel-card" style="text-align:center;padding:14px 6px">
-        <div style="font-size:22px;margin-bottom:5px">🇦🇺</div>
-        <div class="fw-7 fs-12" style="margin-bottom:2px" data-i18n="loc_aus_name">Австралия</div>
-        <div class="text-xs c-text2" style="margin-bottom:5px">Sydney · AUS</div>
+      <div class="card sel-card sel-card-loc">
+        <div class="loc-card-flag">🇦🇺</div>
+        <div class="fw-7 fs-12 loc-card-name" data-i18n="loc_aus_name">Австралия</div>
+        <div class="text-xs c-text2 loc-card-sub">Sydney · AUS</div>
         <div class="text-xs c-green">● ~180 мс</div>
       </div>
     </div>
   </div>
 
-  <div class="card" style="padding:16px">
+  <div class="card card-sm">
     <div class="flex items-center gap-3">
       <div class="fs-20">ℹ️</div>
       <div class="fs-13 c-text2">Сервер можно перенести в другой регион через снапшот в любое время. Перенос занимает ~5 минут.</div>
     </div>
   </div>
 
-  <div class="flex gap-3 mt-auto" style="justify-content:flex-end">
+  <div class="flex gap-3 mt-auto jce">
     <a href="servers.html" class="btn btn-ghost">← Отмена</a>
     <a href="create-step2.html" class="btn btn-primary">Далее: Образ →</a>
   </div>
@@ -139,7 +141,7 @@
 </div>
 <div class="create-summary">
   <div class="section-title">Конфигурация</div>
-  <div class="sum-row"><span>Регион</span><div class="flex-1"></div><span style="color:var(--text)">🇩🇪 Frankfurt</span></div>
+  <div class="sum-row"><span>Регион</span><div class="flex-1"></div><span>🇩🇪 Frankfurt</span></div>
   <div class="sum-row c-text3"><span>Образ</span><div class="flex-1"></div><span>—</span></div>
   <div class="sum-row c-text3"><span>Тариф</span><div class="flex-1"></div><span>—</span></div>
   <div class="divider"></div>
@@ -148,4 +150,5 @@
 </div>
 </div>
 </div></div>
+<script src="cookie.js"></script>
 </body></html>

@@ -6,6 +6,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>FastCloud — Тарифы</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="marketing.css">
 
 </head>
 <body>
@@ -23,19 +25,58 @@
     <h1 class="fs-36 fw-8 mb-2">Тарифы</h1>
     <div class="c-text2">Фиксированная цена · NVMe SSD · Anti-DDoS включён · Бэкапы 14 дней</div>
   </div>
-  <div class="flex items-center gap-2 mb-6">
-    <span class="chip on">Все</span><span class="chip">Почасово</span><span class="chip">Ежемесячно</span>
-    <div class="flex-1"></div>
-    <span class="chip">Frankfurt</span><span class="chip">Amsterdam</span><span class="chip">Paris</span><span class="chip">Helsinki</span>
+  <div class="pricing-ctrl">
+    <div class="billing-toggle">
+      <div class="billing-toggle-btn on" data-billing="monthly">Ежемесячно</div>
+      <div class="billing-toggle-btn" data-billing="annual">Ежегодно<span class="billing-toggle-badge">−15%</span></div>
+    </div>
+    <div class="task-chips">
+      <div class="task-chip on" data-task="all">Все тарифы</div>
+      <div class="task-chip" data-task="personal">Личные проекты</div>
+      <div class="task-chip" data-task="small-biz">Малый бизнес</div>
+      <div class="task-chip" data-task="shop">Магазины / API</div>
+      <div class="task-chip" data-task="high-load">Высокие нагрузки</div>
+    </div>
   </div>
-  <div class="grid-3" style="margin-bottom:60px">
-    <div class="plan-card"><div class="plan-name">Starter</div><div class="plan-price"><sup>€</sup>3,80<sub>/мес</sub></div><div class="plan-specs">1 vCPU · AMD EPYC<br>2 GB RAM<br>30 GB NVMe SSD<br>2 TB трафик</div><div class="plan-check"><span>Anti-DDoS 10 Гбит/с</span><span>Бэкапы 14 дней</span><span>Поддержка 24/7</span></div><a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a></div>
-    <div class="plan-card"><div class="plan-name">Dev</div><div class="plan-price"><sup>€</sup>7,90<sub>/мес</sub></div><div class="plan-specs">2 vCPU · AMD EPYC<br>4 GB RAM<br>60 GB NVMe SSD<br>∞ трафик</div><div class="plan-check"><span>Anti-DDoS 10 Гбит/с</span><span>Бэкапы 14 дней</span><span>Поддержка 24/7</span></div><a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a></div>
-    <div class="plan-card featured"><div class="plan-badge"><span class="chip green fs-11">★ выбор</span></div><div class="plan-name">Pro</div><div class="plan-price"><sup>€</sup>15,40<sub>/мес</sub></div><div class="plan-specs">4 vCPU · AMD EPYC<br>8 GB RAM<br>120 GB NVMe SSD<br>∞ трафик</div><div class="plan-check"><span>Anti-DDoS 10 Гбит/с</span><span>Бэкапы 14 дней</span><span>Поддержка 24/7</span></div><a href="register.html" class="btn btn-primary w-100 jcc mt-auto">Выбрать →</a></div>
-    <div class="plan-card"><div class="plan-name">Power</div><div class="plan-price"><sup>€</sup>31,00<sub>/мес</sub></div><div class="plan-specs">8 vCPU · AMD EPYC<br>16 GB RAM<br>250 GB NVMe SSD<br>∞ трафик</div><div class="plan-check"><span>Anti-DDoS 10 Гбит/с</span><span>Бэкапы 14 дней</span><span>Поддержка 24/7</span></div><a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a></div>
-    <div class="plan-card"><div class="plan-name">Scale</div><div class="plan-price"><sup>€</sup>62,00<sub>/мес</sub></div><div class="plan-specs">16 vCPU · AMD EPYC<br>32 GB RAM<br>500 GB NVMe SSD<br>∞ трафик</div><div class="plan-check"><span>Anti-DDoS 10 Гбит/с</span><span>Бэкапы 14 дней</span><span>Поддержка 24/7</span></div><a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a></div>
+  <div class="grid-3 mb-15">
+    <div class="plan-card" data-tasks="personal"><div class="plan-name">Starter</div><div class="plan-price"><sup>€</sup><span class="price-val" data-monthly="4,00" data-annual="3,40">4,00</span><sub>/мес</sub></div><div class="plan-specs">1 vCPU · AMD EPYC<br>2 GB RAM<br>30 GB NVMe SSD<br>2 TB трафик</div><div class="plan-check"><span>Anti-DDoS 10 Гбит/с</span><span>Бэкапы 14 дней</span><span>Поддержка 24/7</span></div><a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a></div>
+    <div class="plan-card featured" data-tasks="personal small-biz"><div class="plan-name-row"><div class="plan-name">Pro</div><span class="chip green fs-11 chip-xs">★ Популярный</span></div><div class="plan-price"><sup>€</sup><span class="price-val" data-monthly="9,00" data-annual="7,65">9,00</span><sub>/мес</sub></div><div class="plan-specs">2 vCPU · AMD EPYC<br>4 GB RAM<br>60 GB NVMe SSD<br>∞ трафик</div><div class="plan-check"><span>Anti-DDoS 10 Гбит/с</span><span>Бэкапы 14 дней</span><span>Поддержка 24/7</span></div><a href="register.html" class="btn btn-primary w-100 jcc mt-auto">Выбрать →</a></div>
+    <div class="plan-card" data-tasks="small-biz shop"><div class="plan-name">Business</div><div class="plan-price"><sup>€</sup><span class="price-val" data-monthly="18,00" data-annual="15,30">18,00</span><sub>/мес</sub></div><div class="plan-specs">4 vCPU · AMD EPYC<br>8 GB RAM<br>120 GB NVMe SSD<br>∞ трафик</div><div class="plan-check"><span>Anti-DDoS 10 Гбит/с</span><span>Бэкапы 14 дней</span><span>Поддержка 24/7</span></div><a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a></div>
+    <div class="plan-card" data-tasks="shop high-load"><div class="plan-name">Scale</div><div class="plan-price"><sup>€</sup><span class="price-val" data-monthly="35,00" data-annual="29,75">35,00</span><sub>/мес</sub></div><div class="plan-specs">8 vCPU · AMD EPYC<br>16 GB RAM<br>250 GB NVMe SSD<br>∞ трафик</div><div class="plan-check"><span>Anti-DDoS 10 Гбит/с</span><span>Бэкапы 14 дней</span><span>Поддержка 24/7</span></div><a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a></div>
+    <div class="plan-card" data-tasks="high-load"><div class="plan-name">Enterprise</div><div class="plan-price"><sup>€</sup><span class="price-val" data-monthly="62,00" data-annual="52,70">62,00</span><sub>/мес</sub></div><div class="plan-specs">16 vCPU · AMD EPYC<br>32 GB RAM<br>500 GB NVMe SSD<br>∞ трафик</div><div class="plan-check"><span>Anti-DDoS 10 Гбит/с</span><span>Бэкапы 14 дней</span><span>Поддержка 24/7</span></div><a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a></div>
     <div class="plan-card plan-card-dashed"><div class="fs-28">🖥</div><div class="fw-7 fs-16">Выделенный</div><div class="text-sm">Нужно больше? Обсудим конфигурацию индивидуально.</div><a href="contacts.html" class="btn btn-ghost">Написать →</a></div>
   </div>
+
+  <!-- Features row -->
+  <div class="feat-grid mb-12">
+    <div class="feat-card">
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></div>
+      <div class="feat-title">Фиксированная цена</div>
+      <div class="feat-desc">Цена не меняется. Никаких сюрпризов в счёте — платите ровно то, что видите.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+      <div class="feat-title">Без верификации</div>
+      <div class="feat-desc">Регистрация по e-mail. Никаких паспортов, юр. лиц и долгих проверок.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+      <div class="feat-title">Anti-DDoS включён</div>
+      <div class="feat-desc">Защита 10 Гбит/с на всех тарифах без исключения. Не доплата — стандарт.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.34C18 2.54 15.46 1 13.18 1c-1.12 0-2.18.45-2.97 1.25L9 3.5l-1.22-1.25C6.99 1.45 5.93 1 4.82 1 2.54 1 0 2.54 0 4.66 0 5.12.11 5.56.18 6H0v14h24V6h-4zm-9 12H4V8h7v10zm9 0h-7V8h7v10z"/></svg></div>
+      <div class="feat-title">Бэкапы 14 дней</div>
+      <div class="feat-desc">Ежедневные снапшоты хранятся две недели. Восстановление — в один клик.</div>
+    </div>
+  </div>
+
+</div>
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-title">Запускайся за 55 секунд</div>
+  <div class="cta-sub">Активация мгновенная · Без верификации паспорта</div>
+  <a href="register.html" class="btn btn-lg btn-white mt-8">Создать аккаунт →</a>
 </div>
 <footer class="mkt-footer">
   <div class="mkt-footer-inner">
@@ -60,7 +101,6 @@
         <div class="mkt-footer-label">Поддержка</div>
         <a href="contacts.html">Написать нам</a>
         <a href="mailto:support@fastcloud.eu">support@fastcloud.eu</a>
-        <span class="c-green">● Ответ &lt; 10 мин</span>
       </div>
     </div>
   </div>
@@ -71,4 +111,47 @@
   </div>
 </footer>
 <script src="nav.js"></script>
+<script src="cookie.js"></script>
+<script>
+(function () {
+  var billing = 'monthly';
+  var task = 'all';
+
+  var toggleBtns = document.querySelectorAll('.billing-toggle-btn');
+  var taskChips  = document.querySelectorAll('.task-chip');
+  var cards      = document.querySelectorAll('.plan-card:not(.plan-card-dashed)');
+
+  function update() {
+    cards.forEach(function (card) {
+      var val = card.querySelector('.price-val');
+      if (val) val.textContent = val.getAttribute('data-' + billing);
+
+      if (task === 'all') {
+        card.classList.remove('dimmed');
+      } else {
+        var tasks = (card.getAttribute('data-tasks') || '').split(' ');
+        card.classList.toggle('dimmed', tasks.indexOf(task) === -1);
+      }
+    });
+  }
+
+  toggleBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      billing = this.getAttribute('data-billing');
+      toggleBtns.forEach(function (b) { b.classList.remove('on'); });
+      this.classList.add('on');
+      update();
+    });
+  });
+
+  taskChips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      task = this.getAttribute('data-task');
+      taskChips.forEach(function (c) { c.classList.remove('on'); });
+      this.classList.add('on');
+      update();
+    });
+  });
+})();
+</script>
 </body></html>
