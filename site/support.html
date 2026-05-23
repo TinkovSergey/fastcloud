@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>FastCloud — Поддержка</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="cabinet.css">
+</head>
+<body>
+<div class="cab"><aside class="sidebar">
+  <div class="sidebar-logo"><a href="dashboard.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a></div>
+  <a href="dashboard.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Обзор</a><a href="servers.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 5H5V5h14v2zM4 12h16c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm15 5H5v-2h14v2z"/></svg></span>Серверы</a><a href="create.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>Новый сервер</a><a href="ssh-keys.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>SSH-ключи</a><a href="billing.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Баланс</a><a href="notifications.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></span>Оповещения</a><a href="support.html" class="nav-item on"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg></span>Поддержка</a><a href="profile.html" class="nav-item"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>Профиль</a>
+  <div class="sidebar-balance">
+    <div class="text-sm mb-1">Баланс</div>
+    <div class="sidebar-balance-val">€ 60,00</div>
+    <a href="billing-topup.html" class="btn btn-primary btn-sm w-100 jcc">+ Пополнить</a>
+  </div>
+</aside><div class="cab-main"><div class="cab-topbar">
+  <div class="breadcrumb flex items-center"><span class="breadcrumb"><span>Поддержка</span></span></div>
+  <div class="flex-1"></div>
+  <a href="notifications.html" class="topbar-bell" title="Оповещения"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg><span class="bell-badge">3</span></a>
+  <a href="billing.html" class="topbar-balance">€ 60,00</a>
+  <a href="profile.html"><div class="topbar-avatar">ИП</div></a>
+  <a href="login.html" title="Выйти" class="topbar-logout"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg></a>
+</div>
+<div class="cab-content">
+  <div class="page-title">Поддержка</div>
+  <div class="col-gap-16">
+
+    <!-- FAQ -->
+    <div class="card">
+      <div class="section-title">Частые вопросы</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+        <div style="padding:14px 20px 14px 0;border-bottom:1px solid var(--border);border-right:1px solid var(--border)">
+          <div class="fw-6 fs-13 mb-1">Как подключиться по SSH?</div>
+          <div class="fs-13 c-text2">Используйте команду <span class="text-mono">ssh root@&lt;IP&gt; -p 22</span>. Пароль был отправлен на email при создании сервера.</div>
+        </div>
+        <div style="padding:14px 0 14px 20px;border-bottom:1px solid var(--border)">
+          <div class="fw-6 fs-13 mb-1">Где найти пароль root?</div>
+          <div class="fs-13 c-text2">Пароль отправлен на email при создании сервера. Рекомендуем сменить его сразу после первого входа.</div>
+        </div>
+        <div style="padding:14px 20px 14px 0;border-bottom:1px solid var(--border);border-right:1px solid var(--border)">
+          <div class="fw-6 fs-13 mb-1">Как отменить автопродление?</div>
+          <div class="fs-13 c-text2">Серверы → выбрать сервер → вкладка «Обзор» → переключатель «Автопродление».</div>
+        </div>
+        <div style="padding:14px 0 14px 20px;border-bottom:1px solid var(--border)">
+          <div class="fw-6 fs-13 mb-1">Как удалить сервер?</div>
+          <div class="fs-13 c-text2">Серверы → выбрать сервер → вкладка «Обзор» → кнопка «Удалить сервер». Действие необратимо.</div>
+        </div>
+        <div style="padding:14px 20px 14px 0;border-right:1px solid var(--border)">
+          <div class="fw-6 fs-13 mb-1">Что происходит при нехватке баланса?</div>
+          <div class="fs-13 c-text2">Сервер переходит в статус suspended на 5 дней. После пополнения баланса нажмите «Возобновить» в деталях сервера.</div>
+        </div>
+        <div style="padding:14px 0 14px 20px">
+          <div class="fw-6 fs-13 mb-1">Как сменить тариф?</div>
+          <div class="fs-13 c-text2">Серверы → выбрать сервер → вкладка «Ресайз». Новый тариф применяется с кратковременной перезагрузкой.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- All tickets -->
+    <div class="card p-0 ovh">
+      <div class="flex items-center" style="padding:16px 20px 12px">
+        <div class="section-title mb-0">Обращения</div>
+        <div class="flex-1"></div>
+        <span class="chip fs-11">2 открытых · 3 закрытых</span>
+      </div>
+      <table class="tbl">
+        <thead><tr><th>#</th><th>Тема</th><th>Статус</th><th>Приоритет</th><th>Обновлено</th><th></th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="text-mono c-text2">#1042</td>
+            <td class="fw-6">Сервер не отвечает после перезагрузки</td>
+            <td><span class="dot dot-yellow">ожидает ответа</span></td>
+            <td><span class="ticket-priority high">высокий</span></td>
+            <td class="text-mono c-text2">22.05.2026</td>
+            <td><button class="btn btn-ghost btn-sm">открыть</button></td>
+          </tr>
+          <tr>
+            <td class="text-mono c-text2">#1039</td>
+            <td class="fw-6">Вопрос по смене тарифа</td>
+            <td><span class="dot dot-green">в работе</span></td>
+            <td><span class="ticket-priority low">низкий</span></td>
+            <td class="text-mono c-text2">20.05.2026</td>
+            <td><button class="btn btn-ghost btn-sm">открыть</button></td>
+          </tr>
+          <tr>
+            <td class="text-mono c-text2">#1031</td>
+            <td>Настройка PTR-записи</td>
+            <td><span class="dot dot-gray">закрыт</span></td>
+            <td><span class="ticket-priority low">низкий</span></td>
+            <td class="text-mono c-text2">15.04.2026</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="text-mono c-text2">#1024</td>
+            <td>Пополнение баланса через USDT</td>
+            <td><span class="dot dot-gray">закрыт</span></td>
+            <td><span class="ticket-priority medium">средний</span></td>
+            <td class="text-mono c-text2">02.04.2026</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="text-mono c-text2">#1017</td>
+            <td>Перенос сервера между ДЦ</td>
+            <td><span class="dot dot-gray">закрыт</span></td>
+            <td><span class="ticket-priority medium">средний</span></td>
+            <td class="text-mono c-text2">18.03.2026</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Create ticket -->
+    <div class="card">
+      <div class="flex items-center mb-4">
+        <div class="section-title mb-0">Новое обращение</div>
+        <div class="flex-1"></div>
+        <div class="flex items-center gap-3 fs-12 c-text2">
+          <span class="ticket-priority high">высокий</span> до 1 ч
+          <span class="ticket-priority medium">средний</span> до 4 ч
+          <span class="ticket-priority low">низкий</span> до 24 ч
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div>
+          <label>Тема</label>
+          <select class="inp">
+            <option>Биллинг и оплата</option>
+            <option>Технические проблемы</option>
+            <option>Управление сервером</option>
+            <option>Вопрос по тарифам</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div>
+          <label>Приоритет</label>
+          <select class="inp">
+            <option value="low">Низкий</option>
+            <option value="medium" selected>Средний</option>
+            <option value="high">Высокий</option>
+          </select>
+        </div>
+        <div>
+          <label>Сервер (опционально)</label>
+          <select class="inp">
+            <option value="">— не выбран —</option>
+            <option>fc-pro-fra (185.12.44.22)</option>
+            <option>fc-dev-ams (94.23.11.8)</option>
+            <option>fc-test-par (51.77.88.14)</option>
+          </select>
+        </div>
+        <div style="grid-column:1/-1">
+          <label>Описание</label>
+          <textarea class="inp" style="height:90px;resize:vertical" placeholder="Опишите проблему подробно…"></textarea>
+        </div>
+      </div>
+      <div class="mt-3">
+        <button class="btn btn-primary">Создать обращение</button>
+      </div>
+    </div>
+
+  </div>
+</div></div></div>
+<script src="cookie.js"></script>
+</body></html>

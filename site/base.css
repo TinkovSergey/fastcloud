@@ -1,4 +1,5 @@
 /* === BUTTONS === */
+.btn-link { background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; }
 .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: var(--r-sm); font-weight: 600; font-size: 13px; cursor: pointer; border: 1px solid transparent; transition: background .15s, border-color .15s, color .15s; white-space: nowrap; }
 .btn-primary  { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: var(--accent-d); }
@@ -33,7 +34,7 @@
 .inp { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 9px 12px; color: var(--text); font-size: 13px; font-family: var(--font); transition: border-color .15s; }
 .inp:focus { outline: none; border-color: var(--accent); }
 .inp::placeholder { color: var(--text3); }
-label { display: block; font-size: 12px; color: var(--text2); font-weight: 500; margin-bottom: 5px; }
+label { display: block; font-size: 13px; color: var(--text); font-weight: 500; margin-bottom: 6px; }
 input[type="checkbox"] { accent-color: var(--accent); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0; }
 input[type="radio"] { accent-color: var(--accent); cursor: pointer; }
 
@@ -69,12 +70,12 @@ input[type="radio"] { accent-color: var(--accent); cursor: pointer; }
 
 /* === TYPOGRAPHY === */
 .text-sm   { font-size: 12px; color: var(--text2); }
-.text-xs   { font-size: 11px; color: var(--text3); font-family: var(--mono); }
+.text-xs   { font-size: 12px; color: var(--text3); font-family: var(--mono); }
 .text-mono { font-family: var(--mono); font-size: 12px; }
-.mono-xs   { font-family: var(--mono); font-size: 11px; color: var(--text3); }
-.section-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; color: var(--text3); margin-bottom: 14px; }
+.mono-xs   { font-family: var(--mono); font-size: 12px; color: var(--text3); }
+.section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--text2); margin-bottom: 14px; }
 .page-sub  { font-size: 13px; color: var(--text2); margin-bottom: 4px; }
-.hint      { font-size: 11px; color: var(--text3); margin-top: 5px; }
+.hint      { font-size: 12px; color: var(--text3); margin-top: 5px; }
 .card-icon { font-size: 20px; }
 
 /* === GRID === */
@@ -100,6 +101,7 @@ input[type="radio"] { accent-color: var(--accent); cursor: pointer; }
 .jcc   { justify-content: center; }
 .w-100 { width: 100%; }
 .tac   { text-align: center; }
+.tar   { text-align: right; }
 .ovh   { overflow: hidden; }
 .word-break { word-break: break-all; }
 .cursor-pointer { cursor: pointer; }
