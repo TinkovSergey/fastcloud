@@ -1,35 +1,44 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>FastCloud — Локации</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="marketing.css">
 </head>
 <body>
 <nav class="mkt-nav">
-  <a href="index.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a>
-  <div class="mkt-nav-links">
+  <a href="index.html" class="logo"><svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#c4ff3d">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg></a>
+  <div class="mkt-nav-links" id="navLinks">
     <a href="pricing.html" class="mkt-nav-link">Тарифы</a>
     <a href="locations.html" class="mkt-nav-link on">Локации</a>
     <a href="contacts.html" class="mkt-nav-link">Контакты</a>
+    <div class="mkt-nav-mobile-actions" style="display:none">
+      <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
+    </div>
   </div>
-  <div class="flex gap-2 items-center">
+  <div class="mkt-nav-desktop-actions flex gap-2 items-center">
     <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
     <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
   </div>
+  <button class="nav-burger" id="navBurger" aria-label="Меню">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+  </button>
 </nav>
 
 <div class="page-wrap">
 
   <!-- Hero -->
   <div class="loc-hero">
+    <div class="eyebrow mb-4">FastCloud · network</div>
     <div class="mb-3"><span class="chip green" data-i18n="loc_status_ok">● Все локации в норме</span></div>
-    <h1 class="fs-42 fw-8 mb-3">10 локаций на <span class="c-accent">4 континентах</span></h1>
-    <p class="fs-16 c-text2 loc-hero-sub" data-i18n="loc_hero_sub">NVMe Gen4 · сеть 10 Gbps · Anti-DDoS включён · одинаковые тарифы во всех локациях</p>
+    <h1 class="page-hero-title">10&nbsp;локаций. <em>Одна&nbsp;сеть.</em></h1>
+    <p class="page-hero-sub" data-i18n="loc_hero_sub">NVMe&nbsp;Gen4 · сеть&nbsp;10&nbsp;Gbps · Anti‑DDoS включён · одинаковые тарифы во&nbsp;всех локациях.</p>
   </div>
 
   <!-- World Map -->
@@ -42,9 +51,9 @@
         </filter>
       </defs>
       <style>
-        .land { fill: rgba(108,143,255,.13); stroke: rgba(108,143,255,.3); stroke-width: .28; stroke-linejoin: round; stroke-linecap: round; }
-        .dc-dot { fill: #6c8fff; }
-        .dc-lbl { font-size: 3.4px; font-family: system-ui,sans-serif; fill: #b8ccff; font-weight: 700; text-anchor: middle; }
+        .land { fill: rgba(255,255,255,.04); stroke: rgba(255,255,255,.14); stroke-width: .28; stroke-linejoin: round; stroke-linecap: round; }
+        .dc-dot { fill: #c4ff3d; }
+        .dc-lbl { font-size: 3.4px; font-family: 'JetBrains Mono', monospace; fill: #9ea3b8; font-weight: 700; text-anchor: middle; }
       </style>
       <polygon class="land" points="52.688,20.209 52.762,20.738 51.982,20.898 51.867,22.017 52.822,22.017 54.081,21.9 54.732,21.127 54.035,20.856 53.653,20.423 53.08,19.513 52.822,18.202 51.748,18.421 51.449,18.882 51.449,19.393 51.962,19.756"/>
       <polygon class="land" points="51.787,20.641 51.838,19.937 51.221,19.67 50.34,19.868 49.689,20.908 49.689,21.589 50.45,21.589"/>
@@ -546,33 +555,38 @@
 </div>
 <!-- CTA -->
 <div class="cta-section">
+  <canvas id="ctaFx" class="cta-fx"></canvas>
   <div class="cta-title">Выбери локацию и запускайся</div>
   <div class="cta-sub">Активация за 55 секунд · Без верификации паспорта</div>
   <a href="register.html" class="btn btn-lg btn-white mt-8">Создать аккаунт →</a>
 </div>
 <footer class="mkt-footer">
   <div class="mkt-footer-inner">
-    <div class="mkt-footer-brand">
-      <a href="index.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a>
-      <div class="mkt-footer-brand-desc">Надёжные VPS в 10 локациях по всему миру. NVMe Gen4 · Anti-DDoS · SLA 99,99%.</div>
-    </div>
-    <div class="mkt-footer-cols">
-      <div class="mkt-footer-col">
-        <div class="mkt-footer-label">Продукт</div>
-        <a href="pricing.html">Тарифы</a>
-        <a href="locations.html">Локации</a>
-        <a href="contacts.html">Контакты</a>
+    <div class="row g-4">
+      <div class="col-12 col-md-4 col-lg-3 mkt-footer-brand">
+        <a href="index.html" class="logo"><svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#c4ff3d">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg></a>
+        <div class="mkt-footer-brand-desc">Надёжные VPS в 10 локациях по всему миру. NVMe Gen4 · Anti-DDoS · SLA 99,99%.</div>
       </div>
-      <div class="mkt-footer-col">
-        <div class="mkt-footer-label">Юридические</div>
-        <a href="terms.html">Договор-оферта</a>
-        <a href="privacy.html">Конфиденциальность</a>
-        <a href="sla.html">SLA</a>
-      </div>
-      <div class="mkt-footer-col">
-        <div class="mkt-footer-label">Поддержка</div>
-        <a href="contacts.html">Написать нам</a>
-        <a href="mailto:support@fastcloud.eu">support@fastcloud.eu</a>
+      <div class="col-12 col-md-8 col-lg-9">
+        <div class="row g-3 mkt-footer-cols-row">
+          <div class="col-4 mkt-footer-col">
+            <div class="mkt-footer-label">Продукт</div>
+            <a href="pricing.html">Тарифы</a>
+            <a href="locations.html">Локации</a>
+            <a href="contacts.html">Контакты</a>
+          </div>
+          <div class="col-4 mkt-footer-col">
+            <div class="mkt-footer-label">Юридические</div>
+            <a href="terms.html">Договор-оферта</a>
+            <a href="privacy.html">Конфиденциальность</a>
+            <a href="sla.html">SLA</a>
+          </div>
+          <div class="col-4 mkt-footer-col">
+            <div class="mkt-footer-label">Поддержка</div>
+            <a href="contacts.html">Написать нам</a>
+            <a href="mailto:support@fastcloud.eu">support@fastcloud.eu</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -582,6 +596,7 @@
     <span>GDPR · PCI DSS · Uptime 99,99%</span>
   </div>
 </footer>
+<script src="cta-fx.js"></script>
 <script src="nav.js"></script>
 <script src="cookie.js"></script>
 </body></html>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -11,74 +11,73 @@
 </head>
 <body>
 
-<div class="auth-wrap">
-  <div class="auth-left">
-    <div class="auth-deco auth-deco-1"></div>
-    <div class="auth-deco auth-deco-2"></div>
-    <div class="auth-deco auth-deco-3"></div>
-    <div class="auth-left-content">
-      <div class="auth-left-body">
-        <a href="index.html" class="logo logo-xl">
-          <div class="logo-mark">FC</div>FastCloud
-        </a>
-        <div>
-          <h1 class="auth-hero-title">Быстрые VPS по всему миру.</h1>
-          <p class="auth-hero-sub">Всё что нужно для работы — уже включено.</p>
-          <ul class="feat-row-list mt-8">
-            <li>NVMe Gen4 · AMD EPYC · сеть 10 Gbps</li>
-            <li>10 локаций — Европа, Америка, Азия, Австралия</li>
-            <li>Anti-DDoS 10 Гбит/с на всех тарифах</li>
-            <li>Бэкапы 14 дней включены</li>
-            <li>Активация за 55 секунд без верификации</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="auth-split">
+  <aside class="auth-side">
+    <a href="index.html" class="logo logo-xl">
+      <svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#c4ff3d">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg>
+    </a>
 
-  <div class="auth-right-inner">
-    <div class="auth-form">
-      <h2 class="fs-22 fw-7">Создать аккаунт</h2>
-      <div class="form-group">
-        <div><label>Имя</label><input id="reg-name" class="inp" placeholder="Иван Петров" type="text"></div>
-        <div><label>E-mail</label><input id="reg-email" class="inp" placeholder="ivan@example.com" type="email"></div>
-        <div><label>Пароль</label><input id="reg-pass" class="inp" placeholder="мин. 10 символов" type="password"></div>
-        <div class="flex gap-2 items-center">
-          <input type="checkbox" id="agree">
-          <label for="agree" class="mb-0 cursor-pointer">Согласен с <a href="terms.html" class="c-accent">офертой</a> и <a href="privacy.html" class="c-accent">политикой</a></label>
-        </div>
-        <button id="reg-btn" class="btn btn-primary jcc btn-block" disabled onclick="location.href='dashboard.html'">Зарегистрироваться →</button>
-      </div>
-      <div class="flex items-center gap-2"><div class="divider flex-1"></div><span class="text-sm">или</span><div class="divider flex-1"></div></div>
-      <div class="flex gap-2">
-        <button class="btn btn-ghost jcc flex-1">Google</button>
-        <button class="btn btn-ghost jcc flex-1">GitHub</button>
-      </div>
-      <div class="text-sm tac">Уже есть аккаунт? <a href="login.html" class="c-accent">Войти</a></div>
+    <div class="auth-side-body">
+      <div class="auth-side-eyebrow">sign up · fastcloud.eu</div>
+      <h1 class="auth-side-title">Сервер за&nbsp;<em>55&nbsp;секунд.</em></h1>
+      <p class="auth-side-sub">Без верификации, без скрытых платежей. Просто e‑mail&nbsp;— и&nbsp;сразу в&nbsp;работу.</p>
+
+      <ul class="auth-side-list">
+        <li>NVMe&nbsp;Gen4 · AMD&nbsp;EPYC · сеть 10&nbsp;Gbps</li>
+        <li>Anti‑DDoS 10&nbsp;Gbps и&nbsp;бэкапы 14&nbsp;дней включены</li>
+        <li>10&nbsp;локаций по&nbsp;миру · SLA&nbsp;99,99%</li>
+      </ul>
     </div>
-  </div>
+
+    <div class="auth-side-foot">
+      <a href="terms.html">оферта</a><span>·</span>
+      <a href="privacy.html">конфиденциальность</a><span>·</span>
+      <a href="contacts.html">поддержка</a>
+    </div>
+  </aside>
+
+  <main class="auth-pane">
+    <div class="auth-card">
+      <h2 class="auth-card-h">Создать аккаунт</h2>
+
+      <form class="auth-card-form" onsubmit="event.preventDefault();if(!regBtn.disabled)location.href='dashboard.html';">
+        <label class="field">
+          <span>E‑mail</span>
+          <input id="reg-email" class="inp" type="email" placeholder="ivan@example.com" autocomplete="email" required>
+        </label>
+        <label class="field">
+          <span>Пароль</span>
+          <input id="reg-pass" class="inp" type="password" placeholder="мин.&nbsp;10&nbsp;символов" autocomplete="new-password" required>
+        </label>
+        <label class="auth-check">
+          <input type="checkbox" id="agree">
+          <span>Согласен с&nbsp;<a href="terms.html">офертой</a> и&nbsp;<a href="privacy.html">политикой</a></span>
+        </label>
+        <button id="reg-btn" type="submit" class="btn btn-primary btn-block" disabled>Создать аккаунт →</button>
+      </form>
+
+      <div class="auth-or"><span>или</span></div>
+      <div class="auth-socials">
+        <button class="btn btn-ghost auth-soc">Google</button>
+        <button class="btn btn-ghost auth-soc">GitHub</button>
+      </div>
+
+      <p class="auth-foot">Уже есть аккаунт? <a href="login.html">Войти</a></p>
+    </div>
+  </main>
 </div>
+
 <script src="cookie.js"></script>
 <script>
 (function () {
-  var name  = document.getElementById('reg-name');
-  var email = document.getElementById('reg-email');
-  var pass  = document.getElementById('reg-pass');
-  var agree = document.getElementById('agree');
-  var btn   = document.getElementById('reg-btn');
-
+  const email = document.getElementById('reg-email');
+  const pass  = document.getElementById('reg-pass');
+  const agree = document.getElementById('agree');
+  const btn   = document.getElementById('reg-btn');
   function check() {
-    btn.disabled = !(
-      name.value.trim().length > 0 &&
-      email.value.trim().length > 3 &&
-      pass.value.length >= 10 &&
-      agree.checked
-    );
+    btn.disabled = !(email.value.trim().length > 3 && pass.value.length >= 10 && agree.checked);
   }
-
-  [name, email, pass].forEach(function (el) {
-    el.addEventListener('input', check);
-  });
+  [email, pass].forEach(el => el.addEventListener('input', check));
   agree.addEventListener('change', check);
 })();
 </script>

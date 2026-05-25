@@ -1,628 +1,1027 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>FastCloud — Быстрые VPS по всему миру</title>
+<title>FastCloud — Сервер за 55 секунд</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="marketing.css">
 </head>
 <body>
-<nav class="mkt-nav">
-  <a href="index.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a>
-  <div class="mkt-nav-links"><a href="pricing.html" class="mkt-nav-link">Тарифы</a><a href="locations.html" class="mkt-nav-link">Локации</a><a href="contacts.html" class="mkt-nav-link">Контакты</a></div>
-  <div class="flex gap-2 items-center">
-    
+
+<!-- ═══════════════════════════════════
+     NAV
+     ═══════════════════════════════════ -->
+<nav class="mkt-nav" id="mktNav">
+  <a href="index.html" class="logo">
+    <svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#c4ff3d">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg>
+  </a>
+  <div class="mkt-nav-links" id="navLinks">
+    <a href="pricing.html" class="mkt-nav-link">Тарифы</a>
+    <a href="locations.html" class="mkt-nav-link">Локации</a>
+    <a href="contacts.html" class="mkt-nav-link">Контакты</a>
+    <div class="mkt-nav-mobile-actions" style="display:none">
+      <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
+    </div>
+  </div>
+  <div class="flex gap-2 items-center mkt-nav-desktop-actions">
     <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
     <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
   </div>
+  <button class="nav-burger" id="navBurger" aria-label="Меню">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+  </button>
 </nav>
 
-<!-- ═══ HERO ═══ -->
-<div class="hero-outer">
-  <div class="hero-glow"></div>
+<!-- ═══════════════════════════════════
+     HERO — Editorial "55"
+     ═══════════════════════════════════ -->
+<section class="hero" data-screen-label="01 Hero">
+  <canvas id="heroFx" class="hero-fx"></canvas>
   <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-chip-wrap"><span class="chip yellow">★ NVMe Gen4 · от € 4,00/мес</span></div>
-      <h1 class="hero-title">Быстрые VPS<br>по всему <span class="hero-accent">миру</span></h1>
-      <p class="hero-sub">NVMe SSD, AMD EPYC, сеть 10 Gbps. Развёртывание за 55 секунд. 10 локаций: Европа · Америка · Азия · Австралия.</p>
-      <div class="flex gap-3 mt-8">
-        <a href="register.html" class="btn btn-primary btn-xl">Создать сервер →</a>
-        <a href="pricing.html" class="btn btn-outline-hero btn-xl">Посмотреть тарифы</a>
+    <div class="hero-eyebrow reveal in">
+      <span class="hero-eyebrow-pill">NEW</span>
+      <span>NVMe Gen4 · AMD EPYC · от €4,00/мес</span>
+    </div>
+
+    <h1 class="hero-title reveal in d-1">
+      Поднимите сервер<br>
+      за&nbsp;<span class="hero-title-num" id="heroNum">55</span> <em>секунд.</em>
+    </h1>
+
+    <p class="hero-sub reveal in d-2">
+      Без верификации. Без скрытых платежей. NVMe&nbsp;Gen4, сеть&nbsp;10&nbsp;Gbps
+      и&nbsp;Anti‑DDoS в&nbsp;каждом тарифе&nbsp;— в 10 локациях по миру.
+    </p>
+
+    <div class="hero-ctas reveal in d-3">
+      <a href="register.html" class="btn btn-primary btn-xl">Создать сервер →</a>
+      <a href="pricing.html" class="btn btn-outline-hero btn-xl">Тарифы</a>
+    </div>
+
+    <div class="hero-meta reveal in d-4">
+      <div class="hero-meta-cell">
+        <div class="hero-meta-val">99,99%</div>
+        <div class="hero-meta-lbl">SLA</div>
       </div>
-      <div class="hero-stats">
-        <div><div class="stat-val">99,99%</div><div class="stat-label">SLA</div></div>
-        <div class="stat-divider"></div>
-        <div><div class="stat-val">55 с</div><div class="stat-label">до запуска</div></div>
-        <div class="stat-divider"></div>
-        <div><div class="stat-val">10</div><div class="stat-label">локаций</div></div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-cell">
+        <div class="hero-meta-val">10&nbsp;Gbps</div>
+        <div class="hero-meta-lbl">Anti‑DDoS</div>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-cell">
+        <div class="hero-meta-val">10</div>
+        <div class="hero-meta-lbl">Локаций</div>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-cell">
+        <div class="hero-meta-val">24/7</div>
+        <div class="hero-meta-lbl">Поддержка</div>
       </div>
     </div>
-    <div class="hero-terminal-wrap">
-      <div class="term-header">
-        <div class="term-dot term-dot-r"></div>
-        <div class="term-dot term-dot-y"></div>
-        <div class="term-dot term-dot-g"></div>
-        <span class="mono-xs ml-2">root@fra1.fastcloud.eu — ssh</span>
-      </div>
-      <div id="termScreen" class="term term-plain"></div>
+
+    <div class="hero-ticker reveal in d-5">
+      <span class="hero-ticker-dot"></span>
+      <span><strong>fra1.fastcloud.eu</strong> · только что создан · <em class="serif">«за 53 c, из Берлина»</em></span>
+      <span class="c-dim">·</span>
+      <span><strong>sgp1</strong> · pkg upgrade · <em class="serif">«ping&nbsp;<span class="c-accent">12&nbsp;ms</span> из Токио»</em></span>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ═══ UTP 1: Fast Start ═══ -->
-<div class="feat-section">
-  <div class="feat-row">
-    <div class="feat-row-text">
-      <div class="feat-row-tag">Мгновенный старт</div>
-      <h2 class="feat-row-title">Сервер готов за 55 секунд</h2>
-      <p class="feat-row-desc">Без верификации и ожидания. Hetzner проверяет документы до 24 часов — FastCloud активирует сервер автоматически сразу после оплаты.</p>
-      <ul class="feat-row-list">
-        <li>Никаких паспортов и верификаций</li>
-        <li>Мгновенная активация после оплаты</li>
-        <li>REST API и Terraform-провайдер</li>
+<!-- ═══════════════════════════════════
+     MANIFEST
+     ═══════════════════════════════════ -->
+<section class="manifest" data-screen-label="02 Manifest">
+  <p class="manifest-text reveal">
+    Пока другие проверяют ваш паспорт, <em>сверяют почту</em>
+    и&nbsp;звонят в&nbsp;банк&nbsp;— у&nbsp;вас уже работает
+    <span class="hi">боевой сервер</span> <span class="lime">с&nbsp;Anti‑DDoS&nbsp;на&nbsp;10&nbsp;Gbps</span>
+    и&nbsp;ежедневным бэкапом.
+  </p>
+  <div class="manifest-foot reveal d-1">
+    <span class="mono-xs">FastCloud · 2026</span>
+    <span class="mono-xs c-dim">/</span>
+    <span class="mono-xs c-accent">скорость как продукт</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     STORY 01 — Speed
+     ═══════════════════════════════════ -->
+<section class="story" data-screen-label="03 Speed">
+  <div class="story-inner row align-items-center">
+    <div class="story-text col">
+      <div class="story-num reveal"><span class="step">01</span> &nbsp;/&nbsp; скорость</div>
+      <div class="story-tag reveal d-1">мгновенный старт</div>
+      <h2 class="story-title reveal d-2">
+        55&nbsp;секунд <em>против</em> 24&nbsp;часов.
+      </h2>
+      <p class="story-desc reveal d-3">
+        Hetzner проверяет документы до&nbsp;24&nbsp;часов. Hostinger требует
+        верификацию по&nbsp;паспорту. FastCloud&nbsp;— активирует
+        сервер автоматически сразу после оплаты.
+      </p>
+      <ul class="story-list reveal d-4">
+        <li>Никаких паспортов и&nbsp;звонков в&nbsp;поддержку</li>
+        <li>Мгновенная активация — REST&nbsp;API и&nbsp;Terraform</li>
+        <li>Snapshot‑образы Ubuntu, Debian, Alma, Arch, Windows</li>
       </ul>
     </div>
-    <div class="feat-row-visual">
-      <div class="deploy-timeline">
-        <div class="deploy-step"><div class="deploy-step-left"><div class="deploy-dot done">✓</div><div class="deploy-connector"></div></div><div class="deploy-info"><div class="deploy-label">Выбор ОС и тарифа</div><div class="deploy-time">0 с</div></div></div>
-        <div class="deploy-step"><div class="deploy-step-left"><div class="deploy-dot done">✓</div><div class="deploy-connector"></div></div><div class="deploy-info"><div class="deploy-label">Оплата</div><div class="deploy-time">~ 5 с</div></div></div>
-        <div class="deploy-step"><div class="deploy-step-left"><div class="deploy-dot done">✓</div><div class="deploy-connector"></div></div><div class="deploy-info"><div class="deploy-label">Подготовка образа</div><div class="deploy-time">~ 20 с</div></div></div>
-        <div class="deploy-step"><div class="deploy-step-left"><div class="deploy-dot finish">✓</div></div><div class="deploy-info"><div class="deploy-label c-green">SSH готов</div><div class="deploy-time c-green">55 с ✓</div></div></div>
+
+    <div class="story-visual col d-none d-lg-block reveal d-2">
+      <div class="tlbar">
+        <div class="tlbar-row">
+          <div class="tlbar-meta">
+            <span class="tlbar-name">Hetzner</span>
+            <span class="tlbar-time c-red">≈&nbsp;24&nbsp;часа</span>
+          </div>
+          <div class="tlbar-track"><div class="tlbar-fill tlbar-fill-dim" style="width:100%"></div></div>
+          <div class="tlbar-sub">верификация · KYC · ручная проверка</div>
+        </div>
+        <div class="tlbar-row">
+          <div class="tlbar-meta">
+            <span class="tlbar-name">Hostinger / IONOS</span>
+            <span class="tlbar-time c-red">≈&nbsp;6&nbsp;часов</span>
+          </div>
+          <div class="tlbar-track"><div class="tlbar-fill tlbar-fill-dim" style="width:25%"></div></div>
+          <div class="tlbar-sub">подтверждение оплаты · provisioning</div>
+        </div>
+        <div class="tlbar-row">
+          <div class="tlbar-meta">
+            <span class="tlbar-name fw-7 c-accent">FastCloud</span>
+            <span class="tlbar-time c-accent">55&nbsp;секунд&nbsp;✓</span>
+          </div>
+          <div class="tlbar-track"><div class="tlbar-fill tlbar-fill-lime" data-fill="2%"></div></div>
+          <div class="tlbar-sub">оплата → SSH готов</div>
+        </div>
+        <div class="tlbar-x">
+          <span>0&nbsp;c</span><span>6&nbsp;ч</span><span>12&nbsp;ч</span><span>18&nbsp;ч</span><span>24&nbsp;ч</span>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ═══ UTP 2: DDoS ═══ -->
-<div class="feat-section">
-  <div class="feat-row feat-row-rev">
-    <div class="feat-row-text">
-      <div class="feat-row-tag">Anti-DDoS</div>
-      <h2 class="feat-row-title">DDoS 10 Гбит/с в каждом тарифе</h2>
-      <p class="feat-row-desc">Hetzner даёт лишь базовую защиту. Contabo вообще не защищает. У FastCloud фильтрация включена в базовую цену — ключевое отличие для бизнеса.</p>
-      <ul class="feat-row-list">
-        <li>Фильтрация L3 / L4 / L7</li>
-        <li>Не влияет на задержку</li>
-        <li>Включено во все тарифы без доплат</li>
+<!-- ═══════════════════════════════════
+     STORY 02 — Anti-DDoS
+     ═══════════════════════════════════ -->
+<section class="story story-flip" data-screen-label="04 DDoS">
+  <div class="story-inner row align-items-center">
+    <div class="story-text col">
+      <div class="story-num reveal"><span class="step">02</span> &nbsp;/&nbsp; защита</div>
+      <div class="story-tag reveal d-1">anti‑ddos · 10 gbps</div>
+      <h2 class="story-title reveal d-2">
+        Атаки&nbsp;отбиты <em>до&nbsp;того,</em><br>как доходят до&nbsp;вас.
+      </h2>
+      <p class="story-desc reveal d-3">
+        У&nbsp;Hetzner&nbsp;— базовая защита. Contabo не&nbsp;защищает.
+        У&nbsp;FastCloud фильтрация L3&nbsp;/&nbsp;L4&nbsp;/&nbsp;L7
+        включена в&nbsp;каждый тариф без&nbsp;доплат.
+      </p>
+      <ul class="story-list reveal d-4">
+        <li>UDP&nbsp;Flood, SYN&nbsp;Flood, HTTP&nbsp;DDoS, Amplification</li>
+        <li>Фильтрация не&nbsp;влияет на&nbsp;latency</li>
+        <li>Включено во&nbsp;все тарифы, без&nbsp;скрытых платежей</li>
       </ul>
     </div>
-    <div class="feat-row-visual">
-      <div class="shield-card">
-        <div class="shield-header">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6l-8-4z" fill="rgba(62,207,119,.15)" stroke="var(--green)" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="shield-status">Активная защита</span>
-          <span class="dot dot-green ml-auto">включена</span>
+
+    <div class="story-visual col d-none d-lg-block reveal d-2">
+      <div class="shield-viz">
+        <div class="shield-orb">
+          <div class="shield-ring r3"></div>
+          <div class="shield-ring r2"></div>
+          <div class="shield-ring r1"></div>
+          <div class="shield-core">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L4 6v6c0 5.2 3.5 10.1 8 11.3c4.5-1.2 8-6.1 8-11.3V6l-8-4z" stroke="currentColor" stroke-width="1.6" fill="rgba(196,255,61,.08)"/>
+              <path d="M9 12l2.2 2.2L15.6 9.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="shield-attack a1">UDP&nbsp;Flood</div>
+          <div class="shield-attack a2">SYN&nbsp;Flood</div>
+          <div class="shield-attack a3">HTTP&nbsp;DDoS</div>
+          <div class="shield-attack a4">Amplification</div>
         </div>
         <div class="shield-stats">
-          <div class="shield-stat-item"><div class="shield-stat-val c-green">99,8%</div><div class="shield-stat-label">атак отфильтровано</div></div>
-          <div class="shield-stat-item"><div class="shield-stat-val">10 Gbps</div><div class="shield-stat-label">пропускная способность</div></div>
+          <div class="shield-stat">
+            <div class="shield-stat-val c-accent">99,8%</div>
+            <div class="shield-stat-lbl">атак отфильтровано</div>
+          </div>
+          <div class="shield-stat">
+            <div class="shield-stat-val">10&nbsp;Gbps</div>
+            <div class="shield-stat-lbl">пропускная способность</div>
+          </div>
+          <div class="shield-stat">
+            <div class="shield-stat-val">&lt;&nbsp;1&nbsp;ms</div>
+            <div class="shield-stat-lbl">оверхед на&nbsp;фильтрацию</div>
+          </div>
         </div>
-        <div class="shield-attacks">
-          <div class="shield-attack-row"><span class="shield-block">✗</span>UDP Flood</div>
-          <div class="shield-attack-row"><span class="shield-block">✗</span>SYN Flood</div>
-          <div class="shield-attack-row"><span class="shield-block">✗</span>HTTP DDoS</div>
-          <div class="shield-attack-row"><span class="shield-block">✗</span>Amplification Attack</div>
-        </div>
-        <div class="shield-footer">→ ваш сервер защищён</div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ═══ UTP 3: Support ═══ -->
-<div class="feat-section">
-  <div class="feat-row">
-    <div class="feat-row-text">
-      <div class="feat-row-tag">Поддержка</div>
-      <h2 class="feat-row-title">Живые инженеры 24/7</h2>
-      <p class="feat-row-desc">Никаких ботов и скриптов. Реальные специалисты — в чате, по e-mail и в Telegram. Среднее время первого ответа — менее 5 минут.</p>
-      <ul class="feat-row-list">
-        <li>Живые инженеры, не боты</li>
-        <li>Среднее время ответа &lt; 5 минут</li>
-        <li>Телеграм-канал со статусом локаций</li>
+<!-- ═══════════════════════════════════
+     STORY 03 — Fixed pricing
+     ═══════════════════════════════════ -->
+<section class="story" data-screen-label="05 Pricing">
+  <div class="story-inner row align-items-center">
+    <div class="story-text col">
+      <div class="story-num reveal"><span class="step">03</span> &nbsp;/&nbsp; ценообразование</div>
+      <div class="story-tag reveal d-1">честные цены</div>
+      <h2 class="story-title reveal d-2">
+        Цена при&nbsp;старте&nbsp;= <em>цена</em> при&nbsp;продлении.
+      </h2>
+      <p class="story-desc reveal d-3">
+        Hostinger обещает $4,99, а&nbsp;при продлении выставляет $11,99.
+        Contabo берёт setup&nbsp;fee. FastCloud замораживает цену
+        на&nbsp;всю жизнь аккаунта.
+      </p>
+      <ul class="story-list reveal d-4">
+        <li>Цена не&nbsp;меняется при&nbsp;продлении&nbsp;— никогда</li>
+        <li>Нет скрытых комиссий и&nbsp;setup‑платежей</li>
+        <li>Почасовой биллинг, удаление в&nbsp;1&nbsp;клик без&nbsp;штрафов</li>
       </ul>
     </div>
-    <div class="feat-row-visual">
+
+    <div class="story-visual col d-none d-lg-block reveal d-2">
+      <div class="ptbl">
+        <div class="ptbl-head">
+          <span>Провайдер</span><span>Старт</span><span>Продление</span>
+        </div>
+        <div class="ptbl-row">
+          <span class="ptbl-name">Hostinger</span>
+          <span class="ptbl-price">$4,99</span>
+          <span class="ptbl-renew">$11,99 <span class="ptbl-arrow">↑</span></span>
+        </div>
+        <div class="ptbl-row">
+          <span class="ptbl-name">DigitalOcean</span>
+          <span class="ptbl-price">$6,00</span>
+          <span class="ptbl-renew">$12,00 <span class="ptbl-arrow">↑</span></span>
+        </div>
+        <div class="ptbl-row">
+          <span class="ptbl-name">Contabo</span>
+          <span class="ptbl-price">$4,50</span>
+          <span class="ptbl-renew">+&nbsp;€4,99&nbsp;setup</span>
+        </div>
+        <div class="ptbl-row">
+          <span class="ptbl-name">IONOS</span>
+          <span class="ptbl-price">$2,00</span>
+          <span class="ptbl-renew">$8,00 <span class="ptbl-arrow">↑</span></span>
+        </div>
+        <div class="ptbl-row us">
+          <span class="ptbl-name us">FastCloud</span>
+          <span class="ptbl-price us">$9,00</span>
+          <span class="ptbl-renew ok">$9,00&nbsp;✓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     STORY 04 — Backups
+     ═══════════════════════════════════ -->
+<section class="story story-flip" data-screen-label="06 Backups">
+  <div class="story-inner row align-items-center">
+    <div class="story-text col">
+      <div class="story-num reveal"><span class="step">04</span> &nbsp;/&nbsp; бэкапы</div>
+      <div class="story-tag reveal d-1">14 снэпшотов</div>
+      <h2 class="story-title reveal d-2">
+        Ежедневные бэкапы.<br><em>В&nbsp;каждом</em> тарифе.
+      </h2>
+      <p class="story-desc reveal d-3">
+        У&nbsp;Hetzner, Contabo и&nbsp;IONOS бэкапы&nbsp;— платная опция.
+        У&nbsp;FastCloud автоматический snapshot каждую ночь
+        и&nbsp;хранение 14&nbsp;дней — без&nbsp;доплаты.
+      </p>
+      <ul class="story-list reveal d-4">
+        <li>Автоматический snapshot каждую ночь в&nbsp;03:00</li>
+        <li>Хранение&nbsp;— 14&nbsp;дней, доступно для всех тарифов</li>
+        <li>Восстановление в&nbsp;1&nbsp;клик без&nbsp;потери IP</li>
+      </ul>
+    </div>
+
+    <div class="story-visual col d-none d-lg-block reveal d-2">
+      <div class="bkp">
+        <div class="bkp-row"><div class="bkp-dot"></div><div class="bkp-date">Сегодня, 03:00</div><div class="bkp-size">2,4&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
+        <div class="bkp-row"><div class="bkp-dot"></div><div class="bkp-date">Вчера, 03:00</div><div class="bkp-size">2,3&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
+        <div class="bkp-row"><div class="bkp-dot"></div><div class="bkp-date">23&nbsp;мая, 03:00</div><div class="bkp-size">2,3&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
+        <div class="bkp-row"><div class="bkp-dot"></div><div class="bkp-date">22&nbsp;мая, 03:00</div><div class="bkp-size">2,2&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
+        <div class="bkp-row bkp-row-dim"><div class="bkp-dot"></div><div class="bkp-date">21&nbsp;мая, 03:00</div><div class="bkp-size">2,2&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
+        <div class="bkp-row bkp-row-ghost"><div class="bkp-dot dim"></div><div class="bkp-date dim">+&nbsp;ещё 9&nbsp;снэпшотов</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     STORY 05 — Locations
+     ═══════════════════════════════════ -->
+<section class="story" data-screen-label="07 Locations">
+  <div class="story-inner row align-items-center">
+    <div class="story-text col">
+      <div class="story-num reveal"><span class="step">05</span> &nbsp;/&nbsp; локации</div>
+      <div class="story-tag reveal d-1">10 дата‑центров</div>
+      <h2 class="story-title reveal d-2">
+        10&nbsp;локаций. <em>Один</em> SLA.
+      </h2>
+      <p class="story-desc reveal d-3">
+        Европа, Северная Америка, Азия и&nbsp;Австралия&nbsp;— выбирайте регион
+        с&nbsp;минимальной задержкой для&nbsp;вашей аудитории. Сетевая магистраль
+        Cogent&nbsp;+&nbsp;Telia&nbsp;+&nbsp;Lumen.
+      </p>
+      <ul class="story-list reveal d-4">
+        <li>EU&nbsp;×5: Frankfurt, Amsterdam, Milan, Warsaw, London</li>
+        <li>NA&nbsp;×3: New&nbsp;York, San&nbsp;Francisco, Toronto</li>
+        <li>APAC&nbsp;×3: Singapore, Mumbai, Sydney</li>
+      </ul>
+    </div>
+
+    <div class="story-visual flush col d-none d-lg-block reveal d-2 map-visual">
+      <!-- HUD corner brackets -->
+      <span class="hud-corner hud-tl"></span>
+      <span class="hud-corner hud-tr"></span>
+      <span class="hud-corner hud-bl"></span>
+      <span class="hud-corner hud-br"></span>
+
+      <!-- Live status overlay -->
+      <div class="map-hud">
+        <span class="map-hud-dot"></span>
+        <span class="map-hud-label">LIVE</span>
+        <span class="map-hud-sep">·</span>
+        <span class="map-hud-stat">10&nbsp;dc</span>
+        <span class="map-hud-sep">·</span>
+        <span class="map-hud-stat">1.24&nbsp;Tbps</span>
+      </div>
+      <div class="map-hud map-hud-br">
+        <span class="mono-xs mono-plain">ближайший&nbsp;узел</span>
+        <span class="map-hud-stat">fra1&nbsp;<span class="c-accent">·&nbsp;12&nbsp;ms</span></span>
+      </div>
+
+      <svg class="world-map-svg" viewBox="0 8 125.762 72" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="dcglow" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="1.2" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <!-- Reusable arc paths -->
+        <path id="arc-eu-us" d="M 55 21 Q 30 6 9 25" fill="none"/>
+        <path id="arc-eu-sg" d="M 55 21 Q 80 8 101 44" fill="none"/>
+        <path id="arc-eu-au" d="M 55 21 Q 90 14 118 60" fill="none"/>
+        <path id="arc-eu-in" d="M 55 21 Q 72 16 85 38" fill="none"/>
+        <path id="arc-sg-au" d="M 101 44 Q 116 48 118 60" fill="none"/>
+        <path id="arc-uw-ue" d="M 9 25 Q 18 16 27 29" fill="none"/>
+        <path id="arc-ue-eu" d="M 27 29 Q 42 12 55 21" fill="none"/>
+      </defs>
+      <style>
+        .land { fill: rgba(124,140,255,.10); stroke: rgba(124,140,255,.35); stroke-width: .28; stroke-linejoin: round; stroke-linecap: round; }
+        .dc-dot { fill: #c4ff3d; }
+        .dc-lbl { font-size: 3.4px; font-family: 'JetBrains Mono', monospace; fill: #d4e4a6; font-weight: 700; text-anchor: middle; }
+        .arc { fill: none; stroke: rgba(196,255,61,.75); stroke-width: .4; stroke-dasharray: 1.8 2; stroke-linecap: round; animation: arcFlow 6s linear infinite; }
+        .arc.a2 { animation-duration: 7s; animation-delay: -1.5s; opacity: .85; }
+        .arc.a3 { animation-duration: 8s; animation-delay: -3s; opacity: .75; }
+        .arc.a4 { animation-duration: 5.5s; animation-delay: -2.2s; opacity: .9; }
+        .arc.a5 { animation-duration: 6.5s; animation-delay: -4s; opacity: .75; }
+        .arc.a6 { animation-duration: 5s; animation-delay: -1s; opacity: .8; }
+        .arc.a7 { animation-duration: 7.5s; animation-delay: -3.4s; opacity: .8; }
+        @keyframes arcFlow { to { stroke-dashoffset: -36; } }
+        .pkt { fill: #c4ff3d; filter: url(#dcglow); }
+      </style>
+      <polygon class="land" points="52.688,20.209 52.762,20.738 51.982,20.898 51.867,22.017 52.822,22.017 54.081,21.9 54.732,21.127 54.035,20.856 53.653,20.423 53.08,19.513 52.822,18.202 51.748,18.421 51.449,18.882 51.449,19.393 51.962,19.756"/>
+      <polygon class="land" points="51.787,20.641 51.838,19.937 51.221,19.67 50.34,19.868 49.689,20.908 49.689,21.589 50.45,21.589"/>
+      <path class="land" d="M33.574,24.122h-0.929v0.485h0.223c0,0,0.016,0.1,0.03,0.234l0.578-0.052l0.343-0.214l0.104-0.452l0.457-0.035l0.184-0.382l-0.428-0.092l-0.362,0.01L33.574,24.122z"/>
+      <polygon class="land" points="31.327,24.971 32.012,24.914 32.068,24.441 31.66,24.122 31.366,24.504"/>
+      <polygon class="land" points="102.764,47.568 100.77,47.628 100.691,46.543 101.014,46.683 101.795,46.592 101.715,45.598 99.548,45.624 98.961,44.842 98.988,44.424 96.205,41.918 95.508,42.46 99.502,47.33 100.064,47.518 100.064,47.781 99.312,47.781 99.502,48.388 104.391,48.602"/>
+      <polygon class="land" points="106.244,42.136 105.906,41.998 105.748,41.161 105.256,41.161 104.943,42.002 104.57,42.336 101.74,43.877 101.74,45.395 102.681,46.643 105.062,46.643 105.371,45.867 105.906,45.379 105.906,45.022 106.244,44.808"/>
+      <polygon class="land" points="108.006,44.808 106.574,45.36 106.604,45.678 106.244,45.678 106.244,47.657 106.967,47.657 106.867,46.395 107.43,46.604 107.43,47.488 108.025,47.448"/>
+      <polygon class="land" points="120.057,56.79 119.664,55.192 118.208,53.943 118.092,51.562 117.138,49.916 116.273,49.87 115.915,52.859 114.273,52.74 113.796,52.457 113.751,51.278 114.615,51.458 115.357,50.736 113.781,49.786 111.941,49.786 110.613,51.676 110.08,51.676 110.08,51.08 108.479,51.193 105.966,54.053 104.63,54.083 103.143,55.097 103.048,59.544 102.143,60.409 102.143,61.19 106.48,59.703 109.98,59.563 111.279,62.423 115.264,62.558 119.104,58.947"/>
+      <polygon class="land" points="111.806,64.626 113.214,64.772 114.348,64.149 114.378,63.289 113.129,63.155"/>
+      <polygon class="land" points="125.359,60.722 124.773,60.837 124.756,59.514 123.677,59.583 123.533,61.653 122.589,62.299 120.833,62.538 118.018,64.542 117.546,64.935 117.546,65.601 119.007,65.382 122.585,63.194 123.588,62.528 124.667,62.05 125.762,61.434"/>
+      <polygon class="land" points="114.293,45.946 113.383,45.976 113.458,45.026 112.588,44.514 111.363,45.748 112.189,46.762 113.975,47.021 114.969,47.543 114.999,48.03 114.343,48.03 114.378,49.034 116.535,48.896 117.32,48.055 118.172,47.976 118.172,49.518 119.629,49.518 119.629,48.896 118.887,48.896 118.764,47.021 115.264,45.433"/>
+      <polygon class="land" points="88.322,41.456 88.665,42.376 89.895,41.918 90.018,40.646 89.038,40.457"/>
+      <polygon class="land" points="73.869,52.173 72.193,51.955 72.193,53.257 72.795,53.953 72.337,54.659 71.656,55.441 71.656,56.878 72.586,57.773 73.422,56.425 75.068,54.013 75.854,50.223 74.854,50.223"/>
+      <polygon class="land" points="108.363,48.174 107.807,48.174 107.807,48.468 108.234,48.602"/>
+      <rect class="land" x="105.256" y="48.602" width="0.657" height="0.358"/>
+      <polygon class="land" points="106.843,48.96 107.246,48.96 107.246,48.646 107.545,48.602 107.545,48.294 106.896,48.294 106.629,48.602 106.244,48.96 106.244,49.273 106.843,49.218"/>
+      <polygon class="land" points="108.509,49.25 109.16,49.25 109.16,48.911 109.609,48.96 109.549,48.388 108.812,48.503 108.742,48.872 107.918,48.96 107.877,48.96 107.877,49.527 108.509,49.527"/>
+      <path class="land" d="M96.701,41.202l3.854,3.7l0.204-0.657l-3.133-4.456l0.329-1.303l1.651,1.875l0.92,0.094l1.213-0.806l-0.199-1.214l-2.01-1.608l-0.078-1.462l0.57-0.769l1.006,0.321l-0.075,0.687l0.577,0.892l0.513-0.368l-0.284-1.054l2.84-1.018l1.244-1.039l-0.193-1.88l-2.467-2.596l-0.046-2.114h1.095l3.412,2.596l0.965-0.253l-0.646-0.836l-1.824-1.111l0.114-1.654l2.164,0.005l0.175-2.047l-0.826-1.079l0.492-0.532l1.049,1.059l0.344-0.448l-1.367-1.541l-3.344-0.403l-0.447-0.895l0.97-1.383l0.767,0.576l2.316,0.2l2.915-1.947l0.487,0.606l-0.651,1.019v1.007l2.681,2.191l0.85-0.443l-0.317-1.462l-1.91-1.783l2.517-0.169v-0.726l1.209-0.246l-0.926-0.642l0.035-0.493L118,16.004l0.488-0.411l-3.457-1.457l-12.572-0.646l-1.17-0.597l-1.875-0.286l-1.396-0.045l-1.277,1.289l-0.533-0.041l-1.696-1.258h-4.993l-2.312-1.384l-4.635,0.291l-3.513,1.584l0.021,1.822l-1.088,0.327l-0.244-1.829l-0.409-0.631l-1.209-0.302l-0.283,1.095l0.354,0.898l-4.328-0.286l-2.059,0.952l-0.313-0.902l-0.522,0.134l-0.378,1.002l-1.079,0.846l-2.636-0.072l-0.124-0.584l2.766-0.117l0.562-0.485l-3.327-1.547l-4.054,0.122l-2.269,1.161l-0.856,1.524l-1.512,0.586l-0.631,0.692l0.145,0.8l0.78,0.107l0.472,1.171l1.323-0.54l0.234,1.562h-0.418l-1.088-0.162l-1.214,0.204l-1.174,1.659l-1.691,0.271l-0.238,1.438l0.717,0.167l-0.205,0.928L51.4,24.723l-1.531,0.331l-0.32,0.855l0.26,1.793l0.909,0.422l1.502-0.005l1.025-0.097l0.314-0.815l1.59-2.062l1.05,0.213l1.03-0.933l0.193,0.729l2.538,1.716l-0.314,0.417l-1.144-0.067l0.433,0.626l0.711,0.155l0.825-0.343l-0.014-0.997l0.373-0.185l-0.304-0.315l-1.696-0.943l-0.437-1.261h1.402l0.448,0.443l1.219,1.05l0.043,1.268l1.263,1.338l0.468-1.833l0.871-0.48l0.162,1.502l0.852,0.937l2.564-0.039l0.762,0.564v1.346l-0.936,0.85H64.91l-1.581-1.182l-1.661,0.167v1.014h-0.533l-0.566-0.408l-2.88-0.734v-1.863l-3.66,0.284l-1.135,0.607h-1.442l-0.715-0.071l-1.76,0.979v1.837l-3.601,2.604l0.303,1.104h0.726l-0.184,1.055l-0.512,0.194l-0.03,2.76l3.104,3.541h1.353l0.094-0.218h2.426l0.708-0.646h1.377l0.761,0.76l2.055,0.209l-0.269,2.741l2.282,4.033l-1.204,2.298l0.085,1.079l0.955,0.945v2.606l1.238,1.671v2.168h3.68l2.765-2.835l0.866-1.546l1.109-0.244V54.52l0.729-0.866l1.538-2.119l-0.32-3.213l-0.676-1.193l3.035-2.904l3.337-4.78l-0.638-0.303l-3.477,0.731l-0.9-0.443l-3.649-6.883l0.253-0.299l3.626,4.395l0.089,1.359l0.826,0.841l1.721-0.109l3.545-2.576l1.125-0.727l-0.019-0.898l-1.188-0.146c0,0-4.174-1.968-4.174-2.055c0-0.09,0.025-1.686,0.025-1.686h0.925l0.134,1.164l1.93,1.114l2.213,0.106l4.781,0.784l1.127,0.709v1.094l-0.145,1.494l2.463,4.034l0.78,0.184l0.796-1.149l0.434-3.267l0.82-1.759l1.316-0.494l2.322,0.224l2.93,2.599v3.72H96.701z M63.031,15.514l-1.6,0.987v0.646l0.904,0.423l0.07,0.878l-1.294,1.914l-2.238-0.022l-0.139-0.458l1.398-0.714l0.015-2.648l2.368-1.66h0.518v0.654H63.031z M68,26.799v-0.005l-2.107-0.091l-0.628,0.091v-1.435l0.474-0.534l0.506-0.16l1.125-0.127l0.238-0.383l0.461,0.227l0.061,1.313l1.229,0.505l0.104,0.6L68,26.799L68,26.799z M76.092,27.824h-0.005l-0.373,0.35l-0.853-0.064l-0.162-0.256l-1.338-0.103l0.094-0.427l0.717-0.61v-0.515l-1.363-0.985l-0.06-1.261l0.278-0.617l1.099-0.102l0.931,0.391l0.045,0.651l-1.332-0.074l-0.064,0.601l1.66,1.104v0.815l0.726,0.522L76.092,27.824L76.092,27.824z"/>
+      <path class="land" d="M40.224,45.842l-2.869-0.025l-2.274-0.865l-0.109-1.621l-0.76-1.329l-2.044-0.024l-1.194-1.871L29.919,39.6l-0.054,0.558l-1.92,0.119l-0.706-0.979L25.23,38.89l-1.652,1.905l-2.59-0.438l-0.189-2.929l-1.9-0.326l0.762-1.43l-0.22-0.826l-2.481,1.667l-1.567-0.189l-0.567-1.229l0.349-1.268l0.865-1.587l1.984-1.01h3.845l-0.01,1.171l1.383,0.637l-0.114-2.002l0.995-0.997l2.009-1.32l0.128-0.926l2.011-2.084l2.133-1.176l-0.191-0.151l1.437-1.361l0.533,0.137l0.244,0.306l0.546-0.611l0.125-0.063l-0.591-0.08L31.9,22.507v-0.593l0.318-0.263h0.716l0.329,0.142l0.278,0.564l0.343-0.05v-0.034l0.104,0.029l0.995-0.159l0.138-0.487l0.557,0.142v0.525l-0.521,0.368l0.079,0.584l1.811,0.555c0,0,0.005,0.01,0.005,0.02l0.413-0.035l0.03-0.779l-1.432-0.651l-0.085-0.383l1.189-0.408l0.049-1.131l-1.239-0.759l-0.08-1.914l-1.715,0.836h-0.621l0.163-1.46l-2.308-0.552l-0.964,0.723v2.221l-1.727,0.54l-0.696,1.447l-0.746,0.117v-1.845l-1.622-0.229l-0.81-0.524l-0.329-1.191l2.903-1.701l1.418-0.433l0.139,0.953l0.796-0.04l0.064-0.48l0.826-0.117l0.009-0.162l-0.348-0.154l-0.085-0.504l1.015-0.088l0.612-0.641l0.044-0.045v0.005l0.184-0.194l2.149-0.269l0.939,0.803l-2.486,1.321l3.158,0.743l0.404-1.06h1.387l0.481-0.917l-0.968-0.245v-1.161l-3.059-1.355L32,12.376l-1.199,0.622l0.09,1.518l-1.24-0.194l-0.189-0.835l1.18-1.084l-2.154-0.107l-0.628,0.182l-0.274,0.733l0.817,0.14l-0.165,0.813l-1.377,0.083l-0.214,0.534l-2.014,0.057c0,0-0.045-1.136-0.125-1.136c-0.085,0,1.567-0.024,1.567-0.024l1.193-1.167l-0.651-0.329l-0.865,0.845l-1.438-0.079l-0.86-1.193h-1.841l-1.923,1.437h1.76l0.163,0.514l-0.462,0.433l1.95,0.058l0.298,0.701l-2.193-0.088l-0.109-0.539L19.72,13.97l-0.731-0.4L15.74,13.6l-0.999,0.972l-0.681-0.058l-0.757-0.438l-2.243-0.672H6.947l-2.378,1.619l-1.597,0.247l-0.73,0.569l1.134,0.167v0.455H0.949L0,17.137l1.212,1.03l3.327,0.029l0.463-0.495h2.78l1.004,0.893l-0.06,1.385l0.847,0.783l-0.706,0.505l0.159,1.822l-2.511,3.057v2.867l1.347,0.652v2.573l1.31,2.213l1.043,0.159l0.135-0.758l-1.233-1.915l-0.244-1.865h0.731l0.313,1.92l1.8,2.623l-0.482,0.846l1.153,1.751l2.846,0.704v-0.458l1.133,0.156l-0.104,0.816l0.89,0.154l1.383,0.388l1.95,2.218l2.486,0.185l0.244,2.034l-1.705,1.188l-0.085,1.805l-0.238,1.115l2.461,3.083l0.189,1.049c0,0,0.896,0.244,0.995,0.244c0.109,0,2.009,1.438,2.009,1.438v5.565l0.676,0.199l-0.472,2.566l1.139,1.512l-0.205,2.545l1.498,2.646l1.929,1.682l1.931,0.035l0.193-0.617l-1.417-1.198l0.084-0.598l0.26-0.735l0.054-0.736l-0.97-0.029l-0.497-0.607l0.81-0.775l0.109-0.577l-0.895-0.253l0.049-0.543l1.274-0.188l1.934-0.925l0.652-1.194l2.028-2.606l-0.461-2.024l0.622-1.084l1.864,0.055l1.253-0.985l0.408-3.924l1.394-1.775l0.248-1.134l-1.274-0.408L40.224,45.842z M25.046,26.306h-1.035l0.166-0.704l0.487-0.052l0.109-0.239l0.741-0.102v0.632h0.004L25.046,26.306z M25.761,24.563l-0.488,0.316l-0.611,0.106c0,0,0-0.967,0-1.069h1.099V24.563z M26.686,23.815l0.502,0.306l-0.402,0.331l-0.383-0.331L26.686,23.815z M26.03,24.625h0.08l1.243,0.36v0.638h-1.044l-0.278-0.409L26.03,24.625L26.03,24.625z M25.219,22.877l0.672,0.612l-0.672,0.164V22.877z M22.375,22.979l0.934-0.386h1.284v0.386h0.278v0.674h-1.954l-0.722-0.199L22.375,22.979z M22.195,24.729l0.741-0.811h1.074l-1.377,1.925l-0.572-0.306L22.195,24.729z M21.201,20.145l0.766,0.177l-0.265,1.04l-0.831,0.267l-0.522-1.082L21.201,20.145z M17.346,15.234v-0.061h0.712l0.064-0.246h1.165v0.51l-0.344,0.442h-1.597V15.234z M18.476,16.817c0,0,0.716-0.126,0.771-0.126c0.055,0,0,0.713,0,0.713l-1.603,0.102l-0.302-0.363L18.476,16.817z"/>
+      <!-- EU: GB · FR · DE · IT · PL -->
+      <circle class="dc-dot" cx="55" cy="21" r="0.9" filter="url(#dcglow)"/>
+      <circle class="dc-dot" cx="56" cy="23" r="0.9" filter="url(#dcglow)"/>
+      <circle class="dc-dot" cx="59" cy="21" r="0.9" filter="url(#dcglow)"/>
+      <circle class="dc-dot" cx="59" cy="25" r="0.9" filter="url(#dcglow)"/>
+      <circle class="dc-dot" cx="63" cy="20" r="0.9" filter="url(#dcglow)"/>
+      <text class="dc-lbl" x="58" y="16">EU ×5</text>
+      <!-- IN (Mumbai) -->
+      <circle class="dc-dot" cx="85" cy="38" r="0.9" filter="url(#dcglow)"/>
+      <text class="dc-lbl" x="85" y="35">IN</text>
+      <!-- SG (Singapore) -->
+      <circle class="dc-dot" cx="101" cy="44" r="0.9" filter="url(#dcglow)"/>
+      <text class="dc-lbl" x="101" y="41">SG</text>
+      <!-- AU (Sydney) -->
+      <circle class="dc-dot" cx="118" cy="60" r="0.9" filter="url(#dcglow)"/>
+      <text class="dc-lbl" x="118" y="57">AU</text>
+      <!-- CA (Toronto) -->
+      <circle class="dc-dot" cx="26" cy="26" r="0.9" filter="url(#dcglow)"/>
+      <text class="dc-lbl" x="26" y="23">CA</text>
+      <!-- US West + US East -->
+      <circle class="dc-dot" cx="9" cy="25" r="0.9" filter="url(#dcglow)"/>
+      <circle class="dc-dot" cx="27" cy="29" r="0.9" filter="url(#dcglow)"/>
+      <text class="dc-lbl" x="17" y="33">US ×2</text>
+    
+  <!-- Trade-route arcs between datacenters -->
+  <g class="arcs">
+    <use href="#arc-eu-us" class="arc a1"/>
+    <use href="#arc-eu-sg" class="arc a2"/>
+    <use href="#arc-eu-au" class="arc a3"/>
+    <use href="#arc-eu-in" class="arc a4"/>
+    <use href="#arc-sg-au" class="arc a5"/>
+    <use href="#arc-uw-ue" class="arc a6"/>
+    <use href="#arc-ue-eu" class="arc a7"/>
+  </g>
+  <!-- Soft pulse rings -->
+  <g>
+    <circle cx="55" cy="21" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5"/>
+    <circle cx="101" cy="44" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:.8s"/>
+    <circle cx="9"  cy="25" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:1.6s"/>
+  </g>
+  <!-- Packets traveling along arcs -->
+  <g class="pkts">
+    <circle class="pkt" r=".55"><animateMotion dur="4.6s" repeatCount="indefinite"><mpath href="#arc-eu-sg"/></animateMotion></circle>
+    <circle class="pkt" r=".5"><animateMotion dur="5.2s" begin="-2s" repeatCount="indefinite"><mpath href="#arc-eu-au"/></animateMotion></circle>
+    <circle class="pkt" r=".55"><animateMotion dur="4s" begin="-1.4s" repeatCount="indefinite"><mpath href="#arc-eu-us"/></animateMotion></circle>
+    <circle class="pkt" r=".5"><animateMotion dur="3.4s" begin="-0.5s" repeatCount="indefinite"><mpath href="#arc-eu-in"/></animateMotion></circle>
+    <circle class="pkt" r=".45"><animateMotion dur="3.2s" begin="-2.8s" repeatCount="indefinite"><mpath href="#arc-sg-au"/></animateMotion></circle>
+    <circle class="pkt" r=".5"><animateMotion dur="2.4s" begin="-1s" repeatCount="indefinite"><mpath href="#arc-uw-ue"/></animateMotion></circle>
+  </g>
+  </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     STORY 06 — Support
+     ═══════════════════════════════════ -->
+<section class="story story-flip" data-screen-label="08 Support">
+  <div class="story-inner row align-items-center">
+    <div class="story-text col">
+      <div class="story-num reveal"><span class="step">06</span> &nbsp;/&nbsp; поддержка</div>
+      <div class="story-tag reveal d-1">24/7 · живые инженеры</div>
+      <h2 class="story-title reveal d-2">
+        <em>Никаких</em> ботов. Только&nbsp;инженеры.
+      </h2>
+      <p class="story-desc reveal d-3">
+        Живые специалисты в&nbsp;чате, e‑mail и&nbsp;Telegram.
+        Среднее время первого ответа&nbsp;— меньше&nbsp;5&nbsp;минут,
+        даже в&nbsp;3&nbsp;часа ночи.
+      </p>
+      <ul class="story-list reveal d-4">
+        <li>Среднее время первого ответа &lt;&nbsp;5&nbsp;минут</li>
+        <li>Telegram‑канал со&nbsp;статусом всех локаций</li>
+        <li>Документация и&nbsp;примеры для&nbsp;Terraform&nbsp;/&nbsp;Ansible</li>
+      </ul>
+    </div>
+
+    <div class="story-visual flush col d-none d-lg-block reveal d-2">
       <div class="chat-mock">
         <div class="chat-mock-header">
-          <span class="dot dot-green"></span>Поддержка FastCloud<span class="ml-auto fs-11 c-text3">сейчас онлайн</span>
+          <span class="dot dot-lime"></span>Поддержка FastCloud
+          <span class="ml-auto fs-11 c-text3">сейчас онлайн</span>
         </div>
         <div class="chat-mock-body">
-          <div class="chat-bubble chat-bubble-user">Сервер не отвечает на запросы</div>
-          <div class="chat-bubble chat-bubble-agent">Добрый день! Уже проверяю — вижу аномальный трафик, DDoS-фильтрация активирована.</div>
-          <div class="chat-bubble chat-bubble-agent">✓ Защита включена. Сервер работает в штатном режиме.</div>
-          <div class="chat-time">03:21</div>
+          <div class="chat-bubble chat-bubble-user">Сервер не&nbsp;отвечает на&nbsp;запросы</div>
+          <div class="chat-bubble chat-bubble-agent">
+            Добрый день! Уже&nbsp;проверяю&nbsp;— вижу аномальный
+            трафик, DDoS‑фильтрация активирована.
+          </div>
+          <div class="chat-typing"><span></span><span></span><span></span></div>
+          <div class="chat-bubble chat-bubble-agent">
+            ✓&nbsp;Защита включена. Сервер работает в&nbsp;штатном режиме.
+            Хотите, я&nbsp;настрою rate‑limit на&nbsp;Nginx?
+          </div>
+        </div>
+        <div class="chat-time">03:21 · ответ за&nbsp;1&nbsp;минуту&nbsp;48&nbsp;секунд</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     STORY 07 — Apps
+     ═══════════════════════════════════ -->
+<section class="story" data-screen-label="09 Apps">
+  <div class="story-inner row align-items-center">
+    <div class="story-text col">
+      <div class="story-num reveal"><span class="step">07</span> &nbsp;/&nbsp; маркетплейс</div>
+      <div class="story-tag reveal d-1">50+ приложений в 1 клик</div>
+      <h2 class="story-title reveal d-2">
+        WordPress. Docker. n8n.<br><em>Один</em> клик.
+      </h2>
+      <p class="story-desc reveal d-3">
+        Снижает барьер входа для&nbsp;нетехнических клиентов
+        и&nbsp;экономит время инженерам. Готовые образы
+        с&nbsp;предустановленным TLS, fail2ban и&nbsp;cron‑бэкапом.
+      </p>
+      <ul class="story-list reveal d-4">
+        <li>CMS&nbsp;— WordPress, Ghost, Strapi</li>
+        <li>DevOps&nbsp;— Docker, GitLab, Portainer, K3s</li>
+        <li>Автоматизация&nbsp;— n8n, NocoDB, Appsmith</li>
+      </ul>
+    </div>
+
+    <div class="story-visual col d-none d-lg-block reveal d-2 app-mp-wrap">
+      <div class="app-mp-bar">
+        <div class="app-mp-search">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <span>Поиск среди 50+&nbsp;приложений…</span>
+          <kbd>⌘&nbsp;K</kbd>
+        </div>
+        <div class="app-mp-chips">
+          <span class="app-mp-chip on">все</span>
+          <span class="app-mp-chip">cms</span>
+          <span class="app-mp-chip">devops</span>
+          <span class="app-mp-chip">auto</span>
+        </div>
+      </div>
+      <div class="app-mp-grid">
+        <div class="app-mp-card hot">
+          <div class="app-icon-feat app-wp">WP</div>
+          <div class="app-mp-name">WordPress</div>
+          <div class="app-mp-meta"><span class="app-mp-tag">blog</span><span class="app-mp-time">⚡&nbsp;38&nbsp;c</span></div>
+          <span class="app-mp-pop">★</span>
+        </div>
+        <div class="app-mp-card">
+          <div class="app-icon-feat app-docker">DO</div>
+          <div class="app-mp-name">Docker</div>
+          <div class="app-mp-meta"><span class="app-mp-tag">container</span><span class="app-mp-time">⚡&nbsp;42&nbsp;c</span></div>
+        </div>
+        <div class="app-mp-card">
+          <div class="app-icon-feat app-gitlab">GL</div>
+          <div class="app-mp-name">GitLab</div>
+          <div class="app-mp-meta"><span class="app-mp-tag">git</span><span class="app-mp-time">⚡&nbsp;55&nbsp;c</span></div>
+        </div>
+        <div class="app-mp-card">
+          <div class="app-icon-feat app-n8n">n8</div>
+          <div class="app-mp-name">n8n</div>
+          <div class="app-mp-meta"><span class="app-mp-tag">auto</span><span class="app-mp-time">⚡&nbsp;36&nbsp;c</span></div>
+        </div>
+        <div class="app-mp-card">
+          <div class="app-icon-feat app-portainer">PT</div>
+          <div class="app-mp-name">Portainer</div>
+          <div class="app-mp-meta"><span class="app-mp-tag">ops</span><span class="app-mp-time">⚡&nbsp;30&nbsp;c</span></div>
+        </div>
+        <div class="app-mp-card">
+          <div class="app-icon-feat app-ghost">GH</div>
+          <div class="app-mp-name">Ghost</div>
+          <div class="app-mp-meta"><span class="app-mp-tag">blog</span><span class="app-mp-time">⚡&nbsp;44&nbsp;c</span></div>
+        </div>
+        <div class="app-mp-card">
+          <div class="app-icon-feat app-nginx">NX</div>
+          <div class="app-mp-name">Nginx</div>
+          <div class="app-mp-meta"><span class="app-mp-tag">proxy</span><span class="app-mp-time">⚡&nbsp;28&nbsp;c</span></div>
+        </div>
+        <div class="app-mp-card app-mp-more">
+          <div class="app-icon-feat app-more">+43</div>
+          <div class="app-mp-name">ещё</div>
+          <div class="app-mp-meta"><span class="app-mp-tag">в маркетплейсе</span></div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ═══ UTP 4: Fixed Price ═══ -->
-<div class="feat-section">
-  <div class="feat-row feat-row-rev">
-    <div class="feat-row-text">
-      <div class="feat-row-tag">Ценообразование</div>
-      <h2 class="feat-row-title">Цена не меняется при продлении</h2>
-      <p class="feat-row-desc">Hostinger показывает $4,99, но при продлении выставляет $11,99. FastCloud гарантирует фиксированную цену — никаких сюрпризов.</p>
-      <ul class="feat-row-list">
-        <li>Цена при старте = цена при продлении</li>
-        <li>Нет скрытых комиссий и setup fee</li>
-        <li>Почасовой биллинг без штрафов</li>
-      </ul>
+<!-- ═══════════════════════════════════
+     PLANS
+     ═══════════════════════════════════ -->
+<section class="plans" data-screen-label="10 Plans">
+  <div class="plans-inner">
+    <div class="plans-head">
+      <h2 class="plans-title reveal">
+        Тарифы <em>от&nbsp;€4</em><br>до&nbsp;корпоративных.
+      </h2>
+      <a href="pricing.html" class="plans-link reveal d-1">все тарифы</a>
     </div>
-    <div class="feat-row-visual">
-      <div class="price-cmp">
-        <div class="price-cmp-head"><span>Провайдер</span><span>Старт</span><span>Продление</span></div>
-        <div class="price-cmp-row"><span>Hostinger</span><span>$4,99</span><span class="c-red">$11,99 ↑</span></div>
-        <div class="price-cmp-row"><span>DigitalOcean</span><span>$6,00</span><span class="c-red">$12,00 ↑</span></div>
-        <div class="price-cmp-row"><span>Contabo</span><span>$4,50</span><span class="c-red">+€4,99 fee</span></div>
-        <div class="price-cmp-row"><span class="fw-7">FastCloud</span><span class="c-green fw-7">$9,00</span><span class="c-green fw-7">$9,00 ✓</span></div>
+
+    <div class="plans-controls reveal d-2">
+      <div class="billing-toggle" id="planBilling">
+        <button class="billing-toggle-btn on" data-b="m">1&nbsp;мес</button>
+        <button class="billing-toggle-btn" data-b="q">3&nbsp;мес<span class="billing-toggle-badge">−5%</span></button>
+        <button class="billing-toggle-btn" data-b="h">6&nbsp;мес<span class="billing-toggle-badge">−10%</span></button>
+        <button class="billing-toggle-btn" data-b="y">12&nbsp;мес<span class="billing-toggle-badge">−15%</span></button>
       </div>
+      <div class="plans-hint"><span class="plans-hint-dot"></span>Фиксированная цена при&nbsp;продлении · смена тарифа в&nbsp;1&nbsp;клик</div>
     </div>
-  </div>
-</div>
 
-<!-- ═══ UTP 5: Backups ═══ -->
-<div class="feat-section">
-  <div class="feat-row">
-    <div class="feat-row-text">
-      <div class="feat-row-tag">Бэкапы</div>
-      <h2 class="feat-row-title">Ежедневные бэкапы включены</h2>
-      <p class="feat-row-desc">У Hetzner, Contabo и IONOS бэкапы — платная опция. FastCloud включает ежедневные снэпшоты с хранением 14 дней во всех тарифах.</p>
-      <ul class="feat-row-list">
-        <li>Автоматически каждую ночь в 03:00</li>
-        <li>Хранение 14 снэпшотов включено</li>
-        <li>Восстановление в 1 клик</li>
-      </ul>
-    </div>
-    <div class="feat-row-visual">
-      <div class="backup-list">
-        <div class="backup-list-header">Автобэкапы · 14 дней хранения</div>
-        <div class="backup-item"><span class="backup-dot"></span><span class="backup-date">Сегодня, 03:00</span><span class="backup-size">2,4 ГБ</span><span class="chip green chip-xs ml-auto">✓</span></div>
-        <div class="backup-item"><span class="backup-dot"></span><span class="backup-date">Вчера, 03:00</span><span class="backup-size">2,3 ГБ</span><span class="chip green chip-xs ml-auto">✓</span></div>
-        <div class="backup-item"><span class="backup-dot"></span><span class="backup-date">21 мая, 03:00</span><span class="backup-size">2,3 ГБ</span><span class="chip green chip-xs ml-auto">✓</span></div>
-        <div class="backup-item"><span class="backup-dot"></span><span class="backup-date">20 мая, 03:00</span><span class="backup-size">2,2 ГБ</span><span class="chip green chip-xs ml-auto">✓</span></div>
-        <div class="backup-item backup-item-faded"><span class="backup-dot backup-dot-dim"></span><span class="backup-date">+ ещё 10 снэпшотов</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ UTP 6: Locations ═══ -->
-<div class="feat-section">
-  <div class="feat-row feat-row-rev">
-    <div class="feat-row-text">
-      <div class="feat-row-tag">Локации</div>
-      <h2 class="feat-row-title">10 локаций по всему миру</h2>
-      <p class="feat-row-desc">Европа, Северная Америка, Азия и Австралия — выбирайте ближайший регион для минимальной задержки.</p>
-      <ul class="feat-row-list">
-        <li>Европа: FR, DE, IT, PL, GB</li>
-        <li>Северная Америка: US East, US West, CA</li>
-        <li>Asia Pacific: SG, IN, AU</li>
-      </ul>
-    </div>
-    <div class="feat-row-visual feat-row-visual-map">
-      <svg class="world-map-svg" viewBox="0 8 125.762 72" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="dcglow" x="-100%" y="-100%" width="300%" height="300%">
-            <feGaussianBlur stdDeviation="1.2" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <style>
-          .land { fill: rgba(108,143,255,.13); stroke: rgba(108,143,255,.3); stroke-width: .28; stroke-linejoin: round; stroke-linecap: round; }
-          .dc-dot { fill: #6c8fff; }
-          .dc-lbl { font-size: 3.4px; font-family: system-ui,sans-serif; fill: #b8ccff; font-weight: 700; text-anchor: middle; }
-        </style>
-
-        <!-- Continent paths from SVGRepo world map (viewBox 0 0 125.762 125.762) -->
-        <polygon class="land" points="52.688,20.209 52.762,20.738 51.982,20.898 51.867,22.017 52.822,22.017 54.081,21.9 54.732,21.127 54.035,20.856 53.653,20.423 53.08,19.513 52.822,18.202 51.748,18.421 51.449,18.882 51.449,19.393 51.962,19.756"/>
-        <polygon class="land" points="51.787,20.641 51.838,19.937 51.221,19.67 50.34,19.868 49.689,20.908 49.689,21.589 50.45,21.589"/>
-        <path class="land" d="M33.574,24.122h-0.929v0.485h0.223c0,0,0.016,0.1,0.03,0.234l0.578-0.052l0.343-0.214l0.104-0.452l0.457-0.035l0.184-0.382l-0.428-0.092l-0.362,0.01L33.574,24.122z"/>
-        <polygon class="land" points="31.327,24.971 32.012,24.914 32.068,24.441 31.66,24.122 31.366,24.504"/>
-        <polygon class="land" points="102.764,47.568 100.77,47.628 100.691,46.543 101.014,46.683 101.795,46.592 101.715,45.598 99.548,45.624 98.961,44.842 98.988,44.424 96.205,41.918 95.508,42.46 99.502,47.33 100.064,47.518 100.064,47.781 99.312,47.781 99.502,48.388 104.391,48.602"/>
-        <polygon class="land" points="106.244,42.136 105.906,41.998 105.748,41.161 105.256,41.161 104.943,42.002 104.57,42.336 101.74,43.877 101.74,45.395 102.681,46.643 105.062,46.643 105.371,45.867 105.906,45.379 105.906,45.022 106.244,44.808"/>
-        <polygon class="land" points="108.006,44.808 106.574,45.36 106.604,45.678 106.244,45.678 106.244,47.657 106.967,47.657 106.867,46.395 107.43,46.604 107.43,47.488 108.025,47.448"/>
-        <polygon class="land" points="120.057,56.79 119.664,55.192 118.208,53.943 118.092,51.562 117.138,49.916 116.273,49.87 115.915,52.859 114.273,52.74 113.796,52.457 113.751,51.278 114.615,51.458 115.357,50.736 113.781,49.786 111.941,49.786 110.613,51.676 110.08,51.676 110.08,51.08 108.479,51.193 105.966,54.053 104.63,54.083 103.143,55.097 103.048,59.544 102.143,60.409 102.143,61.19 106.48,59.703 109.98,59.563 111.279,62.423 115.264,62.558 119.104,58.947"/>
-        <polygon class="land" points="111.806,64.626 113.214,64.772 114.348,64.149 114.378,63.289 113.129,63.155"/>
-        <polygon class="land" points="125.359,60.722 124.773,60.837 124.756,59.514 123.677,59.583 123.533,61.653 122.589,62.299 120.833,62.538 118.018,64.542 117.546,64.935 117.546,65.601 119.007,65.382 122.585,63.194 123.588,62.528 124.667,62.05 125.762,61.434"/>
-        <polygon class="land" points="114.293,45.946 113.383,45.976 113.458,45.026 112.588,44.514 111.363,45.748 112.189,46.762 113.975,47.021 114.969,47.543 114.999,48.03 114.343,48.03 114.378,49.034 116.535,48.896 117.32,48.055 118.172,47.976 118.172,49.518 119.629,49.518 119.629,48.896 118.887,48.896 118.764,47.021 115.264,45.433"/>
-        <polygon class="land" points="88.322,41.456 88.665,42.376 89.895,41.918 90.018,40.646 89.038,40.457"/>
-        <polygon class="land" points="73.869,52.173 72.193,51.955 72.193,53.257 72.795,53.953 72.337,54.659 71.656,55.441 71.656,56.878 72.586,57.773 73.422,56.425 75.068,54.013 75.854,50.223 74.854,50.223"/>
-        <polygon class="land" points="108.363,48.174 107.807,48.174 107.807,48.468 108.234,48.602"/>
-        <rect class="land" x="105.256" y="48.602" width="0.657" height="0.358"/>
-        <polygon class="land" points="106.843,48.96 107.246,48.96 107.246,48.646 107.545,48.602 107.545,48.294 106.896,48.294 106.629,48.602 106.244,48.96 106.244,49.273 106.843,49.218"/>
-        <polygon class="land" points="108.509,49.25 109.16,49.25 109.16,48.911 109.609,48.96 109.549,48.388 108.812,48.503 108.742,48.872 107.918,48.96 107.877,48.96 107.877,49.527 108.509,49.527"/>
-        <!-- Eurasia + Europe (main landmass) -->
-        <path class="land" d="M96.701,41.202l3.854,3.7l0.204-0.657l-3.133-4.456l0.329-1.303l1.651,1.875l0.92,0.094l1.213-0.806l-0.199-1.214l-2.01-1.608l-0.078-1.462l0.57-0.769l1.006,0.321l-0.075,0.687l0.577,0.892l0.513-0.368l-0.284-1.054l2.84-1.018l1.244-1.039l-0.193-1.88l-2.467-2.596l-0.046-2.114h1.095l3.412,2.596l0.965-0.253l-0.646-0.836l-1.824-1.111l0.114-1.654l2.164,0.005l0.175-2.047l-0.826-1.079l0.492-0.532l1.049,1.059l0.344-0.448l-1.367-1.541l-3.344-0.403l-0.447-0.895l0.97-1.383l0.767,0.576l2.316,0.2l2.915-1.947l0.487,0.606l-0.651,1.019v1.007l2.681,2.191l0.85-0.443l-0.317-1.462l-1.91-1.783l2.517-0.169v-0.726l1.209-0.246l-0.926-0.642l0.035-0.493L118,16.004l0.488-0.411l-3.457-1.457l-12.572-0.646l-1.17-0.597l-1.875-0.286l-1.396-0.045l-1.277,1.289l-0.533-0.041l-1.696-1.258h-4.993l-2.312-1.384l-4.635,0.291l-3.513,1.584l0.021,1.822l-1.088,0.327l-0.244-1.829l-0.409-0.631l-1.209-0.302l-0.283,1.095l0.354,0.898l-4.328-0.286l-2.059,0.952l-0.313-0.902l-0.522,0.134l-0.378,1.002l-1.079,0.846l-2.636-0.072l-0.124-0.584l2.766-0.117l0.562-0.485l-3.327-1.547l-4.054,0.122l-2.269,1.161l-0.856,1.524l-1.512,0.586l-0.631,0.692l0.145,0.8l0.78,0.107l0.472,1.171l1.323-0.54l0.234,1.562h-0.418l-1.088-0.162l-1.214,0.204l-1.174,1.659l-1.691,0.271l-0.238,1.438l0.717,0.167l-0.205,0.928L51.4,24.723l-1.531,0.331l-0.32,0.855l0.26,1.793l0.909,0.422l1.502-0.005l1.025-0.097l0.314-0.815l1.59-2.062l1.05,0.213l1.03-0.933l0.193,0.729l2.538,1.716l-0.314,0.417l-1.144-0.067l0.433,0.626l0.711,0.155l0.825-0.343l-0.014-0.997l0.373-0.185l-0.304-0.315l-1.696-0.943l-0.437-1.261h1.402l0.448,0.443l1.219,1.05l0.043,1.268l1.263,1.338l0.468-1.833l0.871-0.48l0.162,1.502l0.852,0.937l2.564-0.039l0.762,0.564v1.346l-0.936,0.85H64.91l-1.581-1.182l-1.661,0.167v1.014h-0.533l-0.566-0.408l-2.88-0.734v-1.863l-3.66,0.284l-1.135,0.607h-1.442l-0.715-0.071l-1.76,0.979v1.837l-3.601,2.604l0.303,1.104h0.726l-0.184,1.055l-0.512,0.194l-0.03,2.76l3.104,3.541h1.353l0.094-0.218h2.426l0.708-0.646h1.377l0.761,0.76l2.055,0.209l-0.269,2.741l2.282,4.033l-1.204,2.298l0.085,1.079l0.955,0.945v2.606l1.238,1.671v2.168h3.68l2.765-2.835l0.866-1.546l1.109-0.244V54.52l0.729-0.866l1.538-2.119l-0.32-3.213l-0.676-1.193l3.035-2.904l3.337-4.78l-0.638-0.303l-3.477,0.731l-0.9-0.443l-3.649-6.883l0.253-0.299l3.626,4.395l0.089,1.359l0.826,0.841l1.721-0.109l3.545-2.576l1.125-0.727l-0.019-0.898l-1.188-0.146c0,0-4.174-1.968-4.174-2.055c0-0.09,0.025-1.686,0.025-1.686h0.925l0.134,1.164l1.93,1.114l2.213,0.106l4.781,0.784l1.127,0.709v1.094l-0.145,1.494l2.463,4.034l0.78,0.184l0.796-1.149l0.434-3.267l0.82-1.759l1.316-0.494l2.322,0.224l2.93,2.599v3.72H96.701z M63.031,15.514l-1.6,0.987v0.646l0.904,0.423l0.07,0.878l-1.294,1.914l-2.238-0.022l-0.139-0.458l1.398-0.714l0.015-2.648l2.368-1.66h0.518v0.654H63.031z M68,26.799v-0.005l-2.107-0.091l-0.628,0.091v-1.435l0.474-0.534l0.506-0.16l1.125-0.127l0.238-0.383l0.461,0.227l0.061,1.313l1.229,0.505l0.104,0.6L68,26.799L68,26.799z M76.092,27.824h-0.005l-0.373,0.35l-0.853-0.064l-0.162-0.256l-1.338-0.103l0.094-0.427l0.717-0.61v-0.515l-1.363-0.985l-0.06-1.261l0.278-0.617l1.099-0.102l0.931,0.391l0.045,0.651l-1.332-0.074l-0.064,0.601l1.66,1.104v0.815l0.726,0.522L76.092,27.824L76.092,27.824z"/>
-        <!-- Americas -->
-        <path class="land" d="M40.224,45.842l-2.869-0.025l-2.274-0.865l-0.109-1.621l-0.76-1.329l-2.044-0.024l-1.194-1.871L29.919,39.6l-0.054,0.558l-1.92,0.119l-0.706-0.979L25.23,38.89l-1.652,1.905l-2.59-0.438l-0.189-2.929l-1.9-0.326l0.762-1.43l-0.22-0.826l-2.481,1.667l-1.567-0.189l-0.567-1.229l0.349-1.268l0.865-1.587l1.984-1.01h3.845l-0.01,1.171l1.383,0.637l-0.114-2.002l0.995-0.997l2.009-1.32l0.128-0.926l2.011-2.084l2.133-1.176l-0.191-0.151l1.437-1.361l0.533,0.137l0.244,0.306l0.546-0.611l0.125-0.063l-0.591-0.08L31.9,22.507v-0.593l0.318-0.263h0.716l0.329,0.142l0.278,0.564l0.343-0.05v-0.034l0.104,0.029l0.995-0.159l0.138-0.487l0.557,0.142v0.525l-0.521,0.368l0.079,0.584l1.811,0.555c0,0,0.005,0.01,0.005,0.02l0.413-0.035l0.03-0.779l-1.432-0.651l-0.085-0.383l1.189-0.408l0.049-1.131l-1.239-0.759l-0.08-1.914l-1.715,0.836h-0.621l0.163-1.46l-2.308-0.552l-0.964,0.723v2.221l-1.727,0.54l-0.696,1.447l-0.746,0.117v-1.845l-1.622-0.229l-0.81-0.524l-0.329-1.191l2.903-1.701l1.418-0.433l0.139,0.953l0.796-0.04l0.064-0.48l0.826-0.117l0.009-0.162l-0.348-0.154l-0.085-0.504l1.015-0.088l0.612-0.641l0.044-0.045v0.005l0.184-0.194l2.149-0.269l0.939,0.803l-2.486,1.321l3.158,0.743l0.404-1.06h1.387l0.481-0.917l-0.968-0.245v-1.161l-3.059-1.355L32,12.376l-1.199,0.622l0.09,1.518l-1.24-0.194l-0.189-0.835l1.18-1.084l-2.154-0.107l-0.628,0.182l-0.274,0.733l0.817,0.14l-0.165,0.813l-1.377,0.083l-0.214,0.534l-2.014,0.057c0,0-0.045-1.136-0.125-1.136c-0.085,0,1.567-0.024,1.567-0.024l1.193-1.167l-0.651-0.329l-0.865,0.845l-1.438-0.079l-0.86-1.193h-1.841l-1.923,1.437h1.76l0.163,0.514l-0.462,0.433l1.95,0.058l0.298,0.701l-2.193-0.088l-0.109-0.539L19.72,13.97l-0.731-0.4L15.74,13.6l-0.999,0.972l-0.681-0.058l-0.757-0.438l-2.243-0.672H6.947l-2.378,1.619l-1.597,0.247l-0.73,0.569l1.134,0.167v0.455H0.949L0,17.137l1.212,1.03l3.327,0.029l0.463-0.495h2.78l1.004,0.893l-0.06,1.385l0.847,0.783l-0.706,0.505l0.159,1.822l-2.511,3.057v2.867l1.347,0.652v2.573l1.31,2.213l1.043,0.159l0.135-0.758l-1.233-1.915l-0.244-1.865h0.731l0.313,1.92l1.8,2.623l-0.482,0.846l1.153,1.751l2.846,0.704v-0.458l1.133,0.156l-0.104,0.816l0.89,0.154l1.383,0.388l1.95,2.218l2.486,0.185l0.244,2.034l-1.705,1.188l-0.085,1.805l-0.238,1.115l2.461,3.083l0.189,1.049c0,0,0.896,0.244,0.995,0.244c0.109,0,2.009,1.438,2.009,1.438v5.565l0.676,0.199l-0.472,2.566l1.139,1.512l-0.205,2.545l1.498,2.646l1.929,1.682l1.931,0.035l0.193-0.617l-1.417-1.198l0.084-0.598l0.26-0.735l0.054-0.736l-0.97-0.029l-0.497-0.607l0.81-0.775l0.109-0.577l-0.895-0.253l0.049-0.543l1.274-0.188l1.934-0.925l0.652-1.194l2.028-2.606l-0.461-2.024l0.622-1.084l1.864,0.055l1.253-0.985l0.408-3.924l1.394-1.775l0.248-1.134l-1.274-0.408L40.224,45.842z M25.046,26.306h-1.035l0.166-0.704l0.487-0.052l0.109-0.239l0.741-0.102v0.632h0.004L25.046,26.306z M25.761,24.563l-0.488,0.316l-0.611,0.106c0,0,0-0.967,0-1.069h1.099V24.563z M26.686,23.815l0.502,0.306l-0.402,0.331l-0.383-0.331L26.686,23.815z M26.03,24.625h0.08l1.243,0.36v0.638h-1.044l-0.278-0.409L26.03,24.625L26.03,24.625z M25.219,22.877l0.672,0.612l-0.672,0.164V22.877z M22.375,22.979l0.934-0.386h1.284v0.386h0.278v0.674h-1.954l-0.722-0.199L22.375,22.979z M22.195,24.729l0.741-0.811h1.074l-1.377,1.925l-0.572-0.306L22.195,24.729z M21.201,20.145l0.766,0.177l-0.265,1.04l-0.831,0.267l-0.522-1.082L21.201,20.145z M17.346,15.234v-0.061h0.712l0.064-0.246h1.165v0.51l-0.344,0.442h-1.597V15.234z M18.476,16.817c0,0,0.716-0.126,0.771-0.126c0.055,0,0,0.713,0,0.713l-1.603,0.102l-0.302-0.363L18.476,16.817z"/>
-
-        <!-- ── Datacenter dots ── -->
-        <!-- EU: GB · FR · DE · IT · PL -->
-        <circle class="dc-dot" cx="55" cy="21" r="0.9" filter="url(#dcglow)"/>
-        <circle class="dc-dot" cx="56" cy="23" r="0.9" filter="url(#dcglow)"/>
-        <circle class="dc-dot" cx="59" cy="21" r="0.9" filter="url(#dcglow)"/>
-        <circle class="dc-dot" cx="59" cy="25" r="0.9" filter="url(#dcglow)"/>
-        <circle class="dc-dot" cx="63" cy="20" r="0.9" filter="url(#dcglow)"/>
-        <text class="dc-lbl" x="58" y="16">EU ×5</text>
-        <!-- IN (Mumbai) -->
-        <circle class="dc-dot" cx="85" cy="38" r="0.9" filter="url(#dcglow)"/>
-        <text class="dc-lbl" x="85" y="35">IN</text>
-        <!-- SG (Singapore) -->
-        <circle class="dc-dot" cx="101" cy="44" r="0.9" filter="url(#dcglow)"/>
-        <text class="dc-lbl" x="101" y="41">SG</text>
-        <!-- AU (Sydney) -->
-        <circle class="dc-dot" cx="118" cy="60" r="0.9" filter="url(#dcglow)"/>
-        <text class="dc-lbl" x="118" y="57">AU</text>
-        <!-- CA (Toronto) -->
-        <circle class="dc-dot" cx="26" cy="26" r="0.9" filter="url(#dcglow)"/>
-        <text class="dc-lbl" x="26" y="23">CA</text>
-        <!-- US West + US East -->
-        <circle class="dc-dot" cx="9" cy="25" r="0.9" filter="url(#dcglow)"/>
-        <circle class="dc-dot" cx="27" cy="29" r="0.9" filter="url(#dcglow)"/>
-        <text class="dc-lbl" x="17" y="33">US ×2</text>
-      </svg>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ UTP 7: Apps ═══ -->
-<div class="feat-section">
-  <div class="feat-row">
-    <div class="feat-row-text">
-      <div class="feat-row-tag">Маркетплейс</div>
-      <h2 class="feat-row-title">50+ приложений в 1 клик</h2>
-      <p class="feat-row-desc">WordPress, Docker, n8n, GitLab, VPN — как у Hostinger, но доступно всем, включая СНГ-аудиторию. Снижает барьер входа для нетехнических клиентов.</p>
-      <ul class="feat-row-list">
-        <li>CMS: WordPress, Ghost, Strapi</li>
-        <li>DevOps: Docker, GitLab, Portainer</li>
-        <li>Автоматизация: n8n, Zapier, Make</li>
-      </ul>
-    </div>
-    <div class="feat-row-visual">
-      <div class="app-grid-feat">
-        <div class="app-item-feat"><div class="app-icon-feat app-wp">WP</div>WordPress</div>
-        <div class="app-item-feat"><div class="app-icon-feat app-docker">DO</div>Docker</div>
-        <div class="app-item-feat"><div class="app-icon-feat app-gitlab">GL</div>GitLab</div>
-        <div class="app-item-feat"><div class="app-icon-feat app-n8n">n8</div>n8n</div>
-        <div class="app-item-feat"><div class="app-icon-feat app-portainer">PT</div>Portainer</div>
-        <div class="app-item-feat"><div class="app-icon-feat app-ghost">GH</div>Ghost</div>
-        <div class="app-item-feat"><div class="app-icon-feat app-nginx">NX</div>Nginx</div>
-        <div class="app-item-feat"><div class="app-icon-feat app-more">+42</div>ещё</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ═══ PLANS ═══ -->
-<div class="feat-section feat-section-plans">
-  <div class="feat-row feat-row-stack">
-    <div class="flex items-center w-100">
-      <div class="section-title mb-0" data-i18n="plans_title">Популярные тарифы</div>
-      <div class="flex-1"></div>
-      <a href="pricing.html" class="fs-13 c-accent">все тарифы →</a>
-    </div>
-    <div class="grid-4 w-100">
-      <div class="plan-card">
-        <div class="plan-name-row"><div class="plan-name">Starter</div></div>
-        <div class="plan-price"><sup>€</sup>4,00<sub>/мес</sub></div>
-        <div class="plan-specs">1 vCPU · 2 GB · 30 GB NVMe</div>
+    <div class="plan-grid row g-3">
+      <!-- Starter -->
+      <div class="col-12 col-sm-6 col-xl-3"><div class="plan-card reveal d-1">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">
+          <span class="plan-price-cur">€</span><span class="plan-price-val" data-m="4,00" data-q="3,80" data-h="3,60" data-y="3,40">4,00</span><span class="plan-price-per">/мес</span>
+        </div>
+        <div class="plan-savings" data-save-m="" data-save-q="экономия €&nbsp;2,40&nbsp;/&nbsp;год" data-save-h="экономия €&nbsp;4,80&nbsp;/&nbsp;год" data-save-y="экономия €&nbsp;7,20&nbsp;/&nbsp;год">&nbsp;</div>
+        <div class="plan-tags"><span>блог</span><span>хобби</span><span>тест</span></div>
+        <div class="plan-stats">
+          <div class="plan-stat"><span class="plan-stat-val">1</span><span class="plan-stat-lbl">vCPU</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">2</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">30</span><span class="plan-stat-lbl">GB&nbsp;NVMe</span></div>
+        </div>
         <div class="plan-check">
-          <span>Anti-DDoS 10 Gbps</span>
-          <span>Бэкапы 14 дней</span>
+          <span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span>
+          <span>Бэкапы 14&nbsp;дней</span>
           <span>Поддержка 24/7</span>
         </div>
-        <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать</a>
-      </div>
-      <div class="plan-card featured">
-        <div class="plan-name-row">
-          <div class="plan-name">Pro</div>
-          <span class="chip green fs-11 chip-xs">★ Популярный</span>
+        <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать →</a>
+      </div></div>
+
+      <!-- Pro -->
+      <div class="col-12 col-sm-6 col-xl-3"><div class="plan-card featured reveal d-2">
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">
+          <span class="plan-price-cur">€</span><span class="plan-price-val" data-m="9,00" data-q="8,55" data-h="8,10" data-y="7,65">9,00</span><span class="plan-price-per">/мес</span>
         </div>
-        <div class="plan-price"><sup>€</sup>9,00<sub>/мес</sub></div>
-        <div class="plan-specs">2 vCPU · 4 GB · 60 GB NVMe</div>
+        <div class="plan-savings" data-save-m="" data-save-q="экономия €&nbsp;5,40&nbsp;/&nbsp;год" data-save-h="экономия €&nbsp;10,80&nbsp;/&nbsp;год" data-save-y="экономия €&nbsp;16,20&nbsp;/&nbsp;год">&nbsp;</div>
+        <div class="plan-tags"><span>API</span><span>лендинг</span><span>SaaS</span></div>
+        <div class="plan-stats">
+          <div class="plan-stat"><span class="plan-stat-val">2</span><span class="plan-stat-lbl">vCPU</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">4</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">60</span><span class="plan-stat-lbl">GB&nbsp;NVMe</span></div>
+        </div>
         <div class="plan-check">
-          <span>Anti-DDoS 10 Gbps</span>
-          <span>Бэкапы 14 дней</span>
+          <span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span>
+          <span>Бэкапы 14&nbsp;дней</span>
           <span>Поддержка 24/7</span>
         </div>
-        <a href="register.html" class="btn btn-primary btn-sm mt-auto">Выбрать</a>
-      </div>
-      <div class="plan-card">
-        <div class="plan-name-row"><div class="plan-name">Business</div></div>
-        <div class="plan-price"><sup>€</sup>18,00<sub>/мес</sub></div>
-        <div class="plan-specs">4 vCPU · 8 GB · 120 GB NVMe</div>
+        <a href="register.html" class="btn btn-primary btn-sm mt-auto">Выбрать →</a>
+      </div></div>
+
+      <!-- Business -->
+      <div class="col-12 col-sm-6 col-xl-3"><div class="plan-card reveal d-3">
+        <div class="plan-name">Business</div>
+        <div class="plan-price">
+          <span class="plan-price-cur">€</span><span class="plan-price-val" data-m="18,00" data-q="17,10" data-h="16,20" data-y="15,30">18,00</span><span class="plan-price-per">/мес</span>
+        </div>
+        <div class="plan-savings" data-save-m="" data-save-q="экономия €&nbsp;10,80&nbsp;/&nbsp;год" data-save-h="экономия €&nbsp;21,60&nbsp;/&nbsp;год" data-save-y="экономия €&nbsp;32,40&nbsp;/&nbsp;год">&nbsp;</div>
+        <div class="plan-tags"><span>магазин</span><span>CI/CD</span><span>прод</span></div>
+        <div class="plan-stats">
+          <div class="plan-stat"><span class="plan-stat-val">4</span><span class="plan-stat-lbl">vCPU</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">8</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">120</span><span class="plan-stat-lbl">GB&nbsp;NVMe</span></div>
+        </div>
         <div class="plan-check">
-          <span>Anti-DDoS 10 Gbps</span>
-          <span>Бэкапы 14 дней</span>
-          <span>Поддержка 24/7</span>
+          <span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span>
+          <span>Бэкапы 14&nbsp;дней</span>
           <span>Выделенный IPv4</span>
-        </div>
-        <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать</a>
-      </div>
-      <div class="plan-card">
-        <div class="plan-name-row"><div class="plan-name">Scale</div></div>
-        <div class="plan-price"><sup>€</sup>35,00<sub>/мес</sub></div>
-        <div class="plan-specs">8 vCPU · 16 GB · 250 GB NVMe</div>
-        <div class="plan-check">
-          <span>Anti-DDoS 10 Gbps</span>
-          <span>Бэкапы 14 дней</span>
           <span>Поддержка 24/7</span>
+        </div>
+        <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать →</a>
+      </div></div>
+
+      <!-- Scale -->
+      <div class="col-12 col-sm-6 col-xl-3"><div class="plan-card reveal d-4">
+        <div class="plan-name">Scale</div>
+        <div class="plan-price">
+          <span class="plan-price-cur">€</span><span class="plan-price-val" data-m="35,00" data-q="33,25" data-h="31,50" data-y="29,75">35,00</span><span class="plan-price-per">/мес</span>
+        </div>
+        <div class="plan-savings" data-save-m="" data-save-q="экономия €&nbsp;21,00&nbsp;/&nbsp;год" data-save-h="экономия €&nbsp;42,00&nbsp;/&nbsp;год" data-save-y="экономия €&nbsp;63,00&nbsp;/&nbsp;год">&nbsp;</div>
+        <div class="plan-tags"><span>highload</span><span>БД</span><span>k8s</span></div>
+        <div class="plan-stats">
+          <div class="plan-stat"><span class="plan-stat-val">8</span><span class="plan-stat-lbl">vCPU</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">16</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">250</span><span class="plan-stat-lbl">GB&nbsp;NVMe</span></div>
+        </div>
+        <div class="plan-check">
+          <span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span>
+          <span>Бэкапы 14&nbsp;дней</span>
           <span>Выделенный IPv4</span>
+          <span>Поддержка 24/7</span>
         </div>
-        <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать</a>
+        <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать →</a>
+      </div></div>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    const root = document.querySelector('[data-screen-label="10 Plans"]');
+    if (!root) return;
+    const btns = root.querySelectorAll('.billing-toggle-btn');
+    const vals = root.querySelectorAll('.plan-price-val');
+    const saves = root.querySelectorAll('.plan-savings');
+    btns.forEach(b => b.addEventListener('click', () => {
+      const cur = b.dataset.b;
+      btns.forEach(x => x.classList.toggle('on', x === b));
+      vals.forEach(v => { v.textContent = v.dataset[cur] || v.textContent; });
+      saves.forEach(s => { s.innerHTML = s.dataset['save' + cur.toUpperCase()] || '&nbsp;'; });
+    }));
+  })();
+  </script>
+</section>
+
+<!-- ═══════════════════════════════════
+     TRUST · marquee
+     ═══════════════════════════════════ -->
+<section class="trust-section" data-screen-label="11 Trust">
+  <div class="trust-head">
+    <div class="trust-eyebrow reveal">★ ★ ★ ★ ★ — 4,9 / 5 · 1 240 отзывов</div>
+    <h2 class="trust-title reveal d-1">Нам&nbsp;доверяют <em>разработчики.</em></h2>
+  </div>
+
+  <div class="trust-marquee-wrap">
+    <div class="trust-marquee">
+      <!-- pass 1 -->
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«Брал под Postgres. Прям ощутимо быстрее на&nbsp;тяжёлых запросах — не&nbsp;ожидал такой разницы.»</div>
+        <div class="trust-author">— Алексей К. · разработчик</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«Полгода юзаю для&nbsp;CI/CD. Один раз была сеть минут десять, написал в&nbsp;поддержку — ответили быстро, объяснили. Больше проблем не&nbsp;было.»</div>
+        <div class="trust-author">— Михаил Т. · DevOps</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«Не&nbsp;надо ждать верификацию — это прям кайф. Поднял, настроил, задеплоил за&nbsp;вечер.»</div>
+        <div class="trust-author">— Сергей Д. · разработчик</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«Брал со&nbsp;скептицизмом — слишком красивый сайт обычно означает плохой продукт. Но нет. Четыре месяца, всё работает.»</div>
+        <div class="trust-author">— Дмитрий О. · фаундер</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«У&nbsp;старого провайдера третий раз за&nbsp;месяц упал диск — переехал сюда. Тут пока тьфу‑тьфу.»</div>
+        <div class="trust-author">— Владимир С. · сисадмин</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«Нужен был сервер в&nbsp;Сингапуре под азиатский рынок. Пинг из&nbsp;Японии — нормальный. Заодно взял в&nbsp;Амстердаме.»</div>
+        <div class="trust-author">— Роман Л. · full‑stack</div>
+      </div>
+      <!-- pass 2 (duplicate for seamless marquee) -->
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«Брал под Postgres. Прям ощутимо быстрее на&nbsp;тяжёлых запросах — не&nbsp;ожидал такой разницы.»</div>
+        <div class="trust-author">— Алексей К. · разработчик</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«Полгода юзаю для&nbsp;CI/CD. Один раз была сеть минут десять, написал в&nbsp;поддержку — ответили быстро, объяснили. Больше проблем не&nbsp;было.»</div>
+        <div class="trust-author">— Михаил Т. · DevOps</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«Не&nbsp;надо ждать верификацию — это прям кайф. Поднял, настроил, задеплоил за&nbsp;вечер.»</div>
+        <div class="trust-author">— Сергей Д. · разработчик</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«Брал со&nbsp;скептицизмом — слишком красивый сайт обычно означает плохой продукт. Но нет. Четыре месяца, всё работает.»</div>
+        <div class="trust-author">— Дмитрий О. · фаундер</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«У&nbsp;старого провайдера третий раз за&nbsp;месяц упал диск — переехал сюда. Тут пока тьфу‑тьфу.»</div>
+        <div class="trust-author">— Владимир С. · сисадмин</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-stars">★ ★ ★ ★ ★</div>
+        <div class="trust-text">«Нужен был сервер в&nbsp;Сингапуре под азиатский рынок. Пинг из&nbsp;Японии — нормальный. Заодно взял в&nbsp;Амстердаме.»</div>
+        <div class="trust-author">— Роман Л. · full‑stack</div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ═══ TRUST ═══ -->
-<div class="trust-section">
-  <div class="page-wrap-xl">
-    <div class="section-title tac">Нам доверяют разработчики</div>
-    <div class="trust-carousel" id="trustCarousel">
-      <button class="trust-btn trust-prev" id="trustPrev" aria-label="Назад">&#8592;</button>
-      <div class="trust-track-wrap">
-        <div class="trust-track" id="trustTrack">
-
-          <div class="trust-slide">
-            <div class="trust-card">
-              <div class="trust-stars">★★★★★</div>
-              <div class="trust-text">«Брал под Postgres. Прям ощутимо быстрее на тяжёлых запросах — не ожидал такой разницы.»</div>
-              <div class="trust-author">— Алексей К., разработчик</div>
-            </div>
-          </div>
-
-          <div class="trust-slide">
-            <div class="trust-card">
-              <div class="trust-stars">★★★★★</div>
-              <div class="trust-text">«Полгода юзаю для CI/CD. Один раз была сеть минут десять, написал в поддержку — ответили быстро, объяснили что к чему. Больше проблем не было. В целом доволен, продолжаю пользоваться.»</div>
-              <div class="trust-author">— Михаил Т., DevOps</div>
-            </div>
-          </div>
-
-          <div class="trust-slide">
-            <div class="trust-card">
-              <div class="trust-stars">★★★★★</div>
-              <div class="trust-text">«Не надо ждать верификацию — это прям кайф. Поднял, настроил, задеплоил за вечер.»</div>
-              <div class="trust-author">— Сергей Д., разработчик</div>
-            </div>
-          </div>
-
-          <div class="trust-slide">
-            <div class="trust-card">
-              <div class="trust-stars">★★★★★</div>
-              <div class="trust-text">«Брал со скептицизмом — слишком красивый сайт обычно означает плохой продукт 😅 Но нет. Четыре месяца, всё работает, претензий нет.»</div>
-              <div class="trust-author">— Дмитрий О., фаундер</div>
-            </div>
-          </div>
-
-          <div class="trust-slide">
-            <div class="trust-card">
-              <div class="trust-stars">★★★★★</div>
-              <div class="trust-text">«У старого провайдера третий раз за месяц упал диск — переехал сюда. Тут пока тьфу-тьфу.»</div>
-              <div class="trust-author">— Владимир С., сисадмин</div>
-            </div>
-          </div>
-
-          <div class="trust-slide">
-            <div class="trust-card">
-              <div class="trust-stars">★★★★★</div>
-              <div class="trust-text">«Нужен был сервер в Сингапуре под азиатский рынок. Поднял, поставил стек — пинг из Японии вышел нормальный. Заодно взял второй в Амстердаме под EU-трафик, тоже ок. Пока всё устраивает, буду брать ещё под новый проект наверное.»</div>
-              <div class="trust-author">— Роман Л., full-stack</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <button class="trust-btn trust-next" id="trustNext" aria-label="Вперёд">&#8594;</button>
-    </div>
-    <div class="trust-dots" id="trustDots">
-      <button class="trust-dot on"></button>
-      <button class="trust-dot"></button>
-      <button class="trust-dot"></button>
+<!-- ═══════════════════════════════════
+     CTA
+     ═══════════════════════════════════ -->
+<section class="cta-section" data-screen-label="12 CTA">
+  <canvas id="ctaFx" class="cta-fx"></canvas>
+  <div class="cta-inner">
+    <h2 class="cta-title reveal">
+      Ваш&nbsp;сервер<br>уже через <em>55&nbsp;секунд.</em>
+    </h2>
+    <p class="cta-sub reveal d-1">
+      Без верификации, без скрытых платежей. Просто создайте аккаунт&nbsp;—
+      и&nbsp;сразу в&nbsp;работу.
+    </p>
+    <div class="cta-ctas reveal d-2">
+      <a href="register.html" class="btn btn-primary btn-xl">Создать аккаунт →</a>
+      <a href="pricing.html" class="btn btn-outline-hero btn-xl">Тарифы</a>
     </div>
   </div>
-</div>
-<script>
-(function () {
-  var track = document.getElementById('trustTrack');
-  var dots  = document.querySelectorAll('.trust-dot');
-  var n = dots.length, cur = 0, timer;
+</section>
 
-  function go(i) {
-    cur = (i + n) % n;
-    track.style.transform = 'translateX(-' + cur * 100 + '%)';
-    dots.forEach(function (d, j) { d.classList.toggle('on', j === cur); });
-  }
-  function start() { timer = setInterval(function () { go(cur + 1); }, 4500); }
-  function stop()  { clearInterval(timer); }
-
-  document.getElementById('trustPrev').addEventListener('click', function () { stop(); go(cur - 1); start(); });
-  document.getElementById('trustNext').addEventListener('click', function () { stop(); go(cur + 1); start(); });
-  dots.forEach(function (d, j) { d.addEventListener('click', function () { stop(); go(j); start(); }); });
-
-  var wrap = document.querySelector('.trust-track-wrap');
-  wrap.addEventListener('mouseenter', stop);
-  wrap.addEventListener('mouseleave', start);
-
-  start();
-})();
-</script>
-
-<!-- ═══ CTA ═══ -->
-<div class="cta-section">
-  <div class="cta-title">Ваш сервер готов через 55 секунд</div>
-  <div class="cta-sub">Без верификации, без скрытых платежей. Просто создайте аккаунт — и сразу в работу.</div>
-  <a href="register.html" class="btn btn-lg btn-white mt-8">Создать аккаунт бесплатно →</a>
-</div>
-
+<!-- ═══════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════ -->
 <footer class="mkt-footer">
   <div class="mkt-footer-inner">
-    <div class="mkt-footer-brand">
-      <a href="index.html" class="logo"><div class="logo-mark">FC</div>FastCloud</a>
-      <div class="mkt-footer-brand-desc">Надёжные VPS в 10 локациях по всему миру. NVMe Gen4 · Anti-DDoS · SLA 99,99%.</div>
-    </div>
-    <div class="mkt-footer-cols">
-      <div class="mkt-footer-col">
+    <div class="mkt-footer-grid row g-4">
+      <div class="col-12 col-lg-4">
+        <a href="index.html" class="logo">
+          <svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#c4ff3d">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg>
+        </a>
+        <p class="mkt-footer-brand-desc">
+          Скорость как продукт. VPS в&nbsp;10 локациях по&nbsp;миру.
+          NVMe Gen4 · Anti‑DDoS · SLA&nbsp;99,99%.
+        </p>
+      </div>
+      <div class="mkt-footer-col col-12 col-sm-4 col-lg">
         <div class="mkt-footer-label">Продукт</div>
         <a href="pricing.html">Тарифы</a>
         <a href="locations.html">Локации</a>
         <a href="contacts.html">Контакты</a>
       </div>
-      <div class="mkt-footer-col">
-        <div class="mkt-footer-label">Юридические</div>
-        <a href="terms.html">Договор-оферта</a>
+      <div class="mkt-footer-col col-12 col-sm-4 col-lg">
+        <div class="mkt-footer-label">Юридическое</div>
+        <a href="terms.html">Договор‑оферта</a>
         <a href="privacy.html">Конфиденциальность</a>
         <a href="sla.html">SLA</a>
       </div>
-      <div class="mkt-footer-col">
+      <div class="mkt-footer-col col-12 col-sm-4 col-lg">
         <div class="mkt-footer-label">Поддержка</div>
         <a href="contacts.html">Написать нам</a>
         <a href="mailto:support@fastcloud.eu">support@fastcloud.eu</a>
+        <a href="https://t.me/fastcloud_status">Telegram‑статус</a>
       </div>
     </div>
   </div>
   <div class="mkt-footer-copy">
     <span>© 2026 FastCloud OÜ · Tallinn, Estonia</span>
     <div class="flex-1"></div>
-    <span>GDPR · PCI DSS · Uptime 99,99%</span>
+    <span>GDPR · PCI&nbsp;DSS · Uptime&nbsp;99,99%</span>
   </div>
 </footer>
+
+<script src="cta-fx.js"></script>
 <script src="nav.js"></script>
 <script src="cookie.js"></script>
+
 <script>
-/* ── Terminal animation ── */
+/* ────────── reveal-on-scroll ────────── */
 (function () {
-  var el = document.getElementById('termScreen');
-  if (!el) return;
-
-  var PR = '<span class="p">root@fra1</span>:<span class="c">~</span># ';
-  var MAX = 20;
-  var nodes = [];
-
-  var SCRIPT = [
-    { k:'cmd', s:'ls -lh' },
-    { k:'out', q:[
-      '<span class="dim">total 36K</span>',
-      '<span class="dim">drwxr-xr-x  app/</span>',
-      '<span class="dim">drwxr-xr-x  backups/</span>',
-      '<span class="dim">drwxr-xr-x  logs/</span>',
-      '<span class="dim">-rw-r--r--  nginx.conf</span>',
-      '<span class="dim">-rwxr-xr-x  deploy.sh</span>',
-    ]},
-    { k:'wait', ms:600 },
-    { k:'cmd', s:'tail -4 logs/access.log' },
-    { k:'out', q:[
-      '<span class="dim">185.34.12.1 "GET /api/status"  <span class="c-green">200</span>  12ms</span>',
-      '<span class="dim">95.142.44.2 "GET /api/data"    <span class="c-green">200</span>  89ms</span>',
-      '<span class="dim">10.0.0.5    "POST /api/upload" <span class="c-green">201</span> 210ms</span>',
-      '<span class="dim">127.0.0.1   "GET /health"      <span class="c-green">200</span>   3ms</span>',
-    ]},
-    { k:'wait', ms:700 },
-    { k:'cmd', s:'free -h' },
-    { k:'out', q:[
-      '<span class="dim">              total    used    free</span>',
-      '<span class="dim">Mem:          8.0G    1.4G    <span class="c-green">6.6G</span></span>',
-      '<span class="dim">Swap:         2.0G    0.0G    <span class="c-green">2.0G</span></span>',
-    ]},
-    { k:'wait', ms:600 },
-    { k:'cmd', s:'df -h /' },
-    { k:'out', q:[
-      '<span class="dim">Filesystem   Size   Used  Avail  Use%</span>',
-      '<span class="dim">/dev/vda1     60G   8.3G   <span class="c-green">52G</span>   14%</span>',
-    ]},
-    { k:'wait', ms:600 },
-    { k:'cmd', s:'ping 8.8.8.8 -c 4 -q' },
-    { k:'wait', ms:900 },
-    { k:'out', q:[
-      '<span class="dim">PING 8.8.8.8 (8.8.8.8) 56(84) bytes</span>',
-      '<span class="dim">4 packets transmitted, 4 received, <span class="c-green">0% loss</span></span>',
-      '<span class="dim">rtt min/avg/max = <span class="c-green">1.1/1.2/1.3 ms</span></span>',
-    ]},
-    { k:'wait', ms:600 },
-    { k:'cmd', s:'uptime' },
-    { k:'out', q:[
-      '<span class="dim"> 14:22:05 up 14 days 2:11,  load: <span class="c-green">0.08</span>, 0.05, 0.06</span>',
-    ]},
-    { k:'wait', ms:600 },
-    { k:'cmd', s:'./deploy.sh --env prod' },
-    { k:'wait', ms:400 },
-    { k:'out', q:[
-      '<span class="c-green">✔ pulling latest image...</span>',
-      '<span class="c-green">✔ running migrations</span>',
-      '<span class="c-green">✔ restarting app (zero downtime)</span>',
-      '<span class="c-green">✔ deployed in 18s</span>',
-    ]},
-    { k:'wait', ms:1800 },
-  ];
-
-  function push(html) {
-    var d = document.createElement('div');
-    d.innerHTML = html;
-    el.appendChild(d);
-    nodes.push(d);
-    while (nodes.length > MAX) el.removeChild(nodes.shift());
-    el.scrollTop = el.scrollHeight;
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(el => el.classList.add('in'));
+    return;
   }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(el => { if (!el.classList.contains('in')) io.observe(el); });
+})();
 
-  var si = 0, ci = 0, promptEl = null;
+/* ────────── timeline bar fill on view ────────── */
+(function () {
+  const fills = document.querySelectorAll('.tlbar-fill-lime');
+  if (!fills.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const target = e.target;
+        target.style.width = target.dataset.fill || '2%';
+        io.unobserve(target);
+      }
+    });
+  }, { threshold: 0.4 });
+  fills.forEach(f => io.observe(f));
+})();
 
-  function tick() {
-    if (si >= SCRIPT.length) {
-      setTimeout(function () {
-        el.innerHTML = '';
-        nodes = [];
-        si = 0; ci = 0;
-        push('');
-        tick();
-      }, 1600);
-      return;
+/* ────────── nav scrolled state ────────── */
+(function () {
+  const nav = document.getElementById('mktNav');
+  if (!nav) return;
+  const update = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+})();
+
+/* ────────── hero counter shimmer on scroll ────────── */
+(function () {
+  const n = document.getElementById('heroNum');
+  if (!n) return;
+  let raf;
+  const update = () => {
+    const y = Math.min(1, window.scrollY / 600);
+    const v = Math.round(55 - y * 13);
+    n.textContent = v.toString().padStart(2, '0');
+  };
+  window.addEventListener('scroll', () => {
+    if (!raf) raf = requestAnimationFrame(() => { update(); raf = null; });
+  }, { passive: true });
+})();
+
+/* ────────── hero FX: speed-packet stream ────────── */
+(function () {
+  const canvas = document.getElementById('heroFx');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  let W = 0, H = 0;
+  const particles = [];
+  const MAX = 70;
+  let running = false;
+  let raf = 0;
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    W = canvas.width  = Math.max(1, rect.width  * DPR);
+    H = canvas.height = Math.max(1, rect.height * DPR);
+  }
+  function spawn() {
+    const isLime = Math.random() < 0.72;
+    return {
+      x: -120 * DPR,
+      y: Math.random() * H,
+      speed: (2.5 + Math.random() * 9) * DPR,
+      length: (60 + Math.random() * 180) * DPR,
+      width: (0.5 + Math.random() * 1.6) * DPR,
+      lime: isLime,
+      alpha: isLime ? 0.55 + Math.random() * 0.3 : 0.12 + Math.random() * 0.18,
+    };
+  }
+  let lastT = 0;
+  function loop(t) {
+    const dt = Math.min(50, t - lastT) / 16.67;
+    lastT = t;
+
+    // soft trail-fade
+    ctx.fillStyle = 'rgba(10,12,19,0.16)';
+    ctx.fillRect(0, 0, W, H);
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.speed * dt;
+      const grad = ctx.createLinearGradient(p.x - p.length, p.y, p.x, p.y);
+      const col = p.lime ? '196,255,61' : '244,245,249';
+      grad.addColorStop(0,   `rgba(${col},0)`);
+      grad.addColorStop(0.6, `rgba(${col},${p.alpha * 0.6})`);
+      grad.addColorStop(1,   `rgba(${col},${p.alpha})`);
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = p.width;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(p.x - p.length, p.y);
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+
+      // bright head dot
+      if (p.lime) {
+        ctx.fillStyle = `rgba(${col},${p.alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.width * 0.9, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (p.x > W + 200) particles.splice(i, 1);
     }
 
-    var step = SCRIPT[si];
-
-    if (step.k === 'cmd') {
-      if (ci === 0) {
-        promptEl = document.createElement('div');
-        promptEl.innerHTML = PR + '<span class="blink">█</span>';
-        el.appendChild(promptEl);
-        nodes.push(promptEl);
-        while (nodes.length > MAX) el.removeChild(nodes.shift());
-        el.scrollTop = el.scrollHeight;
-      }
-      if (ci < step.s.length) {
-        promptEl.innerHTML = PR + step.s.slice(0, ci + 1) + '<span class="blink">█</span>';
-        ci++;
-        el.scrollTop = el.scrollHeight;
-        setTimeout(tick, 48 + Math.random() * 72);
-      } else {
-        promptEl.innerHTML = PR + step.s;
-        ci = 0; si++;
-        setTimeout(tick, 160);
-      }
-
-    } else if (step.k === 'out') {
-      var oi = 0;
-      (function nextLine() {
-        if (oi < step.q.length) { push(step.q[oi++]); setTimeout(nextLine, 55); }
-        else { si++; setTimeout(tick, 320); }
-      })();
-
-    } else if (step.k === 'wait') {
-      si++;
-      setTimeout(tick, step.ms);
+    if (particles.length < MAX && Math.random() < 0.18) {
+      particles.push(spawn());
     }
+    if (running) raf = requestAnimationFrame(loop);
   }
 
-  push('');
-  setTimeout(tick, 400);
+  let scheduled = false;
+  function onResize() {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => { resize(); scheduled = false; });
+  }
+  window.addEventListener('resize', onResize);
+  resize();
+  // warm-start: seed a few particles across the canvas
+  for (let i = 0; i < 12; i++) {
+    const p = spawn();
+    p.x = Math.random() * W;
+    particles.push(p);
+  }
+  const start = () => { if (running) return; running = true; lastT = performance.now(); raf = requestAnimationFrame(loop); };
+  const stop  = () => { running = false; cancelAnimationFrame(raf); };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => e.isIntersecting ? start() : stop());
+  }, { rootMargin: '100px' });
+  io.observe(canvas);
 })();
 </script>
-</body></html>
+</body>
+</html>
