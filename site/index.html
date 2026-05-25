@@ -45,9 +45,9 @@
 <section class="hero" data-screen-label="01 Hero">
   <canvas id="heroFx" class="hero-fx"></canvas>
   <div class="hero-inner">
-    <div class="hero-eyebrow reveal in">
-      <span class="hero-eyebrow-pill">NEW</span>
-      <span>NVMe Gen4 · AMD EPYC · от €4,00/мес</span>
+    <div class="hero-eyebrow reveal in" id="heroLive">
+      <span class="hero-ticker-dot"></span>
+      <span class="hero-live-text" id="heroLiveText"><strong>fra1.fastcloud.eu</strong> · только что создан · <em>«за&nbsp;53&nbsp;с, из Берлина»</em></span>
     </div>
 
     <h1 class="hero-title reveal in d-1">
@@ -60,39 +60,34 @@
       и&nbsp;Anti‑DDoS в&nbsp;каждом тарифе&nbsp;— в 10 локациях по миру.
     </p>
 
-    <div class="hero-ctas reveal in d-3">
-      <a href="register.html" class="btn btn-primary btn-xl">Создать сервер →</a>
-      <a href="pricing.html" class="btn btn-outline-hero btn-xl">Тарифы</a>
+    <div class="hero-bottom reveal in d-3">
+      <div class="hero-ctas">
+        <a href="register.html" class="btn btn-primary btn-xl">Создать сервер →</a>
+        <a href="pricing.html" class="btn btn-outline-hero btn-xl">Тарифы</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-cell">
+          <div class="hero-meta-val">99,99%</div>
+          <div class="hero-meta-lbl">SLA</div>
+        </div>
+        <div class="hero-meta-divider"></div>
+        <div class="hero-meta-cell">
+          <div class="hero-meta-val">10&nbsp;Gbps</div>
+          <div class="hero-meta-lbl">Anti‑DDoS</div>
+        </div>
+        <div class="hero-meta-divider"></div>
+        <div class="hero-meta-cell">
+          <div class="hero-meta-val">10</div>
+          <div class="hero-meta-lbl">Локаций</div>
+        </div>
+        <div class="hero-meta-divider"></div>
+        <div class="hero-meta-cell">
+          <div class="hero-meta-val">24/7</div>
+          <div class="hero-meta-lbl">Поддержка</div>
+        </div>
+      </div>
     </div>
 
-    <div class="hero-meta reveal in d-4">
-      <div class="hero-meta-cell">
-        <div class="hero-meta-val">99,99%</div>
-        <div class="hero-meta-lbl">SLA</div>
-      </div>
-      <div class="hero-meta-divider"></div>
-      <div class="hero-meta-cell">
-        <div class="hero-meta-val">10&nbsp;Gbps</div>
-        <div class="hero-meta-lbl">Anti‑DDoS</div>
-      </div>
-      <div class="hero-meta-divider"></div>
-      <div class="hero-meta-cell">
-        <div class="hero-meta-val">10</div>
-        <div class="hero-meta-lbl">Локаций</div>
-      </div>
-      <div class="hero-meta-divider"></div>
-      <div class="hero-meta-cell">
-        <div class="hero-meta-val">24/7</div>
-        <div class="hero-meta-lbl">Поддержка</div>
-      </div>
-    </div>
-
-    <div class="hero-ticker reveal in d-5">
-      <span class="hero-ticker-dot"></span>
-      <span><strong>fra1.fastcloud.eu</strong> · только что создан · <em class="serif">«за 53 c, из Берлина»</em></span>
-      <span class="c-dim">·</span>
-      <span><strong>sgp1</strong> · pkg upgrade · <em class="serif">«ping&nbsp;<span class="c-accent">12&nbsp;ms</span> из Токио»</em></span>
-    </div>
   </div>
 </section>
 
@@ -100,6 +95,7 @@
      MANIFEST
      ═══════════════════════════════════ -->
 <section class="manifest" data-screen-label="02 Manifest">
+  <div class="manifest-inner">
   <p class="manifest-text reveal">
     Пока другие проверяют ваш паспорт, <em>сверяют почту</em>
     и&nbsp;звонят в&nbsp;банк&nbsp;— у&nbsp;вас уже работает
@@ -110,6 +106,7 @@
     <span class="mono-xs">FastCloud · 2026</span>
     <span class="mono-xs c-dim">/</span>
     <span class="mono-xs c-accent">скорость как продукт</span>
+  </div>
   </div>
 </section>
 
@@ -122,12 +119,12 @@
       <div class="story-num reveal"><span class="step">01</span> &nbsp;/&nbsp; скорость</div>
       <div class="story-tag reveal d-1">мгновенный старт</div>
       <h2 class="story-title reveal d-2">
-        55&nbsp;секунд <em>против</em> 24&nbsp;часов.
+        55&nbsp;секунд <em>до&nbsp;готового</em> сервера.
       </h2>
       <p class="story-desc reveal d-3">
-        Hetzner проверяет документы до&nbsp;24&nbsp;часов. Hostinger требует
-        верификацию по&nbsp;паспорту. FastCloud&nbsp;— активирует
-        сервер автоматически сразу после оплаты.
+        Большинство провайдеров держит на&nbsp;ручной верификации часами.
+        FastCloud активирует сервер автоматически сразу после оплаты&nbsp;—
+        без документов, без&nbsp;ожиданий.
       </p>
       <ul class="story-list reveal d-4">
         <li>Никаких паспортов и&nbsp;звонков в&nbsp;поддержку</li>
@@ -137,33 +134,38 @@
     </div>
 
     <div class="story-visual col d-none d-lg-block reveal d-2">
-      <div class="tlbar">
-        <div class="tlbar-row">
-          <div class="tlbar-meta">
-            <span class="tlbar-name">Hetzner</span>
-            <span class="tlbar-time c-red">≈&nbsp;24&nbsp;часа</span>
+      <div class="deploy-steps">
+        <div class="deploy-step done">
+          <div class="deploy-step-dot"></div>
+          <div>
+            <div class="deploy-step-label">Оплата принята</div>
+            <div class="deploy-step-time">0 с</div>
           </div>
-          <div class="tlbar-track"><div class="tlbar-fill tlbar-fill-dim" style="width:100%"></div></div>
-          <div class="tlbar-sub">верификация · KYC · ручная проверка</div>
         </div>
-        <div class="tlbar-row">
-          <div class="tlbar-meta">
-            <span class="tlbar-name">Hostinger / IONOS</span>
-            <span class="tlbar-time c-red">≈&nbsp;6&nbsp;часов</span>
+        <div class="deploy-step done">
+          <div class="deploy-step-dot"></div>
+          <div>
+            <div class="deploy-step-label">Provisioning NVMe</div>
+            <div class="deploy-step-time">12 с</div>
           </div>
-          <div class="tlbar-track"><div class="tlbar-fill tlbar-fill-dim" style="width:25%"></div></div>
-          <div class="tlbar-sub">подтверждение оплаты · provisioning</div>
         </div>
-        <div class="tlbar-row">
-          <div class="tlbar-meta">
-            <span class="tlbar-name fw-7 c-accent">FastCloud</span>
-            <span class="tlbar-time c-accent">55&nbsp;секунд&nbsp;✓</span>
+        <div class="deploy-step done">
+          <div class="deploy-step-dot"></div>
+          <div>
+            <div class="deploy-step-label">ОС установлена</div>
+            <div class="deploy-step-time">38 с</div>
           </div>
-          <div class="tlbar-track"><div class="tlbar-fill tlbar-fill-lime" data-fill="2%"></div></div>
-          <div class="tlbar-sub">оплата → SSH готов</div>
         </div>
-        <div class="tlbar-x">
-          <span>0&nbsp;c</span><span>6&nbsp;ч</span><span>12&nbsp;ч</span><span>18&nbsp;ч</span><span>24&nbsp;ч</span>
+        <div class="deploy-step active">
+          <div class="deploy-step-dot"></div>
+          <div>
+            <div class="deploy-step-label">SSH готов</div>
+            <div class="deploy-step-time">55 с</div>
+          </div>
+        </div>
+        <div class="deploy-total">
+          <span class="deploy-total-val">55 секунд</span>
+          <span class="deploy-total-lbl">от оплаты до SSH</span>
         </div>
       </div>
     </div>
@@ -182,9 +184,9 @@
         Атаки&nbsp;отбиты <em>до&nbsp;того,</em><br>как доходят до&nbsp;вас.
       </h2>
       <p class="story-desc reveal d-3">
-        У&nbsp;Hetzner&nbsp;— базовая защита. Contabo не&nbsp;защищает.
-        У&nbsp;FastCloud фильтрация L3&nbsp;/&nbsp;L4&nbsp;/&nbsp;L7
-        включена в&nbsp;каждый тариф без&nbsp;доплат.
+        Фильтрация работает на&nbsp;уровнях L3, L4 и&nbsp;L7&nbsp;—
+        атаки блокируются ещё до&nbsp;того, как достигают вашего сервера.
+        Входит в&nbsp;каждый тариф без&nbsp;доплат.
       </p>
       <ul class="story-list reveal d-4">
         <li>UDP&nbsp;Flood, SYN&nbsp;Flood, HTTP&nbsp;DDoS, Amplification</li>
@@ -241,46 +243,54 @@
         Цена при&nbsp;старте&nbsp;= <em>цена</em> при&nbsp;продлении.
       </h2>
       <p class="story-desc reveal d-3">
-        Hostinger обещает $4,99, а&nbsp;при продлении выставляет $11,99.
-        Contabo берёт setup&nbsp;fee. FastCloud замораживает цену
-        на&nbsp;всю жизнь аккаунта.
+        Многие провайдеры привлекают низкой ценой при&nbsp;первом платеже,
+        а&nbsp;при продлении выставляют сумму в&nbsp;2–3&nbsp;раза выше.
+        FastCloud не&nbsp;поднимает цену при&nbsp;продлении.
       </p>
       <ul class="story-list reveal d-4">
-        <li>Цена не&nbsp;меняется при&nbsp;продлении&nbsp;— никогда</li>
+        <li>Цена при&nbsp;продлении равна стартовой</li>
         <li>Нет скрытых комиссий и&nbsp;setup‑платежей</li>
-        <li>Почасовой биллинг, удаление в&nbsp;1&nbsp;клик без&nbsp;штрафов</li>
+        <li>Удаление в&nbsp;1&nbsp;клик без&nbsp;штрафов и&nbsp;привязок</li>
       </ul>
     </div>
 
     <div class="story-visual col d-none d-lg-block reveal d-2">
-      <div class="ptbl">
-        <div class="ptbl-head">
-          <span>Провайдер</span><span>Старт</span><span>Продление</span>
+      <div class="incl-list">
+        <div class="incl-head">Что входит в&nbsp;каждый тариф</div>
+        <div class="incl-item">
+          <div class="incl-check">✓</div>
+          <div>
+            <div class="incl-label">NVMe Gen4 · 7&nbsp;000&nbsp;MB/s</div>
+            <div class="incl-sub">высокопроизводительное хранилище</div>
+          </div>
         </div>
-        <div class="ptbl-row">
-          <span class="ptbl-name">Hostinger</span>
-          <span class="ptbl-price">$4,99</span>
-          <span class="ptbl-renew">$11,99 <span class="ptbl-arrow">↑</span></span>
+        <div class="incl-item">
+          <div class="incl-check">✓</div>
+          <div>
+            <div class="incl-label">Anti-DDoS L3&nbsp;/&nbsp;L4&nbsp;/&nbsp;L7</div>
+            <div class="incl-sub">без доплаты, во&nbsp;всех тарифах</div>
+          </div>
         </div>
-        <div class="ptbl-row">
-          <span class="ptbl-name">DigitalOcean</span>
-          <span class="ptbl-price">$6,00</span>
-          <span class="ptbl-renew">$12,00 <span class="ptbl-arrow">↑</span></span>
+        <div class="incl-item">
+          <div class="incl-check">✓</div>
+          <div>
+            <div class="incl-label">Бэкапы · 14&nbsp;дней</div>
+            <div class="incl-sub">автоматические снэпшоты каждую ночь</div>
+          </div>
         </div>
-        <div class="ptbl-row">
-          <span class="ptbl-name">Contabo</span>
-          <span class="ptbl-price">$4,50</span>
-          <span class="ptbl-renew">+&nbsp;€4,99&nbsp;setup</span>
+        <div class="incl-item">
+          <div class="incl-check">✓</div>
+          <div>
+            <div class="incl-label">Поддержка 24/7</div>
+            <div class="incl-sub">живые инженеры, ответ &lt;&nbsp;5&nbsp;мин</div>
+          </div>
         </div>
-        <div class="ptbl-row">
-          <span class="ptbl-name">IONOS</span>
-          <span class="ptbl-price">$2,00</span>
-          <span class="ptbl-renew">$8,00 <span class="ptbl-arrow">↑</span></span>
-        </div>
-        <div class="ptbl-row us">
-          <span class="ptbl-name us">FastCloud</span>
-          <span class="ptbl-price us">$9,00</span>
-          <span class="ptbl-renew ok">$9,00&nbsp;✓</span>
+        <div class="incl-item">
+          <div class="incl-check">✓</div>
+          <div>
+            <div class="incl-label">Цена при&nbsp;продлении = цена при&nbsp;старте</div>
+            <div class="incl-sub">без setup&nbsp;fee и&nbsp;скрытых платежей</div>
+          </div>
         </div>
       </div>
     </div>
@@ -299,9 +309,9 @@
         Ежедневные бэкапы.<br><em>В&nbsp;каждом</em> тарифе.
       </h2>
       <p class="story-desc reveal d-3">
-        У&nbsp;Hetzner, Contabo и&nbsp;IONOS бэкапы&nbsp;— платная опция.
-        У&nbsp;FastCloud автоматический snapshot каждую ночь
-        и&nbsp;хранение 14&nbsp;дней — без&nbsp;доплаты.
+        Каждую ночь FastCloud автоматически создаёт полный snapshot
+        вашего сервера. 14&nbsp;дней хранения — в&nbsp;каждом тарифе,
+        без&nbsp;доплат.
       </p>
       <ul class="story-list reveal d-4">
         <li>Автоматический snapshot каждую ночь в&nbsp;03:00</li>
@@ -330,7 +340,7 @@
   <div class="story-inner row align-items-center">
     <div class="story-text col">
       <div class="story-num reveal"><span class="step">05</span> &nbsp;/&nbsp; локации</div>
-      <div class="story-tag reveal d-1">10 дата‑центров</div>
+      <div class="story-tag reveal d-1">10 локаций по миру</div>
       <h2 class="story-title reveal d-2">
         10&nbsp;локаций. <em>Один</em> SLA.
       </h2>
@@ -358,7 +368,7 @@
         <span class="map-hud-dot"></span>
         <span class="map-hud-label">LIVE</span>
         <span class="map-hud-sep">·</span>
-        <span class="map-hud-stat">10&nbsp;dc</span>
+        <span class="map-hud-stat">10&nbsp;PoP</span>
         <span class="map-hud-sep">·</span>
         <span class="map-hud-stat">1.24&nbsp;Tbps</span>
       </div>
@@ -867,6 +877,47 @@
   </div>
 </footer>
 
+<script>
+/* ────────── live purchase ticker ────────── */
+(function () {
+  const el = document.getElementById('heroLiveText');
+  if (!el) return;
+
+  const events = [
+    '<strong>fra1.fastcloud.eu</strong> · только что создан · <em>«за&nbsp;53&nbsp;с, из Берлина»</em>',
+    '<strong>sgp1.fastcloud.eu</strong> · сервер запущен · <em>«ping&nbsp;<span class="c-accent">12&nbsp;ms</span> из Токио»</em>',
+    '<strong>nyc1.fastcloud.eu</strong> · создан · <em>«за&nbsp;41&nbsp;с, из Нью-Йорка»</em>',
+    '<strong>ams1.fastcloud.eu</strong> · WordPress установлен · <em>«за&nbsp;38&nbsp;с, из Амстердама»</em>',
+    '<strong>lon1.fastcloud.eu</strong> · Docker задеплоен · <em>«за&nbsp;45&nbsp;с, из Лондона»</em>',
+    '<strong>tor1.fastcloud.eu</strong> · создан · <em>«за&nbsp;48&nbsp;с, из Торонто»</em>',
+    '<strong>mum1.fastcloud.eu</strong> · создан · <em>«за&nbsp;44&nbsp;с, из Мумбаи»</em>',
+    '<strong>mil1.fastcloud.eu</strong> · n8n задеплоен · <em>«за&nbsp;39&nbsp;с, из Милана»</em>',
+    '<strong>syd1.fastcloud.eu</strong> · GitLab готов · <em>«за&nbsp;52&nbsp;с, из Сиднея»</em>',
+    '<strong>waw1.fastcloud.eu</strong> · создан · <em>«за&nbsp;36&nbsp;с, из Варшавы»</em>',
+  ];
+
+  let idx = 0;
+
+  function schedule() {
+    const delay = 3500 + Math.random() * 5500; /* 3.5–9 с */
+    setTimeout(tick, delay);
+  }
+
+  function tick() {
+    idx = (idx + 1) % events.length;
+    el.classList.add('hero-live-leave');
+    setTimeout(function () {
+      el.innerHTML = events[idx];
+      el.classList.remove('hero-live-leave');
+      el.classList.add('hero-live-enter');
+      setTimeout(function () { el.classList.remove('hero-live-enter'); }, 380);
+      schedule();
+    }, 240);
+  }
+
+  schedule();
+})();
+</script>
 <script src="cta-fx.js"></script>
 <script src="nav.js"></script>
 <script src="cookie.js"></script>

@@ -77,17 +77,21 @@
 }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 6px 14px 6px 8px; border-radius: 999px;
+  padding: 6px 14px 6px 10px; border-radius: 999px;
   background: rgba(255,255,255,.03); border: 1px solid var(--border2);
   font-family: var(--mono); font-size: 11.5px; font-weight: 500;
-  color: var(--text2); letter-spacing: .04em;
+  color: var(--text3); letter-spacing: .03em;
   align-self: flex-start; margin-bottom: 32px;
+  overflow: hidden;
 }
-.hero-eyebrow-pill {
-  background: var(--accent); color: var(--on-accent);
-  padding: 2px 9px; border-radius: 999px; font-weight: 700;
-  font-size: 10.5px; letter-spacing: .06em;
-}
+.hero-eyebrow strong { color: var(--text); font-weight: 600; }
+.hero-eyebrow em { color: var(--text2); font-style: normal; }
+
+.hero-live-text { display: inline; }
+@keyframes liveIn  { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+@keyframes liveOut { from { opacity:1; transform:translateY(0); } to { opacity:0; transform:translateY(-6px); } }
+.hero-live-enter { animation: liveIn  .35s cubic-bezier(.2,.8,.3,1) forwards; }
+.hero-live-leave { animation: liveOut .22s ease forwards; }
 
 .hero-title {
   font-family: var(--font-display);
@@ -121,12 +125,17 @@
   margin-top: 36px;
 }
 
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+.hero-bottom {
+  display: flex; align-items: center; gap: 40px;
+  margin-top: 40px; flex-wrap: wrap;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .hero-ctas .btn { padding: 14px 28px; font-size: 15px; }
+.hero-ctas .btn-primary { padding: 18px 36px; font-size: 17px; }
 
 .hero-meta {
   display: flex; align-items: center; gap: 28px;
-  margin-top: 60px; flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .hero-meta-cell { display: flex; flex-direction: column; gap: 2px; }
 .hero-meta-val { font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
@@ -157,10 +166,8 @@
 /* ════════════════════════════════════════════
    MANIFEST — big editorial statement
    ════════════════════════════════════════════ */
-.manifest {
-  padding: 140px 40px;
-  max-width: 1180px; margin: 0 auto;
-}
+.manifest { padding: 140px 40px; }
+.manifest-inner { max-width: 1180px; margin: 0 auto; }
 .manifest-text {
   font-family: var(--font-display);
   font-size: clamp(34px, 4.5vw, 64px);
@@ -168,7 +175,6 @@
   line-height: 1.1;
   letter-spacing: -.025em;
   color: var(--text2);
-  max-width: 1080px;
 }
 .manifest-text .hi { color: var(--text); }
 .manifest-text .lime { color: var(--accent); }
@@ -191,6 +197,9 @@
 }
 .story-inner > .story-text,
 .story-inner > .story-visual { flex: 0 0 calc(50% - 4.167%); max-width: calc(50% - 4.167%); min-width: 0; }
+@media (max-width: 991.98px) {
+  .story-inner > .story-text { flex: 0 0 100%; max-width: 100%; }
+}
 /* Flip: visually swap text/visual columns at desktop */
 @media (min-width: 992px) {
   .story-flip .story-text   { order: 2; }
@@ -1260,3 +1269,48 @@
   display: flex; flex-wrap: wrap;
   grid-template-columns: unset; gap: unset;
 }
+
+/* ════════════════════════════════════════════
+   DEPLOY STEPS — Story 01 visual (provisioning timeline)
+   ════════════════════════════════════════════ */
+.deploy-steps { display: flex; flex-direction: column; padding: 4px 0; }
+.deploy-step { display: flex; align-items: flex-start; gap: 16px; position: relative; padding-bottom: 22px; }
+.deploy-step:last-child { padding-bottom: 0; }
+.deploy-step:not(:last-child)::before {
+  content: ''; position: absolute; left: 7px; top: 20px; bottom: 0; width: 2px;
+  background: var(--border2);
+}
+.deploy-step.done:not(:last-child)::before { background: rgba(196,255,61,.35); }
+.deploy-step-dot {
+  width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 2px;
+  background: var(--surface3); border: 2px solid var(--border2);
+  position: relative; z-index: 1;
+}
+.deploy-step.done .deploy-step-dot { background: var(--accent); border-color: var(--accent); }
+.deploy-step.active .deploy-step-dot { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 12px rgba(196,255,61,.4); }
+.deploy-step-label { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.deploy-step.active .deploy-step-label { color: var(--accent); }
+.deploy-step-time { font-size: 12px; color: var(--text3); font-family: var(--mono); margin-top: 2px; }
+.deploy-step.active .deploy-step-time { color: var(--accent); }
+.deploy-total {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 14px; background: var(--accent-soft); border-radius: var(--r-sm);
+  border: 1px solid rgba(196,255,61,.15); margin-top: 10px; font-size: 13px;
+}
+.deploy-total-val { font-weight: 700; color: var(--accent); font-family: var(--mono); }
+.deploy-total-lbl { color: var(--text3); }
+
+/* ════════════════════════════════════════════
+   INCL LIST — Story 03 visual (what's included)
+   ════════════════════════════════════════════ */
+.incl-list { display: flex; flex-direction: column; }
+.incl-head { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text3); margin-bottom: 14px; }
+.incl-item { display: flex; align-items: flex-start; gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--border); }
+.incl-item:last-child { border-bottom: none; padding-bottom: 0; }
+.incl-check {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--green-soft);
+  color: var(--green); font-size: 11px; font-weight: 700; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; margin-top: 1px;
+}
+.incl-label { font-size: 13.5px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.incl-sub { font-size: 12px; color: var(--text3); margin-top: 2px; }
