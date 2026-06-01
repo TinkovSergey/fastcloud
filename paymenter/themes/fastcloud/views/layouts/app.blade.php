@@ -33,10 +33,12 @@
 
     <meta name="theme-color" content="{{ theme('primary') }}">
 
+    <link rel="stylesheet" href="{{ asset('fastcloud/marketing.css') }}">
     {!! hook('head') !!}
+    <style>[wire\:name="components\.locale-switch"]{display:none!important}</style>
 </head>
 
-<body class="w-full bg-background text-base min-h-screen flex flex-col antialiased"
+<body class="w-full bg-background text-base min-h-screen flex flex-col antialiased {{ Route::is('home') ? 'fc-marketing' : '' }}"
     x-cloak
     x-data="{
         theme: $persist('system').as('theme_mode'),

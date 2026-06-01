@@ -1,21 +1,18 @@
 <nav class="w-full px-4 lg:px-8 bg-background-secondary border-b border-neutral md:h-16 flex md:flex-row flex-col justify-between fixed top-0 z-20">
     <div
-        x-data="{ 
+        x-data="{
             slideOverOpen: false,
             hasAside: !!document.getElementById('main-aside')
         }"
         x-init="$watch('slideOverOpen', value => { document.documentElement.style.overflow = value ? 'hidden' : '' })"
         class="relative z-50 w-full h-auto">
         <div
-            class="flex flex-row items-center justify-between h-16"
-            :class="hasAside ? 'w-full' : 'container'">
+            :class="hasAside ? 'w-full' : 'container'"
+            class="flex flex-row items-center justify-between h-16">
 
             <div class="flex flex-row items-center">
                 <a href="{{ route('home') }}" class="flex flex-row items-center h-10 gap-2" wire:navigate>
                     <x-logo class="h-8" />
-                    @if(theme('logo_display', 'logo-and-name') != 'logo-only')
-                    <span class="text-xl font-bold leading-none flex items-center">{{ config('app.name') }}</span>
-                    @endif
                 </a>
                 <div class="md:flex hidden flex-row ml-6">
                     @foreach (\App\Classes\Navigation::getLinks() as $nav)
@@ -60,7 +57,17 @@
                 <livewire:components.cart />
 
                 <div class="items-center hidden md:flex mr-1">
-                    <livewire:components.locale-switch />
+                    @if(auth()->check())
+                    @php
+                        $__rub = \App\Models\Currency::where('code', 'RUB')->first();
+                        $__sum = auth()->user()->credits()->sum('amount');
+                        $__balance = ($__rub?->prefix ?? '') . number_format($__sum, 2) . ($__rub?->suffix ?? ' ₽');
+                    @endphp
+                    <a href="{{ route('account.credits') }}" wire:navigate
+                       class="text-sm font-semibold text-base hover:text-primary transition-colors duration-200 px-3 py-2 whitespace-nowrap">
+                        Баланс: {{ $__balance }}
+                    </a>
+                    @endif
                     <x-theme-toggle />
                 </div>
 

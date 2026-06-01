@@ -1,3 +1,4 @@
+<div style="display:none">
 <x-dropdown>
     <x-slot:trigger>
         <div class="text-sm text-base font-semibold text-nowrap">
@@ -30,3 +31,4 @@
         @endif
     </x-slot:content>
 </x-dropdown>
+</div>

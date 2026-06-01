@@ -103,7 +103,7 @@
         @endisset
         @endforeach
         <div class="flex flex-row items-center mt-4 justify-between md:hidden">
-            <livewire:components.locale-switch />
+            {{-- <livewire:components.locale-switch /> --}}
 
             <x-theme-toggle />
 
