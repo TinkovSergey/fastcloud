@@ -1,4 +1,4 @@
-/* CTA section: radial speed-streaks (lime packets exploding outward, center masked) */
+﻿/* CTA section: radial speed-streaks (lime packets exploding outward, center masked) */
 (function () {
   const canvas = document.getElementById('ctaFx');
   if (!canvas) return;
@@ -47,7 +47,7 @@
       const dx = (-p.vx / mag) * p.length;
       const dy = (-p.vy / mag) * p.length;
       const grad = ctx.createLinearGradient(p.x + dx, p.y + dy, p.x, p.y);
-      const col = p.lime ? '196,255,61' : '244,245,249';
+      const col = p.lime ? '32,181,235' : '244,245,249';
       grad.addColorStop(0,   `rgba(${col},0)`);
       grad.addColorStop(0.6, `rgba(${col},${p.alpha * 0.6})`);
       grad.addColorStop(1,   `rgba(${col},${p.alpha})`);
