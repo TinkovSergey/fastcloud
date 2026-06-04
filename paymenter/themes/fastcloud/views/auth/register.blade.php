@@ -3,9 +3,9 @@
     {{-- ── Левая колонка ── --}}
     <aside class="fc-auth-side">
       <a href="{{ route('home') }}" wire:navigate class="fc-auth-logo">
-        <svg viewBox="0 0 110 24" height="22" xmlns="http://www.w3.org/2000/svg" aria-label="FastCloud">
-          <text x="0" y="19" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="24" font-weight="400" fill="#20b5eb">fast</text>
-          <text x="33" y="19" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="-1" fill="currentColor">cloud</text>
+        <svg viewBox="0 0 110 24" height="22" overflow="visible" xmlns="http://www.w3.org/2000/svg" aria-label="FastCloud">
+          <text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#20b5eb">fast</text>
+          <text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text>
         </svg>
       </a>
 

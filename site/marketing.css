@@ -787,7 +787,8 @@ body.fc-auth-body {
 }
 .fc-auth-side * { box-sizing: border-box; }
 
-.fc-auth-logo { display: inline-flex; align-items: center; }
+.fc-auth-logo { display: inline-flex; align-items: center; overflow: visible; }
+.fc-auth-logo svg { overflow: visible; display: block; }
 .fc-auth-side-body {
   flex: 1; display: flex; flex-direction: column; justify-content: center;
   gap: 18px; max-width: 440px;
