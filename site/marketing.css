@@ -768,7 +768,6 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 /* Body override: block instead of flex so auth page fills viewport cleanly */
 body.fc-auth-body {
   display: block !important;
-  overflow: hidden auto;
 }
 
 .fc-auth-page {
@@ -780,11 +779,13 @@ body.fc-auth-body {
 
 /* ── Left decorative column ── */
 .fc-auth-side {
-  position: relative; overflow: hidden;
+  position: relative;
   display: flex; flex-direction: column;
-  padding: 40px 48px;
+  padding: 48px !important;
   background: #0a0c13;
+  box-sizing: border-box;
 }
+.fc-auth-side * { box-sizing: border-box; }
 
 .fc-auth-logo { display: inline-flex; align-items: center; }
 .fc-auth-side-body {
