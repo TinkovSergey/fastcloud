@@ -1,5 +1,4 @@
 <div class="fc-page fc-auth-page">
-  <div class="fc-auth-split">
 
     {{-- ── Левая колонка ── --}}
     <aside class="fc-auth-side">
@@ -96,5 +95,4 @@
       </div>
     </main>
 
-  </div>
 </div>

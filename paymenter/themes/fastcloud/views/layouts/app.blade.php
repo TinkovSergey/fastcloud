@@ -62,29 +62,28 @@
     :class="{'dark': isDark}"
 >
     {!! hook('body') !!}
-    @unless($isAuth)
+    @if($isAuth)
+    {{-- Auth pages: no nav, no wrappers — slot renders directly --}}
+    {{ $slot }}
+    @else
     <x-navigation />
-    @endunless
     <div class="w-full flex flex-grow">
-        @if (!$isAuth && isset($sidebar) && $sidebar)
+        @if (isset($sidebar) && $sidebar)
         <x-navigation.sidebar title="$title" />
         @endif
-        <div class="{{ (!$isAuth && isset($sidebar) && $sidebar) ? 'md:ml-64 rtl:ml-0 rtl:md:mr-64' : '' }} flex flex-col flex-grow overflow-auto">
-            <main class="{{ $isAuth ? '' : 'mt-16' }} grow">
+        <div class="{{ (isset($sidebar) && $sidebar) ? 'md:ml-64 rtl:ml-0 rtl:md:mr-64' : '' }} flex flex-col flex-grow overflow-auto">
+            <main class="mt-16 grow">
                 {{ $slot }}
             </main>
-            @unless($isAuth)
             <x-notification />
             <x-confirmation />
             <div class="flex">
                 <x-navigation.footer />
             </div>
-            @endunless
         </div>
-        @unless($isAuth)
         <x-impersonating />
-        @endunless
     </div>
+    @endif
     @livewireScriptConfig
     {!! hook('footer') !!}
 </body>

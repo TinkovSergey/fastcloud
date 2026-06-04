@@ -765,11 +765,6 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
    AUTH — split layout (login / register)
    ════════════════════════════════════════════ */
 .fc-auth-page {
-  min-height: 100vh;
-  display: flex;
-  width: 100%;
-}
-.fc-auth-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
@@ -781,18 +776,8 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
   position: relative; overflow: hidden;
   display: flex; flex-direction: column;
   padding: 40px 48px;
-  background: var(--fc-bg);
+  background: #0a0c13;
 }
-.fc-auth-side::before {
-  content: ''; position: absolute; inset: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(181,245,58,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(181,245,58,.04) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse at 40% 50%, #000 30%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse at 40% 50%, #000 30%, transparent 80%);
-}
-.fc-auth-side > * { position: relative; z-index: 1; }
 
 .fc-auth-logo { display: inline-flex; align-items: center; }
 .fc-auth-side-body {
@@ -842,7 +827,7 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 .fc-auth-pane {
   display: flex; align-items: center; justify-content: center;
   padding: 40px 48px;
-  background: var(--fc-bg-elev);
+  background: #0f1219;
   overflow-y: auto;
 }
 .fc-auth-card {
