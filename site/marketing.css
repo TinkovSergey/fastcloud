@@ -778,8 +778,12 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 .fc-auth-side {
   display: flex; flex-direction: column;
   padding: 48px;
-  background: #0a0c13;
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(124,92,255,.28) 0%, transparent 45%),
+    radial-gradient(ellipse at 0% 100%, rgba(32,181,235,.14) 0%, transparent 40%),
+    #0a0c13;
   overflow-y: auto;
+  position: relative;
 }
 
 .fc-auth-logo { display: inline-flex; align-items: center; overflow: visible; }
