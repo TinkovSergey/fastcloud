@@ -661,8 +661,8 @@
 .fc-shield-ring.r1 { border-color: rgba(181,245,58,.22); }
 .fc-shield-stat-val.accent { color: var(--fc-lime); }
 
-/* Hero slides under transparent nav */
-.fc-page { margin-top: -4rem; }
+/* Hero slides under transparent nav (только главная, не auth) */
+body.fc-marketing:not(.fc-auth-body) .fc-page { margin-top: -4rem; }
 
 /* Nav: transparent → blur on scroll — только на маркетинговой странице */
 body.fc-marketing nav.fixed.top-0 {
