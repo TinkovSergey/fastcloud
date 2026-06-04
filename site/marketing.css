@@ -773,8 +773,14 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
    ════════════════════════════════════════════ */
 
 /* Hero */
+.fc-mkt-wrap {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .fc-mkt-hero {
-  padding: 72px max(40px, calc((100% - 1280px) / 2)) 56px;
+  padding: 72px 40px 56px;
   display: flex; align-items: flex-end; justify-content: space-between;
   gap: 40px; flex-wrap: wrap;
   border-bottom: 1px solid var(--fc-border);
@@ -806,7 +812,7 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 /* Pricing bar */
 .fc-pricing-bar {
   display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-end;
-  padding: 20px max(20px, calc((100% - 1280px) / 2)); border-bottom: 1px solid var(--fc-border);
+  padding: 20px 40px; border-bottom: 1px solid var(--fc-border);
   background: var(--fc-bg);
   position: sticky; top: 64px; z-index: 9;
   backdrop-filter: blur(8px);
@@ -852,7 +858,7 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 }
 
 /* Section padding */
-.fc-mkt-section { padding: 48px max(24px, calc((100% - 1280px) / 2)); }
+.fc-mkt-section { padding: 48px 40px; }
 
 /* Plan savings */
 .fc-plan-savings {
@@ -874,7 +880,7 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 /* Feature cards (4-column) */
 .fc-feat-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-  padding: 48px max(24px, calc((100% - 1280px) / 2)); border-top: 1px solid var(--fc-border);
+  padding: 48px 40px; border-top: 1px solid var(--fc-border);
 }
 .fc-feat-card {
   background: var(--fc-surface); border: 1px solid var(--fc-border);
@@ -893,7 +899,7 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 /* Datacenter cards */
 .fc-dc-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-  padding: 24px max(24px, calc((100% - 1280px) / 2));
+  padding: 24px 40px;
 }
 .fc-dc-card {
   background: var(--fc-surface); border: 1px solid var(--fc-border);
@@ -913,7 +919,7 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 .fc-region-label {
   font-family: var(--fc-mono); font-size: 10px; font-weight: 600;
   text-transform: uppercase; letter-spacing: .14em; color: var(--fc-text3);
-  padding: 28px max(24px, calc((100% - 1280px) / 2)) 12px; border-top: 1px solid var(--fc-border);
+  padding: 28px 40px 12px; border-top: 1px solid var(--fc-border);
 }
 
 /* Ping list */
@@ -956,7 +962,7 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 /* Contacts */
 .fc-contact-grid {
   display: grid; grid-template-columns: 1fr 2fr; gap: 20px;
-  padding: 48px max(24px, calc((100% - 1280px) / 2));
+  padding: 48px 40px;
 }
 .fc-contact-cards { display: flex; flex-direction: column; gap: 14px; }
 .fc-section-title {
