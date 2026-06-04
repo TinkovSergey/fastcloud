@@ -765,27 +765,22 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
    AUTH — split layout (login / register)
    ════════════════════════════════════════════ */
 
-/* Body override: block instead of flex so auth page fills viewport cleanly */
-body.fc-auth-body {
-  display: block !important;
-}
-
+/* Auth page: fixed overlay, escapes body layout entirely */
 .fc-auth-page {
+  position: fixed;
+  inset: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
-  width: 100%;
+  z-index: 10;
 }
 
 /* ── Left decorative column ── */
 .fc-auth-side {
-  position: relative;
   display: flex; flex-direction: column;
-  padding: 48px !important;
+  padding: 48px;
   background: #0a0c13;
-  box-sizing: border-box;
+  overflow-y: auto;
 }
-.fc-auth-side * { box-sizing: border-box; }
 
 .fc-auth-logo { display: inline-flex; align-items: center; overflow: visible; }
 .fc-auth-logo svg { overflow: visible; display: block; }
@@ -927,8 +922,8 @@ body.fc-auth-body {
 
 /* ── Responsive ── */
 @media (max-width: 767px) {
-  .fc-auth-split { grid-template-columns: 1fr; }
-  .fc-auth-side { padding: 32px 28px 24px; min-height: auto; }
+  .fc-auth-page { grid-template-columns: 1fr; }
+  .fc-auth-side { padding: 32px 28px 24px; }
   .fc-auth-side-body { padding: 20px 0; gap: 14px; }
   .fc-auth-side-title { font-size: 34px; }
   .fc-auth-pane { padding: 32px 28px 48px; align-items: flex-start; }
