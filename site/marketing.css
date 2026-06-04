@@ -762,6 +762,224 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 }
 
 /* ════════════════════════════════════════════
+   INNER MARKETING PAGES (pricing / locations / contacts)
+   ════════════════════════════════════════════ */
+
+/* Hero */
+.fc-mkt-hero {
+  padding: 72px 40px 56px;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 40px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--fc-border);
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(124,92,255,.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 0% 100%, rgba(32,181,235,.07) 0%, transparent 40%),
+    var(--fc-bg);
+}
+.fc-mkt-hero-eyebrow {
+  font-family: var(--fc-mono); font-size: 11px;
+  text-transform: uppercase; letter-spacing: .14em;
+  color: var(--fc-text3); margin-bottom: 12px;
+}
+.fc-mkt-hero-title {
+  font-family: var(--fc-font);
+  font-size: clamp(34px, 4.5vw, 60px);
+  font-weight: 600; letter-spacing: -.03em; line-height: 1.05;
+  color: var(--fc-text);
+}
+.fc-mkt-hero-title em {
+  font-family: var(--fc-serif); font-style: italic; font-weight: 400;
+  color: var(--fc-accent); font-size: 1.05em;
+}
+.fc-mkt-hero-sub {
+  font-size: 16px; color: var(--fc-text2); line-height: 1.6;
+  max-width: 520px; margin-top: 16px;
+}
+
+/* Pricing bar */
+.fc-pricing-bar {
+  display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-end;
+  padding: 20px 40px; border-bottom: 1px solid var(--fc-border);
+  background: var(--fc-bg);
+  position: sticky; top: 64px; z-index: 9;
+  backdrop-filter: blur(8px);
+}
+.fc-pricing-bar-group { display: flex; flex-direction: column; gap: 8px; }
+.fc-pricing-bar-label {
+  font-family: var(--fc-mono); font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .12em; color: var(--fc-text3);
+}
+
+/* Location chips */
+.fc-loc-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.fc-loc-chip {
+  padding: 5px 13px; border-radius: 999px; font-size: 12.5px; font-weight: 500;
+  border: 1px solid var(--fc-border); background: transparent;
+  color: var(--fc-text2); cursor: pointer; transition: all .15s;
+  font-family: var(--fc-font);
+}
+.fc-loc-chip.on, .fc-loc-chip:hover {
+  background: var(--fc-accent-soft); border-color: rgba(32,181,235,.4);
+  color: var(--fc-accent);
+}
+
+/* Billing period toggle */
+.fc-billing-toggle {
+  display: flex; background: var(--fc-surface); border-radius: 999px; padding: 3px;
+  border: 1px solid var(--fc-border);
+}
+.fc-billing-toggle-btn {
+  padding: 5px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 500;
+  cursor: pointer; color: var(--fc-text2); transition: all .15s;
+  display: flex; align-items: center; gap: 6px; white-space: nowrap;
+  font-family: var(--fc-font);
+}
+.fc-billing-toggle-btn.on {
+  background: var(--fc-surface2); color: var(--fc-text);
+  box-shadow: 0 1px 4px rgba(0,0,0,.3);
+}
+.fc-billing-badge {
+  font-size: 10px; font-weight: 600;
+  background: var(--fc-lime-soft); color: var(--fc-lime);
+  padding: 1px 5px; border-radius: 999px;
+}
+
+/* Section padding */
+.fc-mkt-section { padding: 48px 40px; }
+
+/* Plan savings */
+.fc-plan-savings {
+  font-size: 11.5px; color: var(--fc-lime); min-height: 18px;
+  font-family: var(--fc-mono); letter-spacing: .02em;
+}
+
+/* Dashed plan card */
+.fc-plan-card-dashed {
+  border-style: dashed !important; border-color: var(--fc-border) !important;
+  background: transparent !important;
+}
+
+/* Pricing plan grid — 3 cols, wraps */
+.fc-price-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+
+/* Feature cards (4-column) */
+.fc-feat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  padding: 48px 40px; border-top: 1px solid var(--fc-border);
+}
+.fc-feat-card {
+  background: var(--fc-surface); border: 1px solid var(--fc-border);
+  border-radius: var(--fc-r); padding: 22px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.fc-feat-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--fc-surface2); border: 1px solid var(--fc-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--fc-accent); flex-shrink: 0;
+}
+.fc-feat-title { font-size: 14px; font-weight: 600; color: var(--fc-text); }
+.fc-feat-desc  { font-size: 13px; color: var(--fc-text2); line-height: 1.55; }
+
+/* Datacenter cards */
+.fc-dc-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  padding: 24px 40px;
+}
+.fc-dc-card {
+  background: var(--fc-surface); border: 1px solid var(--fc-border);
+  border-radius: var(--fc-r); padding: 24px;
+  display: flex; flex-direction: column; gap: 18px;
+  transition: border-color .2s;
+}
+.fc-dc-card:hover { border-color: var(--fc-border2); }
+.fc-dc-flag { font-size: 26px; line-height: 1; flex-shrink: 0; }
+.fc-dc-specs {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+}
+.fc-dc-spec {
+  background: var(--fc-surface2); border: 1px solid var(--fc-border);
+  border-radius: var(--fc-r-sm); padding: 8px 10px;
+}
+.fc-region-label {
+  font-family: var(--fc-mono); font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .14em; color: var(--fc-text3);
+  padding: 28px 40px 12px; border-top: 1px solid var(--fc-border);
+}
+
+/* Ping list */
+.fc-ping-list { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.fc-ping-city { font-size: 12px; color: var(--fc-text2); min-width: 90px; flex-shrink: 0; }
+.fc-ping-bar-wrap {
+  flex: 1; height: 4px; background: var(--fc-surface2);
+  border-radius: 2px; overflow: hidden;
+}
+.fc-ping-bar { height: 100%; border-radius: 2px; background: var(--fc-lime); }
+.fc-ping-val {
+  font-size: 12px; color: var(--fc-text); font-family: var(--fc-mono);
+  min-width: 52px; text-align: right; flex-shrink: 0;
+}
+
+/* Status dot */
+.fc-dot-green {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11.5px; color: var(--fc-lime); font-family: var(--fc-mono);
+  white-space: nowrap;
+}
+.fc-dot-green::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--fc-lime); flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(181,245,58,.6);
+}
+.fc-chip-green {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; color: var(--fc-lime); font-family: var(--fc-mono);
+  background: rgba(181,245,58,.08); border: 1px solid rgba(181,245,58,.22);
+  padding: 5px 12px; border-radius: 999px;
+}
+
+/* Generic card */
+.fc-card {
+  background: var(--fc-surface); border: 1px solid var(--fc-border);
+  border-radius: var(--fc-r); padding: 24px;
+}
+
+/* Contacts */
+.fc-contact-grid {
+  display: grid; grid-template-columns: 1fr 2fr; gap: 20px;
+  padding: 48px 40px;
+}
+.fc-contact-cards { display: flex; flex-direction: column; gap: 14px; }
+.fc-section-title {
+  font-family: var(--fc-mono); font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .12em; color: var(--fc-text3);
+  margin-bottom: 10px;
+}
+.fc-form-group { display: flex; flex-direction: column; gap: 14px; }
+.fc-inp-textarea { resize: vertical; min-height: 120px; }
+
+/* Responsive */
+@media (max-width: 991px) {
+  .fc-mkt-hero   { padding: 52px 24px 40px; flex-direction: column; align-items: flex-start; }
+  .fc-pricing-bar { padding: 16px 24px; flex-direction: column; gap: 16px; }
+  .fc-mkt-section { padding: 40px 24px; }
+  .fc-price-grid  { grid-template-columns: repeat(2, 1fr); }
+  .fc-feat-grid   { grid-template-columns: repeat(2, 1fr); padding: 32px 24px; }
+  .fc-dc-grid     { grid-template-columns: repeat(2, 1fr); padding: 20px 24px; }
+  .fc-region-label { padding: 20px 24px 10px; }
+  .fc-contact-grid { grid-template-columns: 1fr; padding: 32px 24px; }
+}
+@media (max-width: 575px) {
+  .fc-price-grid  { grid-template-columns: 1fr; }
+  .fc-feat-grid   { grid-template-columns: 1fr; padding: 24px 16px; }
+  .fc-dc-grid     { grid-template-columns: 1fr; padding: 16px; }
+  .fc-dc-specs    { grid-template-columns: repeat(2, 1fr); }
+  .fc-billing-toggle { flex-wrap: wrap; border-radius: 12px; }
+}
+
+/* ════════════════════════════════════════════
    AUTH — split layout (login / register)
    ════════════════════════════════════════════ */
 

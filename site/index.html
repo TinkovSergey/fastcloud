@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -7,7 +7,6 @@
 <title>FastCloud — Сервер за 55 секунд</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="marketing.css">
@@ -19,7 +18,7 @@
      ═══════════════════════════════════ -->
 <nav class="mkt-nav" id="mktNav">
   <a href="index.html" class="logo">
-    <svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#20b5eb">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg>
+    <svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#c4ff3d">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg>
   </a>
   <div class="mkt-nav-links" id="navLinks">
     <a href="pricing.html" class="mkt-nav-link">Тарифы</a>
@@ -45,9 +44,9 @@
 <section class="hero" data-screen-label="01 Hero">
   <canvas id="heroFx" class="hero-fx"></canvas>
   <div class="hero-inner">
-    <div class="hero-eyebrow reveal in" id="heroLive">
-      <span class="hero-ticker-dot"></span>
-      <span class="hero-live-text" id="heroLiveText"><strong>fra1.fastcloud.eu</strong> · только что создан · <em>«за&nbsp;53&nbsp;с, из Берлина»</em></span>
+    <div class="hero-eyebrow reveal in">
+      <span class="hero-eyebrow-pill">NEW</span>
+      <span>NVMe Gen4 · AMD EPYC · от €4,00/мес</span>
     </div>
 
     <h1 class="hero-title reveal in d-1">
@@ -60,34 +59,39 @@
       и&nbsp;Anti‑DDoS в&nbsp;каждом тарифе&nbsp;— в 10 локациях по миру.
     </p>
 
-    <div class="hero-bottom reveal in d-3">
-      <div class="hero-ctas">
-        <a href="register.html" class="btn btn-primary btn-xl">Создать сервер →</a>
-        <a href="pricing.html" class="btn btn-outline-hero btn-xl">Тарифы</a>
+    <div class="hero-ctas reveal in d-3">
+      <a href="register.html" class="btn btn-primary btn-xl">Создать сервер →</a>
+      <a href="pricing.html" class="btn btn-outline-hero btn-xl">Тарифы</a>
+    </div>
+
+    <div class="hero-meta reveal in d-4">
+      <div class="hero-meta-cell">
+        <div class="hero-meta-val">99,99%</div>
+        <div class="hero-meta-lbl">SLA</div>
       </div>
-      <div class="hero-meta">
-        <div class="hero-meta-cell">
-          <div class="hero-meta-val">99,99%</div>
-          <div class="hero-meta-lbl">SLA</div>
-        </div>
-        <div class="hero-meta-divider"></div>
-        <div class="hero-meta-cell">
-          <div class="hero-meta-val">10&nbsp;Gbps</div>
-          <div class="hero-meta-lbl">Anti‑DDoS</div>
-        </div>
-        <div class="hero-meta-divider"></div>
-        <div class="hero-meta-cell">
-          <div class="hero-meta-val">10</div>
-          <div class="hero-meta-lbl">Локаций</div>
-        </div>
-        <div class="hero-meta-divider"></div>
-        <div class="hero-meta-cell">
-          <div class="hero-meta-val">24/7</div>
-          <div class="hero-meta-lbl">Поддержка</div>
-        </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-cell">
+        <div class="hero-meta-val">10&nbsp;Gbps</div>
+        <div class="hero-meta-lbl">Anti‑DDoS</div>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-cell">
+        <div class="hero-meta-val">10</div>
+        <div class="hero-meta-lbl">Локаций</div>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-cell">
+        <div class="hero-meta-val">24/7</div>
+        <div class="hero-meta-lbl">Поддержка</div>
       </div>
     </div>
 
+    <div class="hero-ticker reveal in d-5">
+      <span class="hero-ticker-dot"></span>
+      <span><strong>fra1.fastcloud.eu</strong> · только что создан · <em class="serif">«за 53 c, из Берлина»</em></span>
+      <span style="color:var(--text-dim)">·</span>
+      <span><strong>sgp1</strong> · pkg upgrade · <em class="serif">«ping&nbsp;<span style="color:var(--accent)">12&nbsp;ms</span> из Токио»</em></span>
+    </div>
   </div>
 </section>
 
@@ -95,7 +99,6 @@
      MANIFEST
      ═══════════════════════════════════ -->
 <section class="manifest" data-screen-label="02 Manifest">
-  <div class="manifest-inner">
   <p class="manifest-text reveal">
     Пока другие проверяют ваш паспорт, <em>сверяют почту</em>
     и&nbsp;звонят в&nbsp;банк&nbsp;— у&nbsp;вас уже работает
@@ -104,9 +107,8 @@
   </p>
   <div class="manifest-foot reveal d-1">
     <span class="mono-xs">FastCloud · 2026</span>
-    <span class="mono-xs c-dim">/</span>
-    <span class="mono-xs c-accent">скорость как продукт</span>
-  </div>
+    <span style="color:var(--text-dim); font-family:var(--mono); font-size:11px">/</span>
+    <span class="mono-xs" style="color:var(--accent)">скорость как продукт</span>
   </div>
 </section>
 
@@ -114,17 +116,17 @@
      STORY 01 — Speed
      ═══════════════════════════════════ -->
 <section class="story" data-screen-label="03 Speed">
-  <div class="story-inner row align-items-center">
-    <div class="story-text col">
+  <div class="story-inner">
+    <div class="story-text">
       <div class="story-num reveal"><span class="step">01</span> &nbsp;/&nbsp; скорость</div>
       <div class="story-tag reveal d-1">мгновенный старт</div>
       <h2 class="story-title reveal d-2">
-        55&nbsp;секунд <em>до&nbsp;готового</em> сервера.
+        55&nbsp;секунд <em>против</em> 24&nbsp;часов.
       </h2>
       <p class="story-desc reveal d-3">
-        Большинство провайдеров держит на&nbsp;ручной верификации часами.
-        FastCloud активирует сервер автоматически сразу после оплаты&nbsp;—
-        без документов, без&nbsp;ожиданий.
+        Hetzner проверяет документы до&nbsp;24&nbsp;часов. Hostinger требует
+        верификацию по&nbsp;паспорту. FastCloud&nbsp;— активирует
+        сервер автоматически сразу после оплаты.
       </p>
       <ul class="story-list reveal d-4">
         <li>Никаких паспортов и&nbsp;звонков в&nbsp;поддержку</li>
@@ -133,39 +135,34 @@
       </ul>
     </div>
 
-    <div class="story-visual col d-none d-lg-block reveal d-2">
-      <div class="deploy-steps">
-        <div class="deploy-step done">
-          <div class="deploy-step-dot"></div>
-          <div>
-            <div class="deploy-step-label">Оплата принята</div>
-            <div class="deploy-step-time">0 с</div>
+    <div class="story-visual reveal d-2">
+      <div class="tlbar">
+        <div class="tlbar-row">
+          <div class="tlbar-meta">
+            <span class="tlbar-name">Hetzner</span>
+            <span class="tlbar-time c-red">≈&nbsp;24&nbsp;часа</span>
           </div>
+          <div class="tlbar-track"><div class="tlbar-fill tlbar-fill-dim" style="width:100%"></div></div>
+          <div class="tlbar-sub">верификация · KYC · ручная проверка</div>
         </div>
-        <div class="deploy-step done">
-          <div class="deploy-step-dot"></div>
-          <div>
-            <div class="deploy-step-label">Provisioning NVMe</div>
-            <div class="deploy-step-time">12 с</div>
+        <div class="tlbar-row">
+          <div class="tlbar-meta">
+            <span class="tlbar-name">Hostinger / IONOS</span>
+            <span class="tlbar-time c-red">≈&nbsp;6&nbsp;часов</span>
           </div>
+          <div class="tlbar-track"><div class="tlbar-fill tlbar-fill-dim" style="width:25%"></div></div>
+          <div class="tlbar-sub">подтверждение оплаты · provisioning</div>
         </div>
-        <div class="deploy-step done">
-          <div class="deploy-step-dot"></div>
-          <div>
-            <div class="deploy-step-label">ОС установлена</div>
-            <div class="deploy-step-time">38 с</div>
+        <div class="tlbar-row">
+          <div class="tlbar-meta">
+            <span class="tlbar-name fw-7" style="color:var(--accent)">FastCloud</span>
+            <span class="tlbar-time c-accent">55&nbsp;секунд&nbsp;✓</span>
           </div>
+          <div class="tlbar-track"><div class="tlbar-fill tlbar-fill-lime" data-fill="2%"></div></div>
+          <div class="tlbar-sub">оплата → SSH готов</div>
         </div>
-        <div class="deploy-step active">
-          <div class="deploy-step-dot"></div>
-          <div>
-            <div class="deploy-step-label">SSH готов</div>
-            <div class="deploy-step-time">55 с</div>
-          </div>
-        </div>
-        <div class="deploy-total">
-          <span class="deploy-total-val">55 секунд</span>
-          <span class="deploy-total-lbl">от оплаты до SSH</span>
+        <div class="tlbar-x">
+          <span>0&nbsp;c</span><span>6&nbsp;ч</span><span>12&nbsp;ч</span><span>18&nbsp;ч</span><span>24&nbsp;ч</span>
         </div>
       </div>
     </div>
@@ -176,17 +173,17 @@
      STORY 02 — Anti-DDoS
      ═══════════════════════════════════ -->
 <section class="story story-flip" data-screen-label="04 DDoS">
-  <div class="story-inner row align-items-center">
-    <div class="story-text col">
+  <div class="story-inner">
+    <div class="story-text">
       <div class="story-num reveal"><span class="step">02</span> &nbsp;/&nbsp; защита</div>
       <div class="story-tag reveal d-1">anti‑ddos · 10 gbps</div>
       <h2 class="story-title reveal d-2">
         Атаки&nbsp;отбиты <em>до&nbsp;того,</em><br>как доходят до&nbsp;вас.
       </h2>
       <p class="story-desc reveal d-3">
-        Фильтрация работает на&nbsp;уровнях L3, L4 и&nbsp;L7&nbsp;—
-        атаки блокируются ещё до&nbsp;того, как достигают вашего сервера.
-        Входит в&nbsp;каждый тариф без&nbsp;доплат.
+        У&nbsp;Hetzner&nbsp;— базовая защита. Contabo не&nbsp;защищает.
+        У&nbsp;FastCloud фильтрация L3&nbsp;/&nbsp;L4&nbsp;/&nbsp;L7
+        включена в&nbsp;каждый тариф без&nbsp;доплат.
       </p>
       <ul class="story-list reveal d-4">
         <li>UDP&nbsp;Flood, SYN&nbsp;Flood, HTTP&nbsp;DDoS, Amplification</li>
@@ -195,7 +192,7 @@
       </ul>
     </div>
 
-    <div class="story-visual col d-none d-lg-block reveal d-2">
+    <div class="story-visual reveal d-2">
       <div class="shield-viz">
         <div class="shield-orb">
           <div class="shield-ring r3"></div>
@@ -203,7 +200,7 @@
           <div class="shield-ring r1"></div>
           <div class="shield-core">
             <svg viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L4 6v6c0 5.2 3.5 10.1 8 11.3c4.5-1.2 8-6.1 8-11.3V6l-8-4z" stroke="currentColor" stroke-width="1.6" fill="rgba(32,181,235,.08)"/>
+              <path d="M12 2L4 6v6c0 5.2 3.5 10.1 8 11.3c4.5-1.2 8-6.1 8-11.3V6l-8-4z" stroke="currentColor" stroke-width="1.6" fill="rgba(196,255,61,.08)"/>
               <path d="M9 12l2.2 2.2L15.6 9.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
@@ -235,62 +232,54 @@
      STORY 03 — Fixed pricing
      ═══════════════════════════════════ -->
 <section class="story" data-screen-label="05 Pricing">
-  <div class="story-inner row align-items-center">
-    <div class="story-text col">
+  <div class="story-inner">
+    <div class="story-text">
       <div class="story-num reveal"><span class="step">03</span> &nbsp;/&nbsp; ценообразование</div>
       <div class="story-tag reveal d-1">честные цены</div>
       <h2 class="story-title reveal d-2">
         Цена при&nbsp;старте&nbsp;= <em>цена</em> при&nbsp;продлении.
       </h2>
       <p class="story-desc reveal d-3">
-        Многие провайдеры привлекают низкой ценой при&nbsp;первом платеже,
-        а&nbsp;при продлении выставляют сумму в&nbsp;2–3&nbsp;раза выше.
-        FastCloud не&nbsp;поднимает цену при&nbsp;продлении.
+        Hostinger обещает $4,99, а&nbsp;при продлении выставляет $11,99.
+        Contabo берёт setup&nbsp;fee. FastCloud замораживает цену
+        на&nbsp;всю жизнь аккаунта.
       </p>
       <ul class="story-list reveal d-4">
-        <li>Цена при&nbsp;продлении равна стартовой</li>
+        <li>Цена не&nbsp;меняется при&nbsp;продлении&nbsp;— никогда</li>
         <li>Нет скрытых комиссий и&nbsp;setup‑платежей</li>
-        <li>Удаление в&nbsp;1&nbsp;клик без&nbsp;штрафов и&nbsp;привязок</li>
+        <li>Почасовой биллинг, удаление в&nbsp;1&nbsp;клик без&nbsp;штрафов</li>
       </ul>
     </div>
 
-    <div class="story-visual col d-none d-lg-block reveal d-2">
-      <div class="incl-list">
-        <div class="incl-head">Что входит в&nbsp;каждый тариф</div>
-        <div class="incl-item">
-          <div class="incl-check">✓</div>
-          <div>
-            <div class="incl-label">NVMe Gen4 · 7&nbsp;000&nbsp;MB/s</div>
-            <div class="incl-sub">высокопроизводительное хранилище</div>
-          </div>
+    <div class="story-visual reveal d-2">
+      <div class="ptbl">
+        <div class="ptbl-head">
+          <span>Провайдер</span><span>Старт</span><span>Продление</span>
         </div>
-        <div class="incl-item">
-          <div class="incl-check">✓</div>
-          <div>
-            <div class="incl-label">Anti-DDoS L3&nbsp;/&nbsp;L4&nbsp;/&nbsp;L7</div>
-            <div class="incl-sub">без доплаты, во&nbsp;всех тарифах</div>
-          </div>
+        <div class="ptbl-row">
+          <span class="ptbl-name">Hostinger</span>
+          <span class="ptbl-price">$4,99</span>
+          <span class="ptbl-renew">$11,99 <span class="ptbl-arrow">↑</span></span>
         </div>
-        <div class="incl-item">
-          <div class="incl-check">✓</div>
-          <div>
-            <div class="incl-label">Бэкапы · 14&nbsp;дней</div>
-            <div class="incl-sub">автоматические снэпшоты каждую ночь</div>
-          </div>
+        <div class="ptbl-row">
+          <span class="ptbl-name">DigitalOcean</span>
+          <span class="ptbl-price">$6,00</span>
+          <span class="ptbl-renew">$12,00 <span class="ptbl-arrow">↑</span></span>
         </div>
-        <div class="incl-item">
-          <div class="incl-check">✓</div>
-          <div>
-            <div class="incl-label">Поддержка 24/7</div>
-            <div class="incl-sub">живые инженеры, ответ &lt;&nbsp;5&nbsp;мин</div>
-          </div>
+        <div class="ptbl-row">
+          <span class="ptbl-name">Contabo</span>
+          <span class="ptbl-price">$4,50</span>
+          <span class="ptbl-renew">+&nbsp;€4,99&nbsp;setup</span>
         </div>
-        <div class="incl-item">
-          <div class="incl-check">✓</div>
-          <div>
-            <div class="incl-label">Цена при&nbsp;продлении = цена при&nbsp;старте</div>
-            <div class="incl-sub">без setup&nbsp;fee и&nbsp;скрытых платежей</div>
-          </div>
+        <div class="ptbl-row">
+          <span class="ptbl-name">IONOS</span>
+          <span class="ptbl-price">$2,00</span>
+          <span class="ptbl-renew">$8,00 <span class="ptbl-arrow">↑</span></span>
+        </div>
+        <div class="ptbl-row us">
+          <span class="ptbl-name us">FastCloud</span>
+          <span class="ptbl-price us">$9,00</span>
+          <span class="ptbl-renew ok">$9,00&nbsp;✓</span>
         </div>
       </div>
     </div>
@@ -301,17 +290,17 @@
      STORY 04 — Backups
      ═══════════════════════════════════ -->
 <section class="story story-flip" data-screen-label="06 Backups">
-  <div class="story-inner row align-items-center">
-    <div class="story-text col">
+  <div class="story-inner">
+    <div class="story-text">
       <div class="story-num reveal"><span class="step">04</span> &nbsp;/&nbsp; бэкапы</div>
       <div class="story-tag reveal d-1">14 снэпшотов</div>
       <h2 class="story-title reveal d-2">
         Ежедневные бэкапы.<br><em>В&nbsp;каждом</em> тарифе.
       </h2>
       <p class="story-desc reveal d-3">
-        Каждую ночь FastCloud автоматически создаёт полный snapshot
-        вашего сервера. 14&nbsp;дней хранения — в&nbsp;каждом тарифе,
-        без&nbsp;доплат.
+        У&nbsp;Hetzner, Contabo и&nbsp;IONOS бэкапы&nbsp;— платная опция.
+        У&nbsp;FastCloud автоматический snapshot каждую ночь
+        и&nbsp;хранение 14&nbsp;дней — без&nbsp;доплаты.
       </p>
       <ul class="story-list reveal d-4">
         <li>Автоматический snapshot каждую ночь в&nbsp;03:00</li>
@@ -320,14 +309,14 @@
       </ul>
     </div>
 
-    <div class="story-visual col d-none d-lg-block reveal d-2">
+    <div class="story-visual reveal d-2">
       <div class="bkp">
         <div class="bkp-row"><div class="bkp-dot"></div><div class="bkp-date">Сегодня, 03:00</div><div class="bkp-size">2,4&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
         <div class="bkp-row"><div class="bkp-dot"></div><div class="bkp-date">Вчера, 03:00</div><div class="bkp-size">2,3&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
         <div class="bkp-row"><div class="bkp-dot"></div><div class="bkp-date">23&nbsp;мая, 03:00</div><div class="bkp-size">2,3&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
         <div class="bkp-row"><div class="bkp-dot"></div><div class="bkp-date">22&nbsp;мая, 03:00</div><div class="bkp-size">2,2&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
-        <div class="bkp-row bkp-row-dim"><div class="bkp-dot"></div><div class="bkp-date">21&nbsp;мая, 03:00</div><div class="bkp-size">2,2&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
-        <div class="bkp-row bkp-row-ghost"><div class="bkp-dot dim"></div><div class="bkp-date dim">+&nbsp;ещё 9&nbsp;снэпшотов</div></div>
+        <div class="bkp-row" style="opacity:.6"><div class="bkp-dot"></div><div class="bkp-date">21&nbsp;мая, 03:00</div><div class="bkp-size">2,2&nbsp;ГБ</div><div class="bkp-tick">✓</div></div>
+        <div class="bkp-row" style="opacity:.35"><div class="bkp-dot dim"></div><div class="bkp-date dim">+&nbsp;ещё 9&nbsp;снэпшотов</div></div>
       </div>
     </div>
   </div>
@@ -337,10 +326,10 @@
      STORY 05 — Locations
      ═══════════════════════════════════ -->
 <section class="story" data-screen-label="07 Locations">
-  <div class="story-inner row align-items-center">
-    <div class="story-text col">
+  <div class="story-inner">
+    <div class="story-text">
       <div class="story-num reveal"><span class="step">05</span> &nbsp;/&nbsp; локации</div>
-      <div class="story-tag reveal d-1">10 локаций по миру</div>
+      <div class="story-tag reveal d-1">10 дата‑центров</div>
       <h2 class="story-title reveal d-2">
         10&nbsp;локаций. <em>Один</em> SLA.
       </h2>
@@ -356,7 +345,7 @@
       </ul>
     </div>
 
-    <div class="story-visual flush col d-none d-lg-block reveal d-2 map-visual">
+    <div class="story-visual flush reveal d-2 map-visual" style="background:transparent;border:none;padding:24px">
       <!-- HUD corner brackets -->
       <span class="hud-corner hud-tl"></span>
       <span class="hud-corner hud-tr"></span>
@@ -368,13 +357,13 @@
         <span class="map-hud-dot"></span>
         <span class="map-hud-label">LIVE</span>
         <span class="map-hud-sep">·</span>
-        <span class="map-hud-stat">10&nbsp;PoP</span>
+        <span class="map-hud-stat">10&nbsp;dc</span>
         <span class="map-hud-sep">·</span>
         <span class="map-hud-stat">1.24&nbsp;Tbps</span>
       </div>
       <div class="map-hud map-hud-br">
-        <span class="mono-xs mono-plain">ближайший&nbsp;узел</span>
-        <span class="map-hud-stat">fra1&nbsp;<span class="c-accent">·&nbsp;12&nbsp;ms</span></span>
+        <span class="mono-xs" style="text-transform:none;letter-spacing:0">ближайший&nbsp;узел</span>
+        <span class="map-hud-stat">fra1&nbsp;<span style="color:var(--accent)">·&nbsp;12&nbsp;ms</span></span>
       </div>
 
       <svg class="world-map-svg" viewBox="0 8 125.762 72" xmlns="http://www.w3.org/2000/svg">
@@ -394,9 +383,9 @@
       </defs>
       <style>
         .land { fill: rgba(124,140,255,.10); stroke: rgba(124,140,255,.35); stroke-width: .28; stroke-linejoin: round; stroke-linecap: round; }
-        .dc-dot { fill: #20b5eb; }
+        .dc-dot { fill: #c4ff3d; }
         .dc-lbl { font-size: 3.4px; font-family: 'JetBrains Mono', monospace; fill: #d4e4a6; font-weight: 700; text-anchor: middle; }
-        .arc { fill: none; stroke: rgba(32,181,235,.75); stroke-width: .4; stroke-dasharray: 1.8 2; stroke-linecap: round; animation: arcFlow 6s linear infinite; }
+        .arc { fill: none; stroke: rgba(196,255,61,.75); stroke-width: .4; stroke-dasharray: 1.8 2; stroke-linecap: round; animation: arcFlow 6s linear infinite; }
         .arc.a2 { animation-duration: 7s; animation-delay: -1.5s; opacity: .85; }
         .arc.a3 { animation-duration: 8s; animation-delay: -3s; opacity: .75; }
         .arc.a4 { animation-duration: 5.5s; animation-delay: -2.2s; opacity: .9; }
@@ -404,7 +393,7 @@
         .arc.a6 { animation-duration: 5s; animation-delay: -1s; opacity: .8; }
         .arc.a7 { animation-duration: 7.5s; animation-delay: -3.4s; opacity: .8; }
         @keyframes arcFlow { to { stroke-dashoffset: -36; } }
-        .pkt { fill: #20b5eb; filter: url(#dcglow); }
+        .pkt { fill: #c4ff3d; filter: url(#dcglow); }
       </style>
       <polygon class="land" points="52.688,20.209 52.762,20.738 51.982,20.898 51.867,22.017 52.822,22.017 54.081,21.9 54.732,21.127 54.035,20.856 53.653,20.423 53.08,19.513 52.822,18.202 51.748,18.421 51.449,18.882 51.449,19.393 51.962,19.756"/>
       <polygon class="land" points="51.787,20.641 51.838,19.937 51.221,19.67 50.34,19.868 49.689,20.908 49.689,21.589 50.45,21.589"/>
@@ -461,9 +450,9 @@
   </g>
   <!-- Soft pulse rings -->
   <g>
-    <circle cx="55" cy="21" r="1.2" fill="#20b5eb" class="dc-pulse" opacity=".5"/>
-    <circle cx="101" cy="44" r="1.2" fill="#20b5eb" class="dc-pulse" opacity=".5" style="animation-delay:.8s"/>
-    <circle cx="9"  cy="25" r="1.2" fill="#20b5eb" class="dc-pulse" opacity=".5" style="animation-delay:1.6s"/>
+    <circle cx="55" cy="21" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5"/>
+    <circle cx="101" cy="44" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:.8s"/>
+    <circle cx="9"  cy="25" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:1.6s"/>
   </g>
   <!-- Packets traveling along arcs -->
   <g class="pkts">
@@ -483,8 +472,8 @@
      STORY 06 — Support
      ═══════════════════════════════════ -->
 <section class="story story-flip" data-screen-label="08 Support">
-  <div class="story-inner row align-items-center">
-    <div class="story-text col">
+  <div class="story-inner">
+    <div class="story-text">
       <div class="story-num reveal"><span class="step">06</span> &nbsp;/&nbsp; поддержка</div>
       <div class="story-tag reveal d-1">24/7 · живые инженеры</div>
       <h2 class="story-title reveal d-2">
@@ -502,7 +491,7 @@
       </ul>
     </div>
 
-    <div class="story-visual flush col d-none d-lg-block reveal d-2">
+    <div class="story-visual flush reveal d-2">
       <div class="chat-mock">
         <div class="chat-mock-header">
           <span class="dot dot-lime"></span>Поддержка FastCloud
@@ -530,8 +519,8 @@
      STORY 07 — Apps
      ═══════════════════════════════════ -->
 <section class="story" data-screen-label="09 Apps">
-  <div class="story-inner row align-items-center">
-    <div class="story-text col">
+  <div class="story-inner">
+    <div class="story-text">
       <div class="story-num reveal"><span class="step">07</span> &nbsp;/&nbsp; маркетплейс</div>
       <div class="story-tag reveal d-1">50+ приложений в 1 клик</div>
       <h2 class="story-title reveal d-2">
@@ -549,7 +538,7 @@
       </ul>
     </div>
 
-    <div class="story-visual col d-none d-lg-block reveal d-2 app-mp-wrap">
+    <div class="story-visual reveal d-2 app-mp-wrap">
       <div class="app-mp-bar">
         <div class="app-mp-search">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -632,15 +621,14 @@
       <div class="plans-hint"><span class="plans-hint-dot"></span>Фиксированная цена при&nbsp;продлении · смена тарифа в&nbsp;1&nbsp;клик</div>
     </div>
 
-    <div class="plan-grid row g-3">
+    <div class="plan-grid">
       <!-- Starter -->
-      <div class="col-12 col-sm-6 col-xl-3"><div class="plan-card reveal d-1">
+      <div class="plan-card reveal d-1">
         <div class="plan-name">Starter</div>
         <div class="plan-price">
           <span class="plan-price-cur">€</span><span class="plan-price-val" data-m="4,00" data-q="3,80" data-h="3,60" data-y="3,40">4,00</span><span class="plan-price-per">/мес</span>
         </div>
         <div class="plan-savings" data-save-m="" data-save-q="экономия €&nbsp;2,40&nbsp;/&nbsp;год" data-save-h="экономия €&nbsp;4,80&nbsp;/&nbsp;год" data-save-y="экономия €&nbsp;7,20&nbsp;/&nbsp;год">&nbsp;</div>
-        <div class="plan-tags"><span>блог</span><span>хобби</span><span>тест</span></div>
         <div class="plan-stats">
           <div class="plan-stat"><span class="plan-stat-val">1</span><span class="plan-stat-lbl">vCPU</span></div>
           <div class="plan-stat"><span class="plan-stat-val">2</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
@@ -652,16 +640,15 @@
           <span>Поддержка 24/7</span>
         </div>
         <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать →</a>
-      </div></div>
+      </div>
 
       <!-- Pro -->
-      <div class="col-12 col-sm-6 col-xl-3"><div class="plan-card featured reveal d-2">
+      <div class="plan-card featured reveal d-2">
         <div class="plan-name">Pro</div>
         <div class="plan-price">
           <span class="plan-price-cur">€</span><span class="plan-price-val" data-m="9,00" data-q="8,55" data-h="8,10" data-y="7,65">9,00</span><span class="plan-price-per">/мес</span>
         </div>
         <div class="plan-savings" data-save-m="" data-save-q="экономия €&nbsp;5,40&nbsp;/&nbsp;год" data-save-h="экономия €&nbsp;10,80&nbsp;/&nbsp;год" data-save-y="экономия €&nbsp;16,20&nbsp;/&nbsp;год">&nbsp;</div>
-        <div class="plan-tags"><span>API</span><span>лендинг</span><span>SaaS</span></div>
         <div class="plan-stats">
           <div class="plan-stat"><span class="plan-stat-val">2</span><span class="plan-stat-lbl">vCPU</span></div>
           <div class="plan-stat"><span class="plan-stat-val">4</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
@@ -673,16 +660,15 @@
           <span>Поддержка 24/7</span>
         </div>
         <a href="register.html" class="btn btn-primary btn-sm mt-auto">Выбрать →</a>
-      </div></div>
+      </div>
 
       <!-- Business -->
-      <div class="col-12 col-sm-6 col-xl-3"><div class="plan-card reveal d-3">
+      <div class="plan-card reveal d-3">
         <div class="plan-name">Business</div>
         <div class="plan-price">
           <span class="plan-price-cur">€</span><span class="plan-price-val" data-m="18,00" data-q="17,10" data-h="16,20" data-y="15,30">18,00</span><span class="plan-price-per">/мес</span>
         </div>
         <div class="plan-savings" data-save-m="" data-save-q="экономия €&nbsp;10,80&nbsp;/&nbsp;год" data-save-h="экономия €&nbsp;21,60&nbsp;/&nbsp;год" data-save-y="экономия €&nbsp;32,40&nbsp;/&nbsp;год">&nbsp;</div>
-        <div class="plan-tags"><span>магазин</span><span>CI/CD</span><span>прод</span></div>
         <div class="plan-stats">
           <div class="plan-stat"><span class="plan-stat-val">4</span><span class="plan-stat-lbl">vCPU</span></div>
           <div class="plan-stat"><span class="plan-stat-val">8</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
@@ -695,16 +681,15 @@
           <span>Поддержка 24/7</span>
         </div>
         <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать →</a>
-      </div></div>
+      </div>
 
       <!-- Scale -->
-      <div class="col-12 col-sm-6 col-xl-3"><div class="plan-card reveal d-4">
+      <div class="plan-card reveal d-4">
         <div class="plan-name">Scale</div>
         <div class="plan-price">
           <span class="plan-price-cur">€</span><span class="plan-price-val" data-m="35,00" data-q="33,25" data-h="31,50" data-y="29,75">35,00</span><span class="plan-price-per">/мес</span>
         </div>
         <div class="plan-savings" data-save-m="" data-save-q="экономия €&nbsp;21,00&nbsp;/&nbsp;год" data-save-h="экономия €&nbsp;42,00&nbsp;/&nbsp;год" data-save-y="экономия €&nbsp;63,00&nbsp;/&nbsp;год">&nbsp;</div>
-        <div class="plan-tags"><span>highload</span><span>БД</span><span>k8s</span></div>
         <div class="plan-stats">
           <div class="plan-stat"><span class="plan-stat-val">8</span><span class="plan-stat-lbl">vCPU</span></div>
           <div class="plan-stat"><span class="plan-stat-val">16</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
@@ -717,7 +702,7 @@
           <span>Поддержка 24/7</span>
         </div>
         <a href="register.html" class="btn btn-ghost btn-sm mt-auto">Выбрать →</a>
-      </div></div>
+      </div>
     </div>
   </div>
 
@@ -840,29 +825,29 @@
      ═══════════════════════════════════ -->
 <footer class="mkt-footer">
   <div class="mkt-footer-inner">
-    <div class="mkt-footer-grid row g-4">
-      <div class="col-12 col-lg-4">
+    <div class="mkt-footer-grid">
+      <div>
         <a href="index.html" class="logo">
-          <svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#20b5eb">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg>
+          <svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#c4ff3d">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg>
         </a>
         <p class="mkt-footer-brand-desc">
           Скорость как продукт. VPS в&nbsp;10 локациях по&nbsp;миру.
           NVMe Gen4 · Anti‑DDoS · SLA&nbsp;99,99%.
         </p>
       </div>
-      <div class="mkt-footer-col col-12 col-sm-4 col-lg">
+      <div class="mkt-footer-col">
         <div class="mkt-footer-label">Продукт</div>
         <a href="pricing.html">Тарифы</a>
         <a href="locations.html">Локации</a>
         <a href="contacts.html">Контакты</a>
       </div>
-      <div class="mkt-footer-col col-12 col-sm-4 col-lg">
+      <div class="mkt-footer-col">
         <div class="mkt-footer-label">Юридическое</div>
         <a href="terms.html">Договор‑оферта</a>
         <a href="privacy.html">Конфиденциальность</a>
         <a href="sla.html">SLA</a>
       </div>
-      <div class="mkt-footer-col col-12 col-sm-4 col-lg">
+      <div class="mkt-footer-col">
         <div class="mkt-footer-label">Поддержка</div>
         <a href="contacts.html">Написать нам</a>
         <a href="mailto:support@fastcloud.eu">support@fastcloud.eu</a>
@@ -877,47 +862,6 @@
   </div>
 </footer>
 
-<script>
-/* ────────── live purchase ticker ────────── */
-(function () {
-  const el = document.getElementById('heroLiveText');
-  if (!el) return;
-
-  const events = [
-    '<strong>fra1.fastcloud.eu</strong> · только что создан · <em>«за&nbsp;53&nbsp;с, из Берлина»</em>',
-    '<strong>sgp1.fastcloud.eu</strong> · сервер запущен · <em>«ping&nbsp;<span class="c-accent">12&nbsp;ms</span> из Токио»</em>',
-    '<strong>nyc1.fastcloud.eu</strong> · создан · <em>«за&nbsp;41&nbsp;с, из Нью-Йорка»</em>',
-    '<strong>ams1.fastcloud.eu</strong> · WordPress установлен · <em>«за&nbsp;38&nbsp;с, из Амстердама»</em>',
-    '<strong>lon1.fastcloud.eu</strong> · Docker задеплоен · <em>«за&nbsp;45&nbsp;с, из Лондона»</em>',
-    '<strong>tor1.fastcloud.eu</strong> · создан · <em>«за&nbsp;48&nbsp;с, из Торонто»</em>',
-    '<strong>mum1.fastcloud.eu</strong> · создан · <em>«за&nbsp;44&nbsp;с, из Мумбаи»</em>',
-    '<strong>mil1.fastcloud.eu</strong> · n8n задеплоен · <em>«за&nbsp;39&nbsp;с, из Милана»</em>',
-    '<strong>syd1.fastcloud.eu</strong> · GitLab готов · <em>«за&nbsp;52&nbsp;с, из Сиднея»</em>',
-    '<strong>waw1.fastcloud.eu</strong> · создан · <em>«за&nbsp;36&nbsp;с, из Варшавы»</em>',
-  ];
-
-  let idx = 0;
-
-  function schedule() {
-    const delay = 3500 + Math.random() * 5500; /* 3.5–9 с */
-    setTimeout(tick, delay);
-  }
-
-  function tick() {
-    idx = (idx + 1) % events.length;
-    el.classList.add('hero-live-leave');
-    setTimeout(function () {
-      el.innerHTML = events[idx];
-      el.classList.remove('hero-live-leave');
-      el.classList.add('hero-live-enter');
-      setTimeout(function () { el.classList.remove('hero-live-enter'); }, 380);
-      schedule();
-    }, 240);
-  }
-
-  schedule();
-})();
-</script>
 <script src="cta-fx.js"></script>
 <script src="nav.js"></script>
 <script src="cookie.js"></script>
@@ -1023,7 +967,7 @@
       const p = particles[i];
       p.x += p.speed * dt;
       const grad = ctx.createLinearGradient(p.x - p.length, p.y, p.x, p.y);
-      const col = p.lime ? '32,181,235' : '244,245,249';
+      const col = p.lime ? '196,255,61' : '244,245,249';
       grad.addColorStop(0,   `rgba(${col},0)`);
       grad.addColorStop(0.6, `rgba(${col},${p.alpha * 0.6})`);
       grad.addColorStop(1,   `rgba(${col},${p.alpha})`);
