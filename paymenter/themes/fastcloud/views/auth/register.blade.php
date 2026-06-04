@@ -1,44 +1,131 @@
-<form
-    class="mx-auto flex flex-col gap-2 mt-4 px-6 sm:px-14 pb-10 bg-primary-800 rounded-md xl:max-w-[60%] w-full"
-    wire:submit.prevent="submit" id="register">
-    <div class="flex flex-col items-center my-14">
-        <x-logo class="h-10" />
-        <h1 class="text-2xl text-center mt-6">{{ __('auth.sign_up_title') }} </h1>
-    </div>
-    <div class="flex flex-col md:grid md:grid-cols-2 gap-4">
-        <x-form.input name="first_name" type="text" :label="__('general.input.first_name')"
-            :placeholder="__('general.input.first_name_placeholder')" wire:model="first_name" required />
-        <x-form.input name="last_name" type="text" :label="__('general.input.last_name')"
-            :placeholder="__('general.input.last_name_placeholder')" wire:model="last_name" required />
+<div class="fc-page fc-auth-page">
+  <div class="fc-auth-split">
 
-        <x-form.input name="email" type="email" :label="__('general.input.email')"
-            :placeholder="__('general.input.email_placeholder')" required wire:model="email" divClass="col-span-2" />
+    {{-- ── Левая колонка ── --}}
+    <aside class="fc-auth-side">
+      <a href="{{ route('home') }}" wire:navigate class="fc-auth-logo">
+        <x-logo class="h-8" />
+      </a>
 
-        <x-form.input name="password" type="password" :label="__('general.input.password')" :placeholder="__('general.input.password_placeholder')"
-            wire:model="password" required />
-        <x-form.input name="password_confirm" type="password" :label="__('general.input.password_confirmation')"
-            :placeholder="__('general.input.password_confirmation_placeholder')" wire:model="password_confirmation" required />
+      <div class="fc-auth-side-body">
+        <div class="fc-auth-eyebrow">sign up · fastcloud.eu</div>
+        <h1 class="fc-auth-side-title">Сервер за&nbsp;<em>55&nbsp;секунд.</em></h1>
+        <p class="fc-auth-side-sub">
+          Без верификации, без скрытых платежей.
+          Просто e&#8209;mail — и&nbsp;сразу в&nbsp;работу.
+        </p>
+        <ul class="fc-auth-side-list">
+          <li>NVMe&nbsp;Gen4 · AMD&nbsp;EPYC · сеть 10&nbsp;Gbps</li>
+          <li>Anti&#8209;DDoS 10&nbsp;Gbps и&nbsp;бэкапы 14&nbsp;дней включены</li>
+          <li>10&nbsp;локаций по&nbsp;миру · SLA&nbsp;99,99%</li>
+        </ul>
+      </div>
 
-        <x-form.properties :custom_properties="$custom_properties" :properties="$properties" />
-    
-        @if(config('settings.tos'))
-            <x-form.checkbox wire:model="tos" name="tos" required>
-                {{ __('product.tos') }}
-                <a href="{{ config('settings.tos') }}" target="_blank" class="text-primary hover:text-primary/80">
-                    {{ __('product.tos_link') }}
-                </a>
-            </x-form.checkbox>
-        @endif    
-    </div>
+      <div class="fc-auth-side-foot">
+        <a href="#">оферта</a><span>·</span>
+        <a href="#">конфиденциальность</a><span>·</span>
+        <a href="#">поддержка</a>
+      </div>
+    </aside>
 
-    <x-captcha :form="'register'" />
+    {{-- ── Правая колонка с формой ── --}}
+    <main class="fc-auth-pane">
+      <div class="fc-auth-card">
+        <h2 class="fc-auth-card-h">Создать аккаунт</h2>
 
-    <x-button.primary class="w-full mt-2">{{ __('auth.sign_up') }}</x-button.primary>
+        <form class="fc-auth-card-form" wire:submit.prevent="submit" id="register">
 
-    <div class="text-base text-center rounded-md py-2 mt-6 text-sm">
-        {{ __('auth.already_have_account') }}
-        <a class="text-sm text-secondary-500 text-secondary hover:underline" href="{{ route('login') }}" wire:navigate>
-            {{ __('auth.sign_in') }}
-        </a>
-    </div>
-</form>
+          {{-- Имя / Фамилия --}}
+          <div class="fc-auth-grid">
+            <div class="fc-field @error('first_name') is-error @enderror">
+              <span class="fc-field-lbl">Имя</span>
+              <input class="fc-inp" type="text"
+                     placeholder="{{ __('general.input.first_name_placeholder') }}"
+                     wire:model="first_name"
+                     id="first_name" name="first_name" required>
+              @error('first_name')
+                <span class="fc-field-error">{{ $message }}</span>
+              @enderror
+            </div>
+
+            <div class="fc-field @error('last_name') is-error @enderror">
+              <span class="fc-field-lbl">Фамилия</span>
+              <input class="fc-inp" type="text"
+                     placeholder="{{ __('general.input.last_name_placeholder') }}"
+                     wire:model="last_name"
+                     id="last_name" name="last_name" required>
+              @error('last_name')
+                <span class="fc-field-error">{{ $message }}</span>
+              @enderror
+            </div>
+          </div>
+
+          {{-- Email --}}
+          <div class="fc-field @error('email') is-error @enderror">
+            <span class="fc-field-lbl">E-mail</span>
+            <input class="fc-inp" type="email"
+                   placeholder="{{ __('general.input.email_placeholder') }}"
+                   wire:model="email"
+                   id="email" name="email" required>
+            @error('email')
+              <span class="fc-field-error">{{ $message }}</span>
+            @enderror
+          </div>
+
+          {{-- Пароли --}}
+          <div class="fc-auth-grid">
+            <div class="fc-field @error('password') is-error @enderror">
+              <span class="fc-field-lbl">Пароль</span>
+              <input class="fc-inp" type="password"
+                     placeholder="{{ __('general.input.password_placeholder') }}"
+                     wire:model="password"
+                     id="password" name="password" required>
+              @error('password')
+                <span class="fc-field-error">{{ $message }}</span>
+              @enderror
+            </div>
+
+            <div class="fc-field @error('password_confirmation') is-error @enderror">
+              <span class="fc-field-lbl">Повтор пароля</span>
+              <input class="fc-inp" type="password"
+                     placeholder="{{ __('general.input.password_confirmation_placeholder') }}"
+                     wire:model="password_confirmation"
+                     id="password_confirmation" name="password_confirmation" required>
+              @error('password_confirmation')
+                <span class="fc-field-error">{{ $message }}</span>
+              @enderror
+            </div>
+          </div>
+
+          {{-- Кастомные поля (из настроек) --}}
+          <x-form.properties :custom_properties="$custom_properties" :properties="$properties" />
+
+          {{-- ToS --}}
+          @if(config('settings.tos'))
+          <label class="fc-auth-check">
+            <input type="checkbox" wire:model="tos" name="tos" required>
+            <span>
+              {{ __('product.tos') }}
+              <a href="{{ config('settings.tos') }}" target="_blank">
+                {{ __('product.tos_link') }}
+              </a>
+            </span>
+          </label>
+          @endif
+
+          <x-captcha :form="'register'" />
+
+          <button type="submit" class="fc-btn-lime fc-btn-block">
+            Создать аккаунт &rarr;
+          </button>
+        </form>
+
+        <p class="fc-auth-foot">
+          Уже есть аккаунт?
+          <a href="{{ route('login') }}" wire:navigate>Войти</a>
+        </p>
+      </div>
+    </main>
+
+  </div>
+</div>

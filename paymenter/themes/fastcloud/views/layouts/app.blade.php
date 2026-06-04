@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>
-        {{ config('app.name', 'Paymenter') }}
+        {{ config('app.name', 'Fast Cloud') }}
         @isset($title)
         - {{ $title }}
         @endisset
@@ -17,10 +17,12 @@
 
     @if (config('settings.favicon'))
     <link rel="icon" href="{{ Storage::url(config('settings.favicon')) }}">
+    @else
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     @endif
     @isset($title)
-    <meta content="{{ isset($title) ? config('app.name', 'Paymenter') . ' - ' . $title : config('app.name', 'Paymenter') }}" property="og:title">
-    <meta content="{{ isset($title) ? config('app.name', 'Paymenter') . ' - ' . $title : config('app.name', 'Paymenter') }}" name="title">
+    <meta content="{{ isset($title) ? config('app.name', 'Fast Cloud') . ' - ' . $title : config('app.name', 'Fast Cloud') }}" property="og:title">
+    <meta content="{{ isset($title) ? config('app.name', 'Fast Cloud') . ' - ' . $title : config('app.name', 'Fast Cloud') }}" name="title">
     @endisset
     @isset($description)
     <meta content="{{ $description }}" property="og:description">
@@ -38,7 +40,8 @@
     <style>[wire\:name="components\.locale-switch"]{display:none!important}</style>
 </head>
 
-<body class="w-full bg-background text-base min-h-screen flex flex-col antialiased {{ Route::is('home') ? 'fc-marketing' : '' }}"
+@php $isAuth = Route::is('login', 'register', 'password.*', '2fa'); @endphp
+<body class="w-full bg-background text-base min-h-screen flex flex-col antialiased {{ (Route::is('home') || $isAuth) ? 'fc-marketing' : '' }}"
     x-cloak
     x-data="{
         theme: $persist('system').as('theme_mode'),
@@ -49,28 +52,38 @@
             });
         },
         get isDark() {
+            @if(Route::is('home') || Route::is('login') || Route::is('register') || Route::is('password.*') || Route::is('2fa'))
+            return true;
+            @else
             return this.theme === 'dark' || (this.theme === 'system' && this.systemDark);
+            @endif
         }
     }"
     :class="{'dark': isDark}"
 >
     {!! hook('body') !!}
+    @unless($isAuth)
     <x-navigation />
+    @endunless
     <div class="w-full flex flex-grow">
-        @if (isset($sidebar) && $sidebar)
+        @if (!$isAuth && isset($sidebar) && $sidebar)
         <x-navigation.sidebar title="$title" />
         @endif
-        <div class="{{ (isset($sidebar) && $sidebar) ? 'md:ml-64 rtl:ml-0 rtl:md:mr-64' : '' }} flex flex-col flex-grow overflow-auto">
-            <main class="mt-16 grow">
+        <div class="{{ (!$isAuth && isset($sidebar) && $sidebar) ? 'md:ml-64 rtl:ml-0 rtl:md:mr-64' : '' }} flex flex-col flex-grow overflow-auto">
+            <main class="{{ $isAuth ? '' : 'mt-16' }} grow">
                 {{ $slot }}
             </main>
+            @unless($isAuth)
             <x-notification />
             <x-confirmation />
             <div class="flex">
                 <x-navigation.footer />
             </div>
+            @endunless
         </div>
+        @unless($isAuth)
         <x-impersonating />
+        @endunless
     </div>
     @livewireScriptConfig
     {!! hook('footer') !!}
