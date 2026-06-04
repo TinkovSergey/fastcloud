@@ -22,8 +22,8 @@
   --fc-lime-rgb: 181,245,58;
 }
 
-/* ── Design tokens scoped to fc-page ────────────────────────────────── */
-.fc-page {
+/* ── Design tokens — на всех маркетинговых страницах ────────────────── */
+body.fc-marketing {
   --fc-bg:         #0a0c13;
   --fc-bg-elev:    #0f1219;
   --fc-surface:    #14171f;
@@ -56,6 +56,13 @@
   color: var(--fc-text);
   background: var(--fc-bg);
   -webkit-font-smoothing: antialiased;
+}
+
+/* .fc-page наследует токены от body.fc-marketing */
+.fc-page {
+  font-family: var(--fc-font);
+  color: var(--fc-text);
+  background: var(--fc-bg);
 }
 
 /* ── Reveal animation ────────────────────────────────────────────────── */
