@@ -764,6 +764,13 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 /* ════════════════════════════════════════════
    AUTH — split layout (login / register)
    ════════════════════════════════════════════ */
+
+/* Body override: block instead of flex so auth page fills viewport cleanly */
+body.fc-auth-body {
+  display: block !important;
+  overflow: hidden auto;
+}
+
 .fc-auth-page {
   display: grid;
   grid-template-columns: 1fr 1fr;

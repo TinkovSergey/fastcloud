@@ -41,7 +41,7 @@
 </head>
 
 @php $isAuth = Route::is('login', 'register', 'password.*', '2fa'); @endphp
-<body class="w-full bg-background text-base min-h-screen flex flex-col antialiased {{ (Route::is('home') || $isAuth) ? 'fc-marketing' : '' }}"
+<body class="w-full bg-background text-base min-h-screen antialiased {{ $isAuth ? 'fc-auth-body fc-marketing' : 'flex flex-col' }} {{ Route::is('home') ? 'fc-marketing' : '' }}"
     x-cloak
     x-data="{
         theme: $persist('system').as('theme_mode'),
@@ -63,7 +63,7 @@
 >
     {!! hook('body') !!}
     @if($isAuth)
-    {{-- Auth pages: no nav, no wrappers — slot renders directly --}}
+    {{-- Auth pages: no nav, no wrappers, no flex context --}}
     {{ $slot }}
     @else
     <x-navigation />
@@ -83,9 +83,9 @@
         </div>
         <x-impersonating />
     </div>
+    {!! hook('footer') !!}
     @endif
     @livewireScriptConfig
-    {!! hook('footer') !!}
 </body>
 
 </html>
