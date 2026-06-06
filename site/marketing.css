@@ -855,7 +855,7 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
   padding: 2px 7px; border-radius: 999px; margin-left: 4px;
 }
 .fc-billing-toggle-btn.on .fc-billing-badge {
-  color: #0a0c13; background: rgba(181,245,58,.3); border-color: transparent;
+  color: #0a0c13; background: var(--fc-lime); border-color: transparent;
 }
 
 /* Plan savings */
