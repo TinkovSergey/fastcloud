@@ -1173,7 +1173,6 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 
 /* ── Legal pages ─────────────────────────────────────────────────────── */
 .fc-legal-body {
-  max-width: 780px;
   display: flex;
   flex-direction: column;
   gap: 0;
