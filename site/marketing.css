@@ -772,22 +772,18 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
    INNER MARKETING PAGES (pricing / locations / contacts)
    ════════════════════════════════════════════ */
 
-/* Hero */
+/* Page wrap — как .page-wrap в дизайне */
 .fc-mkt-wrap {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px;
 }
 
+/* Hero — без фона, без бордера, только layout */
 .fc-mkt-hero {
-  padding: 72px 40px 56px;
   display: flex; align-items: flex-end; justify-content: space-between;
-  gap: 40px; flex-wrap: wrap;
-  border-bottom: 1px solid var(--fc-border);
-  background:
-    radial-gradient(ellipse at 80% 0%, rgba(124,92,255,.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 0% 100%, rgba(32,181,235,.07) 0%, transparent 40%),
-    var(--fc-bg);
+  gap: 16px 40px; flex-wrap: wrap;
+  padding: 20px 0 48px;
 }
 .fc-mkt-hero-eyebrow {
   font-family: var(--fc-mono); font-size: 11px;
@@ -796,74 +792,76 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 }
 .fc-mkt-hero-title {
   font-family: var(--fc-font);
-  font-size: clamp(34px, 4.5vw, 60px);
-  font-weight: 600; letter-spacing: -.03em; line-height: 1.05;
-  color: var(--fc-text);
+  font-size: clamp(32px, 3.6vw, 50px);
+  font-weight: 600; letter-spacing: -.03em; line-height: 1.04;
+  color: var(--fc-text); margin: 0;
 }
 .fc-mkt-hero-title em {
   font-family: var(--fc-serif); font-style: italic; font-weight: 400;
-  color: var(--fc-accent); font-size: 1.05em;
-}
-.fc-mkt-hero-sub {
-  font-size: 16px; color: var(--fc-text2); line-height: 1.6;
-  max-width: 520px; margin-top: 16px;
-}
-
-/* Pricing bar */
-.fc-pricing-bar {
-  display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-end;
-  padding: 20px 40px; border-bottom: 1px solid var(--fc-border);
-  background: var(--fc-bg);
-  position: sticky; top: 64px; z-index: 9;
-  backdrop-filter: blur(8px);
-}
-.fc-pricing-bar-group { display: flex; flex-direction: column; gap: 8px; }
-.fc-pricing-bar-label {
-  font-family: var(--fc-mono); font-size: 10px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: .12em; color: var(--fc-text3);
-}
-
-/* Location chips */
-.fc-loc-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.fc-loc-chip {
-  padding: 5px 13px; border-radius: 999px; font-size: 12.5px; font-weight: 500;
-  border: 1px solid var(--fc-border); background: transparent;
-  color: var(--fc-text2); cursor: pointer; transition: all .15s;
-  font-family: var(--fc-font);
-}
-.fc-loc-chip.on, .fc-loc-chip:hover {
-  background: var(--fc-accent-soft); border-color: rgba(32,181,235,.4);
   color: var(--fc-accent);
 }
+.fc-mkt-hero-sub {
+  font-size: 14px; color: var(--fc-text2); line-height: 1.5;
+  max-width: 420px; margin-top: 16px;
+}
+
+/* Pricing bar — простой flex-column, без sticky */
+.fc-pricing-bar {
+  display: flex; flex-direction: column;
+  gap: 14px; margin-bottom: 28px;
+  padding: 12px 0 4px;
+}
+.fc-pricing-bar-group { display: flex; align-items: center; gap: 12px; }
+.fc-pricing-bar-label {
+  display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0;
+  width: 84px;
+  font-family: var(--fc-mono); font-size: 10.5px;
+  text-transform: uppercase; letter-spacing: .1em; color: var(--fc-text3);
+}
+
+/* Location chips — обёртка со скруглённым фоном */
+.fc-loc-chips {
+  display: inline-flex; align-items: center; flex-wrap: wrap; row-gap: 2px;
+  background: var(--fc-surface); border: 1px solid var(--fc-border);
+  border-radius: 999px; padding: 3px; gap: 2px;
+}
+.fc-loc-chip {
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  border: none; color: var(--fc-text2);
+  background: transparent; transition: background .2s, color .2s;
+  user-select: none; font-family: inherit; white-space: nowrap;
+}
+.fc-loc-chip:hover { color: var(--fc-text); }
+.fc-loc-chip.on { color: var(--fc-on-accent); background: var(--fc-accent); }
 
 /* Billing period toggle */
 .fc-billing-toggle {
-  display: flex; background: var(--fc-surface); border-radius: 999px; padding: 3px;
-  border: 1px solid var(--fc-border);
+  display: flex; align-items: center;
+  background: var(--fc-surface); border: 1px solid var(--fc-border);
+  border-radius: 999px; padding: 3px; gap: 2px;
 }
 .fc-billing-toggle-btn {
-  padding: 5px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 500;
-  cursor: pointer; color: var(--fc-text2); transition: all .15s;
+  padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 600;
+  cursor: pointer; color: var(--fc-text2); transition: background .2s, color .2s;
   display: flex; align-items: center; gap: 6px; white-space: nowrap;
-  font-family: var(--fc-font);
+  background: transparent; border: none; font-family: inherit; user-select: none;
 }
-.fc-billing-toggle-btn.on {
-  background: var(--fc-surface2); color: var(--fc-text);
-  box-shadow: 0 1px 4px rgba(0,0,0,.3);
-}
+.fc-billing-toggle-btn.on { background: var(--fc-accent); color: var(--fc-on-accent); }
 .fc-billing-badge {
-  font-size: 10px; font-weight: 600;
-  background: var(--fc-lime-soft); color: var(--fc-lime);
-  padding: 1px 5px; border-radius: 999px;
+  font-family: var(--fc-mono); font-size: 10.5px; font-weight: 700;
+  color: var(--fc-accent); background: var(--fc-accent-soft);
+  border: 1px solid rgba(32,181,235,.3);
+  padding: 2px 7px; border-radius: 999px; margin-left: 4px;
 }
-
-/* Section padding */
-.fc-mkt-section { padding: 48px 40px; }
+.fc-billing-toggle-btn.on .fc-billing-badge {
+  color: var(--fc-on-accent); background: rgba(0,0,0,.15); border-color: transparent;
+}
 
 /* Plan savings */
 .fc-plan-savings {
-  font-size: 11.5px; color: var(--fc-lime); min-height: 18px;
-  font-family: var(--fc-mono); letter-spacing: .02em;
+  font-family: var(--fc-mono); font-size: 11px; color: var(--fc-lime);
+  letter-spacing: .02em; min-height: 14px; margin-top: -6px;
 }
 
 /* Dashed plan card */
@@ -872,59 +870,68 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
   background: transparent !important;
 }
 
-/* Pricing plan grid — 3 cols, wraps */
+/* Pricing plan grid — 3 cols */
 .fc-price-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-bottom: 40px;
 }
 
-/* Feature cards (4-column) */
+/* Feature cards — без border-top, просто margin */
 .fc-feat-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-  padding: 48px 40px; border-top: 1px solid var(--fc-border);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  margin: 40px 0;
 }
 .fc-feat-card {
   background: var(--fc-surface); border: 1px solid var(--fc-border);
   border-radius: var(--fc-r); padding: 22px;
-  display: flex; flex-direction: column; gap: 10px;
 }
 .fc-feat-icon {
-  width: 36px; height: 36px; border-radius: 10px;
-  background: var(--fc-surface2); border: 1px solid var(--fc-border);
+  width: 40px; height: 40px; margin-bottom: 14px;
+  border-radius: 10px; background: var(--fc-accent-soft);
   display: flex; align-items: center; justify-content: center;
   color: var(--fc-accent); flex-shrink: 0;
 }
-.fc-feat-title { font-size: 14px; font-weight: 600; color: var(--fc-text); }
+.fc-feat-title { font-weight: 700; font-size: 14.5px; margin-bottom: 6px; letter-spacing: -.005em; }
 .fc-feat-desc  { font-size: 13px; color: var(--fc-text2); line-height: 1.55; }
 
-/* Datacenter cards */
+/* Datacenter grid */
 .fc-dc-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-  padding: 24px 40px;
+  margin-bottom: 56px;
 }
 .fc-dc-card {
   background: var(--fc-surface); border: 1px solid var(--fc-border);
-  border-radius: var(--fc-r); padding: 24px;
-  display: flex; flex-direction: column; gap: 18px;
+  border-radius: var(--fc-r); padding: 22px;
+  display: flex; flex-direction: column; gap: 16px;
   transition: border-color .2s;
 }
 .fc-dc-card:hover { border-color: var(--fc-border2); }
-.fc-dc-flag { font-size: 26px; line-height: 1; flex-shrink: 0; }
-.fc-dc-specs {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
-}
-.fc-dc-spec {
+
+/* Flag — коробочка как в дизайне */
+.fc-dc-flag {
+  width: 44px; height: 44px;
   background: var(--fc-surface2); border: 1px solid var(--fc-border);
-  border-radius: var(--fc-r-sm); padding: 8px 10px;
+  border-radius: var(--fc-r); display: flex; align-items: center;
+  justify-content: center; font-size: 22px; flex-shrink: 0;
 }
+
+/* Specs — 2 колонки, без border */
+.fc-dc-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.fc-dc-spec {
+  background: var(--fc-surface2); border-radius: var(--fc-r-sm);
+  padding: 10px 12px;
+}
+
+/* Region label — без border-top, просто margin */
 .fc-region-label {
-  font-family: var(--fc-mono); font-size: 10px; font-weight: 600;
+  font-family: var(--fc-mono); font-size: 11px; font-weight: 600;
   text-transform: uppercase; letter-spacing: .14em; color: var(--fc-text3);
-  padding: 28px 40px 12px; border-top: 1px solid var(--fc-border);
+  margin-bottom: 20px;
 }
 
 /* Ping list */
-.fc-ping-list { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
-.fc-ping-city { font-size: 12px; color: var(--fc-text2); min-width: 90px; flex-shrink: 0; }
+.fc-ping-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.fc-ping-city { flex-shrink: 0; width: 110px; font-size: 12.5px; color: var(--fc-text2); }
 .fc-ping-bar-wrap {
   flex: 1; height: 4px; background: var(--fc-surface2);
   border-radius: 2px; overflow: hidden;
@@ -962,7 +969,6 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 /* Contacts */
 .fc-contact-grid {
   display: grid; grid-template-columns: 1fr 2fr; gap: 20px;
-  padding: 48px 40px;
 }
 .fc-contact-cards { display: flex; flex-direction: column; gap: 14px; }
 .fc-section-title {
@@ -975,21 +981,21 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 
 /* Responsive */
 @media (max-width: 991px) {
-  .fc-mkt-hero   { padding: 52px 24px 40px; flex-direction: column; align-items: flex-start; }
-  .fc-pricing-bar { padding: 16px 24px; flex-direction: column; gap: 16px; }
-  .fc-mkt-section { padding: 40px 24px; }
+  .fc-mkt-wrap    { padding: 32px 24px; }
+  .fc-mkt-hero    { padding: 16px 0; flex-direction: column; align-items: flex-start; }
+  .fc-pricing-bar-group { flex-direction: column; gap: 8px; }
   .fc-price-grid  { grid-template-columns: repeat(2, 1fr); }
-  .fc-feat-grid   { grid-template-columns: repeat(2, 1fr); padding: 32px 24px; }
-  .fc-dc-grid     { grid-template-columns: repeat(2, 1fr); padding: 20px 24px; }
-  .fc-region-label { padding: 20px 24px 10px; }
-  .fc-contact-grid { grid-template-columns: 1fr; padding: 32px 24px; }
+  .fc-feat-grid   { grid-template-columns: repeat(2, 1fr); }
+  .fc-dc-grid     { grid-template-columns: repeat(2, 1fr); }
+  .fc-contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 575px) {
+  .fc-mkt-wrap    { padding: 24px 18px; }
   .fc-price-grid  { grid-template-columns: 1fr; }
-  .fc-feat-grid   { grid-template-columns: 1fr; padding: 24px 16px; }
-  .fc-dc-grid     { grid-template-columns: 1fr; padding: 16px; }
-  .fc-dc-specs    { grid-template-columns: repeat(2, 1fr); }
-  .fc-billing-toggle { flex-wrap: wrap; border-radius: 12px; }
+  .fc-feat-grid   { grid-template-columns: 1fr; }
+  .fc-dc-grid     { grid-template-columns: 1fr; }
+  .fc-billing-toggle { flex-wrap: wrap; border-radius: var(--fc-r); }
+  .fc-billing-toggle-btn { flex: 1 1 auto; text-align: center; }
 }
 
 /* ════════════════════════════════════════════
