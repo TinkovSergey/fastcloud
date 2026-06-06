@@ -1170,3 +1170,54 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
   .fc-auth-pane { padding: 32px 28px 48px; align-items: flex-start; }
   .fc-auth-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Legal pages ─────────────────────────────────────────────────────── */
+.fc-legal-body {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 60px;
+}
+.fc-legal-section {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--fc-border);
+}
+.fc-legal-section:last-child { border-bottom: none; }
+.fc-legal-h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fc-text);
+  margin-bottom: 14px;
+  letter-spacing: -.01em;
+}
+.fc-legal-body p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--fc-text2);
+  margin-bottom: 10px;
+}
+.fc-legal-body p:last-child { margin-bottom: 0; }
+.fc-legal-body strong { color: var(--fc-text); font-weight: 600; }
+.fc-legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.fc-legal-table th,
+.fc-legal-table td {
+  text-align: left;
+  padding: 10px 16px;
+  border: 1px solid var(--fc-border);
+  color: var(--fc-text2);
+}
+.fc-legal-table th {
+  background: var(--fc-surface2);
+  color: var(--fc-text);
+  font-weight: 600;
+  font-family: var(--fc-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.fc-legal-table tr:hover td { background: var(--fc-surface2); }
