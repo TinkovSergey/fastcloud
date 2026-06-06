@@ -850,12 +850,12 @@ nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !impo
 .fc-billing-toggle-btn.on { background: var(--fc-accent); color: var(--fc-on-accent); }
 .fc-billing-badge {
   font-family: var(--fc-mono); font-size: 10.5px; font-weight: 700;
-  color: var(--fc-accent); background: var(--fc-accent-soft);
-  border: 1px solid rgba(32,181,235,.3);
+  color: var(--fc-lime); background: var(--fc-lime-soft);
+  border: 1px solid rgba(181,245,58,.25);
   padding: 2px 7px; border-radius: 999px; margin-left: 4px;
 }
 .fc-billing-toggle-btn.on .fc-billing-badge {
-  color: var(--fc-on-accent); background: rgba(0,0,0,.15); border-color: transparent;
+  color: #0a0c13; background: rgba(181,245,58,.3); border-color: transparent;
 }
 
 /* Plan savings */
