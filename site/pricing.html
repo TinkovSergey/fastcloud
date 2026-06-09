@@ -13,7 +13,7 @@
 </head>
 <body>
 <nav class="mkt-nav">
-  <a href="index.html" class="logo"><svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#c4ff3d">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg></a>
+  <a href="index.html" class="logo"><img src="logo.svg" class="logo-svg" alt="fastcloud"></a>
   <div class="mkt-nav-links" id="navLinks">
     <a href="pricing.html" class="mkt-nav-link on">Тарифы</a>
     <a href="locations.html" class="mkt-nav-link">Локации</a>
@@ -24,6 +24,9 @@
     </div>
   </div>
   <div class="mkt-nav-desktop-actions flex gap-2 items-center">
+    <a href="cart.html" class="nav-cart" aria-label="Корзина">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    </a>
     <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
     <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
   </div>
@@ -70,72 +73,77 @@
   <div class="row g-3 mb-15" id="planGrid">
     <div class="col-12 col-sm-6 col-lg-4">
       <div class="plan-card h-100" data-tasks="personal">
-        <div class="plan-name">Starter</div>
-        <div class="plan-price"><sup>€</sup><span class="price-val" data-base="4.00" data-monthly="4,00" data-quarterly="3,80" data-biannual="3,60" data-annual="3,40">4,00</span><sub>/мес</sub></div>
-        <div class="plan-savings" data-save-monthly="" data-save-quarterly="экономия €&nbsp;2,40&nbsp;/&nbsp;год" data-save-biannual="экономия €&nbsp;4,80&nbsp;/&nbsp;год" data-save-annual="экономия €&nbsp;7,20&nbsp;/&nbsp;год">&nbsp;</div>
+        <div class="plan-name">Старт</div>
+        <div class="plan-price"><span class="price-val" data-base="4.00" data-monthly="4,00" data-quarterly="3,80" data-biannual="3,60" data-annual="3,40">400</span><sub>&nbsp;₽/мес</sub></div>
+        <div class="plan-savings" data-save-monthly="" data-save-quarterly="экономия 240 ₽&nbsp;/&nbsp;год" data-save-biannual="экономия 480 ₽&nbsp;/&nbsp;год" data-save-annual="экономия 720 ₽&nbsp;/&nbsp;год">&nbsp;</div>
         <div class="plan-stats">
           <div class="plan-stat"><span class="plan-stat-val">1</span><span class="plan-stat-lbl">vCPU</span></div>
           <div class="plan-stat"><span class="plan-stat-val">2</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
           <div class="plan-stat"><span class="plan-stat-val">30</span><span class="plan-stat-lbl">GB&nbsp;NVMe</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">2 ТБ</span><span class="plan-stat-lbl">трафик</span></div>
         </div>
-        <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Поддержка 24/7</span><span>2&nbsp;TB трафик</span></div>
-        <a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a>
+        <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Поддержка 24/7</span></div>
+        <a href="configure.html?plan=starter" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="starter">Выбрать →</a>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
       <div class="plan-card featured h-100" data-tasks="personal small-biz">
-        <div class="plan-name">Pro</div>
-        <div class="plan-price"><sup>€</sup><span class="price-val" data-base="9.00" data-monthly="9,00" data-quarterly="8,55" data-biannual="8,10" data-annual="7,65">9,00</span><sub>/мес</sub></div>
-        <div class="plan-savings" data-save-monthly="" data-save-quarterly="экономия €&nbsp;5,40&nbsp;/&nbsp;год" data-save-biannual="экономия €&nbsp;10,80&nbsp;/&nbsp;год" data-save-annual="экономия €&nbsp;16,20&nbsp;/&nbsp;год">&nbsp;</div>
+        <div class="plan-name">Базовый</div>
+        <div class="plan-price"><span class="price-val" data-base="9.00" data-monthly="9,00" data-quarterly="8,55" data-biannual="8,10" data-annual="7,65">900</span><sub>&nbsp;₽/мес</sub></div>
+        <div class="plan-savings" data-save-monthly="" data-save-quarterly="экономия 540 ₽&nbsp;/&nbsp;год" data-save-biannual="экономия 1 080 ₽&nbsp;/&nbsp;год" data-save-annual="экономия 1 620 ₽&nbsp;/&nbsp;год">&nbsp;</div>
         <div class="plan-stats">
           <div class="plan-stat"><span class="plan-stat-val">2</span><span class="plan-stat-lbl">vCPU</span></div>
           <div class="plan-stat"><span class="plan-stat-val">4</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
           <div class="plan-stat"><span class="plan-stat-val">60</span><span class="plan-stat-lbl">GB&nbsp;NVMe</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">∞</span><span class="plan-stat-lbl">трафик</span></div>
         </div>
-        <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Поддержка 24/7</span><span>∞&nbsp;трафик</span></div>
-        <a href="register.html" class="btn btn-primary w-100 jcc mt-auto">Выбрать →</a>
+        <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Поддержка 24/7</span></div>
+        <a href="configure.html?plan=pro" class="btn btn-primary w-100 jcc mt-auto plan-buy" data-plan="pro">Выбрать →</a>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
       <div class="plan-card h-100" data-tasks="small-biz shop">
-        <div class="plan-name">Business</div>
-        <div class="plan-price"><sup>€</sup><span class="price-val" data-base="18.00" data-monthly="18,00" data-quarterly="17,10" data-biannual="16,20" data-annual="15,30">18,00</span><sub>/мес</sub></div>
-        <div class="plan-savings" data-save-monthly="" data-save-quarterly="экономия €&nbsp;10,80&nbsp;/&nbsp;год" data-save-biannual="экономия €&nbsp;21,60&nbsp;/&nbsp;год" data-save-annual="экономия €&nbsp;32,40&nbsp;/&nbsp;год">&nbsp;</div>
+        <div class="plan-name">Стандарт</div>
+        <div class="plan-price"><span class="price-val" data-base="18.00" data-monthly="18,00" data-quarterly="17,10" data-biannual="16,20" data-annual="15,30">1 800</span><sub>&nbsp;₽/мес</sub></div>
+        <div class="plan-savings" data-save-monthly="" data-save-quarterly="экономия 1 080 ₽&nbsp;/&nbsp;год" data-save-biannual="экономия 2 160 ₽&nbsp;/&nbsp;год" data-save-annual="экономия 3 240 ₽&nbsp;/&nbsp;год">&nbsp;</div>
         <div class="plan-stats">
           <div class="plan-stat"><span class="plan-stat-val">4</span><span class="plan-stat-lbl">vCPU</span></div>
           <div class="plan-stat"><span class="plan-stat-val">8</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
           <div class="plan-stat"><span class="plan-stat-val">120</span><span class="plan-stat-lbl">GB&nbsp;NVMe</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">∞</span><span class="plan-stat-lbl">трафик</span></div>
         </div>
         <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Поддержка 24/7</span><span>Выделенный IPv4</span></div>
-        <a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a>
+        <a href="configure.html?plan=business" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="business">Выбрать →</a>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
       <div class="plan-card h-100" data-tasks="shop high-load">
-        <div class="plan-name">Scale</div>
-        <div class="plan-price"><sup>€</sup><span class="price-val" data-base="35.00" data-monthly="35,00" data-quarterly="33,25" data-biannual="31,50" data-annual="29,75">35,00</span><sub>/мес</sub></div>
-        <div class="plan-savings" data-save-monthly="" data-save-quarterly="экономия €&nbsp;21,00&nbsp;/&nbsp;год" data-save-biannual="экономия €&nbsp;42,00&nbsp;/&nbsp;год" data-save-annual="экономия €&nbsp;63,00&nbsp;/&nbsp;год">&nbsp;</div>
+        <div class="plan-name">Бизнес</div>
+        <div class="plan-price"><span class="price-val" data-base="35.00" data-monthly="35,00" data-quarterly="33,25" data-biannual="31,50" data-annual="29,75">3 500</span><sub>&nbsp;₽/мес</sub></div>
+        <div class="plan-savings" data-save-monthly="" data-save-quarterly="экономия 2 100 ₽&nbsp;/&nbsp;год" data-save-biannual="экономия 4 200 ₽&nbsp;/&nbsp;год" data-save-annual="экономия 6 300 ₽&nbsp;/&nbsp;год">&nbsp;</div>
         <div class="plan-stats">
           <div class="plan-stat"><span class="plan-stat-val">8</span><span class="plan-stat-lbl">vCPU</span></div>
           <div class="plan-stat"><span class="plan-stat-val">16</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
           <div class="plan-stat"><span class="plan-stat-val">250</span><span class="plan-stat-lbl">GB&nbsp;NVMe</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">∞</span><span class="plan-stat-lbl">трафик</span></div>
         </div>
         <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Поддержка 24/7</span><span>Выделенный IPv4</span></div>
-        <a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a>
+        <a href="configure.html?plan=scale" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="scale">Выбрать →</a>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
       <div class="plan-card h-100" data-tasks="high-load">
-        <div class="plan-name">Enterprise</div>
-        <div class="plan-price"><sup>€</sup><span class="price-val" data-base="62.00" data-monthly="62,00" data-quarterly="58,90" data-biannual="55,80" data-annual="52,70">62,00</span><sub>/мес</sub></div>
-        <div class="plan-savings" data-save-monthly="" data-save-quarterly="экономия €&nbsp;37,20&nbsp;/&nbsp;год" data-save-biannual="экономия €&nbsp;74,40&nbsp;/&nbsp;год" data-save-annual="экономия €&nbsp;111,60&nbsp;/&nbsp;год">&nbsp;</div>
+        <div class="plan-name">Премиум</div>
+        <div class="plan-price"><span class="price-val" data-base="62.00" data-monthly="62,00" data-quarterly="58,90" data-biannual="55,80" data-annual="52,70">6 200</span><sub>&nbsp;₽/мес</sub></div>
+        <div class="plan-savings" data-save-monthly="" data-save-quarterly="экономия 3 720 ₽&nbsp;/&nbsp;год" data-save-biannual="экономия 7 440 ₽&nbsp;/&nbsp;год" data-save-annual="экономия 11 160 ₽&nbsp;/&nbsp;год">&nbsp;</div>
         <div class="plan-stats">
           <div class="plan-stat"><span class="plan-stat-val">16</span><span class="plan-stat-lbl">vCPU</span></div>
           <div class="plan-stat"><span class="plan-stat-val">32</span><span class="plan-stat-lbl">GB&nbsp;RAM</span></div>
           <div class="plan-stat"><span class="plan-stat-val">500</span><span class="plan-stat-lbl">GB&nbsp;NVMe</span></div>
+          <div class="plan-stat"><span class="plan-stat-val">∞</span><span class="plan-stat-lbl">трафик</span></div>
         </div>
         <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Приоритет‑саппорт</span><span>2&nbsp;× выделенных IPv4</span></div>
-        <a href="register.html" class="btn btn-ghost w-100 jcc mt-auto">Выбрать →</a>
+        <a href="configure.html?plan=enterprise" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="enterprise">Выбрать →</a>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
@@ -149,28 +157,41 @@
     </div>
   </div>
 
-  <!-- Features row -->
-  <div class="feat-grid mb-12">
-    <div class="feat-card">
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></div>
-      <div class="feat-title">Фиксированная цена</div>
-      <div class="feat-desc">Цена не меняется. Никаких сюрпризов в счёте — платите ровно то, что видите.</div>
+  <!-- Features carousel -->
+  <div class="feat-carousel mb-12" data-feat-carousel>
+    <div class="feat-track">
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></div>
+        <div class="feat-title">Фиксированная цена</div>
+        <div class="feat-desc">Цена не меняется. Никаких сюрпризов в счёте — платите ровно то, что видите.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+        <div class="feat-title">Без верификации</div>
+        <div class="feat-desc">Регистрация по e-mail. Никаких паспортов, юр. лиц и долгих проверок.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+        <div class="feat-title">Anti‑DDoS включён</div>
+        <div class="feat-desc">Защита 10&nbsp;Гбит/с на всех тарифах без исключения. Не доплата — стандарт.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C7.03 3 3 5.24 3 8v8c0 2.76 4.03 5 9 5s9-2.24 9-5V8c0-2.76-4.03-5-9-5zm7 13c0 1.3-2.91 3-7 3s-7-1.7-7-3v-1.95C6.61 15.27 9.13 16 12 16s5.39-.73 7-1.95V16zm0-4.55C17.39 12.68 14.87 13.4 12 13.4S6.61 12.68 5 11.45V9.64C6.61 10.86 9.13 11.6 12 11.6s5.39-.74 7-1.96v1.81zM12 10C7.91 10 5 8.3 5 8s2.91-3 7-3 7 1.7 7 3-2.91 2-7 2z"/></svg></div>
+        <div class="feat-title">Бэкапы 14 дней</div>
+        <div class="feat-desc">Ежедневные снапшоты хранятся две недели. Восстановление — в один клик.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z"/></svg></div>
+        <div class="feat-title">Гибкие периоды</div>
+        <div class="feat-desc">Оплата помесячно с выгодой до&nbsp;15% на&nbsp;длинных периодах. Смена тарифа в&nbsp;1&nbsp;клик без&nbsp;штрафов.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></svg></div>
+        <div class="feat-title">50+ приложений</div>
+        <div class="feat-desc">WordPress, Docker, n8n и десятки образов разворачиваются в один клик.</div>
+      </div>
     </div>
-    <div class="feat-card">
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
-      <div class="feat-title">Без верификации</div>
-      <div class="feat-desc">Регистрация по e-mail. Никаких паспортов, юр. лиц и долгих проверок.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
-      <div class="feat-title">Anti-DDoS включён</div>
-      <div class="feat-desc">Защита 10 Гбит/с на всех тарифах без исключения. Не доплата — стандарт.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.34C18 2.54 15.46 1 13.18 1c-1.12 0-2.18.45-2.97 1.25L9 3.5l-1.22-1.25C6.99 1.45 5.93 1 4.82 1 2.54 1 0 2.54 0 4.66 0 5.12.11 5.56.18 6H0v14h24V6h-4zm-9 12H4V8h7v10zm9 0h-7V8h7v10z"/></svg></div>
-      <div class="feat-title">Бэкапы 14 дней</div>
-      <div class="feat-desc">Ежедневные снапшоты хранятся две недели. Восстановление — в один клик.</div>
-    </div>
+    <div class="feat-dots" data-feat-dots></div>
   </div>
 
 </div>
@@ -187,7 +208,7 @@
   <div class="mkt-footer-inner">
     <div class="row g-4">
       <div class="col-12 col-md-4 col-lg-3 mkt-footer-brand">
-        <a href="index.html" class="logo"><svg class="logo-svg" viewBox="0 0 110 24" xmlns="http://www.w3.org/2000/svg" aria-label="fastcloud"><text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#c4ff3d">fast</text><text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text></svg></a>
+        <a href="index.html" class="logo"><img src="logo.svg" class="logo-svg" alt="fastcloud"></a>
         <div class="mkt-footer-brand-desc">Надёжные VPS в 10 локациях по всему миру. NVMe Gen4 · Anti-DDoS · SLA 99,99%.</div>
       </div>
       <div class="col-12 col-md-8 col-lg-9">
@@ -220,6 +241,7 @@
   </div>
 </footer>
 <script src="cta-fx.js"></script>
+<script src="feat-carousel.js"></script>
 <script src="nav.js"></script>
 <script src="cookie.js"></script>
 <script>
@@ -238,8 +260,16 @@
   var toggleBtns = document.querySelectorAll('.billing-toggle-btn');
   var locChips   = document.querySelectorAll('.loc-chip');
   var cards      = document.querySelectorAll('.plan-card:not(.plan-card-dashed)');
+  var buyBtns    = document.querySelectorAll('.plan-buy');
 
-  function fmt(n) { return n.toFixed(2).replace('.', ','); }
+  function fmt(n) { var r = Math.round(n*100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0'); return r; }
+
+  function updateBuyLinks() {
+    buyBtns.forEach(function (b) {
+      var plan = b.getAttribute('data-plan');
+      b.setAttribute('href', 'configure.html?plan=' + plan + '&loc=' + loc + '&period=' + billing);
+    });
+  }
 
   function update() {
     var lm = locMult[loc] || 1;
@@ -258,10 +288,11 @@
           sav.innerHTML = '&nbsp;';
         } else {
           var perYear = (monthlyHere - effective) * 12;
-          sav.innerHTML = 'экономия €&nbsp;' + fmt(perYear) + '&nbsp;/&nbsp;год';
+          sav.innerHTML = 'экономия ' + fmt(perYear) + '&nbsp;₽&nbsp;/&nbsp;год';
         }
       }
     });
+    updateBuyLinks();
   }
 
   toggleBtns.forEach(function (btn) {

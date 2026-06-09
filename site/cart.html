@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>FastCloud — Корзина</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="marketing.css">
+</head>
+<body>
+
+<nav class="mkt-nav" id="mktNav">
+  <a href="index.html" class="logo">
+    <img src="logo.svg" class="logo-svg" alt="fastcloud">
+  </a>
+  <div class="mkt-nav-links" id="navLinks">
+    <a href="pricing.html" class="mkt-nav-link">Тарифы</a>
+    <a href="locations.html" class="mkt-nav-link">Локации</a>
+    <a href="contacts.html" class="mkt-nav-link">Контакты</a>
+    <div class="mkt-nav-mobile-actions" style="display:none">
+      <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
+    </div>
+  </div>
+  <div class="flex gap-2 items-center mkt-nav-desktop-actions">
+    <a href="cart.html" class="nav-cart on" aria-label="Корзина">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    </a>
+    <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
+    <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Меню">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+  </button>
+</nav>
+
+<div class="page-wrap">
+  <div class="breadcrumb mb-6" style="font-family:var(--mono);font-size:12px">
+    <a href="pricing.html" style="color:var(--text3)">тарифы</a>
+    <span class="breadcrumb-sep">/</span>
+    <span style="color:var(--text2)">корзина</span>
+  </div>
+
+  <div class="pricing-hero" style="padding:0 0 32px">
+    <div>
+      <div class="eyebrow mb-2">корзина</div>
+      <h1 class="pricing-hero-title">Ваш <em>заказ.</em></h1>
+    </div>
+    <p class="pricing-hero-sub">Проверьте конфигурацию серверов перед оформлением. Активация каждого&nbsp;— около 55&nbsp;секунд после оплаты.</p>
+  </div>
+
+  <div class="checkout-layout">
+    <!-- LEFT: cart items -->
+    <div class="cart-col" id="cartCol">
+      <div class="cart-item" data-price="183.60">
+        <div class="cart-item-main">
+          <div class="cart-item-head">
+            <h3 class="cart-item-name">Стандарт</h3>
+            <div class="cart-item-price">18 360 ₽</div>
+          </div>
+          <div class="cart-item-specs">4 vCPU · 8 GB RAM · 120 GB NVMe Gen4 · Выделенный IPv4</div>
+          <div class="cart-item-tags">
+            <span class="cart-tag">📍 Франкфурт</span>
+            <span class="cart-tag">12 месяцев · −15%</span>
+            <span class="cart-tag">Ubuntu 24.04</span>
+            <span class="cart-tag">+ Расш. бэкапы</span>
+          </div>
+          <div class="cart-item-actions">
+            <a href="configure.html?plan=business&loc=fra&period=annual" class="cart-action">Изменить</a>
+            <button class="cart-action danger" data-remove>Удалить</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-item" data-price="102.60">
+        <div class="cart-item-main">
+          <div class="cart-item-head">
+            <h3 class="cart-item-name">Базовый</h3>
+            <div class="cart-item-price">10 260 ₽</div>
+          </div>
+          <div class="cart-item-specs">2 vCPU · 4 GB RAM · 60 GB NVMe Gen4</div>
+          <div class="cart-item-tags">
+            <span class="cart-tag">📍 Сингапур</span>
+            <span class="cart-tag">12 месяцев · −15%</span>
+            <span class="cart-tag">Debian 12</span>
+            <span class="cart-tag">+ Anti‑DDoS Pro</span>
+          </div>
+          <div class="cart-item-actions">
+            <a href="configure.html?plan=pro&loc=sgp&period=annual" class="cart-action">Изменить</a>
+            <button class="cart-action danger" data-remove>Удалить</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-item" data-price="35.00">
+        <div class="cart-item-main">
+          <div class="cart-item-head">
+            <h3 class="cart-item-name">Бизнес</h3>
+            <div class="cart-item-price">3 500 ₽</div>
+          </div>
+          <div class="cart-item-specs">8 vCPU · 16 GB RAM · 250 GB NVMe Gen4 · Выделенный IPv4</div>
+          <div class="cart-item-tags">
+            <span class="cart-tag">📍 Нью‑Йорк</span>
+            <span class="cart-tag">1 месяц</span>
+            <span class="cart-tag">AlmaLinux 9</span>
+          </div>
+          <div class="cart-item-actions">
+            <a href="configure.html?plan=scale&loc=usa&period=monthly" class="cart-action">Изменить</a>
+            <button class="cart-action danger" data-remove>Удалить</button>
+          </div>
+        </div>
+      </div>
+
+      <a href="pricing.html" class="cart-add-more">
+        <span class="cart-add-plus">+</span> Добавить ещё сервер
+      </a>
+
+      <div class="cart-empty" id="cartEmpty" style="display:none">
+        <div class="cart-empty-ico">🛒</div>
+        <div class="cart-empty-title">Корзина пуста</div>
+        <p class="cart-empty-desc">Выберите тариф, чтобы добавить сервер в заказ.</p>
+        <a href="pricing.html" class="btn btn-primary mt-4">К тарифам →</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: summary -->
+    <aside class="summary-col">
+      <div class="summary-card">
+        <h2 class="summary-title">Состав заказа</h2>
+
+        <div class="coupon-row">
+          <input class="inp coupon-inp" id="couponInp" placeholder="Промокод" autocomplete="off">
+          <button class="btn btn-ghost btn-sm" id="couponBtn">Применить</button>
+        </div>
+        <div class="coupon-msg" id="couponMsg"></div>
+
+        <div class="summary-divider"></div>
+        <div class="summary-line"><span>Подытог</span><span id="sumSub">32 060 ₽</span></div>
+        <div class="summary-line" id="sumDiscountRow" style="display:none"><span>Скидка по промокоду</span><span id="sumDiscount" class="c-green">−0 ₽</span></div>
+        <div class="summary-total"><span>Итого</span><span id="sumTotal">32 060 ₽</span></div>
+        <div class="summary-period-note">единоразовый платёж за выбранные периоды</div>
+
+        <button class="btn btn-primary btn-block mt-3" onclick="location.href='register.html'">Оформить заказ →</button>
+        <div class="summary-trust"><span class="dot dot-lime"></span>Возврат в первые 7 дней</div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script src="nav.js"></script>
+<script src="cookie.js"></script>
+<script>
+(function () {
+  var cartCol = document.getElementById('cartCol');
+  var couponInp = document.getElementById('couponInp');
+  var couponBtn = document.getElementById('couponBtn');
+  var couponMsg = document.getElementById('couponMsg');
+  var COUPONS = { FAST10: 0.10, WELCOME: 0.05 };
+  var discountRate = 0;
+
+  function fmt(n) { return Math.round(n*100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0') + '\u00A0₽'; }
+
+  function recalc() {
+    var items = cartCol.querySelectorAll('.cart-item');
+    var sub = 0;
+    items.forEach(function (it) { sub += parseFloat(it.getAttribute('data-price')); });
+
+    document.getElementById('sumSub').textContent = fmt(sub);
+    var discount = sub * discountRate;
+    var discRow = document.getElementById('sumDiscountRow');
+    if (discountRate > 0) {
+      discRow.style.display = '';
+      document.getElementById('sumDiscount').textContent = '−' + fmt(discount);
+    } else {
+      discRow.style.display = 'none';
+    }
+    document.getElementById('sumTotal').textContent = fmt(sub - discount);
+
+    // empty state
+    var empty = document.getElementById('cartEmpty');
+    var addMore = cartCol.querySelector('.cart-add-more');
+    if (items.length === 0) {
+      empty.style.display = '';
+      if (addMore) addMore.style.display = 'none';
+    }
+  }
+
+  cartCol.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-remove]');
+    if (!btn) return;
+    var item = btn.closest('.cart-item');
+    item.style.transition = 'opacity .25s, transform .25s';
+    item.style.opacity = '0';
+    item.style.transform = 'translateX(-12px)';
+    setTimeout(function () { item.remove(); recalc(); }, 250);
+  });
+
+  couponBtn.addEventListener('click', function () {
+    var code = couponInp.value.trim().toUpperCase();
+    if (COUPONS[code]) {
+      discountRate = COUPONS[code];
+      couponMsg.textContent = 'Промокод применён — скидка ' + Math.round(discountRate * 100) + '%';
+      couponMsg.className = 'coupon-msg ok';
+    } else if (code === '') {
+      couponMsg.textContent = '';
+      couponMsg.className = 'coupon-msg';
+    } else {
+      discountRate = 0;
+      couponMsg.textContent = 'Промокод не найден';
+      couponMsg.className = 'coupon-msg err';
+    }
+    recalc();
+  });
+  couponInp.addEventListener('keydown', function (e) { if (e.key === 'Enter') couponBtn.click(); });
+
+  recalc();
+})();
+</script>
+</body></html>

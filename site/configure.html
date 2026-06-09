@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>FastCloud — Настройка сервера</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="marketing.css">
+</head>
+<body>
+
+<nav class="mkt-nav" id="mktNav">
+  <a href="index.html" class="logo">
+    <img src="logo.svg" class="logo-svg" alt="fastcloud">
+  </a>
+  <div class="mkt-nav-links" id="navLinks">
+    <a href="pricing.html" class="mkt-nav-link on">Тарифы</a>
+    <a href="locations.html" class="mkt-nav-link">Локации</a>
+    <a href="contacts.html" class="mkt-nav-link">Контакты</a>
+    <div class="mkt-nav-mobile-actions" style="display:none">
+      <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
+    </div>
+  </div>
+  <div class="flex gap-2 items-center mkt-nav-desktop-actions">
+    <a href="cart.html" class="nav-cart" aria-label="Корзина">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    </a>
+    <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
+    <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Меню">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+  </button>
+</nav>
+
+<div class="page-wrap">
+  <div class="breadcrumb mb-6" style="font-family:var(--mono);font-size:12px">
+    <a href="pricing.html" style="color:var(--text3)">тарифы</a>
+    <span class="breadcrumb-sep">/</span>
+    <span style="color:var(--text2)">настройка сервера</span>
+  </div>
+
+  <div class="checkout-layout">
+    <!-- LEFT: configuration -->
+    <div class="config-col">
+      <!-- Plan head -->
+      <div class="config-head">
+        <div>
+          <div class="eyebrow mb-2">выбранный тариф</div>
+          <h1 class="config-plan-name" id="planName">Стандарт</h1>
+          <div class="config-plan-specs" id="planSpecs">4 vCPU · 8 GB RAM · 120 GB NVMe Gen4 · Выделенный IPv4</div>
+        </div>
+        <a href="pricing.html" class="btn btn-ghost btn-sm shrink-0">← Сменить тариф</a>
+      </div>
+
+      <!-- Server name -->
+      <section class="config-section">
+        <div class="config-section-head">
+          <h2 class="config-section-title">Название сервера</h2>
+          <span class="config-section-hint">для отображения в панели</span>
+        </div>
+        <input class="inp" id="serverName" type="text" placeholder="например, web-prod-01" maxlength="48" autocomplete="off">
+      </section>
+
+      <!-- Location (chosen on previous step — read-only) -->
+      <section class="config-section">
+        <div class="config-section-head">
+          <h2 class="config-section-title">Локация</h2>
+          <span class="config-section-hint" id="locHint">Цена зависит от региона</span>
+        </div>
+        <div class="loc-chosen">
+          <div class="loc-chosen-info">
+            <span class="loc-chosen-pin">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <div class="loc-chosen-name" id="locChosenName">Германия</div>
+              <div class="loc-chosen-sub" id="locChosenSub">выбрано на предыдущем шаге</div>
+            </div>
+          </div>
+          <a href="pricing.html" class="btn btn-ghost btn-sm">Сменить локацию</a>
+        </div>
+      </section>
+
+      <!-- Period -->
+      <section class="config-section">
+        <div class="config-section-head">
+          <h2 class="config-section-title">Период оплаты</h2>
+          <span class="config-section-hint">Чем длиннее период — тем дешевле</span>
+        </div>
+        <div class="period-grid" id="periodGrid">
+          <button class="period-tile" data-period="monthly">
+            <span class="period-tile-len">1 месяц</span>
+            <span class="period-tile-price" data-permonth>1 800 ₽<small>/мес</small></span>
+          </button>
+          <button class="period-tile" data-period="quarterly">
+            <span class="period-tile-badge">−5%</span>
+            <span class="period-tile-len">3 месяца</span>
+            <span class="period-tile-price" data-permonth>1 710 ₽<small>/мес</small></span>
+          </button>
+          <button class="period-tile" data-period="biannual">
+            <span class="period-tile-badge">−10%</span>
+            <span class="period-tile-len">6 месяцев</span>
+            <span class="period-tile-price" data-permonth>1 620 ₽<small>/мес</small></span>
+          </button>
+          <button class="period-tile on" data-period="annual">
+            <span class="period-tile-badge">−15%</span>
+            <span class="period-tile-len">12 месяцев</span>
+            <span class="period-tile-price" data-permonth>1 530 ₽<small>/мес</small></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- OS + Panel -->
+      <section class="config-section">
+        <div class="config-section-head">
+          <h2 class="config-section-title">Образ системы</h2>
+        </div>
+        <div class="opt-selects">
+          <label class="opt-field">
+            <span>Операционная система</span>
+            <select class="inp opt-select" id="osSelect">
+              <option value="0" data-label="Ubuntu 24.04 LTS">Ubuntu 24.04 LTS</option>
+              <option value="0" data-label="Debian 12">Debian 12</option>
+              <option value="0" data-label="AlmaLinux 9">AlmaLinux 9</option>
+              <option value="0" data-label="Rocky Linux 9">Rocky Linux 9</option>
+              <option value="8" data-label="Windows Server 2022">Windows Server 2022 (+800 ₽/мес)</option>
+            </select>
+          </label>
+          <label class="opt-field">
+            <span>Панель управления</span>
+            <select class="inp opt-select" id="panelSelect">
+              <option value="0" data-label="Без панели">Без панели</option>
+              <option value="0" data-label="FastPanel">FastPanel (бесплатно)</option>
+              <option value="5" data-label="ISPmanager 6">ISPmanager 6 (+500 ₽/мес)</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <!-- Add-ons -->
+      <section class="config-section">
+        <div class="config-section-head">
+          <h2 class="config-section-title">Дополнительные услуги</h2>
+        </div>
+        <div class="addon-list" id="addonList">
+          <label class="addon-row">
+            <input type="checkbox" data-addon="ip" data-price="2">
+            <span class="addon-info">
+              <span class="addon-name">Дополнительный IPv4</span>
+              <span class="addon-desc">Ещё один выделенный адрес для вашего сервера</span>
+            </span>
+            <span class="addon-price">+200 ₽<small>/мес</small></span>
+          </label>
+          <label class="addon-row">
+            <input type="checkbox" data-addon="backup" data-price="3">
+            <span class="addon-info">
+              <span class="addon-name">Расширенные бэкапы — 30 дней</span>
+              <span class="addon-desc">Вместо стандартных 14 дней хранения снапшотов</span>
+            </span>
+            <span class="addon-price">+300 ₽<small>/мес</small></span>
+          </label>
+          <label class="addon-row">
+            <input type="checkbox" data-addon="ddos" data-price="6">
+            <span class="addon-info">
+              <span class="addon-name">Anti‑DDoS Pro</span>
+              <span class="addon-desc">Усиленная фильтрация L7 и защита приложений</span>
+            </span>
+            <span class="addon-price">+600 ₽<small>/мес</small></span>
+          </label>
+          <label class="addon-row">
+            <input type="checkbox" data-addon="managed" data-price="10">
+            <span class="addon-info">
+              <span class="addon-name">Управляемая поддержка</span>
+              <span class="addon-desc">Наши инженеры настроят и обслужат сервер за вас</span>
+            </span>
+            <span class="addon-price">+1 000 ₽<small>/мес</small></span>
+          </label>
+        </div>
+      </section>
+    </div>
+
+    <!-- RIGHT: order summary -->
+    <aside class="summary-col">
+      <div class="summary-card">
+        <h2 class="summary-title">Состав заказа</h2>
+        <div class="summary-lines" id="summaryLines">
+          <!-- filled by JS -->
+        </div>
+        <div class="summary-divider"></div>
+        <div class="summary-permonth">
+          <span>Цена в месяц</span>
+          <span id="sumPerMonth">1 530 ₽</span>
+        </div>
+        <div class="summary-total">
+          <span>К оплате сегодня</span>
+          <span id="sumToday">18 360 ₽</span>
+        </div>
+        <div class="summary-period-note" id="sumPeriodNote">за 12 месяцев вперёд</div>
+        <a href="cart.html" class="btn btn-primary btn-block mt-3">В корзину →</a>
+        <button class="btn btn-ghost btn-block mt-2" onclick="location.href='cart.html'">Оформить заказ</button>
+        <div class="summary-trust">
+          <span class="dot dot-lime"></span>Активация ~55&nbsp;секунд после оплаты
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script src="nav.js"></script>
+<script src="cookie.js"></script>
+<script>
+(function () {
+  var PLANS = {
+    starter:    { name: 'Старт',    base: 4,  vcpu: 1,  ram: 2,  nvme: 30,  ip: false },
+    pro:        { name: 'Базовый',        base: 9,  vcpu: 2,  ram: 4,  nvme: 60,  ip: false },
+    business:   { name: 'Стандарт',   base: 18, vcpu: 4,  ram: 8,  nvme: 120, ip: true  },
+    scale:      { name: 'Бизнес',      base: 35, vcpu: 8,  ram: 16, nvme: 250, ip: true  },
+    enterprise: { name: 'Премиум', base: 62, vcpu: 16, ram: 32, nvme: 500, ip: true  }
+  };
+  var LOC = {
+    fra: { name: 'Германия', mult: 1.00 }, deu: { name: 'Нидерланды', mult: 1.00 },
+    pol: { name: 'Польша', mult: 0.95 },   ita: { name: 'Италия', mult: 1.05 },
+    gbr: { name: 'Британия', mult: 1.10 }, usa: { name: 'США', mult: 1.15 },
+    can: { name: 'Канада', mult: 1.10 },   sgp: { name: 'Сингапур', mult: 1.25 },
+    ind: { name: 'Индия', mult: 1.05 },    aus: { name: 'Австралия', mult: 1.35 }
+  };
+  var PERIOD = {
+    monthly:   { months: 1,  mult: 1.00, label: '1 месяц' },
+    quarterly: { months: 3,  mult: 0.95, label: '3 месяца' },
+    biannual:  { months: 6,  mult: 0.90, label: '6 месяцев' },
+    annual:    { months: 12, mult: 0.85, label: '12 месяцев' }
+  };
+
+  var params = new URLSearchParams(location.search);
+  var planId = params.get('plan'); if (!PLANS[planId]) planId = 'business';
+  var loc    = params.get('loc');  if (!LOC[loc]) loc = 'fra';
+  var period = params.get('period'); if (!PERIOD[period]) period = 'annual';
+
+  var plan = PLANS[planId];
+
+  function fmt(n) { return Math.round(n*100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0') + '\u00A0₽'; }
+
+  // ---- set plan head ----
+  document.getElementById('planName').textContent = plan.name;
+  document.getElementById('planSpecs').textContent =
+    plan.vcpu + ' vCPU · ' + plan.ram + ' GB RAM · ' + plan.nvme + ' GB NVMe Gen4' + (plan.ip ? ' · Выделенный IPv4' : '');
+
+  // ---- init location (read-only display) ----
+  document.getElementById('locChosenName').textContent = LOC[loc].name;
+
+  // ---- period selection ----
+  var periodTiles = document.querySelectorAll('.period-tile');
+  periodTiles.forEach(function (t) {
+    t.classList.toggle('on', t.getAttribute('data-period') === period);
+    t.addEventListener('click', function () {
+      period = this.getAttribute('data-period');
+      periodTiles.forEach(function (x) { x.classList.remove('on'); });
+      this.classList.add('on');
+      update();
+    });
+  });
+
+  var osSelect = document.getElementById('osSelect');
+  var panelSelect = document.getElementById('panelSelect');
+  var addonInputs = document.querySelectorAll('[data-addon]');
+  var serverNameInput = document.getElementById('serverName');
+
+  [osSelect, panelSelect].forEach(function (s) { s.addEventListener('change', update); });
+  addonInputs.forEach(function (c) { c.addEventListener('change', update); });
+  serverNameInput.addEventListener('input', update);
+
+  function monthlyExtras() {
+    var sum = 0;
+    sum += parseFloat(osSelect.value || 0);
+    sum += parseFloat(panelSelect.value || 0);
+    addonInputs.forEach(function (c) { if (c.checked) sum += parseFloat(c.getAttribute('data-price')); });
+    return sum;
+  }
+
+  function update() {
+    var lm = LOC[loc].mult;
+    var p = PERIOD[period];
+    var serverMonthly = plan.base * lm;
+    var extras = monthlyExtras();
+    var totalMonthly = serverMonthly + extras;
+    var effMonthly = totalMonthly * p.mult;       // discounted per-month
+    var dueToday = effMonthly * p.months;
+
+    // location hint
+    document.getElementById('locHint').textContent =
+      lm === 1 ? 'Базовая цена региона' : (lm > 1 ? '+' + Math.round((lm - 1) * 100) + '% к базовой' : Math.round((lm - 1) * 100) + '% к базовой');
+
+    // period tiles per-month preview
+    periodTiles.forEach(function (t) {
+      var pid = t.getAttribute('data-period');
+      var per = PERIOD[pid];
+      var prev = (serverMonthly + extras) * per.mult;
+      var el = t.querySelector('[data-permonth]');
+      if (el) el.innerHTML = fmt(prev) + '<small>/мес</small>';
+    });
+
+    // build summary lines
+    var lines = [];
+    var sName = (serverNameInput.value || '').trim();
+    if (sName) lines.push(['Имя — ' + sName, '']);
+    lines.push(['Тариф ' + plan.name, fmt(serverMonthly) + '/мес']);
+    lines.push(['Локация — ' + LOC[loc].name, '']);
+    lines.push(['Период — ' + p.label + (p.mult < 1 ? ' (−' + Math.round((1 - p.mult) * 100) + '%)' : ''), '']);
+    var osLabel = osSelect.options[osSelect.selectedIndex].getAttribute('data-label');
+    var osPrice = parseFloat(osSelect.value || 0);
+    lines.push(['ОС — ' + osLabel, osPrice ? '+' + fmt(osPrice) + '/мес' : '']);
+    var panelLabel = panelSelect.options[panelSelect.selectedIndex].getAttribute('data-label');
+    var panelPrice = parseFloat(panelSelect.value || 0);
+    if (panelLabel !== 'Без панели') lines.push(['Панель — ' + panelLabel, panelPrice ? '+' + fmt(panelPrice) + '/мес' : '']);
+    addonInputs.forEach(function (c) {
+      if (c.checked) {
+        var name = c.closest('.addon-row').querySelector('.addon-name').textContent;
+        lines.push([name, '+' + fmt(parseFloat(c.getAttribute('data-price'))) + '/мес']);
+      }
+    });
+
+    var html = '';
+    lines.forEach(function (l) {
+      html += '<div class="summary-line"><span>' + l[0] + '</span><span>' + l[1] + '</span></div>';
+    });
+    document.getElementById('summaryLines').innerHTML = html;
+
+    document.getElementById('sumPerMonth').textContent = fmt(effMonthly);
+    document.getElementById('sumToday').textContent = fmt(dueToday);
+    document.getElementById('sumPeriodNote').textContent =
+      p.months === 1 ? 'оплата за 1 месяц' : 'за ' + p.months + ' мес. вперёд';
+  }
+
+  update();
+})();
+</script>
+</body></html>

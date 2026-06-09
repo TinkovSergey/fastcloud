@@ -21,21 +21,28 @@
   --text-dim:   #51566c;
 
   /* brand */
-  --accent:     #c4ff3d;            /* electric lime — signature */
-  --accent-d:   #a8e62b;
-  --accent-h:   #d4ff70;
-  --accent-soft: rgba(196,255,61,.12);
-  --on-accent:  #0a0c13;            /* text on lime */
+  --accent:     #20b5eb;            /* brand blue — primary */
+  --accent-d:   #1799cc;
+  --accent-h:   #45c6f2;
+  --accent-soft: rgba(32,181,235,.13);
+  --on-accent:  #04141c;            /* dark text on blue */
   --iris:       #7c5cff;            /* deep secondary */
   --iris-soft:  rgba(124,92,255,.14);
   --tangerine:  #ff8a4d;
   --pink:       #ff5b8a;
 
+  /* action / success punch */
+  --lime:       #c4ff3d;            /* CTA buttons · online · checks */
+  --lime-d:     #a8e62b;
+  --lime-h:     #d4ff70;
+  --lime-soft:  rgba(196,255,61,.12);
+  --on-lime:    #0a0c13;
+
   /* status */
   --yellow:     #ffd84d;
-  --green:      #4ade80;            /* bright green — online / positive */
-  --green-d:    #22c55e;
-  --green-soft: rgba(74,222,128,.12);
+  --green:      #c4ff3d;            /* online / positive — lime */
+  --green-d:    #a8e62b;
+  --green-soft: rgba(196,255,61,.12);
   --on-green:   #0a0c13;
   --red:        #ff5470;
 
