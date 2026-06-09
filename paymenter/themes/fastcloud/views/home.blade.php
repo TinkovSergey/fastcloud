@@ -17,7 +17,7 @@
     </p>
     <div class="fc-hero-ctas">
       <a href="{{ route('register') }}" wire:navigate class="fc-btn-lime">Создать сервер &rarr;</a>
-      <a href="{{ route('category.show', ['category' => 'france']) }}" wire:navigate class="fc-btn-ghost">Тарифы</a>
+      <a href="{{ route('pricing') }}" wire:navigate class="fc-btn-ghost">Тарифы</a>
     </div>
     <div class="fc-meta">
       <div class="fc-meta-cell"><div class="fc-meta-val">99,99%</div><div class="fc-meta-lbl">SLA</div></div>
@@ -438,7 +438,7 @@
     <p class="fc-cta-sub">Регистрация за 30 секунд. Сервер активируется сразу после оплаты. Никаких документов.</p>
     <div class="fc-cta-btns">
       <a href="{{ route('register') }}" wire:navigate class="fc-btn-lime">Создать аккаунт &rarr;</a>
-      <a href="{{ route('category.show', ['category' => 'france']) }}" wire:navigate class="fc-btn-ghost">Смотреть тарифы</a>
+      <a href="{{ route('pricing') }}" wire:navigate class="fc-btn-ghost">Смотреть тарифы</a>
     </div>
   </div>
 </section>
