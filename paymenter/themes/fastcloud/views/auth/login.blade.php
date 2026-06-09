@@ -3,10 +3,7 @@
     {{-- ── Левая колонка ── --}}
     <aside class="fc-auth-side">
       <a href="{{ route('home') }}" wire:navigate class="fc-auth-logo">
-        <svg viewBox="0 0 110 24" height="22" overflow="visible" xmlns="http://www.w3.org/2000/svg" aria-label="FastCloud">
-          <text x="0" y="20" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" font-weight="400" fill="#20b5eb">fast</text>
-          <text x="32" y="20" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-1.3" fill="currentColor">cloud</text>
-        </svg>
+        <x-logo class="h-7 w-auto" />
       </a>
 
       <div class="fc-auth-side-body">
@@ -16,9 +13,9 @@
       </div>
 
       <div class="fc-auth-side-foot">
-        <a href="#">оферта</a><span>·</span>
-        <a href="#">конфиденциальность</a><span>·</span>
-        <a href="#">поддержка</a>
+        <a href="{{ route('offer') }}" wire:navigate>оферта</a><span>·</span>
+        <a href="{{ route('privacy') }}" wire:navigate>конфиденциальность</a><span>·</span>
+        <a href="{{ route('contacts') }}" wire:navigate>поддержка</a>
       </div>
     </aside>
 

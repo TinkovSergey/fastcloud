@@ -1,12 +1,42 @@
-<form class="mx-auto flex flex-col gap-2 mt-4 px-6 sm:px-14 pb-10 bg-primary-800 rounded-md xl:max-w-[40%] w-full"
-    wire:submit="submit" id="reset">
-    <div class="flex flex-col items-center my-14">
-        <x-logo class="h-10" />
-        <h1 class="text-2xl text-center mt-6">{{ __('auth.reset_password') }} </h1>
+<div class="fc-auth-solo">
+  <div class="fc-auth-solo-inner">
+
+    <div class="fc-auth-solo-logo">
+      <a href="{{ route('home') }}" wire:navigate>
+        <x-logo class="h-8 w-auto" />
+      </a>
     </div>
-    <x-form.input name="email" type="text" :label="__('general.input.email')" :placeholder="__('general.input.email_placeholder')" wire:model="email" required />
 
-    <x-captcha :form="'reset'" />
+    <div class="fc-auth-solo-card">
+      <h2 class="fc-auth-solo-title">Восстановление пароля</h2>
+      <p class="fc-auth-solo-sub">Введите e-mail — пришлём ссылку для сброса.</p>
 
-    <x-button.primary class="w-full" type="submit">{{ __('auth.reset_password') }}</x-button.primary>
-</form>
+      <form wire:submit="submit" id="reset" style="display:flex;flex-direction:column;gap:14px;">
+
+        <div class="fc-field @error('email') is-error @enderror">
+          <span class="fc-field-lbl">E-mail</span>
+          <input class="fc-inp" type="email"
+                 placeholder="ivan@example.com"
+                 autocomplete="email"
+                 wire:model="email"
+                 id="email" name="email" required>
+          @error('email')
+            <span class="fc-field-error">{{ $message }}</span>
+          @enderror
+        </div>
+
+        <x-captcha :form="'reset'" />
+
+        <button type="submit" class="fc-btn-lime fc-btn-block">
+          Отправить ссылку &rarr;
+        </button>
+
+      </form>
+    </div>
+
+    <div class="fc-auth-solo-foot">
+      <a href="{{ route('login') }}" wire:navigate>← Назад ко входу</a>
+    </div>
+
+  </div>
+</div>

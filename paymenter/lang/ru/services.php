@@ -1,0 +1,75 @@
+<?php
+
+return [
+    'services' => 'Услуги',
+    'product' => 'Продукт',
+    'price' => 'Цена',
+    'status' => 'Статус',
+    'name' => 'Название',
+    'actions' => 'Действия',
+    'view' => 'Просмотр',
+
+    'product_details' => 'Детали продукта',
+    'billing_cycle' => 'Период оплаты',
+    'cancel' => 'Отменить',
+    'cancellation' => 'Отмена услуги: :service',
+    'cancel_are_you_sure' => 'Вы уверены, что хотите отменить эту услугу?',
+    'cancel_reason' => 'Причина отмены',
+    'cancel_type' => 'Тип отмены',
+    'cancel_immediate' => 'Немедленная отмена',
+    'cancel_end_of_period' => 'Отмена по окончании расчётного периода',
+    'cancel_immediate_warning' => 'После нажатия кнопки услуга будет отменена немедленно и станет недоступна.',
+    'cancellation_requested' => 'Запрос на отмену принят',
+
+    'current_plan' => 'Текущий тариф',
+    'new_plan' => 'Новый тариф',
+    'change_plan' => 'Сменить тариф',
+    'current_price' => 'Текущая цена',
+    'new_price' => 'Новая цена',
+    'upgrade' => 'Улучшить',
+    'upgrade_summary' => 'Детали улучшения',
+    'total_today' => 'К оплате сегодня',
+    'upgrade_service' => 'Улучшить услугу',
+    'upgrade_choose_product' => 'Выберите продукт для перехода',
+    'upgrade_choose_config' => 'Выберите конфигурацию',
+    'next_step' => 'Следующий шаг',
+
+    'upgrade_pending' => 'Невозможно улучшить услугу — уже открыт счёт на улучшение или понижение',
+
+    'outstanding_invoice' => 'У вас есть неоплаченный счёт.',
+    'view_and_pay' => 'Нажмите здесь для просмотра и оплаты',
+
+    'statuses' => [
+        'pending' => 'Ожидание',
+        'active' => 'Активна',
+        'cancelled' => 'Отменена',
+        'suspended' => 'Приостановлена',
+        'cancellation_pending' => 'Отмена в процессе',
+    ],
+    'billing_cycles' => [
+        'day' => 'день|дня|дней',
+        'week' => 'неделю|недели|недель',
+        'month' => 'месяц|месяца|месяцев',
+        'year' => 'год|года|лет',
+    ],
+    'every_period' => 'Каждые :period :unit',
+    'price_every_period' => ':price за :period :unit',
+    'price_one_time' => ':price единоразово',
+    'renews_in' => 'Продление через',
+    'renews_on' => 'Продление',
+    'auto_pay' => 'Автооплата через',
+    'auto_pay_not_configured' => 'Не настроено',
+
+    'no_services' => 'Услуг не найдено',
+    'update_billing_agreement' => 'Обновить платёжное соглашение',
+    'clear_billing_agreement' => 'Удалить платёжное соглашение',
+    'select_billing_agreement' => 'Выбрать платёжное соглашение',
+
+    'remove_payment_method' => 'Удалить способ оплаты',
+    'remove_payment_method_confirm' => 'Вы уверены, что хотите удалить способ оплаты ":name" из этой услуги? Автоплатёж будет отключён.',
+
+    'label' => 'Метка',
+    'label_placeholder' => 'Введите метку для этой услуги',
+    'label_modal_title' => 'Изменить метку услуги',
+    'update_label' => 'Обновить метку',
+];

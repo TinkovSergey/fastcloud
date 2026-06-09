@@ -1,4 +1,4 @@
-<div class="container mt-14">
+﻿<div class="container mt-14">
     <x-navigation.breadcrumb />
     <div class="px-2">
         @if($setupModalVisible)
@@ -147,8 +147,8 @@
                 class="bg-background-secondary hover:bg-background-secondary/80 border border-neutral p-1 rounded-lg mb-4">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-3">
-                        <div class="bg-secondary/10 p-2 rounded-lg">
-                            <x-ri-bill-line class="size-5 text-secondary" />
+                        <div class="bg-primary/10 p-2 rounded-lg">
+                            <x-ri-bill-line class="size-5 text-primary" />
                         </div>
                         <span class="font-medium">
                             {{ $transaction->transaction_id ? 'Transaction: ' . $transaction->transaction_id :

@@ -16,23 +16,23 @@
       {{-- Продукт --}}
       <div class="fc-footer-col">
         <div class="fc-footer-label">Продукт</div>
-        <a href="{{ route('category.show', ['category' => 'france']) }}" wire:navigate>Тарифы</a>
-        <a href="{{ route('home') }}" wire:navigate>Локации</a>
-        <a href="{{ route('tickets.create') }}" wire:navigate>Контакты</a>
+        <a href="{{ route('pricing') }}" wire:navigate>Тарифы</a>
+        <a href="{{ route('locations') }}" wire:navigate>Локации</a>
+        <a href="{{ route('contacts') }}" wire:navigate>Контакты</a>
       </div>
 
       {{-- Юридическое --}}
       <div class="fc-footer-col">
         <div class="fc-footer-label">Юридическое</div>
-        <a href="#">Договор&#8209;оферта</a>
-        <a href="#">Конфиденциальность</a>
-        <a href="#">SLA</a>
+        <a href="{{ route('offer') }}" wire:navigate>Договор&#8209;оферта</a>
+        <a href="{{ route('privacy') }}" wire:navigate>Конфиденциальность</a>
+        <a href="{{ route('sla') }}" wire:navigate>SLA</a>
       </div>
 
       {{-- Поддержка --}}
       <div class="fc-footer-col">
         <div class="fc-footer-label">Поддержка</div>
-        <a href="{{ route('tickets.create') }}" wire:navigate>Написать нам</a>
+        <a href="{{ route('contacts') }}" wire:navigate>Написать нам</a>
         <a href="mailto:support@fastcloud.eu">support@fastcloud.eu</a>
         <a href="https://t.me/fastcloud_status" target="_blank" rel="noopener">Telegram&#8209;статус</a>
       </div>
@@ -40,7 +40,7 @@
     </div>
   </div>
   <div class="fc-footer-copy">
-    <span>&copy; {{ date('Y') }} FastCloud O&Uuml; &middot; Tallinn, Estonia</span>
+    <span>&copy; {{ date('Y') }} FastCloud</span>
     <span>GDPR &middot; PCI&nbsp;DSS &middot; Uptime&nbsp;99,99%</span>
   </div>
 </footer>

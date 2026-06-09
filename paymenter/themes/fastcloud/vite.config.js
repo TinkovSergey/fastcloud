@@ -12,7 +12,7 @@ export default defineConfig({
                 path.resolve(__dirname, 'css/app.css'),
                 'resources/css/filament/admin/theme.css',
             ],
-            buildDirectory: 'default/',
+            buildDirectory: 'fastcloud/',
             refresh: true
         }),
         tailwindcss(),

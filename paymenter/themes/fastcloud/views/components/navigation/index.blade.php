@@ -1,6 +1,6 @@
 <nav class="w-full px-4 lg:px-8 bg-background-secondary border-b border-neutral md:h-16 flex md:flex-row flex-col justify-between fixed top-0 z-20">
     <div
-        x-data="{
+        x-data="{ 
             slideOverOpen: false,
             hasAside: !!document.getElementById('main-aside')
         }"
@@ -8,49 +8,20 @@
         class="relative z-50 w-full h-auto">
         <div
             :class="hasAside ? 'w-full' : 'container'"
-            class="flex flex-row items-center justify-between h-16">
+            class="flex flex-row items-center justify-between h-16 relative">
 
+            {{-- Лого --}}
             <div class="flex flex-row items-center">
                 <a href="{{ route('home') }}" class="flex flex-row items-center h-10 gap-2" wire:navigate>
                     <x-logo class="h-8" />
                 </a>
-                <div class="md:flex hidden flex-row ml-6">
-                    @foreach (\App\Classes\Navigation::getLinks() as $nav)
-                    @if (isset($nav['children']) && count($nav['children']) > 0)
-                    <div class="relative">
-                        <x-dropdown>
-                            <x-slot:trigger>
-                                <div class="flex flex-col">
-                                    <span class="flex flex-row items-center p-3 text-sm font-semibold whitespace-nowrap text-base hover:text-base/80">
-                                        {{ $nav['name'] }}
-                                    </span>
-                                </div>
-                            </x-slot:trigger>
-                            <x-slot:content>
-                                @foreach ($nav['children'] as $child)
-                                <x-navigation.link
-                                    :href="$child['url']"
-                                    :spa="isset($child['spa']) ? $nav['spa'] : true">
-                                    {{ $child['name'] }}
-                                </x-navigation.link>
-                                @endforeach
-                            </x-slot:content>
-                        </x-dropdown>
-                    </div>
-                    @else
-                    <x-navigation.link
-                        :href="$nav['url']"
-                        :spa="isset($nav['spa']) ? $nav['spa'] : true"
-                        class="flex items-center p-3">
-                        {{ $nav['name'] }}
-                    </x-navigation.link>
-                    @endif
-                    {{-- @if($nav['separator'])
-                    <div class="h-px w-full bg-neutral"></div>
-                    @endif --}}
-                    @endforeach
+            </div>
 
-                </div>
+            {{-- Меню по центру --}}
+            <div class="absolute left-1/2 -translate-x-1/2 md:flex hidden flex-row items-center gap-1">
+                <a href="{{ route('pricing') }}" wire:navigate class="fc-mkt-nav-link {{ request()->routeIs('pricing') ? 'on' : '' }}">Тарифы</a>
+                <a href="{{ route('locations') }}" wire:navigate class="fc-mkt-nav-link {{ request()->routeIs('locations') ? 'on' : '' }}">Локации</a>
+                <a href="{{ route('contacts') }}" wire:navigate class="fc-mkt-nav-link {{ request()->routeIs('contacts') ? 'on' : '' }}">Контакты</a>
             </div>
 
             <div class="flex flex-row items-center">
@@ -68,7 +39,6 @@
                         Баланс: {{ $__balance }}
                     </a>
                     @endif
-                    <x-theme-toggle />
                 </div>
 
                 @if(auth()->check())
@@ -93,17 +63,13 @@
                     </x-dropdown>
                 </div>
                 @else
-                <div class="hidden lg:flex flex-row gap-3">
-                    <a href="{{ route('login') }}" wire:navigate>
-                        <x-button.secondary>
-                            {{ __('navigation.login') }}
-                        </x-button.secondary>
+                <div class="hidden lg:flex flex-row gap-2">
+                    <a href="{{ route('login') }}" wire:navigate class="fc-btn-ghost fc-btn-sm">
+                        {{ __('navigation.login') }}
                     </a>
                     @if(!config('settings.registration_disabled', false))
-                    <a href="{{ route('register') }}" wire:navigate>
-                        <x-button.primary>
-                            {{ __('navigation.register') }}
-                        </x-button.primary>
+                    <a href="{{ route('register') }}" wire:navigate class="fc-btn-lime fc-btn-sm">
+                        {{ __('navigation.register') }} &rarr;
                     </a>
                     @endif
                 </div>

@@ -40,8 +40,12 @@
     <style>[wire\:name="components\.locale-switch"]{display:none!important}</style>
 </head>
 
-@php $isAuth = Route::is('login', 'register', 'password.*', '2fa'); @endphp
-<body class="w-full bg-background text-base min-h-screen antialiased {{ $isAuth ? 'fc-auth-body fc-marketing' : 'flex flex-col' }} {{ Route::is('home') ? 'fc-marketing' : '' }}"
+@php
+$isAuth     = Route::is('login', 'register', 'password.*', '2fa');
+$isMkt      = Route::is('home', 'pricing', 'locations', 'contacts', 'offer', 'privacy', 'sla', 'products.checkout');
+$isCheckout = Route::is('products.checkout');
+@endphp
+<body class="w-full bg-background text-base min-h-screen antialiased {{ $isAuth ? 'fc-auth-body fc-marketing' : 'flex flex-col' }} {{ $isMkt ? 'fc-marketing' : '' }} {{ $isCheckout ? 'fc-is-checkout' : '' }}"
     x-cloak
     x-data="{
         theme: $persist('system').as('theme_mode'),
@@ -52,11 +56,7 @@
             });
         },
         get isDark() {
-            @if(Route::is('home') || Route::is('login') || Route::is('register') || Route::is('password.*') || Route::is('2fa'))
             return true;
-            @else
-            return this.theme === 'dark' || (this.theme === 'system' && this.systemDark);
-            @endif
         }
     }"
     :class="{'dark': isDark}"
@@ -71,7 +71,7 @@
         @if (isset($sidebar) && $sidebar)
         <x-navigation.sidebar title="$title" />
         @endif
-        <div class="{{ (isset($sidebar) && $sidebar) ? 'md:ml-64 rtl:ml-0 rtl:md:mr-64' : '' }} flex flex-col flex-grow overflow-auto">
+        <div class="{{ (isset($sidebar) && $sidebar) ? 'md:ml-64 rtl:ml-0 rtl:md:mr-64' : '' }} flex flex-col flex-grow {{ $isCheckout ? '' : 'overflow-auto' }}">
             <main class="mt-16 grow">
                 {{ $slot }}
             </main>
@@ -85,6 +85,29 @@
     </div>
     {!! hook('footer') !!}
     @endif
+    {{-- Cookie banner --}}
+    <div id="fc-cookie-bar">
+      <div id="fc-cookie-bar-inner">
+        <div class="fc-cookie-text">
+          <strong>Файлы cookie</strong> — используем их для корректной работы сайта.
+          <a href="{{ route('privacy') }}">Политика конфиденциальности</a>
+        </div>
+        <div class="fc-cookie-btns">
+          <button id="fc-cookie-decline" class="fc-btn-ghost" style="padding:8px 16px;font-size:13px;">Только необходимые</button>
+          <button id="fc-cookie-accept" class="fc-btn-primary" style="padding:8px 16px;font-size:13px;">Принять все</button>
+        </div>
+      </div>
+    </div>
+    <script>
+    (function(){
+      if(localStorage.getItem('fc_cookie_consent'))return;
+      var bar=document.getElementById('fc-cookie-bar');
+      requestAnimationFrame(function(){requestAnimationFrame(function(){bar.classList.add('visible');});});
+      function dismiss(v){localStorage.setItem('fc_cookie_consent',v);bar.classList.remove('visible');setTimeout(function(){bar.remove();},400);}
+      document.getElementById('fc-cookie-accept').addEventListener('click',function(){dismiss('all');});
+      document.getElementById('fc-cookie-decline').addEventListener('click',function(){dismiss('necessary');});
+    })();
+    </script>
     @livewireScriptConfig
 </body>
 

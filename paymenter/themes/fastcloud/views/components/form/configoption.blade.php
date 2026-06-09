@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-1">
+﻿<div class="flex flex-col gap-1">
     @switch($config->type)
         @case('select')
             <x-form.select name="{{ $name }}" :label="__($config->label ?? $config->name)" :required="$config->required ?? false"
@@ -103,7 +103,7 @@
     @endswitch
     @isset($config->description)
         @isset($config->link)
-            <a href="{{ $config->link }}" class="text-xs text-primary-500 hover:underline hover:text-secondary group">
+            <a href="{{ $config->link }}" class="text-xs text-primary-500 hover:underline hover:text-primary group">
                 {{ $config->description }}
                 <x-ri-arrow-right-long-line class="ml-1 size-3 inline-block -rotate-45 group-hover:rotate-0 transition" />
             </a>

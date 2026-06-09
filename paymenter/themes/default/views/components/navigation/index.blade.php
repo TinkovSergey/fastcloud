@@ -18,6 +18,9 @@
                     @endif
                 </a>
                 <div class="md:flex hidden flex-row ml-6">
+                    <x-navigation.link href="{{ route('pricing') }}" :spa="true" class="flex items-center p-3">Тарифы</x-navigation.link>
+                    <x-navigation.link href="{{ route('locations') }}" :spa="true" class="flex items-center p-3">Локации</x-navigation.link>
+                    <x-navigation.link href="{{ route('contacts') }}" :spa="true" class="flex items-center p-3">Контакты</x-navigation.link>
                     @foreach (\App\Classes\Navigation::getLinks() as $nav)
                     @if (isset($nav['children']) && count($nav['children']) > 0)
                     <div class="relative">
@@ -61,7 +64,6 @@
 
                 <div class="items-center hidden md:flex mr-1">
                     <livewire:components.locale-switch />
-                    <x-theme-toggle />
                 </div>
 
                 @if(auth()->check())

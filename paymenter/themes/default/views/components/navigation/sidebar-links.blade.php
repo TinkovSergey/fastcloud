@@ -1,5 +1,14 @@
 <div class="lg:px-4 lg:py-6 flex flex-col gap-2">
     <div class="flex flex-col gap-2 md:hidden">
+        <div class="flex items-center rounded-lg hover:bg-primary/5">
+            <x-navigation.link href="{{ route('pricing') }}" :spa="true" class="w-full">Тарифы</x-navigation.link>
+        </div>
+        <div class="flex items-center rounded-lg hover:bg-primary/5">
+            <x-navigation.link href="{{ route('locations') }}" :spa="true" class="w-full">Локации</x-navigation.link>
+        </div>
+        <div class="flex items-center rounded-lg hover:bg-primary/5">
+            <x-navigation.link href="{{ route('contacts') }}" :spa="true" class="w-full">Контакты</x-navigation.link>
+        </div>
         @foreach (\App\Classes\Navigation::getLinks() as $nav)
         @if (!empty($nav['children']))
         <div x-data="{ activeAccordion: {{ $nav['active'] ? 'true' : 'false' }} }"

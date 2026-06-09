@@ -1,0 +1,35 @@
+{
+  "resources/css/filament/admin/theme.css": {
+    "file": "assets/theme-DlOzUBbn.css",
+    "src": "resources/css/filament/admin/theme.css",
+    "isEntry": true,
+    "name": "theme",
+    "names": [
+      "theme.css"
+    ]
+  },
+  "themes/fastcloud/css/app.css": {
+    "file": "assets/app-CrmStRlg.css",
+    "src": "themes/fastcloud/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "themes/fastcloud/js/app.js": {
+    "file": "assets/app-BOVk2Py_.js",
+    "name": "app",
+    "src": "themes/fastcloud/js/app.js",
+    "isEntry": true
+  },
+  "themes/fastcloud/js/easymde-entry.js": {
+    "file": "assets/easymde-entry-DZDSioEu.js",
+    "name": "easymde-entry",
+    "src": "themes/fastcloud/js/easymde-entry.js",
+    "isEntry": true,
+    "css": [
+      "assets/easymde-entry-DaCrUmpA.css"
+    ]
+  }
+}

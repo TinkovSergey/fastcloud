@@ -1,12 +1,12 @@
-<div class="container mt-14 space-y-4">
+﻿<div class="container mt-14 space-y-4">
     <x-navigation.breadcrumb />
     @forelse ($services as $service)
     <a href="{{ route('services.show', $service) }}" wire:navigate>
         <div class="bg-background-secondary hover:bg-background-secondary/80 border border-neutral p-4 rounded-lg mb-4">
         <div class="flex items-center justify-between mb-2">
             <div class="flex items-center gap-3">
-            <div class="bg-secondary/10 p-2 rounded-lg">
-                <x-ri-instance-line class="size-5 text-secondary" />
+            <div class="bg-primary/10 p-2 rounded-lg">
+                <x-ri-instance-line class="size-5 text-primary" />
             </div>
             <span class="font-medium">{{ $service->label }}</span>
             </div>
