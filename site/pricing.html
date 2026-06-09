@@ -83,7 +83,7 @@
           <div class="plan-stat"><span class="plan-stat-val">2 ТБ</span><span class="plan-stat-lbl">трафик</span></div>
         </div>
         <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Поддержка 24/7</span></div>
-        <a href="configure.html?plan=starter" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="starter">Выбрать →</a>
+        <a href="plan.html?plan=starter" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="starter">Выбрать →</a>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
@@ -98,7 +98,7 @@
           <div class="plan-stat"><span class="plan-stat-val">∞</span><span class="plan-stat-lbl">трафик</span></div>
         </div>
         <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Поддержка 24/7</span></div>
-        <a href="configure.html?plan=pro" class="btn btn-primary w-100 jcc mt-auto plan-buy" data-plan="pro">Выбрать →</a>
+        <a href="plan.html?plan=pro" class="btn btn-primary w-100 jcc mt-auto plan-buy" data-plan="pro">Выбрать →</a>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
@@ -113,7 +113,7 @@
           <div class="plan-stat"><span class="plan-stat-val">∞</span><span class="plan-stat-lbl">трафик</span></div>
         </div>
         <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Поддержка 24/7</span><span>Выделенный IPv4</span></div>
-        <a href="configure.html?plan=business" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="business">Выбрать →</a>
+        <a href="plan.html?plan=business" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="business">Выбрать →</a>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
@@ -128,7 +128,7 @@
           <div class="plan-stat"><span class="plan-stat-val">∞</span><span class="plan-stat-lbl">трафик</span></div>
         </div>
         <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Поддержка 24/7</span><span>Выделенный IPv4</span></div>
-        <a href="configure.html?plan=scale" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="scale">Выбрать →</a>
+        <a href="plan.html?plan=scale" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="scale">Выбрать →</a>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
@@ -143,7 +143,7 @@
           <div class="plan-stat"><span class="plan-stat-val">∞</span><span class="plan-stat-lbl">трафик</span></div>
         </div>
         <div class="plan-check"><span>Anti‑DDoS&nbsp;10&nbsp;Gbps</span><span>Бэкапы 14&nbsp;дней</span><span>Приоритет‑саппорт</span><span>2&nbsp;× выделенных IPv4</span></div>
-        <a href="configure.html?plan=enterprise" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="enterprise">Выбрать →</a>
+        <a href="plan.html?plan=enterprise" class="btn btn-ghost w-100 jcc mt-auto plan-buy" data-plan="enterprise">Выбрать →</a>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4">
@@ -267,7 +267,7 @@
   function updateBuyLinks() {
     buyBtns.forEach(function (b) {
       var plan = b.getAttribute('data-plan');
-      b.setAttribute('href', 'configure.html?plan=' + plan + '&loc=' + loc + '&period=' + billing);
+      b.setAttribute('href', 'plan.html?plan=' + plan + '&loc=' + loc + '&period=' + billing);
     });
   }
 

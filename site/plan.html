@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>FastCloud — Тариф</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="marketing.css">
+</head>
+<body>
+
+<nav class="mkt-nav" id="mktNav">
+  <a href="index.html" class="logo">
+    <img src="logo.svg" class="logo-svg" alt="fastcloud">
+  </a>
+  <div class="mkt-nav-links" id="navLinks">
+    <a href="pricing.html" class="mkt-nav-link on">Тарифы</a>
+    <a href="locations.html" class="mkt-nav-link">Локации</a>
+    <a href="contacts.html" class="mkt-nav-link">Контакты</a>
+    <div class="mkt-nav-mobile-actions" style="display:none">
+      <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
+    </div>
+  </div>
+  <div class="mkt-nav-desktop-actions flex gap-2 items-center">
+    <a href="cart.html" class="nav-cart" aria-label="Корзина">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    </a>
+    <a href="login.html" class="btn btn-ghost btn-sm">Войти</a>
+    <a href="register.html" class="btn btn-primary btn-sm">Создать аккаунт</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Меню">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+  </button>
+</nav>
+
+<div class="page-wrap">
+  <div class="breadcrumb mb-6" style="font-family:var(--mono);font-size:12px">
+    <a href="pricing.html" style="color:var(--text3)">тарифы</a>
+    <span class="breadcrumb-sep">/</span>
+    <span style="color:var(--text2)" id="crumbName">Стандарт</span>
+  </div>
+
+  <div class="plan-detail">
+    <!-- LEFT: info -->
+    <div class="pd-main">
+      <div class="pd-head">
+        <span class="pd-badge" id="pdBadge">популярный выбор</span>
+        <h1 class="pd-name" id="pdName">Стандарт</h1>
+        <p class="pd-tagline" id="pdTagline">Для интернет‑магазинов, API и продакшн‑нагрузок среднего размера.</p>
+      </div>
+
+      <!-- spec tiles -->
+      <div class="pd-specs">
+        <div class="pd-spec">
+          <div class="pd-spec-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+          </div>
+          <div class="pd-spec-val" id="pdCpu">4 vCPU</div>
+          <div class="pd-spec-lbl">AMD EPYC</div>
+        </div>
+        <div class="pd-spec">
+          <div class="pd-spec-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 7V4M10 7V4M14 7V4M18 7V4M6 21v-2M18 21v-2"/></svg>
+          </div>
+          <div class="pd-spec-val" id="pdRam">8 ГБ</div>
+          <div class="pd-spec-lbl">RAM DDR5</div>
+        </div>
+        <div class="pd-spec">
+          <div class="pd-spec-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 12H2M5.5 12l-2 6.5A2 2 0 0 0 5.4 21h13.2a2 2 0 0 0 1.9-2.5l-2-6.5M5.5 12l2-6.5A2 2 0 0 1 9.4 4h5.2a2 2 0 0 1 1.9 1.5L18.5 12"/><circle cx="16" cy="16.5" r="1"/></svg>
+          </div>
+          <div class="pd-spec-val" id="pdNvme">120 ГБ</div>
+          <div class="pd-spec-lbl">NVMe Gen4</div>
+        </div>
+        <div class="pd-spec">
+          <div class="pd-spec-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM2 12h20M12 2c2.5 2.7 4 6.3 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.3-4-10s1.5-7.3 4-10z"/></svg>
+          </div>
+          <div class="pd-spec-val" id="pdTraffic">∞</div>
+          <div class="pd-spec-lbl">трафик</div>
+        </div>
+      </div>
+
+      <!-- included features -->
+      <section class="pd-section">
+        <h2 class="pd-section-title">Включено в тариф</h2>
+        <ul class="pd-features" id="pdFeatures">
+          <li>Anti‑DDoS 10 Гбит/с — фильтрация L3/L4/L7</li>
+          <li>Ежедневные бэкапы с хранением 14 дней</li>
+          <li>Сеть 10 Гбит/с, безлимитный трафик</li>
+          <li>Выделенный IPv4‑адрес</li>
+          <li>Полный root‑доступ, KVM‑консоль</li>
+          <li>Поддержка 24/7 — живые инженеры</li>
+        </ul>
+      </section>
+
+      <!-- location -->
+      <section class="pd-section">
+        <h2 class="pd-section-title">Локация</h2>
+        <div class="pd-loc-grid" id="pdLocGrid">
+          <button class="pd-loc on" data-loc="fra">Германия</button>
+          <button class="pd-loc" data-loc="deu">Нидерланды</button>
+          <button class="pd-loc" data-loc="pol">Польша</button>
+          <button class="pd-loc" data-loc="ita">Италия</button>
+          <button class="pd-loc" data-loc="gbr">Британия</button>
+          <button class="pd-loc" data-loc="usa">США</button>
+          <button class="pd-loc" data-loc="can">Канада</button>
+          <button class="pd-loc" data-loc="sgp">Сингапур</button>
+          <button class="pd-loc" data-loc="ind">Индия</button>
+          <button class="pd-loc" data-loc="aus">Австралия</button>
+        </div>
+        <p class="pd-loc-note" id="pdLocNote">Цена не зависит от выбранной локации.</p>
+      </section>
+
+      <!-- use cases -->
+      <section class="pd-section">
+        <h2 class="pd-section-title">Подходит для</h2>
+        <div class="pd-tags" id="pdTags">
+          <span>интернет‑магазины</span><span>API‑бэкенды</span><span>CI/CD</span><span>1С‑Битрикс</span><span>базы данных</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- RIGHT: sticky purchase -->
+    <aside class="pd-buy">
+      <div class="pd-buy-card">
+        <div class="pd-buy-plan" id="pdBuyName">Стандарт</div>
+        <div class="pd-price">
+          <span class="pd-price-val" id="pdPrice">1 800</span>
+          <span class="pd-price-cur">₽</span>
+          <span class="pd-price-per">/мес</span>
+        </div>
+        <div class="pd-price-note" id="pdPriceNote">при оплате за 1 месяц</div>
+
+        <div class="pd-period" id="pdPeriod">
+          <button class="pd-period-btn on" data-period="monthly">1 мес</button>
+          <button class="pd-period-btn" data-period="quarterly">3 мес<span class="pd-period-save">−5%</span></button>
+          <button class="pd-period-btn" data-period="biannual">6 мес<span class="pd-period-save">−10%</span></button>
+          <button class="pd-period-btn" data-period="annual">12 мес<span class="pd-period-save">−15%</span></button>
+        </div>
+
+        <div class="pd-buy-summary">
+          <div class="pd-buy-line"><span>Локация</span><span id="pdSumLoc">Германия</span></div>
+          <div class="pd-buy-line"><span>Период</span><span id="pdSumPeriod">1 месяц</span></div>
+          <div class="pd-buy-line pd-buy-line-total"><span>К оплате</span><span id="pdSumTotal">1 800 ₽</span></div>
+        </div>
+
+        <a href="configure.html?plan=business" class="btn btn-primary btn-block" id="pdAddBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          В корзину
+        </a>
+        <a href="configure.html?plan=business" class="btn btn-ghost btn-block mt-2" id="pdConfigBtn">Настроить и заказать</a>
+
+        <div class="pd-buy-trust"><span class="dot dot-lime"></span>Активация ~55 секунд после оплаты</div>
+      </div>
+
+      <a href="pricing.html" class="pd-back">← Все тарифы</a>
+    </aside>
+  </div>
+</div>
+
+<script src="nav.js"></script>
+<script src="cookie.js"></script>
+<script>
+(function () {
+  var PLANS = {
+    starter:    { name: 'Старт',    base: 4,  vcpu: 1,  ram: 2,  nvme: 30,  ip: false, traffic: '2 ТБ',
+      tagline: 'Для ботов, тестов и личных проектов.', popular: false,
+      tags: ['телеграм‑боты','тестовые стенды','VPN','личные проекты'] },
+    pro:        { name: 'Базовый',  base: 9,  vcpu: 2,  ram: 4,  nvme: 60,  ip: false, traffic: '∞',
+      tagline: 'Для сайтов, лендингов и небольших сервисов.', popular: false,
+      tags: ['сайты','WordPress','лендинги','небольшие API'] },
+    business:   { name: 'Стандарт', base: 18, vcpu: 4,  ram: 8,  nvme: 120, ip: true,  traffic: '∞',
+      tagline: 'Для интернет‑магазинов, API и продакшн‑нагрузок среднего размера.', popular: true,
+      tags: ['интернет‑магазины','API‑бэкенды','CI/CD','1С‑Битрикс','базы данных'] },
+    scale:      { name: 'Бизнес',   base: 35, vcpu: 8,  ram: 16, nvme: 250, ip: true,  traffic: '∞',
+      tagline: 'Для высоконагруженных сервисов и крупных проектов.', popular: false,
+      tags: ['highload','кластеры','аналитика','микросервисы'] },
+    enterprise: { name: 'Премиум',  base: 62, vcpu: 16, ram: 32, nvme: 500, ip: true,  traffic: '∞',
+      tagline: 'Для AI, big data и корпоративных задач.', popular: false,
+      tags: ['AI / ML','big data','корпоративные БД','биллинг'] }
+  };
+  var LOC = {
+    fra: 'Германия', deu: 'Нидерланды', pol: 'Польша', ita: 'Италия', gbr: 'Британия',
+    usa: 'США', can: 'Канада', sgp: 'Сингапур', ind: 'Индия', aus: 'Австралия'
+  };
+  var PERIOD = {
+    monthly:   { months: 1,  mult: 1.00, label: '1 месяц' },
+    quarterly: { months: 3,  mult: 0.95, label: '3 месяца' },
+    biannual:  { months: 6,  mult: 0.90, label: '6 месяцев' },
+    annual:    { months: 12, mult: 0.85, label: '12 месяцев' }
+  };
+
+  var params = new URLSearchParams(location.search);
+  var planId = params.get('plan'); if (!PLANS[planId]) planId = 'business';
+  var loc    = params.get('loc');  if (!LOC[loc]) loc = 'fra';
+  var period = params.get('period'); if (!PERIOD[period]) period = 'monthly';
+  var plan = PLANS[planId];
+
+  function fmt(n) { return Math.round(n*100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0'); }
+
+  // static fill
+  document.getElementById('pdName').textContent = plan.name;
+  document.getElementById('crumbName').textContent = plan.name;
+  document.getElementById('pdBuyName').textContent = plan.name;
+  document.getElementById('pdTagline').textContent = plan.tagline;
+  document.getElementById('pdCpu').textContent = plan.vcpu + ' vCPU';
+  document.getElementById('pdRam').textContent = plan.ram + ' ГБ';
+  document.getElementById('pdNvme').textContent = plan.nvme + ' ГБ';
+  document.getElementById('pdTraffic').textContent = plan.traffic;
+  document.getElementById('pdBadge').style.display = plan.popular ? '' : 'none';
+  document.getElementById('pdTags').innerHTML = plan.tags.map(function(t){ return '<span>' + t + '</span>'; }).join('');
+
+  // features: hide IPv4 line if not included
+  if (!plan.ip) {
+    var feats = document.querySelectorAll('#pdFeatures li');
+    feats.forEach(function(li){ if (li.textContent.indexOf('IPv4') > -1) li.style.display = 'none'; });
+  }
+
+  // location buttons
+  var locBtns = document.querySelectorAll('.pd-loc');
+  locBtns.forEach(function(b){
+    b.classList.toggle('on', b.getAttribute('data-loc') === loc);
+    b.addEventListener('click', function(){
+      loc = this.getAttribute('data-loc');
+      locBtns.forEach(function(x){ x.classList.remove('on'); });
+      this.classList.add('on');
+      update();
+    });
+  });
+
+  // period buttons
+  var perBtns = document.querySelectorAll('.pd-period-btn');
+  perBtns.forEach(function(b){
+    b.classList.toggle('on', b.getAttribute('data-period') === period);
+    b.addEventListener('click', function(){
+      period = this.getAttribute('data-period');
+      perBtns.forEach(function(x){ x.classList.remove('on'); });
+      this.classList.add('on');
+      update();
+    });
+  });
+
+  function update() {
+    var p = PERIOD[period];
+    var monthly = plan.base * p.mult;
+    document.getElementById('pdPrice').textContent = fmt(monthly);
+    document.getElementById('pdPriceNote').textContent = 'при оплате за ' + p.label.toLowerCase();
+    document.getElementById('pdSumLoc').textContent = LOC[loc];
+    document.getElementById('pdSumPeriod').textContent = p.label;
+    document.getElementById('pdSumTotal').textContent = fmt(monthly * p.months) + ' ₽';
+
+    var q = 'plan=' + planId + '&loc=' + loc + '&period=' + period;
+    document.getElementById('pdAddBtn').setAttribute('href', 'cart.html?' + q);
+    document.getElementById('pdConfigBtn').setAttribute('href', 'configure.html?' + q);
+  }
+
+  update();
+})();
+</script>
+</body></html>

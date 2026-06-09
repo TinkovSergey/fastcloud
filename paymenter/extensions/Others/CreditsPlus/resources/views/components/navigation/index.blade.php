@@ -21,7 +21,7 @@
             :class="hasAside ? 'w-full' : 'container'">
 
             <div class="flex flex-row items-center">
-                <a href="{{ route('home') }}" class="flex flex-row items-center h-10 gap-2" wire:navigate>
+                <a href="{{ route('home') }}" class="flex flex-row items-center h-10 gap-2 fc-nav-logo" wire:navigate>
                     <x-logo class="h-8" />
                     @if(theme('logo_display', 'logo-and-name') != 'logo-only')
                     <span class="text-xl font-bold leading-none flex items-center">{{ config('app.name') }}</span>
@@ -141,14 +141,14 @@
                     x-show="slideOverOpen"
                     @click.away="slideOverOpen = false"
                     x-transition.opacity.duration.300ms
-                    class="absolute inset-0 bg-background-secondary border-t border-neutral shadow-lg overflow-y-auto flex flex-col">
+                    class="absolute inset-0 bg-background-secondary border-t border-neutral shadow-lg"
+                    style="position:absolute;inset:0;overflow-y:auto;padding:16px;">
 
-                    <div class="flex flex-col h-full p-4">
-                        <div class="flex-1 min-h-0 overflow-y-auto">
-                            <x-navigation.sidebar-links />
-                        </div>
-                        <div class="mt-5">
-                            @if(auth()->check())
+                    <x-navigation.sidebar-links />
+
+                    {{-- Auth-блок --}}
+                    <div style="margin-top:12px;padding-top:16px;border-top:1px solid var(--fc-border);">
+                        @if(auth()->check())
 
                             <div
                                 x-data="{ userPanelOpen: false }"
@@ -156,7 +156,7 @@
                                 x-cloak
                                 class="relative">
 
-                                <button @click="userPanelOpen = true" aria-label="Open user menu" class="flex gap-4 items-center justify-start">
+                                <button @click="userPanelOpen = true" aria-label="Open user menu" class="flex gap-4 items-center justify-start w-full">
                                     <img src="{{ auth()->user()->avatar }}" class="size-10 rounded-full border border-neutral bg-background" alt="avatar" />
                                     <div class="flex flex-col items-start gap-0.5">
                                         <span class="font-bold text-md">{{ auth()->user()->name }}</span>
@@ -218,22 +218,17 @@
                             </div>
 
                             @else
-                            <div class="flex flex-col gap-3 mb-3">
+                            <div style="display:flex;flex-direction:column;gap:10px;">
                                 @if(!config('settings.registration_disabled', false))
-                                <a href="{{ route('register') }}" wire:navigate>
-                                    <x-button.primary>
-                                        {{ __('navigation.register') }}
-                                    </x-button.primary>
+                                <a href="{{ route('register') }}" wire:navigate class="fc-btn-lime fc-btn-block">
+                                    {{ __('navigation.register') }} &rarr;
                                 </a>
                                 @endif
-                                <a href="{{ route('login') }}" wire:navigate>
-                                    <x-button.secondary>
-                                        {{ __('navigation.login') }}
-                                    </x-button.secondary>
+                                <a href="{{ route('login') }}" wire:navigate class="fc-btn-ghost fc-btn-block">
+                                    {{ __('navigation.login') }}
                                 </a>
                             </div>
                             @endif
-                        </div>
                     </div>
                 </div>
             </div>

@@ -179,6 +179,9 @@ body.fc-marketing nav.fixed.fc-scrolled {
 /* Маленькие кнопки для навбара */
 .fc-btn-sm { padding: 7px 16px !important; font-size: 12.5px !important; }
 
+/* Полноширинная кнопка для мобильного меню */
+.fc-btn-block { display: flex; width: 100%; justify-content: center; padding: 12px 20px; }
+
 /* Sidebar submenu indent */
 .fc-sidebar-children { padding-left: 30px; }
 
@@ -192,6 +195,10 @@ body.fc-marketing nav.fixed.fc-scrolled {
 }
 .fc-nav-icon-btn:hover { color: var(--fc-text); background: rgba(255,255,255,.06); }
 .fc-nav-icon-btn.on { color: var(--fc-text); background: rgba(255,255,255,.08); }
+
+@media (max-width: 575px) {
+  .fc-nav-logo img { height: 1.375rem; } /* 22px вместо 32px */
+}
 
 /* Мобильные ссылки в слайдовере */
 .fc-mkt-mob-link {
@@ -717,6 +724,8 @@ body.fc-marketing nav.fixed.fc-scrolled {
   .fc-app-grid   { grid-template-columns: repeat(2,1fr); }
   .fc-shield-stats { grid-template-columns: 1fr 1fr; }
   .fc-meta { gap: 16px; }
+  .fc-story-visual { display: none; }
+  .fc-story { padding: 48px 18px; }
 }
 
 
@@ -1237,7 +1246,10 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 @media (max-width: 991px) {
   .fc-mkt-wrap    { padding: 32px 24px; }
   .fc-mkt-hero    { padding: 16px 0; flex-direction: column; align-items: flex-start; }
-  .fc-pricing-bar-group { flex-direction: column; gap: 8px; }
+  .fc-pricing-bar-group { flex-direction: column; align-items: stretch; gap: 8px; }
+  .fc-pricing-bar-label { width: auto; text-align: center; }
+  .fc-loc-chips { display: flex; border-radius: var(--fc-r); }
+  .fc-billing-toggle { border-radius: var(--fc-r); }
   .fc-price-grid  { grid-template-columns: repeat(2, 1fr); }
   .fc-feat-grid   { grid-template-columns: repeat(2, 1fr); }
   .fc-feat-item   { flex: 0 0 clamp(220px, 55%, 360px); }
@@ -1248,15 +1260,17 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   .fc-contact-block { padding: 26px; }
 }
 @media (max-width: 575px) {
-  .fc-mkt-wrap    { padding: 24px 18px; }
+  .fc-mkt-wrap    { padding: 16px 18px; }
+  .fc-mkt-hero    { padding: 8px 0 20px; }
+  .fc-cta         { padding: 56px 18px 48px; }
   .fc-price-grid  { grid-template-columns: 1fr; }
   .fc-feat-grid   { grid-template-columns: 1fr; }
   .fc-feat-item   { flex: 0 0 78%; padding-right: 28px; margin-right: 28px; }
   .fc-feat-item::before { right: 28px; }
   .fc-feat-item .fc-feat-title { font-size: 19px; }
   .fc-dc-grid     { grid-template-columns: 1fr; }
-  .fc-billing-toggle { flex-wrap: wrap; border-radius: var(--fc-r); }
-  .fc-billing-toggle-btn { flex: 1 1 auto; text-align: center; }
+  .fc-billing-toggle { flex-wrap: wrap; }
+  .fc-billing-toggle-btn { flex: 0 0 auto; }
 }
 
 /* ════════════════════════════════════════════
@@ -1472,9 +1486,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 /* ── Responsive ── */
 @media (max-width: 767px) {
   .fc-auth-page { grid-template-columns: 1fr; }
-  .fc-auth-side { padding: 32px 28px 24px; }
-  .fc-auth-side-body { padding: 20px 0; gap: 14px; }
-  .fc-auth-side-title { font-size: 34px; }
+  .fc-auth-side { display: none; }
   .fc-auth-pane { padding: 32px 28px 48px; align-items: flex-start; }
   .fc-auth-grid { grid-template-columns: 1fr; }
 }
@@ -1718,6 +1730,14 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 }
 @media (max-width: 575.98px) {
   .fc-cfg-head { flex-direction: column; gap: 16px; }
+  /* Location block: кнопка "Сменить" уходит на следующую строку */
+  .fc-cfg-loc { flex-wrap: wrap; }
+  /* Section header: hint может переноситься */
+  .fc-cfg-section-head { flex-wrap: wrap; }
+  /* Summary total: уменьшаем шрифт цены */
+  .fc-cfg-summary-total span:last-child { font-size: 22px; }
+  /* Защита от горизонтальной прокрутки */
+  .fc-mkt-wrap { overflow-x: hidden; }
 }
 
 /* ════════════════════════════════════════════
