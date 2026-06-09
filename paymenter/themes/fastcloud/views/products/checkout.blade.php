@@ -85,7 +85,7 @@ $_categoryUrl  = route('category.show', ['category' => $category->slug]);
   addons:      {{ Js::from($_addonInit) }},
   symbol:      {{ Js::from($_symbol) }},
   symAfter:    {{ Js::from($_symbolAfter) }},
-  hostname:    '',
+  hostname:    {{ Js::from($configOptions[$_hostnameOpt?->id] ?? '') }},
   categoryName: {{ Js::from($_categoryName) }},
 
   get curPlan()   { return this.plans[this.selPlan] || null; },
@@ -403,7 +403,7 @@ $_categoryUrl  = route('category.show', ['category' => $category->slug]);
         @if (($product->stock > 0 || !$product->stock) && $product->price()->available)
         <button wire:click="checkout" wire:loading.attr="disabled" class="fc-cfg-checkout-btn">
           <span wire:loading wire:target="checkout">...</span>
-          <span wire:loading.remove wire:target="checkout">Добавить в корзину →</span>
+          <span wire:loading.remove wire:target="checkout">{{ $cartProductKey ? 'Сохранить изменения →' : 'Добавить в корзину →' }}</span>
         </button>
         @endif
 

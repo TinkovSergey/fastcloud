@@ -42,8 +42,8 @@
 
 @php
 $isAuth     = Route::is('login', 'register', 'password.*', '2fa');
-$isMkt      = Route::is('home', 'pricing', 'locations', 'contacts', 'offer', 'privacy', 'sla', 'products.checkout');
-$isCheckout = Route::is('products.checkout');
+$isMkt      = Route::is('home', 'pricing', 'locations', 'contacts', 'offer', 'privacy', 'sla', 'products.checkout', 'cart');
+$isCheckout = Route::is('products.checkout', 'cart');
 @endphp
 <body class="w-full bg-background text-base min-h-screen antialiased {{ $isAuth ? 'fc-auth-body fc-marketing' : 'flex flex-col' }} {{ $isMkt ? 'fc-marketing' : '' }} {{ $isCheckout ? 'fc-is-checkout' : '' }}"
     x-cloak

@@ -28,7 +28,7 @@
                         class="size-4 text-base ease-out duration-300" />
                 </button>
                 <div x-show="activeAccordion" x-collapse x-cloak>
-                    <div class="p-4 pt-0 opacity-70">
+                    <div class="pt-0 pb-4 pr-4 opacity-70 fc-sidebar-children">
                         @foreach ($nav['children'] as $child)
                             @if ($child['condition'] ?? true)
                             <div class="flex items-center space-x-2">

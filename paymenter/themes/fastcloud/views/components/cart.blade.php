@@ -1,10 +1,8 @@
 @if($cartCount > 0)
-<div class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-neutral transition relative">
-    <x-navigation.link :href="route('cart')">
-        <x-ri-shopping-bag-4-fill class="size-4" />
-          <div class="absolute inline-flex items-center justify-center w-4 h-4 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full top-0 end-0">
-            {{ $cartCount }}
-        </div>
-    </x-navigation.link>
-</div>
+<a href="{{ route('cart') }}" wire:navigate
+   class="fc-nav-icon-btn {{ request()->routeIs('cart') ? 'on' : '' }}">
+    <x-ri-shopping-bag-4-fill class="size-4" />
+    <span class="absolute inline-flex items-center justify-center w-4 h-4 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full"
+          style="top:0;right:0;">{{ $cartCount }}</span>
+</a>
 @endif
