@@ -208,7 +208,7 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
         <li>APAC&nbsp;&times;3: Singapore, Mumbai, Sydney</li>
       </ul>
     </div>
-    <div class="fc-story-visual fc-map-visual reveal d-2">
+    <div class="fc-story-visual fc-map-visual reveal d-2" style="clip-path:inset(0 0 20px 0)">
       <span class="fc-hud-corner fc-hud-tl"></span>
       <span class="fc-hud-corner fc-hud-tr"></span>
       <span class="fc-hud-corner fc-hud-bl"></span>
