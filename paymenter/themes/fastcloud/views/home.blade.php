@@ -201,11 +201,11 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
       <div class="fc-story-num reveal"><span class="step">05</span> &nbsp;/&nbsp; локации</div>
       <div class="fc-story-tag reveal d-1">{{ $_locCount }} {{ $_locNoun }} по миру</div>
       <h2 class="fc-story-title reveal d-2">{{ $_locCount }}&nbsp;{{ $_locNoun }}. <em>Один</em> SLA.</h2>
-      <p class="fc-story-desc reveal d-3">Европа, Северная Америка, Азия и Австралия &mdash; выбирайте регион с минимальной задержкой для вашей аудитории. Сетевая магистраль Cogent + Telia + Lumen.</p>
+      <p class="fc-story-desc reveal d-3">Выбирайте регион с минимальной задержкой для вашей аудитории &mdash; Европа, Северная Америка и Азия. Одинаковые тарифы и SLA во всех локациях.</p>
       <ul class="fc-story-list reveal d-4">
-        <li>EU&nbsp;&times;5: Frankfurt, Amsterdam, Milan, Warsaw, London</li>
-        <li>NA&nbsp;&times;3: New York, San Francisco, Toronto</li>
-        <li>APAC&nbsp;&times;3: Singapore, Mumbai, Sydney</li>
+        <li>Низкий пинг для аудитории в любой точке мира</li>
+        <li>Одинаковые цены и условия во всех регионах</li>
+        <li>Миграция между локациями через снапшот</li>
       </ul>
     </div>
     <div class="fc-story-visual fc-map-visual reveal d-2">
