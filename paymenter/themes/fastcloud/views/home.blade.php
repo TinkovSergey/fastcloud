@@ -1,5 +1,14 @@
 <div class="fc-page">
 
+@php
+$_locCount = $categories->count();
+// Russian plural: 1→локация, 2-4→локации, 5+→локаций
+$_r = $_locCount % 100; $_d = $_locCount % 10;
+$_locNoun = ($_r >= 11 && $_r <= 19) ? 'локаций'
+    : (($_d == 1) ? 'локация' : (($_d >= 2 && $_d <= 4) ? 'локации' : 'локаций'));
+$_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // prepositional: в N локациях
+@endphp
+
 {{-- ══ HERO ═══════════════════════════════════════════════════════════════ --}}
 <section class="fc-hero">
   <canvas id="heroFx" class="fc-hero-canvas"></canvas>
@@ -13,7 +22,7 @@
     </h1>
     <p class="fc-hero-sub">
       Без верификации. Без скрытых платежей. NVMe&nbsp;Gen4, сеть&nbsp;10&nbsp;Gbps
-      и&nbsp;Anti&#8209;DDoS в&nbsp;каждом тарифе &mdash; в&nbsp;10&nbsp;локациях по&nbsp;миру.
+      и&nbsp;Anti&#8209;DDoS в&nbsp;каждом тарифе &mdash; в&nbsp;{{ $_locCount }}&nbsp;{{ $_locPrep }} по&nbsp;миру.
     </p>
     <div class="fc-hero-ctas">
       <a href="{{ route('register') }}" wire:navigate class="fc-btn-lime">Создать сервер &rarr;</a>
@@ -24,7 +33,7 @@
       <div class="fc-meta-div"></div>
       <div class="fc-meta-cell"><div class="fc-meta-val">10&nbsp;Gbps</div><div class="fc-meta-lbl">Anti&#8209;DDoS</div></div>
       <div class="fc-meta-div"></div>
-      <div class="fc-meta-cell"><div class="fc-meta-val">10</div><div class="fc-meta-lbl">Локаций</div></div>
+      <div class="fc-meta-cell"><div class="fc-meta-val">{{ $_locCount }}</div><div class="fc-meta-lbl">Локаций</div></div>
       <div class="fc-meta-div"></div>
       <div class="fc-meta-cell"><div class="fc-meta-val">24/7</div><div class="fc-meta-lbl">Поддержка</div></div>
     </div>
@@ -190,8 +199,8 @@
   <div class="fc-story-inner">
     <div class="fc-story-text">
       <div class="fc-story-num"><span class="step">05</span> &nbsp;/&nbsp; локации</div>
-      <div class="fc-story-tag">10 локаций по миру</div>
-      <h2 class="fc-story-title">10&nbsp;локаций. <em>Один</em> SLA.</h2>
+      <div class="fc-story-tag">{{ $_locCount }} {{ $_locNoun }} по миру</div>
+      <h2 class="fc-story-title">{{ $_locCount }}&nbsp;{{ $_locNoun }}. <em>Один</em> SLA.</h2>
       <p class="fc-story-desc">Европа, Северная Америка, Азия и Австралия &mdash; выбирайте регион с минимальной задержкой для вашей аудитории. Сетевая магистраль Cogent + Telia + Lumen.</p>
       <ul class="fc-story-list">
         <li>EU&nbsp;&times;5: Frankfurt, Amsterdam, Milan, Warsaw, London</li>
@@ -208,7 +217,7 @@
         <span class="fc-map-hud-dot"></span>
         <span style="color:var(--fc-lime);font-weight:700;">LIVE</span>
         <span style="color:var(--fc-text-dim);">&middot;</span>
-        <span style="color:var(--fc-text);font-weight:600;">10&nbsp;dc</span>
+        <span style="color:var(--fc-text);font-weight:600;">{{ $_locCount }}&nbsp;dc</span>
         <span style="color:var(--fc-text-dim);">&middot;</span>
         <span style="color:var(--fc-text);font-weight:600;">1.24&nbsp;Tbps</span>
       </div>

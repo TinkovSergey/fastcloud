@@ -6,7 +6,7 @@
 <div class="fc-mkt-hero">
   <div>
     <div class="fc-mkt-hero-eyebrow">FastCloud · network</div>
-    <h1 class="fc-mkt-hero-title">10&nbsp;локаций. <em>Одна&nbsp;сеть.</em></h1>
+    <h1 class="fc-mkt-hero-title">{{ $_locCount }}&nbsp;{{ $_locNoun }}. <em>Одна&nbsp;сеть.</em></h1>
   </div>
   <div>
     <p class="fc-mkt-hero-sub">NVMe&nbsp;Gen4 · сеть&nbsp;10&nbsp;Gbps · Anti&#8209;DDoS включён · одинаковые тарифы во&nbsp;всех локациях.</p>
@@ -36,6 +36,10 @@ foreach (\App\Models\Category::whereNotNull('description')->orderBy('sort')->get
         'slug'    => $_cat->slug,
     ];
 }
+$_locCount = array_sum(array_map(fn($r) => count($r['items']), $_byRegion));
+$_r2 = $_locCount % 100; $_d2 = $_locCount % 10;
+$_locNoun = ($_r2 >= 11 && $_r2 <= 19) ? 'локаций'
+    : (($_d2 == 1) ? 'локация' : (($_d2 >= 2 && $_d2 <= 4) ? 'локации' : 'локаций'));
 @endphp
 
 @foreach($_byRegion as $_regionKey => $_region)

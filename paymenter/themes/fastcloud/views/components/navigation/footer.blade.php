@@ -7,8 +7,12 @@
         <a href="{{ route('home') }}" class="fc-footer-logo">
           <x-logo class="h-8" />
         </a>
+        @php
+        $_lc = \App\Models\Category::whereNull('parent_id')->count();
+        $_lp = $_lc == 1 ? 'локации' : 'локациях';
+        @endphp
         <p class="fc-footer-desc">
-          Скорость как продукт. VPS в&nbsp;10 локациях по&nbsp;миру.
+          Скорость как продукт. VPS в&nbsp;{{ $_lc }} {{ $_lp }} по&nbsp;миру.
           NVMe Gen4 &middot; Anti&#8209;DDoS &middot; SLA&nbsp;99,99%.
         </p>
       </div>

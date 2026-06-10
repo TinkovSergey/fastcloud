@@ -13,10 +13,16 @@
           Без верификации, без скрытых платежей.
           Просто e&#8209;mail — и&nbsp;сразу в&nbsp;работу.
         </p>
+        @php
+        $_lc = \App\Models\Category::whereNull('parent_id')->count();
+        $_r3 = $_lc % 100; $_d3 = $_lc % 10;
+        $_ln = ($_r3 >= 11 && $_r3 <= 19) ? 'локаций'
+            : (($_d3 == 1) ? 'локация' : (($_d3 >= 2 && $_d3 <= 4) ? 'локации' : 'локаций'));
+        @endphp
         <ul class="fc-auth-side-list">
           <li>NVMe&nbsp;Gen4 · AMD&nbsp;EPYC · сеть 10&nbsp;Gbps</li>
           <li>Anti&#8209;DDoS 10&nbsp;Gbps и&nbsp;бэкапы 14&nbsp;дней включены</li>
-          <li>10&nbsp;локаций по&nbsp;миру · SLA&nbsp;99,99%</li>
+          <li>{{ $_lc }}&nbsp;{{ $_ln }} по&nbsp;миру · SLA&nbsp;99,99%</li>
         </ul>
       </div>
 

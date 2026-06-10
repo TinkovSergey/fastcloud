@@ -462,7 +462,7 @@ php artisan cache:clear</code></pre>
     <li>
       <div>
         <strong>Открой настройки внешнего вида</strong>
-        <p>Settings → Appearance (или аналогичный раздел в твоей версии Paymenter).</p>
+        <p>Admin → Settings → Appearance.</p>
       </div>
     </li>
     <li>
@@ -473,17 +473,42 @@ php artisan cache:clear</code></pre>
     </li>
     <li>
       <div>
-        <strong>Установи логотип</strong>
-        <p>Загрузи логотип через поле Logo. Тема поддерживает SVG и PNG. Рекомендуемый формат: SVG, прозрачный фон.</p>
+        <strong>Загрузи Logo Dark <span class="tag required">важно</span></strong>
+        <p>
+          Поскольку тема всегда тёмная, нужен именно <strong>Logo Dark</strong> (поле «Dark Logo» или «Logo (Dark)»).
+          Логотип для тёмного фона: белый или светлый, SVG с прозрачным фоном. Рекомендуемая высота: 32–40 px.
+        </p>
+        <p style="margin-top:6px;font-size:13px;color:var(--text3);">
+          Если Logo Dark не загружен, а Logo загружен — тема покажет его (темный логотип на темном фоне, может быть не виден).<br>
+          Если оба поля пусты — тема автоматически использует резервный SVG из <code>public/images/logo-fastcloud.svg</code>.
+        </p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Загрузи Favicon</strong>
+        <p>Поле Favicon. Рекомендуется SVG или ICO 32×32. Отображается во вкладках браузера.</p>
       </div>
     </li>
     <li>
       <div>
         <strong>Настрой цвета темы</strong>
-        <p>В настройках темы (см. раздел <a href="#theme-settings">«Настройки темы»</a>) оставь значения по умолчанию — тема использует собственные CSS-переменные и не зависит от цветов Paymenter, кроме accent-цвета.</p>
+        <p>В настройках темы (см. раздел <a href="#theme-settings">«Настройки темы»</a>) задай цвета — тема использует их частично для accent-цвета.</p>
       </div>
     </li>
   </ol>
+
+  <h3>Общие настройки — Settings → General</h3>
+  <table>
+    <thead><tr><th>Поле</th><th>Значение</th><th>Где используется в теме</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Terms of Service URL</td>
+        <td><code>https://fast-cloud.uk/offer</code></td>
+        <td>Ссылка «Условия использования» в корзине при оформлении заказа. Если не задано — блок с согласием на TOS не отображается.</td>
+      </tr>
+    </tbody>
+  </table>
 
   <!-- ══ CREDITSPLUS ══ -->
   <h2 id="creditsplus"><span class="num">8</span>Расширение CreditsPlus</h2>
@@ -609,8 +634,9 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
   <h2 id="categories"><span class="num">10</span>Категории — Локации</h2>
 
   <p>
-    В теме каждая <strong>top-level категория</strong> (без родителя) = одна локация на странице тарифов.
-    Кнопки локаций на <code>/pricing</code> генерируются автоматически из категорий.
+    В теме каждая <strong>top-level категория</strong> (без родителя) = одна локация.
+    Она используется в двух местах: на странице тарифов (<code>/pricing</code>) — как кнопка выбора локации,
+    и на странице локаций (<code>/locations</code>) — как карточка датацентра.
   </p>
 
   <h3>Создание категории</h3>
@@ -622,7 +648,7 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
       <tr>
         <td>Name</td>
         <td><code>Германия</code></td>
-        <td>Отображается как кнопка локации</td>
+        <td>Отображается как кнопка локации на странице тарифов и заголовок карточки на /locations</td>
       </tr>
       <tr>
         <td>Slug</td>
@@ -635,30 +661,127 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
         <td>Обязательно пусто. Дочерние категории тема не использует.</td>
       </tr>
       <tr>
+        <td>Sort</td>
+        <td><code>1</code>, <code>2</code>, <code>3</code>…</td>
+        <td>Порядок карточек на странице <code>/locations</code>. На <code>/pricing</code> сортировка по <code>id</code>.</td>
+      </tr>
+      <tr>
         <td>Description</td>
-        <td><code>Франкфурт, DE</code></td>
-        <td>Опционально</td>
+        <td><em>JSON-объект (см. ниже)</em></td>
+        <td><span class="tag required">обязательно для /locations</span> Без Description карточка на странице локаций не появится</td>
       </tr>
     </tbody>
   </table>
 
-  <div class="callout info">
-    <div class="callout-icon">ℹ️</div>
-    <p>Порядок кнопок локаций на странице тарифов = порядок категорий по <code>id</code> (по возрастанию). Создавай в нужном порядке.</p>
+  <h3>Поле Description — JSON-структура <span class="tag required">обязательно</span></h3>
+
+  <p>
+    Страница <code>/locations</code> читает поле Description как JSON. Категория без Description
+    или с невалидным JSON на странице локаций <strong>не отображается</strong>.
+  </p>
+
+  <pre><code>{
+  <span class="st">"region"</span>:       <span class="st">"europe"</span>,          <span class="cm">// ключ региона (латиница, без пробелов)</span>
+  <span class="st">"region_label"</span>: <span class="st">"Европа"</span>,          <span class="cm">// заголовок группы (отображается над карточками)</span>
+  <span class="st">"flag"</span>:         <span class="st">"🇩🇪"</span>,             <span class="cm">// emoji-флаг страны</span>
+  <span class="st">"code"</span>:         <span class="st">"DE-FRA"</span>,          <span class="cm">// код датацентра (отображается на карточке)</span>
+  <span class="st">"city"</span>:         <span class="st">"Франкфурт"</span>,       <span class="cm">// город (отображается на карточке)</span>
+  <span class="st">"online"</span>:        true,              <span class="cm">// true = зелёная метка «онлайн», false = красная «офлайн»</span>
+  <span class="st">"network"</span>:      <span class="st">"10 Gbps"</span>,         <span class="cm">// сеть (отображается в спеках карточки)</span>
+  <span class="st">"storage"</span>:      <span class="st">"NVMe Gen4"</span>,       <span class="cm">// хранилище</span>
+  <span class="st">"ddos"</span>:         <span class="st">"до 10 Gbps"</span>,      <span class="cm">// Anti-DDoS</span>
+  <span class="st">"uptime"</span>:       <span class="st">"99.9%"</span>            <span class="cm">// аптайм SLA</span>
+}</code></pre>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <p>JSON должен быть валидным. Проверяй через <a href="https://jsonlint.com" target="_blank">jsonlint.com</a> перед сохранением. Ошибка в JSON = карточка локации исчезает со страницы <code>/locations</code> без каких-либо сообщений об ошибке.</p>
   </div>
 
-  <h3>Примеры локаций</h3>
+  <div class="callout info">
+    <div class="callout-icon">ℹ️</div>
+    <p>Категории с одинаковым <code>region</code> группируются под одним заголовком <code>region_label</code>. Например, все европейские датацентры можно объединить в группу <code>"region": "europe"</code>.</p>
+  </div>
+
+  <h3>Примеры Description для разных локаций</h3>
+
   <div class="card-grid">
-    <div class="card"><div class="card-title">Германия</div><p>slug: <code>germany</code></p></div>
-    <div class="card"><div class="card-title">Нидерланды</div><p>slug: <code>netherlands</code></p></div>
-    <div class="card"><div class="card-title">США</div><p>slug: <code>usa</code></p></div>
-    <div class="card"><div class="card-title">Сингапур</div><p>slug: <code>singapore</code></p></div>
+    <div class="card">
+      <div class="card-title">🇩🇪 Германия (Франкфурт)</div>
+      <pre style="margin:8px 0 0;font-size:11px;background:var(--bg2);border-color:var(--border2)"><code style="font-size:11px;">{
+  "region": "europe",
+  "region_label": "Европа",
+  "flag": "🇩🇪",
+  "code": "DE-FRA",
+  "city": "Франкфурт",
+  "online": true,
+  "network": "10 Gbps",
+  "storage": "NVMe Gen4",
+  "ddos": "до 10 Gbps",
+  "uptime": "99.9%"
+}</code></pre>
+    </div>
+    <div class="card">
+      <div class="card-title">🇳🇱 Нидерланды (Амстердам)</div>
+      <pre style="margin:8px 0 0;font-size:11px;background:var(--bg2);border-color:var(--border2)"><code style="font-size:11px;">{
+  "region": "europe",
+  "region_label": "Европа",
+  "flag": "🇳🇱",
+  "code": "NL-AMS",
+  "city": "Амстердам",
+  "online": true,
+  "network": "10 Gbps",
+  "storage": "NVMe Gen4",
+  "ddos": "до 10 Gbps",
+  "uptime": "99.9%"
+}</code></pre>
+    </div>
+    <div class="card">
+      <div class="card-title">🇺🇸 США (Нью-Йорк)</div>
+      <pre style="margin:8px 0 0;font-size:11px;background:var(--bg2);border-color:var(--border2)"><code style="font-size:11px;">{
+  "region": "americas",
+  "region_label": "Америка",
+  "flag": "🇺🇸",
+  "code": "US-NYC",
+  "city": "Нью-Йорк",
+  "online": true,
+  "network": "10 Gbps",
+  "storage": "NVMe Gen4",
+  "ddos": "до 10 Gbps",
+  "uptime": "99.9%"
+}</code></pre>
+    </div>
+    <div class="card">
+      <div class="card-title">🇸🇬 Сингапур</div>
+      <pre style="margin:8px 0 0;font-size:11px;background:var(--bg2);border-color:var(--border2)"><code style="font-size:11px;">{
+  "region": "asia",
+  "region_label": "Азия",
+  "flag": "🇸🇬",
+  "code": "SG-SIN",
+  "city": "Сингапур",
+  "online": true,
+  "network": "10 Gbps",
+  "storage": "NVMe Gen4",
+  "ddos": "до 10 Gbps",
+  "uptime": "99.9%"
+}</code></pre>
+    </div>
+  </div>
+
+  <div class="callout info">
+    <div class="callout-icon">ℹ️</div>
+    <p>Порядок кнопок на странице тарифов <code>/pricing</code> = порядок категорий по <code>id</code> (по возрастанию). Порядок карточек на странице локаций <code>/locations</code> = поле <code>Sort</code>.</p>
   </div>
 
   <!-- ══ ПРОДУКТЫ ══ -->
   <h2 id="products"><span class="num">11</span>Продукты — Тарифы</h2>
 
   <p>Каждый продукт = один тарифный план (например, «Nano», «Micro», «Pro»).</p>
+
+  <div class="callout info">
+    <div class="callout-icon">ℹ️</div>
+    <p><strong>Главная страница (<code>/</code>)</strong> показывает превью тарифов. Она берёт <strong>первую категорию по полю Sort</strong> и отображает её первые <strong>3 продукта</strong> (по Sort). Убедись, что первая категория (с наименьшим Sort) содержит нужные продукты с заданными ценами на 1 месяц.</p>
+  </div>
 
   <h3>Основные поля</h3>
   <table>
@@ -667,7 +790,7 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
       <tr>
         <td>Name</td>
         <td><code>Pro</code></td>
-        <td>⚠️ Продукт с именем <strong>Pro</strong> автоматически помечается как «популярный» (featured) на странице тарифов. Можно переименовать — см. <a href="#for-dev">задачи программисту</a>.</td>
+        <td>⚠️ Продукт с именем <strong>Pro</strong> автоматически помечается как «популярный» (featured) на странице тарифов и главной. Можно переименовать — см. <a href="#for-dev">задачи программисту</a>.</td>
       </tr>
       <tr>
         <td>Slug</td>
@@ -682,7 +805,12 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
       <tr>
         <td>Sort</td>
         <td><code>1</code>, <code>2</code>, <code>3</code>…</td>
-        <td>Порядок отображения внутри локации</td>
+        <td>Порядок отображения внутри локации (и на главной странице)</td>
+      </tr>
+      <tr>
+        <td>Hidden</td>
+        <td>выключено</td>
+        <td>Скрытые продукты не попадают на главную страницу</td>
       </tr>
       <tr>
         <td>Stock</td>
