@@ -43,14 +43,14 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
 {{-- ══ MANIFEST ════════════════════════════════════════════════════════════ --}}
 <section class="fc-manifest">
   <div class="fc-manifest-inner">
-    <p class="fc-manifest-text">
+    <p class="fc-manifest-text reveal">
       Пока другие проверяют ваш паспорт, <em>сверяют почту</em>
       и звонят в банк &mdash; у вас уже работает
       <span class="hi">боевой сервер</span>
       <span class="accent">с&nbsp;Anti&#8209;DDoS&nbsp;на&nbsp;10&nbsp;Gbps</span>
       и ежедневным бэкапом.
     </p>
-    <div class="fc-manifest-foot">
+    <div class="fc-manifest-foot reveal d-1">
       <span>FastCloud &middot; 2026</span>
       <span class="c-dim">/</span>
       <span class="c-accent">скорость как продукт</span>
@@ -62,17 +62,17 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
 <section class="fc-story">
   <div class="fc-story-inner">
     <div class="fc-story-text">
-      <div class="fc-story-num"><span class="step">01</span> &nbsp;/&nbsp; скорость</div>
-      <div class="fc-story-tag">мгновенный старт</div>
-      <h2 class="fc-story-title">55&nbsp;секунд <em>до&nbsp;готового</em> сервера.</h2>
-      <p class="fc-story-desc">Большинство провайдеров держит на ручной верификации часами. FastCloud активирует сервер автоматически сразу после оплаты &mdash; без документов, без ожиданий.</p>
-      <ul class="fc-story-list">
+      <div class="fc-story-num reveal"><span class="step">01</span> &nbsp;/&nbsp; скорость</div>
+      <div class="fc-story-tag reveal d-1">мгновенный старт</div>
+      <h2 class="fc-story-title reveal d-2">55&nbsp;секунд <em>до&nbsp;готового</em> сервера.</h2>
+      <p class="fc-story-desc reveal d-3">Большинство провайдеров держит на ручной верификации часами. FastCloud активирует сервер автоматически сразу после оплаты &mdash; без документов, без ожиданий.</p>
+      <ul class="fc-story-list reveal d-4">
         <li>Никаких паспортов и звонков в поддержку</li>
         <li>Мгновенная активация &mdash; REST&nbsp;API и&nbsp;Terraform</li>
         <li>Snapshot&#8209;образы Ubuntu, Debian, Alma, Arch, Windows</li>
       </ul>
     </div>
-    <div class="fc-story-visual">
+    <div class="fc-story-visual reveal d-2">
       <div class="fc-dc" id="deployCard">
         <div class="fc-dc-head">
           <div class="fc-dc-spinner" id="deploySpinner"></div>
@@ -103,17 +103,17 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
 <section class="fc-story">
   <div class="fc-story-inner flip">
     <div class="fc-story-text">
-      <div class="fc-story-num"><span class="step">02</span> &nbsp;/&nbsp; защита</div>
-      <div class="fc-story-tag">anti&#8209;ddos &middot; 10 gbps</div>
-      <h2 class="fc-story-title">Атаки отбиты <em>до&nbsp;того,</em><br>как доходят до вас.</h2>
-      <p class="fc-story-desc">Фильтрация работает на уровнях L3, L4 и L7 &mdash; атаки блокируются ещё до того, как достигают вашего сервера. Входит в каждый тариф без доплат.</p>
-      <ul class="fc-story-list">
+      <div class="fc-story-num reveal"><span class="step">02</span> &nbsp;/&nbsp; защита</div>
+      <div class="fc-story-tag reveal d-1">anti&#8209;ddos &middot; 10 gbps</div>
+      <h2 class="fc-story-title reveal d-2">Атаки отбиты <em>до&nbsp;того,</em><br>как доходят до вас.</h2>
+      <p class="fc-story-desc reveal d-3">Фильтрация работает на уровнях L3, L4 и L7 &mdash; атаки блокируются ещё до того, как достигают вашего сервера. Входит в каждый тариф без доплат.</p>
+      <ul class="fc-story-list reveal d-4">
         <li>UDP Flood, SYN Flood, HTTP DDoS, Amplification</li>
         <li>Фильтрация не влияет на latency</li>
         <li>Включено во все тарифы, без скрытых платежей</li>
       </ul>
     </div>
-    <div class="fc-story-visual">
+    <div class="fc-story-visual reveal d-2">
       <div class="fc-shield-viz">
         <div class="fc-shield-orb">
           <div class="fc-shield-ring r3"></div>
@@ -144,17 +144,17 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
 <section class="fc-story">
   <div class="fc-story-inner">
     <div class="fc-story-text">
-      <div class="fc-story-num"><span class="step">03</span> &nbsp;/&nbsp; ценообразование</div>
-      <div class="fc-story-tag">честные цены</div>
-      <h2 class="fc-story-title">Цена при старте&nbsp;= <em>цена</em> при продлении.</h2>
-      <p class="fc-story-desc">Многие провайдеры привлекают низкой ценой при первом платеже, а при продлении выставляют сумму в 2&mdash;3 раза выше. FastCloud не поднимает цену при продлении.</p>
-      <ul class="fc-story-list">
+      <div class="fc-story-num reveal"><span class="step">03</span> &nbsp;/&nbsp; ценообразование</div>
+      <div class="fc-story-tag reveal d-1">честные цены</div>
+      <h2 class="fc-story-title reveal d-2">Цена при старте&nbsp;= <em>цена</em> при продлении.</h2>
+      <p class="fc-story-desc reveal d-3">Многие провайдеры привлекают низкой ценой при первом платеже, а при продлении выставляют сумму в 2&mdash;3 раза выше. FastCloud не поднимает цену при продлении.</p>
+      <ul class="fc-story-list reveal d-4">
         <li>Цена при продлении равна стартовой</li>
         <li>Нет скрытых комиссий и setup&#8209;платежей</li>
         <li>Удаление в 1 клик без штрафов и привязок</li>
       </ul>
     </div>
-    <div class="fc-story-visual">
+    <div class="fc-story-visual reveal d-2">
       <div class="fc-incl-list">
         <div class="fc-incl-head">Что входит в каждый тариф</div>
         <div class="fc-incl-item"><div class="fc-incl-check">&#10003;</div><div><div class="fc-incl-label">NVMe Gen4 &middot; 7&nbsp;000&nbsp;MB/s</div><div class="fc-incl-sub">высокопроизводительное хранилище</div></div></div>
@@ -171,17 +171,17 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
 <section class="fc-story">
   <div class="fc-story-inner flip">
     <div class="fc-story-text">
-      <div class="fc-story-num"><span class="step">04</span> &nbsp;/&nbsp; бэкапы</div>
-      <div class="fc-story-tag">14 снапшотов</div>
-      <h2 class="fc-story-title">Ежедневные бэкапы.<br><em>В&nbsp;каждом</em> тарифе.</h2>
-      <p class="fc-story-desc">Каждую ночь FastCloud автоматически создаёт полный snapshot вашего сервера. 14 дней хранения &mdash; в каждом тарифе, без доплат.</p>
-      <ul class="fc-story-list">
+      <div class="fc-story-num reveal"><span class="step">04</span> &nbsp;/&nbsp; бэкапы</div>
+      <div class="fc-story-tag reveal d-1">14 снапшотов</div>
+      <h2 class="fc-story-title reveal d-2">Ежедневные бэкапы.<br><em>В&nbsp;каждом</em> тарифе.</h2>
+      <p class="fc-story-desc reveal d-3">Каждую ночь FastCloud автоматически создаёт полный snapshot вашего сервера. 14 дней хранения &mdash; в каждом тарифе, без доплат.</p>
+      <ul class="fc-story-list reveal d-4">
         <li>Автоматический snapshot каждую ночь в 03:00</li>
         <li>Хранение &mdash; 14 дней, доступно для всех тарифов</li>
         <li>Восстановление в 1 клик без потери IP</li>
       </ul>
     </div>
-    <div class="fc-story-visual">
+    <div class="fc-story-visual reveal d-2">
       <div class="fc-bkp">
         <div class="fc-bkp-row"><div class="fc-bkp-dot"></div><div class="fc-bkp-date">Сегодня, 03:00</div><div class="fc-bkp-size">2,4&nbsp;ГБ</div><div class="fc-bkp-tick">&#10003;</div></div>
         <div class="fc-bkp-row"><div class="fc-bkp-dot"></div><div class="fc-bkp-date">Вчера, 03:00</div><div class="fc-bkp-size">2,3&nbsp;ГБ</div><div class="fc-bkp-tick">&#10003;</div></div>
@@ -198,17 +198,17 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
 <section class="fc-story">
   <div class="fc-story-inner">
     <div class="fc-story-text">
-      <div class="fc-story-num"><span class="step">05</span> &nbsp;/&nbsp; локации</div>
-      <div class="fc-story-tag">{{ $_locCount }} {{ $_locNoun }} по миру</div>
-      <h2 class="fc-story-title">{{ $_locCount }}&nbsp;{{ $_locNoun }}. <em>Один</em> SLA.</h2>
-      <p class="fc-story-desc">Европа, Северная Америка, Азия и Австралия &mdash; выбирайте регион с минимальной задержкой для вашей аудитории. Сетевая магистраль Cogent + Telia + Lumen.</p>
-      <ul class="fc-story-list">
+      <div class="fc-story-num reveal"><span class="step">05</span> &nbsp;/&nbsp; локации</div>
+      <div class="fc-story-tag reveal d-1">{{ $_locCount }} {{ $_locNoun }} по миру</div>
+      <h2 class="fc-story-title reveal d-2">{{ $_locCount }}&nbsp;{{ $_locNoun }}. <em>Один</em> SLA.</h2>
+      <p class="fc-story-desc reveal d-3">Европа, Северная Америка, Азия и Австралия &mdash; выбирайте регион с минимальной задержкой для вашей аудитории. Сетевая магистраль Cogent + Telia + Lumen.</p>
+      <ul class="fc-story-list reveal d-4">
         <li>EU&nbsp;&times;5: Frankfurt, Amsterdam, Milan, Warsaw, London</li>
         <li>NA&nbsp;&times;3: New York, San Francisco, Toronto</li>
         <li>APAC&nbsp;&times;3: Singapore, Mumbai, Sydney</li>
       </ul>
     </div>
-    <div class="fc-story-visual fc-map-visual">
+    <div class="fc-story-visual fc-map-visual reveal d-2">
       <span class="fc-hud-corner fc-hud-tl"></span>
       <span class="fc-hud-corner fc-hud-tr"></span>
       <span class="fc-hud-corner fc-hud-bl"></span>
@@ -307,17 +307,17 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
 <section class="fc-story">
   <div class="fc-story-inner flip">
     <div class="fc-story-text">
-      <div class="fc-story-num"><span class="step">06</span> &nbsp;/&nbsp; поддержка</div>
-      <div class="fc-story-tag">24/7 &middot; живые инженеры</div>
-      <h2 class="fc-story-title"><em>Никаких</em> ботов. Только&nbsp;инженеры.</h2>
-      <p class="fc-story-desc">Живые специалисты в чате, e&#8209;mail и Telegram. Среднее время первого ответа &mdash; меньше 5 минут, даже в 3 часа ночи.</p>
-      <ul class="fc-story-list">
+      <div class="fc-story-num reveal"><span class="step">06</span> &nbsp;/&nbsp; поддержка</div>
+      <div class="fc-story-tag reveal d-1">24/7 &middot; живые инженеры</div>
+      <h2 class="fc-story-title reveal d-2"><em>Никаких</em> ботов. Только&nbsp;инженеры.</h2>
+      <p class="fc-story-desc reveal d-3">Живые специалисты в чате, e&#8209;mail и Telegram. Среднее время первого ответа &mdash; меньше 5 минут, даже в 3 часа ночи.</p>
+      <ul class="fc-story-list reveal d-4">
         <li>Среднее время первого ответа &lt;&nbsp;5&nbsp;минут</li>
         <li>Telegram&#8209;канал со статусом всех локаций</li>
         <li>Документация и примеры для Terraform&nbsp;/&nbsp;Ansible</li>
       </ul>
     </div>
-    <div class="fc-story-visual">
+    <div class="fc-story-visual reveal d-2">
       <div class="fc-chat">
         <div class="fc-chat-header"><span class="fc-chat-dot"></span>Поддержка Fast Cloud<span class="fc-chat-online">сейчас онлайн</span></div>
         <div class="fc-chat-body">
@@ -336,17 +336,17 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
 <section class="fc-story">
   <div class="fc-story-inner">
     <div class="fc-story-text">
-      <div class="fc-story-num"><span class="step">07</span> &nbsp;/&nbsp; маркетплейс</div>
-      <div class="fc-story-tag">50+ приложений в 1 клик</div>
-      <h2 class="fc-story-title">WordPress. Docker. n8n. <em>Один</em> клик.</h2>
-      <p class="fc-story-desc">Снижает барьер входа для нетехнических клиентов и экономит время инженерам. Готовые образы с предустановленным TLS, fail2ban и cron&#8209;бэкапом.</p>
-      <ul class="fc-story-list">
+      <div class="fc-story-num reveal"><span class="step">07</span> &nbsp;/&nbsp; маркетплейс</div>
+      <div class="fc-story-tag reveal d-1">50+ приложений в 1 клик</div>
+      <h2 class="fc-story-title reveal d-2">WordPress. Docker. n8n. <em>Один</em> клик.</h2>
+      <p class="fc-story-desc reveal d-3">Снижает барьер входа для нетехнических клиентов и экономит время инженерам. Готовые образы с предустановленным TLS, fail2ban и cron&#8209;бэкапом.</p>
+      <ul class="fc-story-list reveal d-4">
         <li>CMS &mdash; WordPress, Ghost, Strapi</li>
         <li>DevOps &mdash; Docker, GitLab, Portainer, K3s</li>
         <li>Автоматизация &mdash; n8n, NocoDB, Appsmith</li>
       </ul>
     </div>
-    <div class="fc-story-visual">
+    <div class="fc-story-visual reveal d-2">
       <div class="fc-app-mp">
         <div class="fc-app-bar">
           <div class="fc-app-search">
@@ -415,12 +415,12 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
 <section class="fc-plans">
   <div class="fc-plans-inner">
     <div class="fc-plans-head">
-      <h2 class="fc-plans-title">Тарифы <em>от&nbsp;{{ $_minPrice }}</em><br>до корпоративных.</h2>
-      <a href="{{ route('pricing') }}" wire:navigate class="fc-plans-link">все тарифы &rarr;</a>
+      <h2 class="fc-plans-title reveal">Тарифы <em>от&nbsp;{{ $_minPrice }}</em><br>до корпоративных.</h2>
+      <a href="{{ route('pricing') }}" wire:navigate class="fc-plans-link reveal d-1">все тарифы &rarr;</a>
     </div>
     <div class="fc-plan-grid">
       @foreach ($_homePlans as $_p)
-      <div class="fc-plan-card {{ $_p['featured'] ? 'featured' : '' }}">
+      <div class="fc-plan-card {{ $_p['featured'] ? 'featured' : '' }} reveal d-{{ $loop->iteration + 1 }}">
         <div class="fc-plan-name">{{ $_p['name'] }}</div>
         <div class="fc-plan-price">{{ $_p['price'] }}<span class="per">/мес</span></div>
         <div class="fc-plan-stats">
@@ -450,9 +450,9 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
 <section class="fc-cta">
   <canvas id="ctaFx" class="fc-cta-canvas"></canvas>
   <div class="fc-cta-inner">
-    <h2 class="fc-cta-title">Готовы запустить<br><em>первый сервер?</em></h2>
-    <p class="fc-cta-sub">Регистрация за 30 секунд. Сервер активируется сразу после оплаты. Никаких документов.</p>
-    <div class="fc-cta-btns">
+    <h2 class="fc-cta-title reveal">Готовы запустить<br><em>первый сервер?</em></h2>
+    <p class="fc-cta-sub reveal d-1">Регистрация за 30 секунд. Сервер активируется сразу после оплаты. Никаких документов.</p>
+    <div class="fc-cta-btns reveal d-2">
       <a href="{{ route('register') }}" wire:navigate class="fc-btn-lime">Создать аккаунт &rarr;</a>
       <a href="{{ route('pricing') }}" wire:navigate class="fc-btn-ghost">Смотреть тарифы</a>
     </div>
