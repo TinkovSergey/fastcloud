@@ -32,7 +32,7 @@
       <div class="fc-auth-card">
         <h2 class="fc-auth-card-h">Создать аккаунт</h2>
 
-        <form class="fc-auth-card-form" wire:submit.prevent="submit" id="register">
+        <form class="fc-auth-card-form" wire:submit.prevent="submit" id="register" novalidate>
 
           {{-- Имя / Фамилия --}}
           <div class="fc-auth-grid">

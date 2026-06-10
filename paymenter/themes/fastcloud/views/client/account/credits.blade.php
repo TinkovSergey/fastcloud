@@ -17,7 +17,7 @@
 
         <h4 class="text-xl font-bold pb-3">{{ __('account.add_credit') }}</h4>
 
-        <form wire:submit.prevent="addCredit">
+        <form wire:submit.prevent="addCredit" novalidate>
             <!-- Currency and amount -->
             <div class="grid grid-cols-2 gap-4">
                 <x-form.select name="currency" :label="__('account.input.currency')" wire:model.live="currency" required>

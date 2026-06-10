@@ -11,7 +11,7 @@
       <h2 class="fc-auth-solo-title">Восстановление пароля</h2>
       <p class="fc-auth-solo-sub">Введите e-mail — пришлём ссылку для сброса.</p>
 
-      <form wire:submit="submit" id="reset" style="display:flex;flex-direction:column;gap:14px;">
+      <form wire:submit="submit" id="reset" novalidate style="display:flex;flex-direction:column;gap:14px;">
 
         <div class="fc-field @error('email') is-error @enderror">
           <span class="fc-field-lbl">E-mail</span>

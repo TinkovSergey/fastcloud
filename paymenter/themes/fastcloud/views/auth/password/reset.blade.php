@@ -11,7 +11,7 @@
       <h2 class="fc-auth-solo-title">Новый пароль</h2>
       <p class="fc-auth-solo-sub">Придумайте надёжный пароль — минимум 8 символов.</p>
 
-      <form wire:submit="submit" id="reset-confirm" style="display:flex;flex-direction:column;gap:14px;">
+      <form wire:submit="submit" id="reset-confirm" novalidate style="display:flex;flex-direction:column;gap:14px;">
 
         {{-- Email (prefilled, readonly) --}}
         <div class="fc-field">

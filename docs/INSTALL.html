@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastCloud — Инструкция по установке темы</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0a0c13;
+    --bg2:      #0f1219;
+    --surface:  #14171f;
+    --surface2: #1c2030;
+    --border:   #232838;
+    --border2:  #353b54;
+    --text:     #f4f5f9;
+    --text2:    #9ea3b8;
+    --text3:    #6e7388;
+    --accent:   #20b5eb;
+    --lime:     #b5f53a;
+    --red:      #ff5470;
+    --iris:     #7c5cff;
+    --green:    #4ade80;
+    --font:     'Segoe UI', system-ui, sans-serif;
+    --mono:     'Consolas', 'Cascadia Code', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Layout */
+  .wrap { display: flex; min-height: 100vh; }
+
+  /* Sidebar nav */
+  .sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    padding: 32px 0 40px;
+  }
+  .sidebar-logo {
+    padding: 0 24px 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .sidebar-logo span {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -.02em;
+  }
+  .sidebar-logo span em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .sidebar-section {
+    padding: 4px 24px 2px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--text3);
+    font-family: var(--mono);
+    margin-top: 16px;
+  }
+  .sidebar a {
+    display: block;
+    padding: 6px 24px;
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 13.5px;
+    border-left: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .sidebar a:hover { color: var(--text); border-left-color: var(--border2); }
+
+  /* Content */
+  .content {
+    flex: 1;
+    max-width: 860px;
+    padding: 56px 64px 100px;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -.03em;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    margin: 52px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 10px;
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 28px 0 10px;
+    letter-spacing: -.01em;
+  }
+  p { color: var(--text2); margin-bottom: 14px; }
+  p strong { color: var(--text); }
+  a { color: var(--accent); }
+
+  /* Lead */
+  .lead {
+    font-size: 16px;
+    color: var(--text2);
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.7;
+  }
+
+  /* Steps */
+  ol.steps { counter-reset: step; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  ol.steps li {
+    counter-increment: step;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  ol.steps li::before {
+    content: counter(step);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    color: var(--text3);
+    font-size: 11px;
+    font-family: var(--mono);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  ol.steps li > div { flex: 1; }
+  ol.steps li strong { color: var(--text); display: block; margin-bottom: 2px; }
+  ol.steps li p { margin: 0; font-size: 13.5px; }
+
+  /* Code */
+  code {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1px 6px;
+    color: var(--lime);
+  }
+  pre {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    overflow-x: auto;
+    margin: 14px 0 20px;
+  }
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+  pre code .cm { color: var(--text3); }
+  pre code .kw { color: var(--accent); }
+  pre code .st { color: var(--lime); }
+  pre code .hl { color: var(--text); }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 24px;
+    font-size: 13.5px;
+  }
+  th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text3);
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text2);
+    vertical-align: top;
+  }
+  td:first-child { color: var(--text); font-weight: 500; }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: var(--surface); }
+
+  /* Callouts */
+  .callout {
+    display: flex;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    margin: 16px 0;
+    font-size: 13.5px;
+  }
+  .callout-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .callout p { margin: 0; }
+  .callout.warn  { background: rgba(255,84,112,.08); border: 1px solid rgba(255,84,112,.2); }
+  .callout.warn .callout-icon { color: var(--red); }
+  .callout.info  { background: rgba(32,181,235,.07); border: 1px solid rgba(32,181,235,.18); }
+  .callout.info .callout-icon { color: var(--accent); }
+  .callout.tip   { background: rgba(181,245,58,.07); border: 1px solid rgba(181,245,58,.18); }
+  .callout.tip .callout-icon { color: var(--lime); }
+
+  /* Tag badges */
+  .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .tag.required { background: rgba(255,84,112,.15); color: var(--red); }
+  .tag.optional { background: rgba(110,115,136,.15); color: var(--text3); }
+  .tag.dev      { background: rgba(124,92,255,.15); color: var(--iris); }
+
+  /* File path */
+  .path {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text3);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    display: inline-block;
+    margin: 4px 0 10px;
+  }
+
+  /* Section divider */
+  .divider { height: 1px; background: var(--border); margin: 40px 0; }
+
+  /* Grid cards */
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .card-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .card p { font-size: 12.5px; margin: 0; }
+
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .content { padding: 32px 24px 80px; }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ── Sidebar ── -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <span>Fast<em>Cloud</em> — Docs</span>
+  </div>
+  <div class="sidebar-section">Установка</div>
+  <a href="#requirements">Требования</a>
+  <a href="#files">Копирование файлов</a>
+  <a href="#build">Сборка CSS/JS</a>
+  <a href="#env">Настройка .env</a>
+  <a href="#admin-theme">Активация темы</a>
+  <div class="sidebar-section">Расширения</div>
+  <a href="#creditsplus">CreditsPlus</a>
+  <div class="sidebar-section">База данных</div>
+  <a href="#currency">Валюта</a>
+  <a href="#categories">Категории (локации)</a>
+  <a href="#products">Продукты (тарифы)</a>
+  <a href="#config-options">Config Options</a>
+  <a href="#plans">Планы и цены</a>
+  <div class="sidebar-section">Дополнительно</div>
+  <a href="#theme-settings">Настройки темы</a>
+  <a href="#for-dev">Задачи программисту</a>
+</nav>
+
+<!-- ── Content ── -->
+<main class="content">
+
+  <h1>Инструкция по установке<br><em>темы FastCloud</em></h1>
+  <p class="lead">
+    Тема разработана для <strong>Paymenter v1.5.2</strong> (Laravel 12 + Livewire 3).
+    Документ описывает полный процесс установки: копирование файлов, сборку ассетов,
+    настройку расширений и заполнение базы данных.
+  </p>
+
+  <!-- ══ ТРЕБОВАНИЯ ══ -->
+  <h2 id="requirements"><span class="num">1</span>Системные требования</h2>
+
+  <table>
+    <thead><tr><th>Компонент</th><th>Версия</th><th>Примечание</th></tr></thead>
+    <tbody>
+      <tr><td>Paymenter</td><td>v1.5.2+</td><td>Другие версии не тестировались</td></tr>
+      <tr><td>PHP</td><td>8.3+</td><td></td></tr>
+      <tr><td>Node.js</td><td>18+</td><td>Для сборки Vite</td></tr>
+      <tr><td>npm</td><td>9+</td><td></td></tr>
+      <tr><td>БД</td><td>MySQL 8 / MariaDB 10.6+</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ══ ФАЙЛЫ ══ -->
+  <h2 id="files"><span class="num">2</span>Копирование файлов</h2>
+  <p>Скопируй следующие папки и файлы из репозитория в соответствующие места установки Paymenter:</p>
+
+  <table>
+    <thead><tr><th>Откуда (репозиторий)</th><th>Куда (Paymenter)</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>paymenter/themes/fastcloud/</code></td>
+        <td><code>themes/fastcloud/</code></td>
+      </tr>
+      <tr>
+        <td><code>paymenter/public/fastcloud/</code></td>
+        <td><code>public/fastcloud/</code></td>
+      </tr>
+      <tr>
+        <td><code>paymenter/extensions/Others/CreditsPlus/</code></td>
+        <td><code>extensions/Others/CreditsPlus/</code></td>
+      </tr>
+      <tr>
+        <td><code>paymenter/lang/ru/</code></td>
+        <td><code>lang/ru/</code> (заменить)</td>
+      </tr>
+      <tr>
+        <td><code>paymenter/lang/ru.json</code></td>
+        <td><code>lang/ru.json</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <p>При обновлении Paymenter в будущем — папки <code>lang/ru/</code> могут быть перезаписаны стандартными. Храни резервную копию.</p>
+  </div>
+
+  <!-- ══ СБОРКА ══ -->
+  <h2 id="build"><span class="num">3</span>Сборка CSS/JS</h2>
+  <p>Тема использует <strong>Tailwind CSS v4</strong> через Vite. Ассеты нужно собрать после установки.</p>
+
+  <pre><code><span class="cm"># Перейди в корень Paymenter</span>
+cd /path/to/paymenter
+
+<span class="cm"># Установи зависимости (если ещё не)</span>
+npm install
+
+<span class="cm"># Сборка для продакшена</span>
+npm run build
+
+<span class="cm"># ИЛИ dev-режим с hot reload</span>
+npm run dev</code></pre>
+
+  <div class="callout info">
+    <div class="callout-icon">ℹ️</div>
+    <p>Файлы <code>public/fastcloud/marketing.css</code> и <code>public/fastcloud/marketing.js</code> — статические, Vite их не трогает. Они копируются как есть.</p>
+  </div>
+
+  <p>После сборки сбрось кеш шаблонов:</p>
+  <pre><code>php artisan view:clear
+php artisan cache:clear</code></pre>
+
+  <!-- ══ ENV ══ -->
+  <h2 id="env"><span class="num">4</span>Настройка .env</h2>
+  <p>Обязательные значения в <code>.env</code>:</p>
+
+  <pre><code><span class="cm"># Название сайта (отображается в &lt;title&gt;)</span>
+<span class="hl">APP_NAME</span>=<span class="st">"FastCloud"</span>
+
+<span class="cm"># Реальный URL сайта (используется для asset(), route() и почтовых ссылок)</span>
+<span class="hl">APP_URL</span>=<span class="st">https://fast-cloud.uk</span>
+
+<span class="cm"># Язык интерфейса</span>
+<span class="hl">APP_LOCALE</span>=<span class="st">ru</span>
+<span class="hl">APP_FALLBACK_LOCALE</span>=<span class="st">en</span>
+
+<span class="cm"># Почта — нужна для сброса пароля и уведомлений</span>
+<span class="hl">MAIL_MAILER</span>=<span class="st">smtp</span>
+<span class="hl">MAIL_HOST</span>=<span class="st">smtp.example.com</span>
+<span class="hl">MAIL_PORT</span>=<span class="st">587</span>
+<span class="hl">MAIL_USERNAME</span>=<span class="st">noreply@fast-cloud.uk</span>
+<span class="hl">MAIL_PASSWORD</span>=<span class="st">your_password</span>
+<span class="hl">MAIL_FROM_ADDRESS</span>=<span class="st">noreply@fast-cloud.uk</span>
+<span class="hl">MAIL_FROM_NAME</span>=<span class="st">"FastCloud"</span></code></pre>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <p><strong>APP_URL</strong> должен совпадать с реальным доменом. Неправильный URL сломает favicon, ссылки в письмах и OAuth-редиректы.</p>
+  </div>
+
+  <!-- ══ АКТИВАЦИЯ ТЕМЫ ══ -->
+  <h2 id="admin-theme"><span class="num">5</span>Активация темы в админке</h2>
+
+  <ol class="steps">
+    <li>
+      <div>
+        <strong>Войди в админ-панель</strong>
+        <p>Перейди на <code>/admin</code> и войди под администратором.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Открой настройки внешнего вида</strong>
+        <p>Settings → Appearance (или аналогичный раздел в твоей версии Paymenter).</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Выбери тему fastcloud</strong>
+        <p>В поле Theme выбери <code>fastcloud</code> и сохрани.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Установи логотип</strong>
+        <p>Загрузи логотип через поле Logo. Тема поддерживает SVG и PNG. Рекомендуемый формат: SVG, прозрачный фон.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Настрой цвета темы</strong>
+        <p>В настройках темы (см. раздел <a href="#theme-settings">«Настройки темы»</a>) оставь значения по умолчанию — тема использует собственные CSS-переменные и не зависит от цветов Paymenter, кроме accent-цвета.</p>
+      </div>
+    </li>
+  </ol>
+
+  <!-- ══ CREDITSPLUS ══ -->
+  <h2 id="creditsplus"><span class="num">6</span>Расширение CreditsPlus</h2>
+
+  <p>
+    CreditsPlus добавляет отображение баланса в навигацию для авторизованных пользователей
+    и переопределяет компонент навигации когда пользователь залогинен.
+  </p>
+
+  <h3>Установка</h3>
+  <ol class="steps">
+    <li>
+      <div>
+        <strong>Файлы уже скопированы</strong>
+        <p>Если выполнил шаг 2, папка <code>extensions/Others/CreditsPlus/</code> уже на месте.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Включи расширение в админке</strong>
+        <p>Admin → Extensions → Others → CreditsPlus → Enable.</p>
+      </div>
+    </li>
+  </ol>
+
+  <h3>Как работает</h3>
+  <p>Расширение регистрирует View Composer на <code>components.navigation.index</code>. Логика:</p>
+  <ul style="color:var(--text2);padding-left:20px;margin-bottom:14px;display:flex;flex-direction:column;gap:6px;font-size:13.5px;">
+    <li>Пользователь <strong>не авторизован</strong> → используется навигация из темы (стандартно)</li>
+    <li>Пользователь <strong>авторизован</strong> → CreditsPlus подменяет путь к шаблону навигации на свой</li>
+    <li>В навигации появляется кликабельный баланс, ведущий на <code>/account/credits</code></li>
+    <li>В мобильном меню — аватар + имя + выдвижная панель со ссылками</li>
+  </ul>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <p>Если нужно изменить навигацию (ссылки, логика), правки нужно вносить в <strong>два</strong> файла одновременно:<br>
+    <code>themes/fastcloud/views/components/navigation/index.blade.php</code> (для незалогиненных)<br>
+    <code>extensions/Others/CreditsPlus/resources/views/components/navigation/index.blade.php</code> (для залогиненных)</p>
+  </div>
+
+  <!-- ══ ВАЛЮТА ══ -->
+  <h2 id="currency"><span class="num">7</span>Валюта</h2>
+
+  <p>Тема использует рубли как основную валюту. Создай валюту в админке:</p>
+
+  <ol class="steps">
+    <li>
+      <div>
+        <strong>Admin → Currencies → Create</strong>
+        <p></p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Заполни поля</strong>
+        <p>
+          <strong>Code:</strong> <code>RUB</code><br>
+          <strong>Prefix:</strong> оставь пустым<br>
+          <strong>Suffix:</strong> <code> ₽</code> (с пробелом перед знаком)<br>
+          <strong>Default:</strong> включи
+        </p>
+      </div>
+    </li>
+  </ol>
+
+  <div class="callout info">
+    <div class="callout-icon">ℹ️</div>
+    <p>Тема ищет валюту с кодом <code>RUB</code> для отображения баланса в навигации. Если код будет другим — баланс не покажется корректно.</p>
+  </div>
+
+  <!-- ══ КАТЕГОРИИ ══ -->
+  <h2 id="categories"><span class="num">8</span>Категории — Локации</h2>
+
+  <p>
+    В теме каждая <strong>top-level категория</strong> (без родителя) = одна локация на странице тарифов.
+    Кнопки локаций на <code>/pricing</code> генерируются автоматически из категорий.
+  </p>
+
+  <h3>Создание категории</h3>
+  <p>Admin → Categories → Create</p>
+
+  <table>
+    <thead><tr><th>Поле</th><th>Пример</th><th>Важно</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td><code>Германия</code></td>
+        <td>Отображается как кнопка локации</td>
+      </tr>
+      <tr>
+        <td>Slug</td>
+        <td><code>germany</code></td>
+        <td>Используется в URL: <code>/products/checkout/germany/...</code>. Только латиница, дефисы.</td>
+      </tr>
+      <tr>
+        <td>Parent</td>
+        <td>— (пусто)</td>
+        <td>Обязательно пусто. Дочерние категории тема не использует.</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><code>Франкфурт, DE</code></td>
+        <td>Опционально</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout info">
+    <div class="callout-icon">ℹ️</div>
+    <p>Порядок кнопок локаций на странице тарифов = порядок категорий по <code>id</code> (по возрастанию). Создавай в нужном порядке.</p>
+  </div>
+
+  <h3>Примеры локаций</h3>
+  <div class="card-grid">
+    <div class="card"><div class="card-title">Германия</div><p>slug: <code>germany</code></p></div>
+    <div class="card"><div class="card-title">Нидерланды</div><p>slug: <code>netherlands</code></p></div>
+    <div class="card"><div class="card-title">США</div><p>slug: <code>usa</code></p></div>
+    <div class="card"><div class="card-title">Сингапур</div><p>slug: <code>singapore</code></p></div>
+  </div>
+
+  <!-- ══ ПРОДУКТЫ ══ -->
+  <h2 id="products"><span class="num">9</span>Продукты — Тарифы</h2>
+
+  <p>Каждый продукт = один тарифный план (например, «Nano», «Micro», «Pro»).</p>
+
+  <h3>Основные поля</h3>
+  <table>
+    <thead><tr><th>Поле</th><th>Пример</th><th>Примечание</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td><code>Pro</code></td>
+        <td>⚠️ Продукт с именем <strong>Pro</strong> автоматически помечается как «популярный» (featured) на странице тарифов. Можно переименовать — см. <a href="#for-dev">задачи программисту</a>.</td>
+      </tr>
+      <tr>
+        <td>Slug</td>
+        <td><code>vps-pro</code></td>
+        <td>Используется в URL checkout</td>
+      </tr>
+      <tr>
+        <td>Category</td>
+        <td><code>Германия</code></td>
+        <td>Привязывает к локации</td>
+      </tr>
+      <tr>
+        <td>Sort</td>
+        <td><code>1</code>, <code>2</code>, <code>3</code>…</td>
+        <td>Порядок отображения внутри локации</td>
+      </tr>
+      <tr>
+        <td>Stock</td>
+        <td><code>0</code> = неограничено</td>
+        <td>При <code>stock = 0</code> кнопка «В корзину» показывается</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Product Settings — характеристики сервера</h3>
+  <p>
+    На странице конфигурации и в карточке тарифа отображаются характеристики.
+    Они задаются через <strong>Product Settings</strong> (не Config Options).
+    Ключи строго фиксированы:
+  </p>
+
+  <table>
+    <thead><tr><th>Ключ (key)</th><th>Пример значения</th><th>Где отображается</th></tr></thead>
+    <tbody>
+      <tr><td><code>cpu</code></td><td><code>4</code></td><td>«4 vCPU» на карточке и в конфигураторе</td></tr>
+      <tr><td><code>ram</code></td><td><code>8</code></td><td>«8 GB RAM»</td></tr>
+      <tr><td><code>nvme</code></td><td><code>80</code></td><td>«80 GB NVMe»</td></tr>
+      <tr><td><code>traffic</code></td><td><code>Безлимит</code></td><td>«Безлимит трафик»</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <p>Ключи чувствительны к регистру. Только строчные: <code>cpu</code>, <code>ram</code>, <code>nvme</code>, <code>traffic</code>. Если ключ не найден — показывается «—».</p>
+  </div>
+
+  <!-- ══ CONFIG OPTIONS ══ -->
+  <h2 id="config-options"><span class="num">10</span>Config Options — параметры при заказе</h2>
+
+  <p>Config Options — это поля, которые заполняет клиент при оформлении заказа.</p>
+
+  <h3>Поле «Название сервера» <span class="tag required">обязательно</span></h3>
+  <p>
+    Тема автоматически находит <strong>первый Config Option с типом <code>text</code></strong>
+    и использует его как поле имени сервера. Без него поле имени не появится.
+  </p>
+  <table>
+    <thead><tr><th>Поле</th><th>Значение</th></tr></thead>
+    <tbody>
+      <tr><td>Name</td><td><code>Название сервера</code></td></tr>
+      <tr><td>Type</td><td><code>text</code></td></tr>
+      <tr><td>Description</td><td><code>например, web-prod-01</code> (показывается как placeholder)</td></tr>
+      <tr><td>Required</td><td>✅ Включить — иначе клиент может не заполнить</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Поле «Операционная система» <span class="tag optional">опционально</span></h3>
+  <table>
+    <thead><tr><th>Поле</th><th>Значение</th></tr></thead>
+    <tbody>
+      <tr><td>Type</td><td><code>select</code></td></tr>
+      <tr><td>Children</td><td>Список ОС: Ubuntu 22.04, Debian 12, CentOS 9…</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Дополнительные услуги (аддоны) <span class="tag optional">опционально</span></h3>
+  <p>Аддоны — Config Options с типом <code>checkbox</code>. Отображаются в секции «Дополнительные услуги».</p>
+  <table>
+    <thead><tr><th>Поле</th><th>Значение</th></tr></thead>
+    <tbody>
+      <tr><td>Type</td><td><code>checkbox</code></td></tr>
+      <tr><td>Name</td><td><code>Anti-DDoS 10 Gbps</code></td></tr>
+      <tr><td>Description</td><td>Краткое описание (опционально)</td></tr>
+      <tr><td>Children → Plans → Prices</td><td>Цена аддона за каждый период оплаты</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <p>Цена аддона в корзине считается динамически: при смене периода оплаты цена аддона пересчитывается. Убедись что для каждого аддона заданы цены для каждого доступного периода (1 мес, 3 мес, 6 мес, 12 мес).</p>
+  </div>
+
+  <!-- ══ ПЛАНЫ ══ -->
+  <h2 id="plans"><span class="num">11</span>Планы и цены</h2>
+
+  <p>Каждый продукт может иметь несколько планов (периодов оплаты). Тема распознаёт следующие периоды:</p>
+
+  <table>
+    <thead><tr><th>Billing Period</th><th>Billing Unit</th><th>Ключ в теме</th><th>Отображение</th></tr></thead>
+    <tbody>
+      <tr><td><code>1</code></td><td><code>month</code></td><td><code>monthly</code></td><td>1 месяц</td></tr>
+      <tr><td><code>3</code></td><td><code>month</code></td><td><code>quarterly</code></td><td>3 месяца</td></tr>
+      <tr><td><code>6</code></td><td><code>month</code></td><td><code>biannual</code></td><td>6 месяцев</td></tr>
+      <tr><td><code>12</code></td><td><code>month</code></td><td><code>annual</code></td><td>12 месяцев</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <p>Другие периоды (например, 2 мес, 24 мес) тема <strong>игнорирует</strong> — план не попадёт на страницу тарифов.</p>
+  </div>
+
+  <h3>Скидки на длинные периоды</h3>
+  <p>
+    Скидка считается автоматически: тема берёт цену 1-месячного плана и сравнивает
+    с ценой за месяц при более длинном периоде. Если выходит дешевле — показывается
+    бейдж <code>−N%</code>. Для этого <strong>обязательно должен существовать план на 1 месяц</strong>.
+  </p>
+
+  <h3>Настройка цен</h3>
+  <ol class="steps">
+    <li><div><strong>Создай план</strong><p>Product → Plans → Add Plan. Укажи Billing Period и Unit.</p></div></li>
+    <li><div><strong>Добавь цену</strong><p>В плане → Prices → Add Price. Выбери валюту RUB, укажи цену.</p></div></li>
+    <li><div><strong>Повтори для каждого периода</strong><p>1 мес, 3 мес, 6 мес, 12 мес.</p></div></li>
+  </ol>
+
+  <!-- ══ НАСТРОЙКИ ТЕМЫ ══ -->
+  <h2 id="theme-settings"><span class="num">12</span>Настройки темы</h2>
+
+  <p>После активации темы в Admin → Settings → Appearance → Theme Settings:</p>
+
+  <table>
+    <thead><tr><th>Настройка</th><th>Рекомендация</th></tr></thead>
+    <tbody>
+      <tr><td>Logo Display</td><td><code>logo-only</code> — если логотип содержит текст; <code>logo-and-name</code> — если иконка</td></tr>
+      <tr><td>Direct Checkout</td><td>Выключить — тема использует собственную страницу конфигурации</td></tr>
+      <tr><td>Dark Background</td><td><code>hsl(240, 18%, 9%)</code> — тёмный фон темы</td></tr>
+      <tr><td>Dark Background Secondary</td><td><code>hsl(240, 13%, 11%)</code></td></tr>
+      <tr><td>Primary (Dark)</td><td><code>hsl(196, 84%, 38%)</code> — голубой акцент FastCloud</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout info">
+    <div class="callout-icon">ℹ️</div>
+    <p>Тема всегда работает в тёмном режиме — <code>isDark</code> захардкожен в <code>return true</code>. Светлые цвета из настроек темы не используются.</p>
+  </div>
+
+  <!-- ══ ЗАДАЧИ ПРОГРАММИСТУ ══ -->
+  <h2 id="for-dev"><span class="num">13</span>Задачи программисту <span class="tag dev">dev</span></h2>
+
+  <p>Следующие вещи выходят за рамки темы и требуют правок в PHP-коде Paymenter:</p>
+
+  <h3>1. Заголовки страниц (SEO)</h3>
+  <p>
+    Маркетинговые страницы (<code>/pricing</code>, <code>/locations</code> и др.) не передают
+    <code>$title</code> в лейаут — все страницы показывают просто «FastCloud».
+    Нужно добавить атрибут <code>#[Title]</code> к соответствующим Livewire-компонентам:
+  </p>
+  <pre><code><span class="cm">// app/Livewire/Marketing/Pricing.php</span>
+<span class="kw">use</span> Livewire\Attributes\Title;
+
+<span class="kw">#[Title(</span><span class="st">'Тарифы'</span><span class="kw">)]</span>
+<span class="kw">class</span> Pricing <span class="kw">extends</span> Component { ... }</code></pre>
+  <p>Аналогично для: Locations, Contacts, Home, Offer, Privacy, Sla.</p>
+
+  <h3>2. OG-теги для соцсетей</h3>
+  <p>
+    Добавить <code>$description</code> и <code>$image</code> слоты в лейаут каждой маркетинговой страницы
+    для корректного превью в соцсетях. Лейаут <code>layouts/app.blade.php</code> уже поддерживает эти слоты.
+  </p>
+
+  <h3>3. «Популярный» тариф</h3>
+  <p>
+    Сейчас featured-продукт определяется хардкодом в <code>app/Livewire/Marketing/Pricing.php</code>:
+  </p>
+  <pre><code><span class="st">'featured'</span> => $product->name === <span class="st">'Pro'</span>,</code></pre>
+  <p>
+    Рекомендуется заменить на поле в Product Settings (например, ключ <code>featured</code> = <code>1</code>),
+    или использовать отдельное поле продукта.
+  </p>
+
+  <h3>4. Уведомления об ошибках на русском</h3>
+  <p>
+    Некоторые сообщения Paymenter передаются хардкодом на английском (например, в <code>app/Livewire/Cart.php</code>).
+    В теме реализован JS-словарь переводов, но при добавлении новых уведомлений нужно
+    пополнять словарь в <code>themes/fastcloud/views/components/notification.blade.php</code>.
+  </p>
+
+  <h3>5. Сервер приложений</h3>
+  <p>
+    Для продакшена рекомендуется настроить supervisor для очереди задач:
+  </p>
+  <pre><code>php artisan queue:work --daemon</code></pre>
+
+  <div class="divider"></div>
+
+  <p style="color:var(--text3);font-size:13px;text-align:center;">
+    FastCloud Theme · Paymenter v1.5.2 · fast-cloud.uk
+  </p>
+
+</main>
+</div>
+</body>
+</html>

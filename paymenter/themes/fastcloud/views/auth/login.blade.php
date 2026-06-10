@@ -24,7 +24,7 @@
       <div class="fc-auth-card">
         <h2 class="fc-auth-card-h">Войти в&nbsp;аккаунт</h2>
 
-        <form class="fc-auth-card-form" wire:submit="submit" id="login">
+        <form class="fc-auth-card-form" wire:submit="submit" id="login" novalidate>
 
           {{-- Email --}}
           <div class="fc-field @error('email') is-error @enderror">
