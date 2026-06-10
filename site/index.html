@@ -360,7 +360,7 @@
         <span class="map-hud-dot"></span>
         <span class="map-hud-label">LIVE</span>
         <span class="map-hud-sep">·</span>
-        <span class="map-hud-stat">10&nbsp;dc</span>
+        <span class="map-hud-stat">глобальная&nbsp;сеть</span>
         <span class="map-hud-sep">·</span>
         <span class="map-hud-stat">1.24&nbsp;Tbps</span>
       </div>
@@ -375,26 +375,31 @@
           <feGaussianBlur stdDeviation="1.2" result="b"/>
           <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
-        <!-- Reusable arc paths -->
-        <path id="arc-eu-us" d="M 55 21 Q 30 6 9 25" fill="none"/>
-        <path id="arc-eu-sg" d="M 55 21 Q 80 8 101 44" fill="none"/>
-        <path id="arc-eu-au" d="M 55 21 Q 90 14 118 60" fill="none"/>
-        <path id="arc-eu-in" d="M 55 21 Q 72 16 85 38" fill="none"/>
-        <path id="arc-sg-au" d="M 101 44 Q 116 48 118 60" fill="none"/>
-        <path id="arc-uw-ue" d="M 9 25 Q 18 16 27 29" fill="none"/>
-        <path id="arc-ue-eu" d="M 27 29 Q 42 12 55 21" fill="none"/>
+        <!-- Hub-to-hub network arcs -->
+        <path id="arc-na-eu" d="M 24 27 Q 40 9 57 21" fill="none"/>
+        <path id="arc-eu-in" d="M 57 21 Q 73 17 86 38" fill="none"/>
+        <path id="arc-eu-sg" d="M 57 21 Q 84 11 101 44" fill="none"/>
+        <path id="arc-in-sg" d="M 86 38 Q 94 39 101 44" fill="none"/>
+        <path id="arc-sg-au" d="M 101 44 Q 114 49 117 60" fill="none"/>
+        <path id="arc-na-sa" d="M 24 27 Q 25 41 36 53" fill="none"/>
+        <path id="arc-eu-sa" d="M 57 21 Q 43 39 36 53" fill="none"/>
+        <path id="arc-eu-af" d="M 57 21 Q 58 36 62 48" fill="none"/>
+        <path id="arc-af-in" d="M 62 48 Q 74 44 86 38" fill="none"/>
+        <path id="arc-in-ea" d="M 86 38 Q 98 28 106 30" fill="none"/>
+        <path id="arc-ea-sg" d="M 106 30 Q 107 38 101 44" fill="none"/>
       </defs>
       <style>
         .land { fill: rgba(124,140,255,.10); stroke: rgba(124,140,255,.35); stroke-width: .28; stroke-linejoin: round; stroke-linecap: round; }
-        .dc-dot { fill: #c4ff3d; }
-        .dc-lbl { font-size: 3.4px; font-family: 'JetBrains Mono', monospace; fill: #d4e4a6; font-weight: 700; text-anchor: middle; }
-        .arc { fill: none; stroke: rgba(196,255,61,.75); stroke-width: .4; stroke-dasharray: 1.8 2; stroke-linecap: round; animation: arcFlow 6s linear infinite; }
-        .arc.a2 { animation-duration: 7s; animation-delay: -1.5s; opacity: .85; }
-        .arc.a3 { animation-duration: 8s; animation-delay: -3s; opacity: .75; }
-        .arc.a4 { animation-duration: 5.5s; animation-delay: -2.2s; opacity: .9; }
-        .arc.a5 { animation-duration: 6.5s; animation-delay: -4s; opacity: .75; }
-        .arc.a6 { animation-duration: 5s; animation-delay: -1s; opacity: .8; }
-        .arc.a7 { animation-duration: 7.5s; animation-delay: -3.4s; opacity: .8; }
+        .hub-dot { fill: #c4ff3d; }
+        .sat-dot { fill: #c4ff3d; opacity: .32; }
+        .sat-link { stroke: rgba(196,255,61,.20); stroke-width: .16; }
+        .arc { fill: none; stroke: rgba(196,255,61,.7); stroke-width: .38; stroke-dasharray: 1.8 2; stroke-linecap: round; animation: arcFlow 6s linear infinite; }
+        .arc.a2 { animation-duration: 7s; animation-delay: -1.5s; opacity: .8; }
+        .arc.a3 { animation-duration: 8s; animation-delay: -3s; opacity: .7; }
+        .arc.a4 { animation-duration: 5.5s; animation-delay: -2.2s; opacity: .85; }
+        .arc.a5 { animation-duration: 6.5s; animation-delay: -4s; opacity: .7; }
+        .arc.a6 { animation-duration: 5s; animation-delay: -1s; opacity: .75; }
+        .arc.a7 { animation-duration: 7.5s; animation-delay: -3.4s; opacity: .75; }
         @keyframes arcFlow { to { stroke-dashoffset: -36; } }
         .pkt { fill: #c4ff3d; filter: url(#dcglow); }
       </style>
@@ -417,54 +422,113 @@
       <polygon class="land" points="108.509,49.25 109.16,49.25 109.16,48.911 109.609,48.96 109.549,48.388 108.812,48.503 108.742,48.872 107.918,48.96 107.877,48.96 107.877,49.527 108.509,49.527"/>
       <path class="land" d="M96.701,41.202l3.854,3.7l0.204-0.657l-3.133-4.456l0.329-1.303l1.651,1.875l0.92,0.094l1.213-0.806l-0.199-1.214l-2.01-1.608l-0.078-1.462l0.57-0.769l1.006,0.321l-0.075,0.687l0.577,0.892l0.513-0.368l-0.284-1.054l2.84-1.018l1.244-1.039l-0.193-1.88l-2.467-2.596l-0.046-2.114h1.095l3.412,2.596l0.965-0.253l-0.646-0.836l-1.824-1.111l0.114-1.654l2.164,0.005l0.175-2.047l-0.826-1.079l0.492-0.532l1.049,1.059l0.344-0.448l-1.367-1.541l-3.344-0.403l-0.447-0.895l0.97-1.383l0.767,0.576l2.316,0.2l2.915-1.947l0.487,0.606l-0.651,1.019v1.007l2.681,2.191l0.85-0.443l-0.317-1.462l-1.91-1.783l2.517-0.169v-0.726l1.209-0.246l-0.926-0.642l0.035-0.493L118,16.004l0.488-0.411l-3.457-1.457l-12.572-0.646l-1.17-0.597l-1.875-0.286l-1.396-0.045l-1.277,1.289l-0.533-0.041l-1.696-1.258h-4.993l-2.312-1.384l-4.635,0.291l-3.513,1.584l0.021,1.822l-1.088,0.327l-0.244-1.829l-0.409-0.631l-1.209-0.302l-0.283,1.095l0.354,0.898l-4.328-0.286l-2.059,0.952l-0.313-0.902l-0.522,0.134l-0.378,1.002l-1.079,0.846l-2.636-0.072l-0.124-0.584l2.766-0.117l0.562-0.485l-3.327-1.547l-4.054,0.122l-2.269,1.161l-0.856,1.524l-1.512,0.586l-0.631,0.692l0.145,0.8l0.78,0.107l0.472,1.171l1.323-0.54l0.234,1.562h-0.418l-1.088-0.162l-1.214,0.204l-1.174,1.659l-1.691,0.271l-0.238,1.438l0.717,0.167l-0.205,0.928L51.4,24.723l-1.531,0.331l-0.32,0.855l0.26,1.793l0.909,0.422l1.502-0.005l1.025-0.097l0.314-0.815l1.59-2.062l1.05,0.213l1.03-0.933l0.193,0.729l2.538,1.716l-0.314,0.417l-1.144-0.067l0.433,0.626l0.711,0.155l0.825-0.343l-0.014-0.997l0.373-0.185l-0.304-0.315l-1.696-0.943l-0.437-1.261h1.402l0.448,0.443l1.219,1.05l0.043,1.268l1.263,1.338l0.468-1.833l0.871-0.48l0.162,1.502l0.852,0.937l2.564-0.039l0.762,0.564v1.346l-0.936,0.85H64.91l-1.581-1.182l-1.661,0.167v1.014h-0.533l-0.566-0.408l-2.88-0.734v-1.863l-3.66,0.284l-1.135,0.607h-1.442l-0.715-0.071l-1.76,0.979v1.837l-3.601,2.604l0.303,1.104h0.726l-0.184,1.055l-0.512,0.194l-0.03,2.76l3.104,3.541h1.353l0.094-0.218h2.426l0.708-0.646h1.377l0.761,0.76l2.055,0.209l-0.269,2.741l2.282,4.033l-1.204,2.298l0.085,1.079l0.955,0.945v2.606l1.238,1.671v2.168h3.68l2.765-2.835l0.866-1.546l1.109-0.244V54.52l0.729-0.866l1.538-2.119l-0.32-3.213l-0.676-1.193l3.035-2.904l3.337-4.78l-0.638-0.303l-3.477,0.731l-0.9-0.443l-3.649-6.883l0.253-0.299l3.626,4.395l0.089,1.359l0.826,0.841l1.721-0.109l3.545-2.576l1.125-0.727l-0.019-0.898l-1.188-0.146c0,0-4.174-1.968-4.174-2.055c0-0.09,0.025-1.686,0.025-1.686h0.925l0.134,1.164l1.93,1.114l2.213,0.106l4.781,0.784l1.127,0.709v1.094l-0.145,1.494l2.463,4.034l0.78,0.184l0.796-1.149l0.434-3.267l0.82-1.759l1.316-0.494l2.322,0.224l2.93,2.599v3.72H96.701z M63.031,15.514l-1.6,0.987v0.646l0.904,0.423l0.07,0.878l-1.294,1.914l-2.238-0.022l-0.139-0.458l1.398-0.714l0.015-2.648l2.368-1.66h0.518v0.654H63.031z M68,26.799v-0.005l-2.107-0.091l-0.628,0.091v-1.435l0.474-0.534l0.506-0.16l1.125-0.127l0.238-0.383l0.461,0.227l0.061,1.313l1.229,0.505l0.104,0.6L68,26.799L68,26.799z M76.092,27.824h-0.005l-0.373,0.35l-0.853-0.064l-0.162-0.256l-1.338-0.103l0.094-0.427l0.717-0.61v-0.515l-1.363-0.985l-0.06-1.261l0.278-0.617l1.099-0.102l0.931,0.391l0.045,0.651l-1.332-0.074l-0.064,0.601l1.66,1.104v0.815l0.726,0.522L76.092,27.824L76.092,27.824z"/>
       <path class="land" d="M40.224,45.842l-2.869-0.025l-2.274-0.865l-0.109-1.621l-0.76-1.329l-2.044-0.024l-1.194-1.871L29.919,39.6l-0.054,0.558l-1.92,0.119l-0.706-0.979L25.23,38.89l-1.652,1.905l-2.59-0.438l-0.189-2.929l-1.9-0.326l0.762-1.43l-0.22-0.826l-2.481,1.667l-1.567-0.189l-0.567-1.229l0.349-1.268l0.865-1.587l1.984-1.01h3.845l-0.01,1.171l1.383,0.637l-0.114-2.002l0.995-0.997l2.009-1.32l0.128-0.926l2.011-2.084l2.133-1.176l-0.191-0.151l1.437-1.361l0.533,0.137l0.244,0.306l0.546-0.611l0.125-0.063l-0.591-0.08L31.9,22.507v-0.593l0.318-0.263h0.716l0.329,0.142l0.278,0.564l0.343-0.05v-0.034l0.104,0.029l0.995-0.159l0.138-0.487l0.557,0.142v0.525l-0.521,0.368l0.079,0.584l1.811,0.555c0,0,0.005,0.01,0.005,0.02l0.413-0.035l0.03-0.779l-1.432-0.651l-0.085-0.383l1.189-0.408l0.049-1.131l-1.239-0.759l-0.08-1.914l-1.715,0.836h-0.621l0.163-1.46l-2.308-0.552l-0.964,0.723v2.221l-1.727,0.54l-0.696,1.447l-0.746,0.117v-1.845l-1.622-0.229l-0.81-0.524l-0.329-1.191l2.903-1.701l1.418-0.433l0.139,0.953l0.796-0.04l0.064-0.48l0.826-0.117l0.009-0.162l-0.348-0.154l-0.085-0.504l1.015-0.088l0.612-0.641l0.044-0.045v0.005l0.184-0.194l2.149-0.269l0.939,0.803l-2.486,1.321l3.158,0.743l0.404-1.06h1.387l0.481-0.917l-0.968-0.245v-1.161l-3.059-1.355L32,12.376l-1.199,0.622l0.09,1.518l-1.24-0.194l-0.189-0.835l1.18-1.084l-2.154-0.107l-0.628,0.182l-0.274,0.733l0.817,0.14l-0.165,0.813l-1.377,0.083l-0.214,0.534l-2.014,0.057c0,0-0.045-1.136-0.125-1.136c-0.085,0,1.567-0.024,1.567-0.024l1.193-1.167l-0.651-0.329l-0.865,0.845l-1.438-0.079l-0.86-1.193h-1.841l-1.923,1.437h1.76l0.163,0.514l-0.462,0.433l1.95,0.058l0.298,0.701l-2.193-0.088l-0.109-0.539L19.72,13.97l-0.731-0.4L15.74,13.6l-0.999,0.972l-0.681-0.058l-0.757-0.438l-2.243-0.672H6.947l-2.378,1.619l-1.597,0.247l-0.73,0.569l1.134,0.167v0.455H0.949L0,17.137l1.212,1.03l3.327,0.029l0.463-0.495h2.78l1.004,0.893l-0.06,1.385l0.847,0.783l-0.706,0.505l0.159,1.822l-2.511,3.057v2.867l1.347,0.652v2.573l1.31,2.213l1.043,0.159l0.135-0.758l-1.233-1.915l-0.244-1.865h0.731l0.313,1.92l1.8,2.623l-0.482,0.846l1.153,1.751l2.846,0.704v-0.458l1.133,0.156l-0.104,0.816l0.89,0.154l1.383,0.388l1.95,2.218l2.486,0.185l0.244,2.034l-1.705,1.188l-0.085,1.805l-0.238,1.115l2.461,3.083l0.189,1.049c0,0,0.896,0.244,0.995,0.244c0.109,0,2.009,1.438,2.009,1.438v5.565l0.676,0.199l-0.472,2.566l1.139,1.512l-0.205,2.545l1.498,2.646l1.929,1.682l1.931,0.035l0.193-0.617l-1.417-1.198l0.084-0.598l0.26-0.735l0.054-0.736l-0.97-0.029l-0.497-0.607l0.81-0.775l0.109-0.577l-0.895-0.253l0.049-0.543l1.274-0.188l1.934-0.925l0.652-1.194l2.028-2.606l-0.461-2.024l0.622-1.084l1.864,0.055l1.253-0.985l0.408-3.924l1.394-1.775l0.248-1.134l-1.274-0.408L40.224,45.842z M25.046,26.306h-1.035l0.166-0.704l0.487-0.052l0.109-0.239l0.741-0.102v0.632h0.004L25.046,26.306z M25.761,24.563l-0.488,0.316l-0.611,0.106c0,0,0-0.967,0-1.069h1.099V24.563z M26.686,23.815l0.502,0.306l-0.402,0.331l-0.383-0.331L26.686,23.815z M26.03,24.625h0.08l1.243,0.36v0.638h-1.044l-0.278-0.409L26.03,24.625L26.03,24.625z M25.219,22.877l0.672,0.612l-0.672,0.164V22.877z M22.375,22.979l0.934-0.386h1.284v0.386h0.278v0.674h-1.954l-0.722-0.199L22.375,22.979z M22.195,24.729l0.741-0.811h1.074l-1.377,1.925l-0.572-0.306L22.195,24.729z M21.201,20.145l0.766,0.177l-0.265,1.04l-0.831,0.267l-0.522-1.082L21.201,20.145z M17.346,15.234v-0.061h0.712l0.064-0.246h1.165v0.51l-0.344,0.442h-1.597V15.234z M18.476,16.817c0,0,0.716-0.126,0.771-0.126c0.055,0,0,0.713,0,0.713l-1.603,0.102l-0.302-0.363L18.476,16.817z"/>
-      <!-- EU: GB · FR · DE · IT · PL -->
-      <circle class="dc-dot" cx="55" cy="21" r="0.9" filter="url(#dcglow)"/>
-      <circle class="dc-dot" cx="56" cy="23" r="0.9" filter="url(#dcglow)"/>
-      <circle class="dc-dot" cx="59" cy="21" r="0.9" filter="url(#dcglow)"/>
-      <circle class="dc-dot" cx="59" cy="25" r="0.9" filter="url(#dcglow)"/>
-      <circle class="dc-dot" cx="63" cy="20" r="0.9" filter="url(#dcglow)"/>
-      <text class="dc-lbl" x="58" y="16">EU ×5</text>
-      <!-- IN (Mumbai) -->
-      <circle class="dc-dot" cx="85" cy="38" r="0.9" filter="url(#dcglow)"/>
-      <text class="dc-lbl" x="85" y="35">IN</text>
-      <!-- SG (Singapore) -->
-      <circle class="dc-dot" cx="101" cy="44" r="0.9" filter="url(#dcglow)"/>
-      <text class="dc-lbl" x="101" y="41">SG</text>
-      <!-- AU (Sydney) -->
-      <circle class="dc-dot" cx="118" cy="60" r="0.9" filter="url(#dcglow)"/>
-      <text class="dc-lbl" x="118" y="57">AU</text>
-      <!-- CA (Toronto) -->
-      <circle class="dc-dot" cx="26" cy="26" r="0.9" filter="url(#dcglow)"/>
-      <text class="dc-lbl" x="26" y="23">CA</text>
-      <!-- US West + US East -->
-      <circle class="dc-dot" cx="9" cy="25" r="0.9" filter="url(#dcglow)"/>
-      <circle class="dc-dot" cx="27" cy="29" r="0.9" filter="url(#dcglow)"/>
-      <text class="dc-lbl" x="17" y="33">US ×2</text>
-    
-  <!-- Trade-route arcs between datacenters -->
+      <!-- Satellite connector lines (hub → small nodes) -->
+      <g class="sat-links">
+        <!-- NA hub 24,27 -->
+        <line class="sat-link" x1="24" y1="27" x2="19" y2="24"/>
+        <line class="sat-link" x1="24" y1="27" x2="29" y2="29"/>
+        <line class="sat-link" x1="24" y1="27" x2="16" y2="29"/>
+        <line class="sat-link" x1="24" y1="27" x2="30" y2="24"/>
+        <!-- EU hub 57,21 -->
+        <line class="sat-link" x1="57" y1="21" x2="53" y2="23"/>
+        <line class="sat-link" x1="57" y1="21" x2="61" y2="19"/>
+        <line class="sat-link" x1="57" y1="21" x2="55" y2="18"/>
+        <line class="sat-link" x1="57" y1="21" x2="62" y2="24"/>
+        <!-- SA hub 36,53 -->
+        <line class="sat-link" x1="36" y1="53" x2="33" y2="50"/>
+        <line class="sat-link" x1="36" y1="53" x2="39" y2="56"/>
+        <!-- IN hub 86,38 -->
+        <line class="sat-link" x1="86" y1="38" x2="83" y2="40"/>
+        <line class="sat-link" x1="86" y1="38" x2="89" y2="36"/>
+        <!-- SG hub 101,44 -->
+        <line class="sat-link" x1="101" y1="44" x2="98" y2="46"/>
+        <line class="sat-link" x1="101" y1="44" x2="104" y2="42"/>
+        <!-- AU hub 117,60 -->
+        <line class="sat-link" x1="117" y1="60" x2="114" y2="58"/>
+        <line class="sat-link" x1="117" y1="60" x2="120" y2="62"/>
+        <!-- AF hub 62,48 -->
+        <line class="sat-link" x1="62" y1="48" x2="59" y2="45"/>
+        <line class="sat-link" x1="62" y1="48" x2="65" y2="51"/>
+        <line class="sat-link" x1="62" y1="48" x2="60" y2="52"/>
+        <!-- EA hub 106,30 -->
+        <line class="sat-link" x1="106" y1="30" x2="103" y2="28"/>
+        <line class="sat-link" x1="106" y1="30" x2="109" y2="32"/>
+        <line class="sat-link" x1="106" y1="30" x2="108" y2="27"/>
+      </g>
+
+      <!-- Small satellite nodes (dim) -->
+      <g class="sats">
+        <circle class="sat-dot" cx="19" cy="24" r="0.42"/>
+        <circle class="sat-dot" cx="29" cy="29" r="0.42"/>
+        <circle class="sat-dot" cx="16" cy="29" r="0.42"/>
+        <circle class="sat-dot" cx="30" cy="24" r="0.42"/>
+        <circle class="sat-dot" cx="53" cy="23" r="0.42"/>
+        <circle class="sat-dot" cx="61" cy="19" r="0.42"/>
+        <circle class="sat-dot" cx="55" cy="18" r="0.42"/>
+        <circle class="sat-dot" cx="62" cy="24" r="0.42"/>
+        <circle class="sat-dot" cx="33" cy="50" r="0.42"/>
+        <circle class="sat-dot" cx="39" cy="56" r="0.42"/>
+        <circle class="sat-dot" cx="83" cy="40" r="0.42"/>
+        <circle class="sat-dot" cx="89" cy="36" r="0.42"/>
+        <circle class="sat-dot" cx="98" cy="46" r="0.42"/>
+        <circle class="sat-dot" cx="104" cy="42" r="0.42"/>
+        <circle class="sat-dot" cx="114" cy="58" r="0.42"/>
+        <circle class="sat-dot" cx="120" cy="62" r="0.42"/>
+        <circle class="sat-dot" cx="59" cy="45" r="0.42"/>
+        <circle class="sat-dot" cx="65" cy="51" r="0.42"/>
+        <circle class="sat-dot" cx="60" cy="52" r="0.42"/>
+        <circle class="sat-dot" cx="103" cy="28" r="0.42"/>
+        <circle class="sat-dot" cx="109" cy="32" r="0.42"/>
+        <circle class="sat-dot" cx="108" cy="27" r="0.42"/>
+      </g>
+
+  <!-- Hub-to-hub network arcs -->
   <g class="arcs">
-    <use href="#arc-eu-us" class="arc a1"/>
-    <use href="#arc-eu-sg" class="arc a2"/>
-    <use href="#arc-eu-au" class="arc a3"/>
-    <use href="#arc-eu-in" class="arc a4"/>
+    <use href="#arc-na-eu" class="arc a1"/>
+    <use href="#arc-eu-in" class="arc a2"/>
+    <use href="#arc-eu-sg" class="arc a3"/>
+    <use href="#arc-in-sg" class="arc a4"/>
     <use href="#arc-sg-au" class="arc a5"/>
-    <use href="#arc-uw-ue" class="arc a6"/>
-    <use href="#arc-ue-eu" class="arc a7"/>
+    <use href="#arc-na-sa" class="arc a6"/>
+    <use href="#arc-eu-sa" class="arc a7"/>
+    <use href="#arc-eu-af" class="arc a2"/>
+    <use href="#arc-af-in" class="arc a5"/>
+    <use href="#arc-in-ea" class="arc a3"/>
+    <use href="#arc-ea-sg" class="arc a6"/>
   </g>
-  <!-- Soft pulse rings -->
+
+  <!-- Major hubs (bright) -->
+  <g class="hubs">
+    <circle class="hub-dot" cx="24" cy="27" r="1" filter="url(#dcglow)"/>
+    <circle class="hub-dot" cx="57" cy="21" r="1" filter="url(#dcglow)"/>
+    <circle class="hub-dot" cx="36" cy="53" r="1" filter="url(#dcglow)"/>
+    <circle class="hub-dot" cx="86" cy="38" r="1" filter="url(#dcglow)"/>
+    <circle class="hub-dot" cx="101" cy="44" r="1" filter="url(#dcglow)"/>
+    <circle class="hub-dot" cx="117" cy="60" r="1" filter="url(#dcglow)"/>
+    <circle class="hub-dot" cx="62" cy="48" r="1" filter="url(#dcglow)"/>
+    <circle class="hub-dot" cx="106" cy="30" r="1" filter="url(#dcglow)"/>
+  </g>
+
+  <!-- Soft pulse rings on hubs -->
   <g>
-    <circle cx="55" cy="21" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5"/>
-    <circle cx="101" cy="44" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:.8s"/>
-    <circle cx="9"  cy="25" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:1.6s"/>
+    <circle cx="57" cy="21" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5"/>
+    <circle cx="101" cy="44" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:.7s"/>
+    <circle cx="24" cy="27" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:1.4s"/>
+    <circle cx="117" cy="60" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:2.1s"/>
+    <circle cx="106" cy="30" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:1s"/>
+    <circle cx="62" cy="48" r="1.2" fill="#c4ff3d" class="dc-pulse" opacity=".5" style="animation-delay:2.6s"/>
   </g>
-  <!-- Packets traveling along arcs -->
+
+  <!-- Packets traveling along network arcs -->
   <g class="pkts">
     <circle class="pkt" r=".55"><animateMotion dur="4.6s" repeatCount="indefinite"><mpath href="#arc-eu-sg"/></animateMotion></circle>
-    <circle class="pkt" r=".5"><animateMotion dur="5.2s" begin="-2s" repeatCount="indefinite"><mpath href="#arc-eu-au"/></animateMotion></circle>
-    <circle class="pkt" r=".55"><animateMotion dur="4s" begin="-1.4s" repeatCount="indefinite"><mpath href="#arc-eu-us"/></animateMotion></circle>
-    <circle class="pkt" r=".5"><animateMotion dur="3.4s" begin="-0.5s" repeatCount="indefinite"><mpath href="#arc-eu-in"/></animateMotion></circle>
-    <circle class="pkt" r=".45"><animateMotion dur="3.2s" begin="-2.8s" repeatCount="indefinite"><mpath href="#arc-sg-au"/></animateMotion></circle>
-    <circle class="pkt" r=".5"><animateMotion dur="2.4s" begin="-1s" repeatCount="indefinite"><mpath href="#arc-uw-ue"/></animateMotion></circle>
+    <circle class="pkt" r=".5"><animateMotion dur="5.2s" begin="-2s" repeatCount="indefinite"><mpath href="#arc-na-eu"/></animateMotion></circle>
+    <circle class="pkt" r=".55"><animateMotion dur="4s" begin="-1.4s" repeatCount="indefinite"><mpath href="#arc-eu-in"/></animateMotion></circle>
+    <circle class="pkt" r=".5"><animateMotion dur="3.4s" begin="-0.5s" repeatCount="indefinite"><mpath href="#arc-sg-au"/></animateMotion></circle>
+    <circle class="pkt" r=".45"><animateMotion dur="3.6s" begin="-2.8s" repeatCount="indefinite"><mpath href="#arc-na-sa"/></animateMotion></circle>
+    <circle class="pkt" r=".5"><animateMotion dur="3s" begin="-1s" repeatCount="indefinite"><mpath href="#arc-in-sg"/></animateMotion></circle>
+    <circle class="pkt" r=".5"><animateMotion dur="4.2s" begin="-2.3s" repeatCount="indefinite"><mpath href="#arc-eu-af"/></animateMotion></circle>
+    <circle class="pkt" r=".5"><animateMotion dur="3.8s" begin="-1.7s" repeatCount="indefinite"><mpath href="#arc-in-ea"/></animateMotion></circle>
   </g>
   </svg>
     </div>
