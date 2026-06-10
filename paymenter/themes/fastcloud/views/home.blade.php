@@ -160,7 +160,7 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
         <div class="fc-incl-item"><div class="fc-incl-check">&#10003;</div><div><div class="fc-incl-label">NVMe Gen4 &middot; 7&nbsp;000&nbsp;MB/s</div><div class="fc-incl-sub">высокопроизводительное хранилище</div></div></div>
         <div class="fc-incl-item"><div class="fc-incl-check">&#10003;</div><div><div class="fc-incl-label">Anti-DDoS L3&nbsp;/&nbsp;L4&nbsp;/&nbsp;L7</div><div class="fc-incl-sub">без доплаты, во всех тарифах</div></div></div>
         <div class="fc-incl-item"><div class="fc-incl-check">&#10003;</div><div><div class="fc-incl-label">Бэкапы &middot; 14&nbsp;дней</div><div class="fc-incl-sub">автоматические снапшоты каждую ночь</div></div></div>
-        <div class="fc-incl-item"><div class="fc-incl-check">&#10003;</div><div><div class="fc-incl-label">Поддержка 24/7</div><div class="fc-incl-sub">живые инженеры, ответ &lt;&nbsp;5&nbsp;мин</div></div></div>
+        <div class="fc-incl-item"><div class="fc-incl-check">&#10003;</div><div><div class="fc-incl-label">Поддержка 24/7</div><div class="fc-incl-sub">живые инженеры, без ботов</div></div></div>
         <div class="fc-incl-item"><div class="fc-incl-check">&#10003;</div><div><div class="fc-incl-label">Цена при продлении = цена при старте</div><div class="fc-incl-sub">без setup fee и скрытых платежей</div></div></div>
       </div>
     </div>
@@ -371,9 +371,9 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
       <div class="fc-story-num reveal"><span class="step">06</span> &nbsp;/&nbsp; поддержка</div>
       <div class="fc-story-tag reveal d-1">24/7 &middot; живые инженеры</div>
       <h2 class="fc-story-title reveal d-2"><em>Никаких</em> ботов. Только&nbsp;инженеры.</h2>
-      <p class="fc-story-desc reveal d-3">Живые специалисты в чате, e&#8209;mail и Telegram. Среднее время первого ответа &mdash; меньше 5 минут, даже в 3 часа ночи.</p>
+      <p class="fc-story-desc reveal d-3">Живые специалисты в чате, e&#8209;mail и Telegram &mdash; без ботов и автоответчиков. Работаем круглосуточно.</p>
       <ul class="fc-story-list reveal d-4">
-        <li>Среднее время первого ответа &lt;&nbsp;5&nbsp;минут</li>
+        <li>Живой ответ, а не скрипт и шаблонные отписки</li>
         <li>Telegram&#8209;канал со статусом всех локаций</li>
         <li>Документация и примеры для Terraform&nbsp;/&nbsp;Ansible</li>
       </ul>
