@@ -393,8 +393,8 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
   </div>
 </section>
 
-{{-- ══ STORY 07 — Apps ═════════════════════════════════════════════════════ --}}
-<section class="fc-story">
+{{-- ══ STORY 07 — Apps (скрыт до готовности маркетплейса) ═════════════════ --}}
+{{-- <section class="fc-story">
   <div class="fc-story-inner">
     <div class="fc-story-text">
       <div class="fc-story-num reveal"><span class="step">07</span> &nbsp;/&nbsp; маркетплейс</div>
@@ -434,7 +434,7 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
 {{-- ══ PLANS PREVIEW ══════════════════════════════════════════════════════ --}}
 @php
