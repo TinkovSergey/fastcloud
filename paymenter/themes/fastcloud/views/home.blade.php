@@ -208,7 +208,7 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
         <li>APAC&nbsp;&times;3: Singapore, Mumbai, Sydney</li>
       </ul>
     </div>
-    <div class="fc-story-visual fc-map-visual reveal d-2" style="clip-path:inset(0 0 20px 0)">
+    <div class="fc-story-visual fc-map-visual reveal d-2">
       <span class="fc-hud-corner fc-hud-tl"></span>
       <span class="fc-hud-corner fc-hud-tr"></span>
       <span class="fc-hud-corner fc-hud-bl"></span>
@@ -221,7 +221,7 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
         <span style="color:var(--fc-text-dim);">&middot;</span>
         <span style="color:var(--fc-text);font-weight:600;">1.24&nbsp;Tbps</span>
       </div>
-        <svg class="fc-map-svg" viewBox="0 8 125.762 72" xmlns="http://www.w3.org/2000/svg">
+        <svg class="fc-map-svg" viewBox="0 8 125.762 72" xmlns="http://www.w3.org/2000/svg" style="clip-path:inset(0 0 30px 0)">
           <defs>
             <filter id="fcglow" x="-100%" y="-100%" width="300%" height="300%">
               <feGaussianBlur stdDeviation="1.2" result="b"/>
