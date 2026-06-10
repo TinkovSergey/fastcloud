@@ -323,6 +323,9 @@
   <a href="#admin-theme">Активация темы</a>
   <div class="sidebar-section">Расширения</div>
   <a href="#creditsplus">CreditsPlus</a>
+  <div class="sidebar-section">PHP-код</div>
+  <a href="#livewire">Livewire-компоненты</a>
+  <a href="#routes">Маршруты</a>
   <div class="sidebar-section">База данных</div>
   <a href="#currency">Валюта</a>
   <a href="#categories">Категории (локации)</a>
@@ -483,7 +486,7 @@ php artisan cache:clear</code></pre>
   </ol>
 
   <!-- ══ CREDITSPLUS ══ -->
-  <h2 id="creditsplus"><span class="num">6</span>Расширение CreditsPlus</h2>
+  <h2 id="creditsplus"><span class="num">8</span>Расширение CreditsPlus</h2>
 
   <p>
     CreditsPlus добавляет отображение баланса в навигацию для авторизованных пользователей
@@ -522,8 +525,58 @@ php artisan cache:clear</code></pre>
     <code>extensions/Others/CreditsPlus/resources/views/components/navigation/index.blade.php</code> (для залогиненных)</p>
   </div>
 
+  <!-- ══ LIVEWIRE-КОМПОНЕНТЫ ══ -->
+  <h2 id="livewire"><span class="num">6</span>PHP — Livewire-компоненты</h2>
+
+  <p>Маркетинговые страницы требуют кастомных Livewire-компонентов. Скопируй папку целиком:</p>
+
+  <table>
+    <thead><tr><th>Откуда (архив)</th><th>Куда (Paymenter)</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>app/Livewire/Marketing/</code></td>
+        <td><code>app/Livewire/Marketing/</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Содержимое папки:</p>
+  <table>
+    <thead><tr><th>Файл</th><th>Страница</th></tr></thead>
+    <tbody>
+      <tr><td><code>Pricing.php</code></td><td><code>/pricing</code> — загружает категории/продукты/цены для тарифной сетки</td></tr>
+      <tr><td><code>Locations.php</code></td><td><code>/locations</code></td></tr>
+      <tr><td><code>Contacts.php</code></td><td><code>/contacts</code></td></tr>
+      <tr><td><code>Offer.php</code></td><td><code>/offer</code> — оферта</td></tr>
+      <tr><td><code>Privacy.php</code></td><td><code>/privacy</code> — политика конфиденциальности</td></tr>
+      <tr><td><code>Sla.php</code></td><td><code>/sla</code> — соглашение об уровне сервиса</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ══ МАРШРУТЫ ══ -->
+  <h2 id="routes"><span class="num">7</span>PHP — Маршруты</h2>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <p>Файл <code>routes/web.php</code> в архиве — <strong>полная замена</strong> стандартного файла Paymenter. Если Paymenter уже установлен и в <code>web.php</code> есть кастомные маршруты — используй merge-подход: добавь только нужные строки вручную.</p>
+  </div>
+
+  <p>Если устанавливаешь с нуля — просто скопируй <code>routes/web.php</code> из архива.</p>
+  <p>Если мержишь вручную — добавь следующие строки в начало файла (после existing use-блоков) и в тело файла:</p>
+
+  <pre><code><span class="cm">// Добавить в блок use-импортов:</span>
+<span class="kw">use</span> App\Livewire\Marketing;
+
+<span class="cm">// Добавить маршруты (после Route::get('/', Home::class)...):</span>
+Route::get(<span class="st">'/pricing'</span>, Marketing\Pricing::class)->name(<span class="st">'pricing'</span>);
+Route::get(<span class="st">'/locations'</span>, Marketing\Locations::class)->name(<span class="st">'locations'</span>);
+Route::get(<span class="st">'/contacts'</span>, Marketing\Contacts::class)->name(<span class="st">'contacts'</span>);
+Route::get(<span class="st">'/offer'</span>, Marketing\Offer::class)->name(<span class="st">'offer'</span>);
+Route::get(<span class="st">'/privacy'</span>, Marketing\Privacy::class)->name(<span class="st">'privacy'</span>);
+Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span class="st">'sla'</span>);</code></pre>
+
   <!-- ══ ВАЛЮТА ══ -->
-  <h2 id="currency"><span class="num">7</span>Валюта</h2>
+  <h2 id="currency"><span class="num">9</span>Валюта</h2>
 
   <p>Тема использует рубли как основную валюту. Создай валюту в админке:</p>
 
@@ -553,7 +606,7 @@ php artisan cache:clear</code></pre>
   </div>
 
   <!-- ══ КАТЕГОРИИ ══ -->
-  <h2 id="categories"><span class="num">8</span>Категории — Локации</h2>
+  <h2 id="categories"><span class="num">10</span>Категории — Локации</h2>
 
   <p>
     В теме каждая <strong>top-level категория</strong> (без родителя) = одна локация на странице тарифов.
@@ -603,7 +656,7 @@ php artisan cache:clear</code></pre>
   </div>
 
   <!-- ══ ПРОДУКТЫ ══ -->
-  <h2 id="products"><span class="num">9</span>Продукты — Тарифы</h2>
+  <h2 id="products"><span class="num">11</span>Продукты — Тарифы</h2>
 
   <p>Каждый продукт = один тарифный план (например, «Nano», «Micro», «Pro»).</p>
 
@@ -662,7 +715,7 @@ php artisan cache:clear</code></pre>
   </div>
 
   <!-- ══ CONFIG OPTIONS ══ -->
-  <h2 id="config-options"><span class="num">10</span>Config Options — параметры при заказе</h2>
+  <h2 id="config-options"><span class="num">12</span>Config Options — параметры при заказе</h2>
 
   <p>Config Options — это поля, которые заполняет клиент при оформлении заказа.</p>
 
@@ -708,7 +761,7 @@ php artisan cache:clear</code></pre>
   </div>
 
   <!-- ══ ПЛАНЫ ══ -->
-  <h2 id="plans"><span class="num">11</span>Планы и цены</h2>
+  <h2 id="plans"><span class="num">13</span>Планы и цены</h2>
 
   <p>Каждый продукт может иметь несколько планов (периодов оплаты). Тема распознаёт следующие периоды:</p>
 
@@ -742,7 +795,7 @@ php artisan cache:clear</code></pre>
   </ol>
 
   <!-- ══ НАСТРОЙКИ ТЕМЫ ══ -->
-  <h2 id="theme-settings"><span class="num">12</span>Настройки темы</h2>
+  <h2 id="theme-settings"><span class="num">14</span>Настройки темы</h2>
 
   <p>После активации темы в Admin → Settings → Appearance → Theme Settings:</p>
 
@@ -763,7 +816,7 @@ php artisan cache:clear</code></pre>
   </div>
 
   <!-- ══ ЗАДАЧИ ПРОГРАММИСТУ ══ -->
-  <h2 id="for-dev"><span class="num">13</span>Задачи программисту <span class="tag dev">dev</span></h2>
+  <h2 id="for-dev"><span class="num">15</span>Задачи программисту <span class="tag dev">dev</span></h2>
 
   <p>Следующие вещи выходят за рамки темы и требуют правок в PHP-коде Paymenter:</p>
 
