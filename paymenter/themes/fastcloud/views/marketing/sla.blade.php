@@ -86,7 +86,7 @@
   <div class="fc-legal-section">
     <h2 class="fc-legal-h2">6. Мониторинг и отчётность</h2>
     <p>6.1. Статус всех локаций и сервисов публикуется в реальном времени в Telegram-канале <a href="https://t.me/fastcloud_status" target="_blank" rel="noopener" style="color:var(--fc-accent);">@fastcloud_status</a>.</p>
-    <p>6.2. История инцидентов доступна по адресу <strong>status.fastcloud.eu</strong>.</p>
+    <p>6.2. История инцидентов доступна по адресу <strong>status.fast-cloud.uk</strong>.</p>
     <p>6.3. Плановые технические работы анонсируются в канале статуса не менее чем за 24 часа.</p>
   </div>
 

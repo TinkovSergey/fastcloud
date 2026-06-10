@@ -15,4 +15,5 @@ return [
     'tickets' => 'Тикеты',
     'admin' => 'Администратор',
     'notifications' => 'Уведомления',
+    'logout' => 'Выйти',
 ];

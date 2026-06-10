@@ -35,4 +35,5 @@ return [
     'all_rights_reserved' => 'Все права защищены.',
     'update' => 'Обновить',
     'save' => 'Сохранить',
+    'cancel' => 'Отмена',
 ];

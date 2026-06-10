@@ -7,7 +7,7 @@
       </a>
 
       <div class="fc-auth-side-body">
-        <div class="fc-auth-eyebrow">login · fastcloud.eu</div>
+        <div class="fc-auth-eyebrow">login · fast-cloud.uk</div>
         <h1 class="fc-auth-side-title">С&nbsp;<em>возвращением.</em></h1>
         <p class="fc-auth-side-sub">Серверы работают. Баланс, графики и&nbsp;консоль ждут внутри.</p>
       </div>

@@ -6,7 +6,7 @@
   <div class="fc-hero-inner" style="position:relative;z-index:1">
     <div class="fc-eyebrow">
       <span class="fc-eyebrow-dot"></span>
-      <span id="heroLiveText"><strong>fra1.fastcloud.eu</strong> &middot; только что создан &middot; <em>«за&nbsp;53&nbsp;с, из Берлина»</em></span>
+      <span id="heroLiveText"><strong>fra1.fast-cloud.uk</strong> &middot; только что создан &middot; <em>«за&nbsp;53&nbsp;с, из Берлина»</em></span>
     </div>
     <h1 class="fc-hero-title">
       Поднимите сервер<br>за&nbsp;<span style="color:hsl(var(--color-primary))"><span id="heroNum">55</span></span> <em>секунд.</em>

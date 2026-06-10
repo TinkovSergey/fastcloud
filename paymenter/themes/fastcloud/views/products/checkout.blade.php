@@ -405,6 +405,11 @@ $_categoryUrl  = route('category.show', ['category' => $category->slug]);
           <span wire:loading wire:target="checkout">...</span>
           <span wire:loading.remove wire:target="checkout">{{ $cartProductKey ? 'Сохранить изменения →' : 'Добавить в корзину →' }}</span>
         </button>
+        @if($_hostnameOpt)
+        @error('configOptions.' . $_hostnameOpt->id)
+        <p class="fc-cfg-field-error" style="text-align:center;margin-top:8px;">Укажите название сервера</p>
+        @enderror
+        @endif
         @endif
 
         <div class="fc-cfg-summary-trust">Активация ~55&nbsp;секунд после оплаты</div>

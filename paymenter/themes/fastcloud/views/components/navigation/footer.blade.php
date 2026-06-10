@@ -33,7 +33,7 @@
       <div class="fc-footer-col">
         <div class="fc-footer-label">Поддержка</div>
         <a href="{{ route('contacts') }}" wire:navigate>Написать нам</a>
-        <a href="mailto:support@fastcloud.eu">support@fastcloud.eu</a>
+        <a href="mailto:support@fast-cloud.uk">support@fast-cloud.uk</a>
         <a href="https://t.me/fastcloud_status" target="_blank" rel="noopener">Telegram&#8209;статус</a>
       </div>
 

@@ -65,6 +65,7 @@ $isCheckout = Route::is('products.checkout', 'cart');
     @if($isAuth)
     {{-- Auth pages: no nav, no wrappers, no flex context --}}
     {{ $slot }}
+    <x-notification />
     @else
     <x-navigation />
     <div class="w-full flex flex-grow">

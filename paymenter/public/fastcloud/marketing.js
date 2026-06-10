@@ -112,15 +112,15 @@ var FC_LIME_RGB = (function () {
   var el = document.getElementById('heroLiveText');
   if (!el) return;
   var events = [
-    '<strong>fra1.fastcloud.eu</strong> · только что создан · <em>«за&nbsp;53&nbsp;с, из Берлина»</em>',
-    '<strong>sgp1.fastcloud.eu</strong> · сервер запущен · <em>«ping&nbsp;<span style="color:#20b5eb">12&nbsp;ms</span> из Токио»</em>',
-    '<strong>nyc1.fastcloud.eu</strong> · создан · <em>«за&nbsp;41&nbsp;с, из Нью-Йорка»</em>',
-    '<strong>ams1.fastcloud.eu</strong> · WordPress установлен · <em>«за&nbsp;38&nbsp;с, из Амстердама»</em>',
-    '<strong>lon1.fastcloud.eu</strong> · Docker задеплоен · <em>«за&nbsp;45&nbsp;с, из Лондона»</em>',
-    '<strong>tor1.fastcloud.eu</strong> · создан · <em>«за&nbsp;48&nbsp;с, из Торонто»</em>',
-    '<strong>mum1.fastcloud.eu</strong> · создан · <em>«за&nbsp;44&nbsp;с, из Мумбаи»</em>',
-    '<strong>syd1.fastcloud.eu</strong> · GitLab готов · <em>«за&nbsp;52&nbsp;с, из Сиднея»</em>',
-    '<strong>waw1.fastcloud.eu</strong> · создан · <em>«за&nbsp;36&nbsp;с, из Варшавы»</em>',
+    '<strong>fra1.fast-cloud.uk</strong> · только что создан · <em>«за&nbsp;53&nbsp;с, из Берлина»</em>',
+    '<strong>sgp1.fast-cloud.uk</strong> · сервер запущен · <em>«ping&nbsp;<span style="color:#20b5eb">12&nbsp;ms</span> из Токио»</em>',
+    '<strong>nyc1.fast-cloud.uk</strong> · создан · <em>«за&nbsp;41&nbsp;с, из Нью-Йорка»</em>',
+    '<strong>ams1.fast-cloud.uk</strong> · WordPress установлен · <em>«за&nbsp;38&nbsp;с, из Амстердама»</em>',
+    '<strong>lon1.fast-cloud.uk</strong> · Docker задеплоен · <em>«за&nbsp;45&nbsp;с, из Лондона»</em>',
+    '<strong>tor1.fast-cloud.uk</strong> · создан · <em>«за&nbsp;48&nbsp;с, из Торонто»</em>',
+    '<strong>mum1.fast-cloud.uk</strong> · создан · <em>«за&nbsp;44&nbsp;с, из Мумбаи»</em>',
+    '<strong>syd1.fast-cloud.uk</strong> · GitLab готов · <em>«за&nbsp;52&nbsp;с, из Сиднея»</em>',
+    '<strong>waw1.fast-cloud.uk</strong> · создан · <em>«за&nbsp;36&nbsp;с, из Варшавы»</em>',
   ];
   var idx = 0;
   function tick() {

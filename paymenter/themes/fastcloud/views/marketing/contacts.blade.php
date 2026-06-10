@@ -67,7 +67,7 @@
     <p class="fc-contact-block-desc">Живые инженеры в&nbsp;чате, e‑mail и&nbsp;Telegram. Среднее время первого ответа&nbsp;— меньше&nbsp;5&nbsp;минут, даже ночью.</p>
     <div class="fc-contact-block-links">
       <a href="https://t.me/fastcloud_support" target="_blank" rel="noopener" class="fc-contact-block-link">Telegram: @fastcloud_support</a>
-      <a href="mailto:support@fastcloud.eu" class="fc-contact-block-link">support@fastcloud.eu</a>
+      <a href="mailto:support@fast-cloud.uk" class="fc-contact-block-link">support@fast-cloud.uk</a>
     </div>
     <a href="https://t.me/fastcloud_support" target="_blank" rel="noopener" class="fc-contact-block-cta">Написать в&nbsp;поддержку →</a>
   </div>
@@ -82,10 +82,10 @@
     <h3 class="fc-contact-block-title">Продажи</h3>
     <p class="fc-contact-block-desc">Нестандартная конфигурация, bare‑metal, кластеры или&nbsp;большой объём? Подберём решение и&nbsp;посчитаем смету индивидуально.</p>
     <div class="fc-contact-block-links">
-      <a href="mailto:sales@fastcloud.eu" class="fc-contact-block-link">sales@fastcloud.eu</a>
+      <a href="mailto:sales@fast-cloud.uk" class="fc-contact-block-link">sales@fast-cloud.uk</a>
       <span class="fc-contact-block-link">Договор и&nbsp;закрывающие документы</span>
     </div>
-    <a href="mailto:sales@fastcloud.eu" class="fc-contact-block-cta">Написать в&nbsp;продажи →</a>
+    <a href="mailto:sales@fast-cloud.uk" class="fc-contact-block-cta">Написать в&nbsp;продажи →</a>
   </div>
 
 </div>

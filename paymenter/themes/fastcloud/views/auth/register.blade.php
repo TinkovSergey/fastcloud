@@ -7,7 +7,7 @@
       </a>
 
       <div class="fc-auth-side-body">
-        <div class="fc-auth-eyebrow">sign up · fastcloud.eu</div>
+        <div class="fc-auth-eyebrow">sign up · fast-cloud.uk</div>
         <h1 class="fc-auth-side-title">Сервер за&nbsp;<em>55&nbsp;секунд.</em></h1>
         <p class="fc-auth-side-sub">
           Без верификации, без скрытых платежей.

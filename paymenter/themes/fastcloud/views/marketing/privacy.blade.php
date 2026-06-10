@@ -16,7 +16,7 @@
 
   <div class="fc-legal-section">
     <h2 class="fc-legal-h2">1. Оператор данных</h2>
-    <p>Оператором персональных данных является <strong>FastCloud OÜ</strong> (рег. №&nbsp;16587234), Harju maakond, Tallinn, 10145, Estonia. Контакт по вопросам защиты данных: <a href="mailto:privacy@fastcloud.eu" style="color:var(--fc-accent);">privacy@fastcloud.eu</a>.</p>
+    <p>Оператором персональных данных является <strong>FastCloud OÜ</strong> (рег. №&nbsp;16587234), Harju maakond, Tallinn, 10145, Estonia. Контакт по вопросам защиты данных: <a href="mailto:privacy@fast-cloud.uk" style="color:var(--fc-accent);">privacy@fast-cloud.uk</a>.</p>
   </div>
 
   <div class="fc-legal-section">
@@ -58,7 +58,7 @@
     <p><strong>Ограничение обработки (ст. 18)</strong> — ограничить обработку в отдельных случаях.</p>
     <p><strong>Переносимость (ст. 20)</strong> — получить данные в машиночитаемом формате.</p>
     <p><strong>Возражение (ст. 21)</strong> — возразить против обработки на основании законного интереса.</p>
-    <p>Для реализации прав обратитесь на <a href="mailto:privacy@fastcloud.eu" style="color:var(--fc-accent);">privacy@fastcloud.eu</a>. Срок ответа — 30 дней. При нарушении прав вы можете подать жалобу в Инспекцию по защите данных Эстонии (AKI).</p>
+    <p>Для реализации прав обратитесь на <a href="mailto:privacy@fast-cloud.uk" style="color:var(--fc-accent);">privacy@fast-cloud.uk</a>. Срок ответа — 30 дней. При нарушении прав вы можете подать жалобу в Инспекцию по защите данных Эстонии (AKI).</p>
   </div>
 
   <div class="fc-legal-section">
@@ -81,9 +81,9 @@
   <canvas id="ctaFx" class="fc-cta-canvas"></canvas>
   <div class="fc-cta-inner">
     <h2 class="fc-cta-title">Остались <em>вопросы?</em></h2>
-    <p class="fc-cta-sub">По вопросам защиты данных — privacy@fastcloud.eu.</p>
+    <p class="fc-cta-sub">По вопросам защиты данных — privacy@fast-cloud.uk.</p>
     <div class="fc-cta-btns">
-      <a href="mailto:privacy@fastcloud.eu" class="fc-btn-lime">Написать &rarr;</a>
+      <a href="mailto:privacy@fast-cloud.uk" class="fc-btn-lime">Написать &rarr;</a>
       <a href="{{ route('register') }}" wire:navigate class="fc-btn-ghost">Создать аккаунт</a>
     </div>
   </div>
