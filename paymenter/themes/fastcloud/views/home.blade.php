@@ -398,7 +398,7 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
   <div class="fc-story-inner">
     <div class="fc-story-text">
       <div class="fc-story-num reveal"><span class="step">07</span> &nbsp;/&nbsp; маркетплейс</div>
-      <div class="fc-story-tag reveal d-1">50+ приложений в 1 клик</div>
+      <div class="fc-story-tag reveal d-1">готовые образы &middot; 1 клик</div>
       <h2 class="fc-story-title reveal d-2">WordPress. Docker. n8n. <em>Один</em> клик.</h2>
       <p class="fc-story-desc reveal d-3">Снижает барьер входа для нетехнических клиентов и экономит время инженерам. Готовые образы с предустановленным TLS, fail2ban и cron&#8209;бэкапом.</p>
       <ul class="fc-story-list reveal d-4">
@@ -412,7 +412,7 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
         <div class="fc-app-bar">
           <div class="fc-app-search">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            <span>Поиск среди 50+&nbsp;приложений&hellip;</span>
+            <span>Поиск по маркетплейсу&hellip;</span>
           </div>
           <div class="fc-app-chips">
             <span class="fc-app-chip on">все</span>
@@ -422,14 +422,14 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
           </div>
         </div>
         <div class="fc-app-grid">
-          <div class="fc-app-card"><div class="fc-app-icon wp">WP</div><div class="fc-app-name">WordPress</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;&nbsp;38&nbsp;с</span></div><span class="fc-app-pop">&#9733;</span></div>
-          <div class="fc-app-card"><div class="fc-app-icon docker">DO</div><div class="fc-app-name">Docker</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;&nbsp;42&nbsp;с</span></div></div>
-          <div class="fc-app-card"><div class="fc-app-icon gitlab">GL</div><div class="fc-app-name">GitLab</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;&nbsp;55&nbsp;с</span></div></div>
-          <div class="fc-app-card"><div class="fc-app-icon n8n">n8</div><div class="fc-app-name">n8n</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;&nbsp;36&nbsp;с</span></div></div>
-          <div class="fc-app-card"><div class="fc-app-icon portainer">PT</div><div class="fc-app-name">Portainer</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;&nbsp;30&nbsp;с</span></div></div>
-          <div class="fc-app-card"><div class="fc-app-icon ghost">GH</div><div class="fc-app-name">Ghost</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;&nbsp;44&nbsp;с</span></div></div>
-          <div class="fc-app-card"><div class="fc-app-icon nginx">NX</div><div class="fc-app-name">Nginx</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;&nbsp;28&nbsp;с</span></div></div>
-          <div class="fc-app-card"><div class="fc-app-icon more">+43</div><div class="fc-app-name">ещё</div><div class="fc-app-meta">в маркетплейсе</div></div>
+          <div class="fc-app-card"><div class="fc-app-icon wp">WP</div><div class="fc-app-name">WordPress</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;</span></div><span class="fc-app-pop">&#9733;</span></div>
+          <div class="fc-app-card"><div class="fc-app-icon docker">DO</div><div class="fc-app-name">Docker</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;</span></div></div>
+          <div class="fc-app-card"><div class="fc-app-icon gitlab">GL</div><div class="fc-app-name">GitLab</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;</span></div></div>
+          <div class="fc-app-card"><div class="fc-app-icon n8n">n8</div><div class="fc-app-name">n8n</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;</span></div></div>
+          <div class="fc-app-card"><div class="fc-app-icon portainer">PT</div><div class="fc-app-name">Portainer</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;</span></div></div>
+          <div class="fc-app-card"><div class="fc-app-icon ghost">GH</div><div class="fc-app-name">Ghost</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;</span></div></div>
+          <div class="fc-app-card"><div class="fc-app-icon nginx">NX</div><div class="fc-app-name">Nginx</div><div class="fc-app-meta"><span class="fc-app-time">&#9889;</span></div></div>
+          <div class="fc-app-card"><div class="fc-app-icon more">&middot;&middot;&middot;</div><div class="fc-app-name">ещё</div><div class="fc-app-meta">в маркетплейсе</div></div>
         </div>
       </div>
     </div>
