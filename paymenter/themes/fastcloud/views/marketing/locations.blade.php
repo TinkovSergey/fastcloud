@@ -1,19 +1,4 @@
 {{-- ═══ LOCATIONS PAGE ═══════════════════════════════════════════════════ --}}
-<div>
-<div class="fc-mkt-wrap">
-
-{{-- ── Hero ────────────────────────────────────────────────────────────── --}}
-<div class="fc-mkt-hero">
-  <div>
-    <div class="fc-mkt-hero-eyebrow">FastCloud · network</div>
-    <h1 class="fc-mkt-hero-title">{{ $_locCount }}&nbsp;{{ $_locNoun }}. <em>Одна&nbsp;сеть.</em></h1>
-  </div>
-  <div>
-    <p class="fc-mkt-hero-sub">NVMe&nbsp;Gen4 · сеть&nbsp;10&nbsp;Gbps · Anti&#8209;DDoS включён · одинаковые тарифы во&nbsp;всех локациях.</p>
-    <div style="margin-top:16px;"><span class="fc-chip-green">Все локации в норме</span></div>
-  </div>
-</div>
-
 @php
 $_byRegion = [];
 foreach (\App\Models\Category::whereNotNull('description')->orderBy('sort')->get() as $_cat) {
@@ -41,6 +26,20 @@ $_r2 = $_locCount % 100; $_d2 = $_locCount % 10;
 $_locNoun = ($_r2 >= 11 && $_r2 <= 19) ? 'локаций'
     : (($_d2 == 1) ? 'локация' : (($_d2 >= 2 && $_d2 <= 4) ? 'локации' : 'локаций'));
 @endphp
+<div>
+<div class="fc-mkt-wrap">
+
+{{-- ── Hero ────────────────────────────────────────────────────────────── --}}
+<div class="fc-mkt-hero">
+  <div>
+    <div class="fc-mkt-hero-eyebrow">FastCloud · network</div>
+    <h1 class="fc-mkt-hero-title">{{ $_locCount }}&nbsp;{{ $_locNoun }}. <em>Одна&nbsp;сеть.</em></h1>
+  </div>
+  <div>
+    <p class="fc-mkt-hero-sub">NVMe&nbsp;Gen4 · сеть&nbsp;10&nbsp;Gbps · Anti&#8209;DDoS включён · одинаковые тарифы во&nbsp;всех локациях.</p>
+    <div style="margin-top:16px;"><span class="fc-chip-green">Все локации в норме</span></div>
+  </div>
+</div>
 
 @foreach($_byRegion as $_regionKey => $_region)
 <div class="fc-region-label">{{ $_region['label'] }}</div>
