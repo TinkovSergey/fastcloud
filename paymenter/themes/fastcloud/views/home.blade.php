@@ -221,7 +221,7 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
         <span style="color:var(--fc-text-dim);">&middot;</span>
         <span style="color:var(--fc-text);font-weight:600;">1.24&nbsp;Tbps</span>
       </div>
-        <svg class="fc-map-svg" viewBox="0 -7 125.762 72" xmlns="http://www.w3.org/2000/svg" style="clip-path:inset(0 0 30px 0)">
+        <svg class="fc-map-svg" viewBox="0 8 125.762 72" xmlns="http://www.w3.org/2000/svg" style="clip-path:inset(0 0 30px 0)">
           <defs>
             <filter id="fcglow" x="-100%" y="-100%" width="300%" height="300%">
               <feGaussianBlur stdDeviation="1.2" result="b"/>
