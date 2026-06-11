@@ -17,11 +17,21 @@ $_locNoun = ($_r2 >= 11 && $_r2 <= 19) ? 'локаций'
     <h1 class="fc-mkt-hero-title">{{ $_locCount }}&nbsp;{{ $_locNoun }}. <em>Одна&nbsp;сеть.</em></h1>
   </div>
   <div>
-    <p class="fc-mkt-hero-sub">NVMe&nbsp;Gen4 · сеть&nbsp;10&nbsp;Gbps · Anti&#8209;DDoS включён · одинаковые тарифы во&nbsp;всех локациях.</p>
-    <div style="margin-top:16px;"><span class="fc-chip-green">Все локации в норме</span></div>
+    <div style="margin-bottom:16px;"><span class="fc-chip-green">Все локации в норме</span></div>
+    <p class="fc-mkt-hero-sub">NVMe&nbsp;Gen4 · сеть&nbsp;10&nbsp;Gbps · Anti&#8209;DDoS включён · один SLA во&nbsp;всех локациях.</p>
   </div>
 </div>
 
+@if($_locCount < 4)
+{{-- Мало локаций — показываем все в одной сетке без разделения по регионам --}}
+<div class="fc-dc-grid" style="margin-bottom:0;">
+  @foreach($locations as $_regionKey => $_region)
+    @foreach($_region['locations'] as $dc)
+    @include('marketing._dc-card', $dc)
+    @endforeach
+  @endforeach
+</div>
+@else
 @foreach($locations as $_regionKey => $_region)
 <div class="fc-region-label">{{ $_region['label'] }}</div>
 <div class="fc-dc-grid" style="{{ $loop->last ? 'margin-bottom:0;' : '' }}">
@@ -30,14 +40,15 @@ $_locNoun = ($_r2 >= 11 && $_r2 <= 19) ? 'локаций'
   @endforeach
 </div>
 @endforeach
+@endif
 
 {{-- ── Features carousel ──────────────────────────────────────────────── --}}
 <div class="fc-feat-carousel" data-fc-feat-carousel>
   <div class="fc-feat-track">
     <div class="fc-feat-item">
       <div class="fc-feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></div>
-      <div class="fc-feat-title">Одинаковые тарифы</div>
-      <div class="fc-feat-desc">Цена не зависит от локации. Выбирай по пингу, не по бюджету.</div>
+      <div class="fc-feat-title">Тарифы для каждой локации</div>
+      <div class="fc-feat-desc">Выбирай локацию по географии&nbsp;— ближе к&nbsp;аудитории, меньше задержка.</div>
     </div>
     <div class="fc-feat-item">
       <div class="fc-feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg></div>

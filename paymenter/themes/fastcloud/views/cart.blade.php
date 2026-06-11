@@ -180,7 +180,7 @@
           <span wire:loading wire:target="checkout">Обрабатываем...</span>
         </button>
 
-        <div class="fc-cfg-summary-trust">Возврат в первые 7&nbsp;дней</div>
+        <div class="fc-cfg-summary-trust">Поддержка 24/7 · Без скрытых платежей</div>
       </div>
     </aside>
     @endif

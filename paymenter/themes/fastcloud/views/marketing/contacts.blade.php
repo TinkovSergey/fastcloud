@@ -32,7 +32,7 @@
 
     <details class="fc-faq-item">
       <summary>Можно ли&nbsp;поменять тариф после покупки?<span class="fc-faq-mark"></span></summary>
-      <div class="fc-faq-body">Да, апгрейд и&nbsp;даунгрейд&nbsp;— в&nbsp;1&nbsp;клик из&nbsp;панели, без&nbsp;переустановки и&nbsp;смены IP. При&nbsp;апгрейде доплачивается только разница за&nbsp;оставшийся период.</div>
+      <div class="fc-faq-body">Апгрейд&nbsp;— да, в&nbsp;1&nbsp;клик из&nbsp;панели без&nbsp;переустановки и&nbsp;смены IP. Доплачивается разница за&nbsp;оставшийся период. Даунгрейд недоступен&nbsp;— выбирайте тариф с&nbsp;запасом.</div>
     </details>
 
     <details class="fc-faq-item">
@@ -41,13 +41,13 @@
     </details>
 
     <details class="fc-faq-item">
-      <summary>Есть ли&nbsp;возврат средств?<span class="fc-faq-mark"></span></summary>
-      <div class="fc-faq-body">Да. Если что‑то пошло не&nbsp;так в&nbsp;первые 7&nbsp;дней&nbsp;— вернём неиспользованный остаток на&nbsp;баланс или&nbsp;исходный способ оплаты. Удалить сервер можно в&nbsp;любой момент без&nbsp;штрафов.</div>
+      <summary>Возвращаете ли&nbsp;деньги?<span class="fc-faq-mark"></span></summary>
+      <div class="fc-faq-body">Нет. Все тарифы оплачиваются авансом за выбранный период&nbsp;— возврат не&nbsp;предусмотрен. Удалить сервер можно в&nbsp;любой момент, однако оставшиеся дни не&nbsp;компенсируются. Рекомендуем начать с&nbsp;минимального периода.</div>
     </details>
 
     <details class="fc-faq-item">
       <summary>В&nbsp;какой локации лучше брать сервер?<span class="fc-faq-mark"></span></summary>
-      <div class="fc-faq-body">Выбирайте регион, ближайший к&nbsp;вашей аудитории&nbsp;— это минимальная задержка. На&nbsp;странице <a href="{{ route('locations') }}" wire:navigate>Локации</a> есть пинг‑тесты из&nbsp;разных городов. Актуальную цену смотрите в&nbsp;<a href="{{ route('pricing') }}" wire:navigate>Тарифах</a>.</div>
+      <div class="fc-faq-body">Выбирайте регион, ближайший к&nbsp;вашей аудитории&nbsp;— это минимальная задержка. Доступные локации смотрите на&nbsp;странице <a href="{{ route('locations') }}" wire:navigate>Локации</a>, актуальные цены&nbsp;— в&nbsp;<a href="{{ route('pricing') }}" wire:navigate>Тарифах</a>.</div>
     </details>
 
   </div>
@@ -64,7 +64,7 @@
       <span class="fc-contact-block-status">онлайн&nbsp;24/7</span>
     </div>
     <h3 class="fc-contact-block-title">Поддержка</h3>
-    <p class="fc-contact-block-desc">Живые инженеры в&nbsp;чате, e‑mail и&nbsp;Telegram. Среднее время первого ответа&nbsp;— меньше&nbsp;5&nbsp;минут, даже ночью.</p>
+    <p class="fc-contact-block-desc">Живые инженеры в&nbsp;чате, e‑mail и&nbsp;Telegram. Работаем 24/7&nbsp;— без&nbsp;ботов и&nbsp;автоответчиков.</p>
     <div class="fc-contact-block-links">
       <a href="https://t.me/fastcloud_support" target="_blank" rel="noopener" class="fc-contact-block-link">Telegram: @fastcloud_support</a>
       <a href="mailto:support@fast-cloud.uk" class="fc-contact-block-link">support@fast-cloud.uk</a>

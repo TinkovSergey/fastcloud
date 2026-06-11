@@ -1,11 +1,11 @@
-/* ════════════════════════════════════════════
-   FastCloud · Marketing — scoped under .fc-page
-   Все классы с префиксом fc- не конфликтуют с темой Paymenter
-   ════════════════════════════════════════════ */
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FastCloud Â· Marketing â€” scoped under .fc-page
+   Ð’ÑÐµ ÐºÐ»Ð°ÑÑÑ‹ Ñ Ð¿Ñ€ÐµÑ„Ð¸ÐºÑÐ¾Ð¼ fc- Ð½Ðµ ÐºÐ¾Ð½Ñ„Ð»Ð¸ÐºÑ‚ÑƒÑŽÑ‚ Ñ Ñ‚ÐµÐ¼Ð¾Ð¹ Paymenter
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
 
-/* ── Keyframes (глобальные) ──────────────────────────────────────────── */
+/* â”€â”€ Keyframes (Ð³Ð»Ð¾Ð±Ð°Ð»ÑŒÐ½Ñ‹Ðµ) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @keyframes fc-blink    { 0%,100%{opacity:1} 50%{opacity:.3} }
 @keyframes fc-liveIn   { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
 @keyframes fc-liveOut  { from{opacity:1;transform:translateY(0)} to{opacity:0;transform:translateY(-6px)} }
@@ -16,13 +16,13 @@
 @keyframes fc-dcPulse  { 0%{transform:scale(.6);opacity:.7} 100%{transform:scale(3.8);opacity:0} }
 @keyframes fc-arcFlow  { to{stroke-dashoffset:-36} }
 
-/* ── Global tokens (доступны в JS через getComputedStyle) ───────────── */
+/* â”€â”€ Global tokens (Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ñ‹ Ð² JS Ñ‡ÐµÑ€ÐµÐ· getComputedStyle) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --fc-lime:     #b5f53a;
   --fc-lime-rgb: 181,245,58;
 }
 
-/* ── Design tokens — на всех маркетинговых страницах ────────────────── */
+/* â”€â”€ Design tokens â€” Ð½Ð° Ð²ÑÐµÑ… Ð¼Ð°Ñ€ÐºÐµÑ‚Ð¸Ð½Ð³Ð¾Ð²Ñ‹Ñ… ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°Ñ… â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --fc-bg:         #0a0c13;
   --fc-bg-elev:    #0f1219;
@@ -88,14 +88,14 @@ body.fc-marketing {
   -webkit-font-smoothing: antialiased;
 }
 
-/* .fc-page наследует токены от body.fc-marketing */
+/* .fc-page Ð½Ð°ÑÐ»ÐµÐ´ÑƒÐµÑ‚ Ñ‚Ð¾ÐºÐµÐ½Ñ‹ Ð¾Ñ‚ body.fc-marketing */
 .fc-page {
   font-family: var(--fc-font);
   color: var(--fc-text);
   background: var(--fc-bg);
 }
 
-/* ── Reveal animation ────────────────────────────────────────────────── */
+/* â”€â”€ Reveal animation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fc-page .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -107,7 +107,7 @@ body.fc-marketing {
 .fc-page .reveal.d-3 { transition-delay: .32s; }
 .fc-page .reveal.d-4 { transition-delay: .44s; }
 
-/* ── Text utilities ──────────────────────────────────────────────────── */
+/* â”€â”€ Text utilities â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fc-page .hi      { color: var(--fc-text); }
 .fc-page .accent  { color: var(--fc-accent); }
 .fc-page .c-dim   { color: var(--fc-text-dim); }
@@ -115,7 +115,7 @@ body.fc-marketing {
 .fc-page .step    { color: var(--fc-accent); font-weight: 700; }
 .fc-page em       { font-family: var(--fc-serif); font-style: italic; font-weight: 400; color: var(--fc-accent); }
 
-/* ── Buttons ─────────────────────────────────────────────────────────── */
+/* â”€â”€ Buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fc-btn-primary, .fc-btn-ghost, .fc-btn-lime {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   padding: 14px 28px; border-radius: 999px; border: 1px solid transparent;
@@ -133,7 +133,7 @@ body.fc-marketing {
   color: #0a0c13;
 }
 .fc-btn-primary {
-  background: var(--fc-accent); color: var(--fc-on-accent);
+  background: var(--fc-lime); color: #0a0c13;
 }
 .fc-btn-primary:hover {
   background: var(--fc-accent-h);
@@ -150,11 +150,11 @@ body.fc-marketing {
   color: var(--fc-accent);
 }
 
-/* ════════════════════════════════════════════
-   NAV — marketing override
-   ════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   NAV â€” marketing override
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* Прозрачный фон на маркетинговых страницах, blur при скролле */
+/* ÐŸÑ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ñ‹Ð¹ Ñ„Ð¾Ð½ Ð½Ð° Ð¼Ð°Ñ€ÐºÐµÑ‚Ð¸Ð½Ð³Ð¾Ð²Ñ‹Ñ… ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°Ñ…, blur Ð¿Ñ€Ð¸ ÑÐºÑ€Ð¾Ð»Ð»Ðµ */
 body.fc-marketing nav.fixed {
   background-color: transparent !important;
   border-bottom-color: transparent !important;
@@ -166,7 +166,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
   border-bottom-color: var(--fc-border) !important;
 }
 
-/* Пункты меню — pill-стиль */
+/* ÐŸÑƒÐ½ÐºÑ‚Ñ‹ Ð¼ÐµÐ½ÑŽ â€” pill-ÑÑ‚Ð¸Ð»ÑŒ */
 .fc-mkt-nav-link {
   padding: 7px 14px; border-radius: 999px;
   color: var(--fc-text2); font-size: 14px; font-weight: 500;
@@ -176,16 +176,16 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-mkt-nav-link:hover { color: var(--fc-text); background: rgba(255,255,255,.04); }
 .fc-mkt-nav-link.on { color: var(--fc-text); background: rgba(255,255,255,.06); }
 
-/* Маленькие кнопки для навбара */
+/* ÐœÐ°Ð»ÐµÐ½ÑŒÐºÐ¸Ðµ ÐºÐ½Ð¾Ð¿ÐºÐ¸ Ð´Ð»Ñ Ð½Ð°Ð²Ð±Ð°Ñ€Ð° */
 .fc-btn-sm { padding: 7px 16px !important; font-size: 12.5px !important; }
 
-/* Полноширинная кнопка для мобильного меню */
+/* ÐŸÐ¾Ð»Ð½Ð¾ÑˆÐ¸Ñ€Ð¸Ð½Ð½Ð°Ñ ÐºÐ½Ð¾Ð¿ÐºÐ° Ð´Ð»Ñ Ð¼Ð¾Ð±Ð¸Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ð¼ÐµÐ½ÑŽ */
 .fc-btn-block { display: flex; width: 100%; justify-content: center; padding: 12px 20px; }
 
 /* Sidebar submenu indent */
 .fc-sidebar-children { padding-left: 30px; }
 
-/* Круглые иконки-кнопки в навбаре (корзина, уведомления) */
+/* ÐšÑ€ÑƒÐ³Ð»Ñ‹Ðµ Ð¸ÐºÐ¾Ð½ÐºÐ¸-ÐºÐ½Ð¾Ð¿ÐºÐ¸ Ð² Ð½Ð°Ð²Ð±Ð°Ñ€Ðµ (ÐºÐ¾Ñ€Ð·Ð¸Ð½Ð°, ÑƒÐ²ÐµÐ´Ð¾Ð¼Ð»ÐµÐ½Ð¸Ñ) */
 .fc-nav-icon-btn {
   width: 36px; height: 36px; border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
@@ -197,10 +197,10 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-nav-icon-btn.on { color: var(--fc-text); background: rgba(255,255,255,.08); }
 
 @media (max-width: 575px) {
-  .fc-nav-logo img { height: 1.375rem; } /* 22px вместо 32px */
+  .fc-nav-logo img { height: 1.375rem; } /* 22px Ð²Ð¼ÐµÑÑ‚Ð¾ 32px */
 }
 
-/* Мобильные ссылки в слайдовере */
+/* ÐœÐ¾Ð±Ð¸Ð»ÑŒÐ½Ñ‹Ðµ ÑÑÑ‹Ð»ÐºÐ¸ Ð² ÑÐ»Ð°Ð¹Ð´Ð¾Ð²ÐµÑ€Ðµ */
 .fc-mkt-mob-link {
   display: block; padding: 12px 4px;
   font-size: 15px; font-weight: 500;
@@ -212,9 +212,9 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-mkt-mob-link:hover { color: var(--fc-text); }
 .fc-mkt-mob-link.on { color: var(--fc-accent); font-weight: 600; }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    HERO
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .fc-hero {
   position: relative; overflow: hidden;
   min-height: 100vh; padding: 130px 40px 90px;
@@ -290,9 +290,9 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-meta-lbl  { font-size: 11px; color: var(--fc-text3); text-transform: uppercase; letter-spacing: .08em; font-family: var(--fc-mono); }
 .fc-meta-div  { width: 1px; height: 28px; background: var(--fc-border2); }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    MANIFEST
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .fc-manifest { padding: 130px 40px; background: var(--fc-bg); }
 .fc-manifest-inner { max-width: 1180px; margin: 0 auto; }
 .fc-manifest-text {
@@ -308,9 +308,9 @@ body.fc-marketing nav.fixed.fc-scrolled {
   text-transform: uppercase; letter-spacing: .12em; color: var(--fc-text3);
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    STORY SECTIONS
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .fc-story {
   padding: 100px 40px;
   border-top: 1px solid var(--fc-border);
@@ -358,7 +358,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
   background-repeat: no-repeat; background-position: center;
 }
 
-/* ── Deploy Card (Speed) ────────────────────────────────────────────── */
+/* â”€â”€ Deploy Card (Speed) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @keyframes fc-dc-spin    { to { transform: rotate(360deg); } }
 @keyframes fc-dc-pulse   { 0%,100%{opacity:1} 50%{opacity:.25} }
 @keyframes fc-dc-fadeup  { from{opacity:0;transform:translateY(7px)} to{opacity:1;transform:translateY(0)} }
@@ -409,7 +409,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-deploy-total-val { font-family: var(--fc-font); font-size: 22px; font-weight: 700; color: var(--fc-lime); }
 .fc-deploy-total-lbl { font-family: var(--fc-mono); font-size: 11px; color: var(--fc-text3); text-transform: uppercase; letter-spacing: .08em; }
 
-/* ── Shield (DDoS) ────────────────────────────────────────────────── */
+/* â”€â”€ Shield (DDoS) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fc-shield-viz  { flex: 1; display: flex; flex-direction: column; gap: 18px; }
 .fc-shield-orb  { position: relative; flex: 1; min-height: 240px; display: flex; align-items: center; justify-content: center; }
 .fc-shield-core {
@@ -435,7 +435,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
   background: rgba(255,84,112,.08); border: 1px solid rgba(255,84,112,.3);
   color: var(--fc-red); white-space: nowrap; animation: fc-attackFloat 4s infinite;
 }
-.fc-shield-attack::after { content: ' ✕'; color: var(--fc-red); font-weight: 700; }
+.fc-shield-attack::after { content: ' âœ•'; color: var(--fc-red); font-weight: 700; }
 .fc-shield-attack.a1 { top: 10%;    left: 0%;   animation-delay: 0s; }
 .fc-shield-attack.a2 { top: 30%;    right: 0%;  animation-delay: 1.1s; }
 .fc-shield-attack.a3 { bottom: 18%; left: 6%;   animation-delay: 2.2s; }
@@ -446,7 +446,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-shield-stat-val.accent { color: var(--fc-accent); }
 .fc-shield-stat-lbl { font-size: 11px; color: var(--fc-text3); margin-top: 4px; }
 
-/* ── Incl List (Pricing) ──────────────────────────────────────────── */
+/* â”€â”€ Incl List (Pricing) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fc-incl-list { display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .fc-incl-head {
   font-family: var(--fc-mono); font-size: 11px; font-weight: 600;
@@ -458,7 +458,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-incl-label { font-size: 13.5px; font-weight: 600; color: var(--fc-text); }
 .fc-incl-sub   { font-size: 12px; color: var(--fc-text3); margin-top: 2px; }
 
-/* ── Backups ──────────────────────────────────────────────────────── */
+/* â”€â”€ Backups â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fc-bkp { display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .fc-bkp-row {
   display: flex; align-items: center; gap: 14px;
@@ -474,7 +474,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-bkp-size { font-family: var(--fc-mono); font-size: 12px; color: var(--fc-text2); }
 .fc-bkp-tick { color: var(--fc-accent); }
 
-/* ── Map (Locations) ──────────────────────────────────────────────── */
+/* â”€â”€ Map (Locations) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fc-map-visual {
   background: transparent !important;
   border: none !important;
@@ -513,7 +513,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .pkt-map    { fill: var(--fc-lime); filter: url(#fcglow); }
 .dc-pulse-map { transform-origin: center; animation: fc-dcPulse 2.4s ease-out infinite; transform-box: fill-box; }
 
-/* ── Chat (Support) ───────────────────────────────────────────────── */
+/* â”€â”€ Chat (Support) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fc-chat {
   display: flex; flex-direction: column; flex: 1;
   background: var(--fc-bg-elev); border: 1px solid var(--fc-border);
@@ -537,7 +537,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-chat-typing span:nth-child(3) { animation-delay: .4s; }
 .fc-chat-time { font-size: 11px; color: var(--fc-text3); text-align: center; padding: 0 20px 14px; }
 
-/* ── App Marketplace ──────────────────────────────────────────────── */
+/* â”€â”€ App Marketplace â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fc-app-mp { display: flex; flex-direction: column; gap: 14px; flex: 1; }
 .fc-app-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .fc-app-search {
@@ -574,15 +574,15 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-app-icon.portainer { background: #6e40c9; }
 .fc-app-icon.ghost     { background: #15171a; border: 1px solid #2a2d31; }
 .fc-app-icon.nginx     { background: #009639; }
-.fc-app-icon.more      { background: var(--fc-accent); color: var(--fc-on-accent); }
+.fc-app-icon.more      { background: var(--fc-lime); color: #0a0c13; }
 .fc-app-name { font-size: 12.5px; font-weight: 600; color: var(--fc-text); line-height: 1.2; }
 .fc-app-meta { font-family: var(--fc-mono); font-size: 10px; display: flex; align-items: center; gap: 6px; width: 100%; }
 .fc-app-time { color: var(--fc-accent); background: rgba(32,181,235,.08); padding: 1px 6px; border-radius: 4px; margin-left: auto; }
 .fc-app-pop  { position: absolute; top: 6px; right: 8px; font-size: 11px; color: var(--fc-accent); text-shadow: 0 0 6px rgba(32,181,235,.55); }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    PLANS PREVIEW
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .fc-plans { padding: 100px 40px; border-top: 1px solid var(--fc-border); background: var(--fc-bg); }
 .fc-plans-inner { max-width: 1180px; margin: 0 auto; }
 .fc-plans-head {
@@ -607,17 +607,25 @@ body.fc-marketing nav.fixed.fc-scrolled {
   background: var(--fc-surface); border: 1px solid var(--fc-border);
   border-radius: var(--fc-r); padding: 24px 22px;
   display: flex; flex-direction: column; gap: 14px;
-  transition: border-color .2s, transform .2s;
+  position: relative; overflow: hidden;
+  transition: border-color .3s, transform .3s, box-shadow .3s;
 }
-.fc-plan-card:hover { border-color: var(--fc-border2); transform: translateY(-2px); }
+.fc-plan-card::after {
+  content: ''; pointer-events: none;
+  position: absolute; top: 0; left: -75%; width: 45%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.045), transparent);
+  transform: skewX(-18deg);
+  transition: left 0s;
+}
+.fc-plan-card:hover { border-color: var(--fc-accent); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,.28), 0 0 24px rgba(32,181,235,.07); }
+.fc-plan-card:hover::after { left: 130%; transition: left .55s ease; }
 .fc-plan-card.featured {
-  border-color: var(--fc-accent);
-  background: linear-gradient(180deg, rgba(32,181,235,.06) 0%, var(--fc-surface) 60%);
-  position: relative;
+  border-color: rgba(181,245,58,.35);
+  background: linear-gradient(180deg, rgba(181,245,58,.06) 0%, var(--fc-surface) 60%);
 }
 .fc-plan-card.featured::before {
-  content: 'популярный'; position: absolute; top: -1px; right: 18px;
-  background: var(--fc-accent); color: var(--fc-on-accent);
+  content: 'популярный'; position: absolute; top: 0; right: 18px;
+  background: var(--fc-lime); color: #0a0c13;
   font-family: var(--fc-mono); font-size: 10px; font-weight: 700;
   text-transform: uppercase; letter-spacing: .08em;
   padding: 4px 10px; border-radius: 0 0 6px 6px;
@@ -626,7 +634,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
   font-family: var(--fc-mono); font-size: 11px; font-weight: 600;
   text-transform: uppercase; letter-spacing: .12em; color: var(--fc-text3);
 }
-.fc-plan-card.featured .fc-plan-name { color: var(--fc-accent); }
+.fc-plan-card.featured .fc-plan-name { color: var(--fc-lime); }
 .fc-plan-price {
   font-family: var(--fc-font); font-size: 42px; font-weight: 700;
   letter-spacing: -.03em; line-height: 1; color: var(--fc-text);
@@ -657,9 +665,9 @@ body.fc-marketing nav.fixed.fc-scrolled {
   background-repeat: no-repeat; background-position: center;
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CTA
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .fc-cta {
   padding: 140px 40px 120px; text-align: center;
   position: relative; overflow: hidden;
@@ -698,9 +706,9 @@ body.fc-marketing nav.fixed.fc-scrolled {
 }
 .fc-cta-btns { display: flex; justify-content: center; gap: 12px; margin-top: 40px; flex-wrap: wrap; }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    RESPONSIVE
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media (max-width: 991px) {
   .fc-hero { padding: 100px 24px 70px; }
   .fc-manifest { padding: 80px 24px; }
@@ -729,7 +737,7 @@ body.fc-marketing nav.fixed.fc-scrolled {
 }
 
 
-/* ── Lime overrides: точки, галочки, маркеры списков ────────────────── */
+/* â”€â”€ Lime overrides: Ñ‚Ð¾Ñ‡ÐºÐ¸, Ð³Ð°Ð»Ð¾Ñ‡ÐºÐ¸, Ð¼Ð°Ñ€ÐºÐµÑ€Ñ‹ ÑÐ¿Ð¸ÑÐºÐ¾Ð² â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* Eyebrow dot */
 .fc-eyebrow-dot {
@@ -737,35 +745,35 @@ body.fc-marketing nav.fixed.fc-scrolled {
   box-shadow:  0 0 10px var(--fc-lime);
 }
 
-/* Story list checkmarks — SVG stroke меняем на лайм */
+/* Story list checkmarks â€” SVG stroke Ð¼ÐµÐ½ÑÐµÐ¼ Ð½Ð° Ð»Ð°Ð¹Ð¼ */
 .fc-story-list li::before {
   background-color: rgba(181,245,58,.10);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6L5 8.5L9.5 4' stroke='%23b5f53a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
 }
 
-/* Deploy: соединительная линия */
+/* Deploy: ÑÐ¾ÐµÐ´Ð¸Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð°Ñ Ð»Ð¸Ð½Ð¸Ñ */
 .fc-deploy-step:not(:last-of-type)::after { background: var(--fc-lime); }
 
-/* Deploy: активные и выполненные шаги */
+/* Deploy: Ð°ÐºÑ‚Ð¸Ð²Ð½Ñ‹Ðµ Ð¸ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð½Ñ‹Ðµ ÑˆÐ°Ð³Ð¸ */
 .fc-deploy-step.done .fc-deploy-dot,
 .fc-deploy-step.active .fc-deploy-dot {
-  background: var(--fc-lime); border-color: var(--fc-lime);
+  background: var(--fc-lime); border-color: rgba(181,245,58,.35);
 }
 .fc-deploy-step.done .fc-deploy-dot::after,
 .fc-deploy-step.active .fc-deploy-dot::after { color: #0a0c13; }
 .fc-deploy-step.active .fc-deploy-dot { box-shadow: 0 0 18px rgba(181,245,58,.5); }
 
-/* Pricing: галочки в списке */
+/* Pricing: Ð³Ð°Ð»Ð¾Ñ‡ÐºÐ¸ Ð² ÑÐ¿Ð¸ÑÐºÐµ */
 .fc-incl-check { color: var(--fc-lime); }
 
-/* Backup: точки и галочки */
+/* Backup: Ñ‚Ð¾Ñ‡ÐºÐ¸ Ð¸ Ð³Ð°Ð»Ð¾Ñ‡ÐºÐ¸ */
 .fc-bkp-dot  { background: var(--fc-lime); box-shadow: 0 0 8px rgba(181,245,58,.5); }
 .fc-bkp-tick { color: var(--fc-lime); }
 
-/* Map: пульсирующая точка */
+/* Map: Ð¿ÑƒÐ»ÑŒÑÐ¸Ñ€ÑƒÑŽÑ‰Ð°Ñ Ñ‚Ð¾Ñ‡ÐºÐ° */
 .fc-map-hud-dot { background: var(--fc-lime); box-shadow: 0 0 8px var(--fc-lime); }
 
-/* Shield: щит и первое кольцо */
+/* Shield: Ñ‰Ð¸Ñ‚ Ð¸ Ð¿ÐµÑ€Ð²Ð¾Ðµ ÐºÐ¾Ð»ÑŒÑ†Ð¾ */
 .fc-shield-core {
   background: radial-gradient(circle at 30% 30%, rgba(181,245,58,.28), rgba(124,92,255,.14));
   border: 1px solid rgba(181,245,58,.35);
@@ -779,12 +787,12 @@ body.fc-marketing nav.fixed.fc-scrolled {
 .fc-shield-ring.r1 { border-color: rgba(181,245,58,.22); }
 .fc-shield-stat-val.accent { color: var(--fc-lime); }
 
-/* Hero slides under transparent nav (только главная, не auth) */
+/* Hero slides under transparent nav (Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð³Ð»Ð°Ð²Ð½Ð°Ñ, Ð½Ðµ auth) */
 body.fc-marketing:not(.fc-auth-body):not(.fc-is-checkout) .fc-page { margin-top: -4rem; }
-/* Checkout: fc-page не уезжает под шапку — нормальный поток */
+/* Checkout: fc-page Ð½Ðµ ÑƒÐµÐ·Ð¶Ð°ÐµÑ‚ Ð¿Ð¾Ð´ ÑˆÐ°Ð¿ÐºÑƒ â€” Ð½Ð¾Ñ€Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ð¿Ð¾Ñ‚Ð¾Ðº */
 body.fc-is-checkout .fc-page { margin-top: 0; }
 
-/* Nav: transparent → blur on scroll — только на маркетинговой странице */
+/* Nav: transparent \2192 blur on scroll â€” Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð½Ð° Ð¼Ð°Ñ€ÐºÐµÑ‚Ð¸Ð½Ð³Ð¾Ð²Ð¾Ð¹ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ðµ */
 body.fc-marketing nav.fixed.top-0 {
   background: transparent !important;
   border-bottom-color: transparent !important;
@@ -800,19 +808,21 @@ body.fc-marketing nav.fixed.top-0.fc-scrolled {
 /* Hide theme toggle on marketing page */
 body.fc-marketing nav.fixed div.mr-1 > button { display: none !important; }
 
-/* Nav full-width override — только на маркетинговой странице */
+/* Nav full-width override â€” Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð½Ð° Ð¼Ð°Ñ€ÐºÐµÑ‚Ð¸Ð½Ð³Ð¾Ð²Ð¾Ð¹ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ðµ */
 body.fc-marketing nav.fixed > div > div { width: 100% !important; max-width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; }
 
-/* Hide locale/currency switcher — multiple selectors for reliability */
+/* Hide locale/currency switcher â€” multiple selectors for reliability */
 [wire\:name="components.locale-switch"],
 [wire\:name="components.locale-switch"] *,
 nav div[class*="md:flex"][class*="mr-1"] > div:first-child { display: none !important; }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FOOTER
-   ════════════════════════════════════════════ */
-/* Отступ перед футером только на внутренних страницах */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ÐžÑ‚ÑÑ‚ÑƒÐ¿ Ð¿ÐµÑ€ÐµÐ´ Ñ„ÑƒÑ‚ÐµÑ€Ð¾Ð¼ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð½Ð° Ð²Ð½ÑƒÑ‚Ñ€ÐµÐ½Ð½Ð¸Ñ… ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°Ñ… */
 body:not(.fc-marketing) main { padding-bottom: 64px; }
+/* Убираем чёрную полосу между CTA и футером на маркетинговых страницах */
+body.fc-marketing main { background: var(--fc-bg); }
 
 .fc-footer {
   width: 100%;
@@ -884,18 +894,18 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   .fc-footer-inner { padding: 36px 18px 28px; }
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    INNER MARKETING PAGES (pricing / locations / contacts)
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* Page wrap — как .page-wrap в дизайне */
+/* Page wrap â€” ÐºÐ°Ðº .page-wrap Ð² Ð´Ð¸Ð·Ð°Ð¹Ð½Ðµ */
 .fc-mkt-wrap {
   max-width: 1180px;
   margin: 0 auto;
   padding: 40px;
 }
 
-/* Hero — без фона, без бордера, только layout */
+/* Hero â€” Ð±ÐµÐ· Ñ„Ð¾Ð½Ð°, Ð±ÐµÐ· Ð±Ð¾Ñ€Ð´ÐµÑ€Ð°, Ñ‚Ð¾Ð»ÑŒÐºÐ¾ layout */
 .fc-mkt-hero {
   display: flex; align-items: flex-end; justify-content: space-between;
   gap: 16px 40px; flex-wrap: wrap;
@@ -921,7 +931,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   max-width: 420px; margin-top: 16px;
 }
 
-/* Pricing bar — простой flex-column, без sticky */
+/* Pricing bar â€” Ð¿Ñ€Ð¾ÑÑ‚Ð¾Ð¹ flex-column, Ð±ÐµÐ· sticky */
 .fc-pricing-bar {
   display: flex; flex-direction: column;
   gap: 14px; margin-bottom: 28px;
@@ -935,7 +945,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   text-transform: uppercase; letter-spacing: .1em; color: var(--fc-text3);
 }
 
-/* Location chips — обёртка со скруглённым фоном */
+/* Location chips â€” Ð¾Ð±Ñ‘Ñ€Ñ‚ÐºÐ° ÑÐ¾ ÑÐºÑ€ÑƒÐ³Ð»Ñ‘Ð½Ð½Ñ‹Ð¼ Ñ„Ð¾Ð½Ð¾Ð¼ */
 .fc-loc-chips {
   display: inline-flex; align-items: center; flex-wrap: wrap; row-gap: 2px;
   background: var(--fc-surface); border: 1px solid var(--fc-border);
@@ -963,7 +973,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   display: flex; align-items: center; gap: 6px; white-space: nowrap;
   background: transparent; border: none; font-family: inherit; user-select: none;
 }
-.fc-billing-toggle-btn.on { background: var(--fc-accent); color: var(--fc-on-accent); }
+.fc-billing-toggle-btn.on { background: var(--fc-accent); color: #0a0c13; }
 .fc-billing-badge {
   font-family: var(--fc-mono); font-size: 10.5px; font-weight: 700;
   color: var(--fc-lime); background: var(--fc-lime-soft);
@@ -986,13 +996,13 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   background: transparent !important;
 }
 
-/* Pricing plan grid — 3 cols */
+/* Pricing plan grid â€” 3 cols */
 .fc-price-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
   margin-bottom: 40px;
 }
 
-/* Feature cards — без border-top, просто margin */
+/* Feature cards â€” Ð±ÐµÐ· border-top, Ð¿Ñ€Ð¾ÑÑ‚Ð¾ margin */
 .fc-feat-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
   margin: 40px 0;
@@ -1052,11 +1062,20 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   background: var(--fc-surface); border: 1px solid var(--fc-border);
   border-radius: var(--fc-r); padding: 22px;
   display: flex; flex-direction: column; gap: 16px;
-  transition: border-color .2s;
+  position: relative; overflow: hidden;
+  transition: border-color .3s, transform .3s, box-shadow .3s;
 }
-.fc-dc-card:hover { border-color: var(--fc-border2); }
+.fc-dc-card::after {
+  content: ''; pointer-events: none;
+  position: absolute; top: 0; left: -75%; width: 45%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.045), transparent);
+  transform: skewX(-18deg);
+  transition: left 0s;
+}
+.fc-dc-card:hover { border-color: var(--fc-accent); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,.28), 0 0 24px rgba(32,181,235,.07); }
+.fc-dc-card:hover::after { left: 130%; transition: left .55s ease; }
 
-/* Flag — коробочка как в дизайне */
+/* Flag â€” ÐºÐ¾Ñ€Ð¾Ð±Ð¾Ñ‡ÐºÐ° ÐºÐ°Ðº Ð² Ð´Ð¸Ð·Ð°Ð¹Ð½Ðµ */
 .fc-dc-flag {
   width: 44px; height: 44px;
   background: var(--fc-surface2); border: 1px solid var(--fc-border);
@@ -1064,14 +1083,14 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   justify-content: center; font-size: 22px; flex-shrink: 0;
 }
 
-/* Specs — 2 колонки, без border */
+/* Specs â€” 2 ÐºÐ¾Ð»Ð¾Ð½ÐºÐ¸, Ð±ÐµÐ· border */
 .fc-dc-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .fc-dc-spec {
   background: var(--fc-surface2); border-radius: var(--fc-r-sm);
   padding: 10px 12px;
 }
 
-/* Region label — без border-top, просто margin */
+/* Region label â€” Ð±ÐµÐ· border-top, Ð¿Ñ€Ð¾ÑÑ‚Ð¾ margin */
 .fc-region-label {
   font-family: var(--fc-mono); font-size: 11px; font-weight: 600;
   text-transform: uppercase; letter-spacing: .14em; color: var(--fc-text3);
@@ -1124,7 +1143,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   border-radius: var(--fc-r); padding: 24px;
 }
 
-/* Contacts — old grid (kept for compat) */
+/* Contacts â€” old grid (kept for compat) */
 .fc-contact-grid {
   display: grid; grid-template-columns: 1fr 2fr; gap: 20px; margin-bottom: 60px;
 }
@@ -1233,7 +1252,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   text-decoration: none;
 }
 .fc-contact-block-link:hover { color: var(--fc-text); }
-.fc-contact-block-link::before { content: '→'; color: var(--fc-accent); }
+.fc-contact-block-link::before { content: '\2192'; color: var(--fc-accent); }
 .fc-contact-block-cta {
   margin-top: auto;
   font-size: 14px; font-weight: 600; color: var(--fc-accent);
@@ -1273,9 +1292,9 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   .fc-billing-toggle-btn { flex: 0 0 auto; }
 }
 
-/* ════════════════════════════════════════════
-   AUTH — split layout (login / register)
-   ════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   AUTH â€” split layout (login / register)
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /* Auth page: fixed overlay, escapes body layout entirely */
 .fc-auth-page {
@@ -1286,7 +1305,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   z-index: 10;
 }
 
-/* ── Left decorative column ── */
+/* â”€â”€ Left decorative column â”€â”€ */
 .fc-auth-side {
   display: flex; flex-direction: column;
   padding: 48px;
@@ -1343,7 +1362,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 .fc-auth-side-foot a:hover { color: var(--fc-accent); }
 .fc-auth-side-foot span { color: var(--fc-text-dim); }
 
-/* ── Right form column ── */
+/* â”€â”€ Right form column â”€â”€ */
 .fc-auth-pane {
   display: flex; align-items: center; justify-content: center;
   padding: 40px 48px;
@@ -1363,7 +1382,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 .fc-auth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .fc-auth-grid .fc-field { min-width: 0; }
 
-/* ── Field / input ── */
+/* â”€â”€ Field / input â”€â”€ */
 .fc-field { display: flex; flex-direction: column; gap: 6px; }
 .fc-field-lbl {
   font-family: var(--fc-mono); font-size: 11px;
@@ -1392,7 +1411,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   color: var(--fc-red); letter-spacing: .03em;
 }
 
-/* ── Standard theme inputs inside auth (x-form.properties etc.) ── */
+/* â”€â”€ Standard theme inputs inside auth (x-form.properties etc.) â”€â”€ */
 .fc-auth-page fieldset { display: flex; flex-direction: column; gap: 6px; }
 .fc-auth-page fieldset label { font-family: var(--fc-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--fc-text3); margin-bottom: 0; font-weight: 400; }
 .fc-auth-page fieldset input:not([type=checkbox]):not([type=radio]),
@@ -1406,8 +1425,8 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 }
 .fc-auth-page fieldset input:focus { outline: none; border-color: var(--fc-accent); box-shadow: 0 0 0 3px var(--fc-accent-soft); }
 
-/* ── Checkbox ── */
-/* Центрированный однострочный макет (password reset) */
+/* â”€â”€ Checkbox â”€â”€ */
+/* Ð¦ÐµÐ½Ñ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð¾Ð´Ð½Ð¾ÑÑ‚Ñ€Ð¾Ñ‡Ð½Ñ‹Ð¹ Ð¼Ð°ÐºÐµÑ‚ (password reset) */
 .fc-auth-solo {
   min-height: 100vh;
   display: flex;
@@ -1467,10 +1486,10 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 .fc-auth-check a { color: var(--fc-text); text-decoration: underline; text-decoration-color: var(--fc-border2); text-underline-offset: 3px; }
 .fc-auth-check a:hover { text-decoration-color: var(--fc-accent); color: var(--fc-accent); }
 
-/* ── Block button ── */
+/* â”€â”€ Block button â”€â”€ */
 .fc-btn-block { width: 100%; padding: 13px 12px; }
 
-/* ── Divider / socials ── */
+/* â”€â”€ Divider / socials â”€â”€ */
 .fc-auth-or {
   display: flex; align-items: center; gap: 12px;
   font-family: var(--fc-mono); font-size: 11px;
@@ -1483,7 +1502,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 .fc-auth-foot a { color: var(--fc-accent); transition: text-decoration .15s; }
 .fc-auth-foot a:hover { text-decoration: underline; }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 767px) {
   .fc-auth-page { grid-template-columns: 1fr; }
   .fc-auth-side { display: none; }
@@ -1491,7 +1510,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   .fc-auth-grid { grid-template-columns: 1fr; }
 }
 
-/* ── Legal pages ─────────────────────────────────────────────────────── */
+/* â”€â”€ Legal pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fc-legal-body {
   display: flex;
   flex-direction: column;
@@ -1541,7 +1560,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 }
 .fc-legal-table tr:hover td { background: var(--fc-surface2); }
 
-/* ── Cookie banner ───────────────────────────────────────────────────── */
+/* â”€â”€ Cookie banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #fc-cookie-bar {
   position: fixed; bottom: 16px; left: 16px; right: 16px;
   z-index: 9999; max-width: 720px; margin: 0 auto;
@@ -1559,10 +1578,10 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 .fc-cookie-text a:hover { text-decoration: underline; }
 .fc-cookie-btns { display: flex; gap: 8px; flex-shrink: 0; }
 
-/* ── Checkout page ───────────────────────────────────────────────────── */
-/* ════════════════════════════════════════════
+/* â”€â”€ Checkout page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CHECKOUT / CONFIGURE
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /* Layout */
 .fc-cfg-layout {
@@ -1676,7 +1695,7 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
   display: flex; align-items: center; justify-content: center;
   transition: border-color .15s, background .15s;
 }
-.fc-cfg-addon-row.on .fc-cfg-addon-cb { background: var(--fc-lime); border-color: var(--fc-lime); }
+.fc-cfg-addon-row.on .fc-cfg-addon-cb { background: var(--fc-lime); border-color: rgba(181,245,58,.35); }
 .fc-cfg-addon-cb-icon { display: none; }
 .fc-cfg-addon-row.on .fc-cfg-addon-cb-icon { display: block; }
 .fc-cfg-addon-info { flex: 1; min-width: 0; }
@@ -1730,19 +1749,19 @@ body:not(.fc-marketing) main { padding-bottom: 64px; }
 }
 @media (max-width: 575.98px) {
   .fc-cfg-head { flex-direction: column; gap: 16px; }
-  /* Location block: кнопка "Сменить" уходит на следующую строку */
+  /* Location block: ÐºÐ½Ð¾Ð¿ÐºÐ° "Ð¡Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ" ÑƒÑ…Ð¾Ð´Ð¸Ñ‚ Ð½Ð° ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÑƒÑŽ ÑÑ‚Ñ€Ð¾ÐºÑƒ */
   .fc-cfg-loc { flex-wrap: wrap; }
-  /* Section header: hint может переноситься */
+  /* Section header: hint Ð¼Ð¾Ð¶ÐµÑ‚ Ð¿ÐµÑ€ÐµÐ½Ð¾ÑÐ¸Ñ‚ÑŒÑÑ */
   .fc-cfg-section-head { flex-wrap: wrap; }
-  /* Summary total: уменьшаем шрифт цены */
+  /* Summary total: ÑƒÐ¼ÐµÐ½ÑŒÑˆÐ°ÐµÐ¼ ÑˆÑ€Ð¸Ñ„Ñ‚ Ñ†ÐµÐ½Ñ‹ */
   .fc-cfg-summary-total span:last-child { font-size: 22px; }
-  /* Защита от горизонтальной прокрутки */
+  /* Ð—Ð°Ñ‰Ð¸Ñ‚Ð° Ð¾Ñ‚ Ð³Ð¾Ñ€Ð¸Ð·Ð¾Ð½Ñ‚Ð°Ð»ÑŒÐ½Ð¾Ð¹ Ð¿Ñ€Ð¾ÐºÑ€ÑƒÑ‚ÐºÐ¸ */
   .fc-mkt-wrap { overflow-x: hidden; }
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CART PAGE
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .fc-cart-col { display: flex; flex-direction: column; gap: 12px; }
 

@@ -34,7 +34,8 @@ class Pricing extends Component
             $locationsList[] = ['slug' => $cat->slug, 'name' => $cat->name];
 
             $products = [];
-            foreach ($cat->products as $product) {
+            $middleIndex = (int) floor(($cat->products->count() - 1) / 2);
+            foreach ($cat->products as $_prodIdx => $product) {
                 $settings = $product->settings->pluck('value', 'key');
 
                 $prices   = [];
@@ -72,7 +73,7 @@ class Pricing extends Component
                     'ram'          => $settings['memory'] ?? '—',
                     'nvme'         => $settings['disk']   ?? '—',
                     'traffic'      => $settings['traffic'] ?? '—',
-                    'featured'     => $product->name === 'Pro',
+                    'featured'     => $_prodIdx === $middleIndex,
                     'checkout_base'=> $baseUrl,
                     'plan_ids'     => $plan_ids,
                     'prices'       => $prices,

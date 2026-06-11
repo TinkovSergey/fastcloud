@@ -327,7 +327,6 @@
   <a href="#livewire">Livewire-компоненты</a>
   <a href="#routes">Маршруты</a>
   <div class="sidebar-section">База данных</div>
-  <a href="#currency">Валюта</a>
   <a href="#categories">Категории (локации)</a>
   <a href="#products">Продукты (тарифы)</a>
   <a href="#config-options">Config Options</a>
@@ -600,36 +599,6 @@ Route::get(<span class="st">'/offer'</span>, Marketing\Offer::class)->name(<span
 Route::get(<span class="st">'/privacy'</span>, Marketing\Privacy::class)->name(<span class="st">'privacy'</span>);
 Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span class="st">'sla'</span>);</code></pre>
 
-  <!-- ══ ВАЛЮТА ══ -->
-  <h2 id="currency"><span class="num">9</span>Валюта</h2>
-
-  <p>Тема использует рубли как основную валюту. Создай валюту в админке:</p>
-
-  <ol class="steps">
-    <li>
-      <div>
-        <strong>Admin → Currencies → Create</strong>
-        <p></p>
-      </div>
-    </li>
-    <li>
-      <div>
-        <strong>Заполни поля</strong>
-        <p>
-          <strong>Code:</strong> <code>RUB</code><br>
-          <strong>Prefix:</strong> оставь пустым<br>
-          <strong>Suffix:</strong> <code> ₽</code> (с пробелом перед знаком)<br>
-          <strong>Default:</strong> включи
-        </p>
-      </div>
-    </li>
-  </ol>
-
-  <div class="callout info">
-    <div class="callout-icon">ℹ️</div>
-    <p>Тема ищет валюту с кодом <code>RUB</code> для отображения баланса в навигации. Если код будет другим — баланс не покажется корректно.</p>
-  </div>
-
   <!-- ══ КАТЕГОРИИ ══ -->
   <h2 id="categories"><span class="num">10</span>Категории — Локации</h2>
 
@@ -790,7 +759,7 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
       <tr>
         <td>Name</td>
         <td><code>Pro</code></td>
-        <td>⚠️ Продукт с именем <strong>Pro</strong> автоматически помечается как «популярный» (featured) на странице тарифов и главной. Можно переименовать — см. <a href="#for-dev">задачи программисту</a>.</td>
+        <td>Автоматически помечается как «популярный» (featured) <strong>средний по порядку сортировки</strong> тариф в категории. Привязки к названию нет.</td>
       </tr>
       <tr>
         <td>Slug</td>
@@ -820,6 +789,30 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
     </tbody>
   </table>
 
+  <h3>Установка порядка продуктов через Tinker <span class="tag dev">dev</span></h3>
+  <p>
+    В форме редактирования продукта в админке поле <strong>Sort</strong> отсутствует.
+    Порядок задаётся через <code>php artisan tinker</code>:
+  </p>
+
+  <pre><code><span class="cm"># Посмотреть все продукты с текущим sort</span>
+App\Models\Product::orderBy(<span class="st">'category_id'</span>)->orderBy(<span class="st">'sort'</span>)
+    ->get([<span class="st">'id'</span>, <span class="st">'name'</span>, <span class="st">'category_id'</span>, <span class="st">'sort'</span>]);
+
+<span class="cm"># Установить sort конкретному продукту по slug</span>
+App\Models\Product::where(<span class="st">'slug'</span>, <span class="st">'vps-nano'</span>)->update([<span class="st">'sort'</span> => 1]);
+
+<span class="cm"># Установить sort нескольким продуктам сразу</span>
+$order = [<span class="st">'vps-nano'</span> => 1, <span class="st">'vps-micro'</span> => 2, <span class="st">'vps-pro'</span> => 3, <span class="st">'vps-ultra'</span> => 4];
+foreach ($order as $slug => $sort) {
+    App\Models\Product::where(<span class="st">'slug'</span>, $slug)->update([<span class="st">'sort'</span> => $sort]);
+}</code></pre>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <p>Главная страница берёт первые <strong>3 продукта по sort</strong> из первой категории. Убедись, что у продуктов этой категории проставлены <code>sort = 1, 2, 3</code>.</p>
+  </div>
+
   <h3>Product Settings — характеристики сервера</h3>
   <p>
     На странице конфигурации и в карточке тарифа отображаются характеристики.
@@ -830,16 +823,16 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
   <table>
     <thead><tr><th>Ключ (key)</th><th>Пример значения</th><th>Где отображается</th></tr></thead>
     <tbody>
-      <tr><td><code>cpu</code></td><td><code>4</code></td><td>«4 vCPU» на карточке и в конфигураторе</td></tr>
-      <tr><td><code>ram</code></td><td><code>8</code></td><td>«8 GB RAM»</td></tr>
-      <tr><td><code>nvme</code></td><td><code>80</code></td><td>«80 GB NVMe»</td></tr>
+      <tr><td><code>cores</code></td><td><code>4</code></td><td>«4 vCPU» на карточке и в конфигураторе</td></tr>
+      <tr><td><code>memory</code></td><td><code>8</code></td><td>«8 GB RAM»</td></tr>
+      <tr><td><code>disk</code></td><td><code>80</code></td><td>«80 GB NVMe»</td></tr>
       <tr><td><code>traffic</code></td><td><code>Безлимит</code></td><td>«Безлимит трафик»</td></tr>
     </tbody>
   </table>
 
   <div class="callout warn">
     <div class="callout-icon">⚠️</div>
-    <p>Ключи чувствительны к регистру. Только строчные: <code>cpu</code>, <code>ram</code>, <code>nvme</code>, <code>traffic</code>. Если ключ не найден — показывается «—».</p>
+    <p>Ключи чувствительны к регистру. Только строчные: <code>cores</code>, <code>memory</code>, <code>disk</code>, <code>traffic</code>. Если ключ не найден — показывается «—».</p>
   </div>
 
   <!-- ══ CONFIG OPTIONS ══ -->
@@ -908,6 +901,33 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
     <p>Другие периоды (например, 2 мес, 24 мес) тема <strong>игнорирует</strong> — план не попадёт на страницу тарифов.</p>
   </div>
 
+  <h3>Тарифная сетка FastCloud</h3>
+  <p>Базовые цены в рублях. Скидки применяются к итоговой сумме за период.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Тариф</th>
+        <th>1 месяц</th>
+        <th>3 месяца (−5%)</th>
+        <th>6 месяцев (−10%)</th>
+        <th>12 месяцев (−20%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Nano</td><td><code>600 ₽</code></td><td><code>1 710 ₽</code></td><td><code>3 240 ₽</code></td><td><code>5 760 ₽</code></td></tr>
+      <tr><td>Micro</td><td><code>1 500 ₽</code></td><td><code>4 275 ₽</code></td><td><code>8 100 ₽</code></td><td><code>14 400 ₽</code></td></tr>
+      <tr><td>Standard ⭐</td><td><code>3 000 ₽</code></td><td><code>8 550 ₽</code></td><td><code>16 200 ₽</code></td><td><code>28 800 ₽</code></td></tr>
+      <tr><td>Plus</td><td><code>6 000 ₽</code></td><td><code>17 100 ₽</code></td><td><code>32 400 ₽</code></td><td><code>57 600 ₽</code></td></tr>
+      <tr><td>Ultra</td><td><code>12 000 ₽</code></td><td><code>34 200 ₽</code></td><td><code>64 800 ₽</code></td><td><code>115 200 ₽</code></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <p>Скидка считается автоматически: тема сравнивает цену многомесячного плана с ценой месячного и показывает бейдж <code>−N%</code>. Цифры выше — итоговые суммы за весь период.</p>
+  </div>
+
   <h3>Скидки на длинные периоды</h3>
   <p>
     Скидка считается автоматически: тема берёт цену 1-месячного плана и сравнивает
@@ -928,13 +948,18 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
   <p>После активации темы в Admin → Settings → Appearance → Theme Settings:</p>
 
   <table>
-    <thead><tr><th>Настройка</th><th>Рекомендация</th></tr></thead>
+    <thead><tr><th>Настройка</th><th>Значение</th></tr></thead>
     <tbody>
       <tr><td>Logo Display</td><td><code>logo-only</code> — если логотип содержит текст; <code>logo-and-name</code> — если иконка</td></tr>
       <tr><td>Direct Checkout</td><td>Выключить — тема использует собственную страницу конфигурации</td></tr>
-      <tr><td>Dark Background</td><td><code>hsl(240, 18%, 9%)</code> — тёмный фон темы</td></tr>
-      <tr><td>Dark Background Secondary</td><td><code>hsl(240, 13%, 11%)</code></td></tr>
-      <tr><td>Primary (Dark)</td><td><code>hsl(196, 84%, 38%)</code> — голубой акцент FastCloud</td></tr>
+      <tr><td>Primary — Brand Color (Dark)</td><td><code>hsl(196, 84%, 38%)</code></td></tr>
+      <tr><td>Secondary — Brand Color (Dark)</td><td><code>hsl(196, 84%, 38%)</code></td></tr>
+      <tr><td>Borders, Accents… (Dark)</td><td><code>hsl(225, 23%, 18%)</code></td></tr>
+      <tr><td>Base — Text Color (Dark)</td><td><code>hsl(228, 25%, 96%)</code></td></tr>
+      <tr><td>Muted — Text Color (Dark)</td><td><code>hsl(228, 10%, 48%)</code></td></tr>
+      <tr><td>Inverted — Text Color (Dark)</td><td><code>hsl(228, 15%, 67%)</code></td></tr>
+      <tr><td>Background — Color (Dark)</td><td><code>hsl(227, 35%, 6%)</code></td></tr>
+      <tr><td>Background — Secondary Color (Dark)</td><td><code>hsl(224, 22%, 10%)</code></td></tr>
     </tbody>
   </table>
 
@@ -971,7 +996,8 @@ Route::get(<span class="st">'/sla'</span>, Marketing\Sla::class)->name(<span cla
   <p>
     Сейчас featured-продукт определяется хардкодом в <code>app/Livewire/Marketing/Pricing.php</code>:
   </p>
-  <pre><code><span class="st">'featured'</span> => $product->name === <span class="st">'Pro'</span>,</code></pre>
+  <pre><code><span class="cm">// Средний по sort индекс в категории:</span>
+<span class="st">'featured'</span> => $_prodIdx === $middleIndex,</code></pre>
   <p>
     Рекомендуется заменить на поле в Product Settings (например, ключ <code>featured</code> = <code>1</code>),
     или использовать отдельное поле продукта.

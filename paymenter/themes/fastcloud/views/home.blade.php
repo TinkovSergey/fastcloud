@@ -18,7 +18,7 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
       <span id="heroLiveText"><strong>fra1.fast-cloud.uk</strong> &middot; только что создан &middot; <em>«за&nbsp;53&nbsp;с, из Берлина»</em></span>
     </div>
     <h1 class="fc-hero-title">
-      Поднимите сервер<br>за&nbsp;<span style="color:hsl(var(--color-primary))"><span id="heroNum">55</span></span> <em>секунд.</em>
+      Поднимите сервер<br>за&nbsp;<span style="color:var(--fc-accent)"><span id="heroNum">55</span></span> <em>секунд.</em>
     </h1>
     <p class="fc-hero-sub">
       Без верификации. Без скрытых платежей. NVMe&nbsp;Gen4, сеть&nbsp;10&nbsp;Gbps
@@ -201,10 +201,10 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
       <div class="fc-story-num reveal"><span class="step">05</span> &nbsp;/&nbsp; локации</div>
       <div class="fc-story-tag reveal d-1">{{ $_locCount }} {{ $_locNoun }} по миру</div>
       <h2 class="fc-story-title reveal d-2">{{ $_locCount }}&nbsp;{{ $_locNoun }}. <em>Один</em> SLA.</h2>
-      <p class="fc-story-desc reveal d-3">Выбирайте регион с минимальной задержкой для вашей аудитории &mdash; Европа, Северная Америка и Азия. Одинаковые тарифы и SLA во всех локациях.</p>
+      <p class="fc-story-desc reveal d-3">Выбирайте регион с минимальной задержкой для вашей аудитории &mdash; Европа, Северная Америка и Азия. Один SLA и стандарт качества во всех локациях.</p>
       <ul class="fc-story-list reveal d-4">
-        <li>Низкий пинг для аудитории в любой точке мира</li>
-        <li>Одинаковые цены и условия во всех регионах</li>
+        <li>Низкая задержка для аудитории в любой точке мира</li>
+        <li>Единый SLA и условия во всех регионах</li>
         <li>Миграция между локациями через снапшот</li>
       </ul>
     </div>
@@ -443,11 +443,14 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
   $_symbol    = $_currModel?->suffix ?? ($_currModel?->prefix ?? $_currency);
   $_symAfter  = !empty($_currModel?->suffix);
 
-  // Берём первую категорию как референс (цены одинаковые во всех локациях)
+  // Берём первую категорию как референс для отображения тарифов
   $_refCat    = $categories->first();
   $_homePlans = [];
   if ($_refCat) {
-      foreach ($_refCat->products->sortBy('sort')->take(3) as $_prod) {
+      $_allSorted   = $_refCat->products->sortBy('sort')->values();
+      $_homeMidIdx  = (int) floor(($_allSorted->count() - 1) / 2);
+      $_homeProds   = $_allSorted->take(3);
+      foreach ($_homeProds as $_hIdx => $_prod) {
           $_settings    = $_prod->settings->pluck('value', 'key');
           $_monthlyPlan = $_prod->plans
               ->where('billing_period', 1)
@@ -462,7 +465,7 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
               : $_symbol . ' ' . round($_rawPrice);
           $_homePlans[] = [
               'name'     => $_prod->name,
-              'featured' => $_prod->name === 'Pro',
+              'featured' => $_hIdx === $_homeMidIdx,
               'price'    => $_price,
               'cpu'      => $_settings['cores']  ?? '—',
               'ram'      => $_settings['memory'] ?? '—',

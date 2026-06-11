@@ -31,8 +31,8 @@ class Locations extends Component
             // Убираем HTML-теги и декодируем HTML-сущности (&quot; -> ")
             $clean = html_entity_decode(strip_tags($raw), ENT_QUOTES | ENT_HTML5);
 
-            // Убираем BOM и невидимые символы
-            $clean = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $clean);
+            // Убираем BOM и управляющие символы, не трогая UTF-8 (эмодзи, кириллицу)
+            $clean = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/', '', $clean);
 
             // Дополнительная очистка от мусора
             $clean = trim($clean);

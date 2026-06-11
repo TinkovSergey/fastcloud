@@ -1,6 +1,10 @@
 @php
 $lightLogo = config('settings.logo');
 $darkLogo  = config('settings.logo_dark');
+
+// Фолбэк: если настройки не загрузились из конфига, проверяем файлы на диске напрямую
+if (!$darkLogo  && \Illuminate\Support\Facades\Storage::disk('public')->exists('logo-dark.webp'))  { $darkLogo  = 'logo-dark.webp'; }
+if (!$lightLogo && \Illuminate\Support\Facades\Storage::disk('public')->exists('logo-light.webp')) { $lightLogo = 'logo-light.webp'; }
 @endphp
 
 @if ($lightLogo && $darkLogo)

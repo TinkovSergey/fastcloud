@@ -140,7 +140,7 @@
     <div class="fc-feat-item">
       <div class="fc-feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z"/></svg></div>
       <div class="fc-feat-title">Гибкие периоды</div>
-      <div class="fc-feat-desc">Оплата помесячно с выгодой до&nbsp;15% на&nbsp;длинных периодах. Смена тарифа в&nbsp;1&nbsp;клик без&nbsp;штрафов.</div>
+      <div class="fc-feat-desc">Оплата помесячно с выгодой до&nbsp;15% на&nbsp;длинных периодах. Апгрейд тарифа в&nbsp;1&nbsp;клик без&nbsp;переустановки.</div>
     </div>
     <div class="fc-feat-item">
       <div class="fc-feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></svg></div>

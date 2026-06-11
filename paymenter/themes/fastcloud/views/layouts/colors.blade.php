@@ -31,7 +31,7 @@
     .dark {
         /* Branding Colors (Dark) — FastCloud palette */
         --color-primary: {{ str_replace(',', '', preg_replace('/^hsl\((.+)\)$/', '$1', theme('dark-primary', '76 100% 62%'))) }};
-        --color-secondary: {{ str_replace(',', '', preg_replace('/^hsl\((.+)\)$/', '$1', theme('dark-secondary', '252 100% 68%'))) }};
+        --color-secondary: {{ str_replace(',', '', preg_replace('/^hsl\((.+)\)$/', '$1', theme('dark-secondary', '196 84% 38%'))) }};
 
         /* Neutral Colors - Borders, Accents... (Dark) */
         --color-neutral: {{ str_replace(',', '', preg_replace('/^hsl\((.+)\)$/', '$1', theme('dark-neutral', '225 23% 18%'))) }};

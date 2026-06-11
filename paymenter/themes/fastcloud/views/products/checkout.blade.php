@@ -165,7 +165,7 @@ $_categoryUrl  = route('category.show', ['category' => $category->slug]);
           <div class="fc-cfg-plan-specs">{{ $_specs }}</div>
           @endif
         </div>
-        <a href="{{ $_categoryUrl }}" wire:navigate class="fc-btn-ghost fc-btn-sm" style="flex-shrink:0;">
+        <a href="{{ route('pricing') }}" wire:navigate class="fc-btn-ghost fc-btn-sm" style="flex-shrink:0;">
           ← Сменить тариф
         </a>
       </div>
