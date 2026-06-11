@@ -464,9 +464,9 @@ $_locPrep = $_locCount == 1 ? 'локации' : 'локациях'; // preposit
               'name'     => $_prod->name,
               'featured' => $_prod->name === 'Pro',
               'price'    => $_price,
-              'cpu'      => $_settings['cpu']     ?? '—',
-              'ram'      => $_settings['ram']     ?? '—',
-              'nvme'     => $_settings['nvme']    ?? '—',
+              'cpu'      => $_settings['cores']  ?? '—',
+              'ram'      => $_settings['memory'] ?? '—',
+              'nvme'     => $_settings['disk']   ?? '—',
               'traffic'  => $_settings['traffic'] ?? '—',
           ];
       }

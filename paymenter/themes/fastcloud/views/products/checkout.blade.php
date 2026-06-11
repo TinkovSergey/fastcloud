@@ -8,12 +8,12 @@ $_currencyModel = \App\Models\Currency::find($_currency);
 $_symbol        = $_currencyModel?->suffix ?? ($_currencyModel?->prefix ?? $_currency);
 $_symbolAfter   = !empty($_currencyModel?->suffix);
 
-// ── Настройки продукта (CPU/RAM/NVMe) ────────────────────────────────────────
+// ── Настройки продукта (cores/memory/disk) ───────────────────────────────────
 $_settings = $product->settings->pluck('value', 'key');
 $_specs = collect([
-    $_settings['cpu']     ?? null ? ($_settings['cpu'] . ' vCPU')     : null,
-    $_settings['ram']     ?? null ? ($_settings['ram'] . ' GB RAM')   : null,
-    $_settings['nvme']    ?? null ? ($_settings['nvme'] . ' GB NVMe') : null,
+    $_settings['cores']   ?? null ? ($_settings['cores']  . ' vCPU')     : null,
+    $_settings['memory']  ?? null ? ($_settings['memory'] . ' GB RAM')   : null,
+    $_settings['disk']    ?? null ? ($_settings['disk']   . ' GB NVMe') : null,
     $_settings['traffic'] ?? null ? ($_settings['traffic'] . ' трафик') : null,
 ])->filter()->implode(' · ');
 
