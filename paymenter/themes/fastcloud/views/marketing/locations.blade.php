@@ -1,27 +1,8 @@
 {{-- ═══ LOCATIONS PAGE ═══════════════════════════════════════════════════ --}}
 @php
-$_byRegion = [];
-foreach (\App\Models\Category::whereNotNull('description')->orderBy('sort')->get() as $_cat) {
-    $_meta = json_decode($_cat->description, true);
-    if (!$_meta || empty($_meta['region'])) continue;
-    $_r = $_meta['region'];
-    if (!isset($_byRegion[$_r])) {
-        $_byRegion[$_r] = ['label' => $_meta['region_label'] ?? $_r, 'items' => []];
-    }
-    $_byRegion[$_r]['items'][] = [
-        'flag'    => $_meta['flag']    ?? '',
-        'code'    => $_meta['code']    ?? '',
-        'city'    => $_meta['city']    ?? '',
-        'online'  => $_meta['online']  ?? true,
-        'network' => $_meta['network'] ?? '10 Gbps',
-        'storage' => $_meta['storage'] ?? 'NVMe Gen4',
-        'ddos'    => $_meta['ddos']    ?? '—',
-        'uptime'  => $_meta['uptime']  ?? '—',
-        'name'    => $_cat->name,
-        'slug'    => $_cat->slug,
-    ];
-}
-$_locCount = array_sum(array_map(fn($r) => count($r['items']), $_byRegion));
+// $locations передаётся из App\Livewire\Marketing\Locations::getLocations()
+// структура: ['region' => ['label' => '...', 'locations' => [...]]]
+$_locCount = array_sum(array_map(fn($r) => count($r['locations']), $locations));
 $_r2 = $_locCount % 100; $_d2 = $_locCount % 10;
 $_locNoun = ($_r2 >= 11 && $_r2 <= 19) ? 'локаций'
     : (($_d2 == 1) ? 'локация' : (($_d2 >= 2 && $_d2 <= 4) ? 'локации' : 'локаций'));
@@ -41,10 +22,10 @@ $_locNoun = ($_r2 >= 11 && $_r2 <= 19) ? 'локаций'
   </div>
 </div>
 
-@foreach($_byRegion as $_regionKey => $_region)
+@foreach($locations as $_regionKey => $_region)
 <div class="fc-region-label">{{ $_region['label'] }}</div>
 <div class="fc-dc-grid" style="{{ $loop->last ? 'margin-bottom:0;' : '' }}">
-  @foreach($_region['items'] as $dc)
+  @foreach($_region['locations'] as $dc)
   @include('marketing._dc-card', $dc)
   @endforeach
 </div>
